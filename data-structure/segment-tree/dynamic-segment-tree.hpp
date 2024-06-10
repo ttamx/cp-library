@@ -3,11 +3,11 @@
 /**
  * Author: Teetat T.
  * Date: 2024-01-15
- * Description: Sparse Segment Tree
+ * Description: Dynamic Segment Tree
  */
 
 template<class MonoidAction>
-struct SparseSegmentTree{
+struct DynamicSegmentTree{
     using InfoMonoid = typename MonoidAction::InfoMonoid;
     using TagMonoid = typename MonoidAction::TagMonoid;
     using Info = typename MonoidAction::Info;
@@ -23,9 +23,9 @@ struct SparseSegmentTree{
     };
     ll lb,ub;
     Ptr rt;
-    SparseSegmentTree(){}
-    SparseSegmentTree(ll n){init(0,n-1);}
-    SparseSegmentTree(ll lb,ll ub){init(lb,ub);}
+    DynamicSegmentTree(){}
+    DynamicSegmentTree(ll n){init(0,n-1);}
+    DynamicSegmentTree(ll lb,ll ub){init(lb,ub);}
     void init(ll _lb,ll _ub){
         lb=_lb,ub=_ub,rt=new Node();
     }
