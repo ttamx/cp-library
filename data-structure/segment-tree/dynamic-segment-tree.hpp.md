@@ -9,16 +9,16 @@ data:
   attributes:
     links: []
   bundledCode: "#line 2 \"data-structure/segment-tree/dynamic-segment-tree.hpp\"\n\
-    \n/**\n * Author: Teetat T.\n * Date: 2024-01-15\n * Description: Sparse Segment\
-    \ Tree\n */\n\ntemplate<class MonoidAction>\nstruct SparseSegmentTree{\n    using\
+    \n/**\n * Author: Teetat T.\n * Date: 2024-01-15\n * Description: Dynamic Segment\
+    \ Tree\n */\n\ntemplate<class MonoidAction>\nstruct DynamicSegmentTree{\n    using\
     \ InfoMonoid = typename MonoidAction::InfoMonoid;\n    using TagMonoid = typename\
     \ MonoidAction::TagMonoid;\n    using Info = typename MonoidAction::Info;\n  \
     \  using Tag = typename MonoidAction::Tag;\n    struct Node;\n    using Ptr =\
     \ Node*;\n    struct Node{\n        Info val;\n        Tag lz;\n        Ptr l,r;\n\
     \        Node():val(InfoMonoid::unit()),lz(TagMonoid::unit()),l(nullptr),r(nullptr){}\n\
     \        Node(Info v,Tag t):val(v),lz(t),l(nullptr),r(nullptr){}\n    };\n   \
-    \ ll lb,ub;\n    Ptr rt;\n    SparseSegmentTree(){}\n    SparseSegmentTree(ll\
-    \ n){init(0,n-1);}\n    SparseSegmentTree(ll lb,ll ub){init(lb,ub);}\n    void\
+    \ ll lb,ub;\n    Ptr rt;\n    DynamicSegmentTree(){}\n    DynamicSegmentTree(ll\
+    \ n){init(0,n-1);}\n    DynamicSegmentTree(ll lb,ll ub){init(lb,ub);}\n    void\
     \ init(ll _lb,ll _ub){\n        lb=_lb,ub=_ub,rt=new Node();\n    }\n    Info\
     \ val(Ptr t){\n        return t?t->val:InfoMonoid::unit();\n    }\n    void pull(Ptr\
     \ &t){\n        t->val=InfoMonoid::op(val(t->l),val(t->r));\n    }\n    void apply(Ptr\
@@ -49,15 +49,15 @@ data:
     \        return res;\n    }\n    template<class F>\n    ll findlast(ll x,ll y,const\
     \ F &f){\n        return findlast(lb,ub,rt,x,y,f);\n    }\n};\n\n"
   code: "#pragma once\n\n/**\n * Author: Teetat T.\n * Date: 2024-01-15\n * Description:\
-    \ Sparse Segment Tree\n */\n\ntemplate<class MonoidAction>\nstruct SparseSegmentTree{\n\
+    \ Dynamic Segment Tree\n */\n\ntemplate<class MonoidAction>\nstruct DynamicSegmentTree{\n\
     \    using InfoMonoid = typename MonoidAction::InfoMonoid;\n    using TagMonoid\
     \ = typename MonoidAction::TagMonoid;\n    using Info = typename MonoidAction::Info;\n\
     \    using Tag = typename MonoidAction::Tag;\n    struct Node;\n    using Ptr\
     \ = Node*;\n    struct Node{\n        Info val;\n        Tag lz;\n        Ptr\
     \ l,r;\n        Node():val(InfoMonoid::unit()),lz(TagMonoid::unit()),l(nullptr),r(nullptr){}\n\
     \        Node(Info v,Tag t):val(v),lz(t),l(nullptr),r(nullptr){}\n    };\n   \
-    \ ll lb,ub;\n    Ptr rt;\n    SparseSegmentTree(){}\n    SparseSegmentTree(ll\
-    \ n){init(0,n-1);}\n    SparseSegmentTree(ll lb,ll ub){init(lb,ub);}\n    void\
+    \ ll lb,ub;\n    Ptr rt;\n    DynamicSegmentTree(){}\n    DynamicSegmentTree(ll\
+    \ n){init(0,n-1);}\n    DynamicSegmentTree(ll lb,ll ub){init(lb,ub);}\n    void\
     \ init(ll _lb,ll _ub){\n        lb=_lb,ub=_ub,rt=new Node();\n    }\n    Info\
     \ val(Ptr t){\n        return t?t->val:InfoMonoid::unit();\n    }\n    void pull(Ptr\
     \ &t){\n        t->val=InfoMonoid::op(val(t->l),val(t->r));\n    }\n    void apply(Ptr\
@@ -91,7 +91,7 @@ data:
   isVerificationFile: false
   path: data-structure/segment-tree/dynamic-segment-tree.hpp
   requiredBy: []
-  timestamp: '2024-06-10 16:05:09+07:00'
+  timestamp: '2024-06-10 22:25:14+07:00'
   verificationStatus: LIBRARY_NO_TESTS
   verifiedWith: []
 documentation_of: data-structure/segment-tree/dynamic-segment-tree.hpp
