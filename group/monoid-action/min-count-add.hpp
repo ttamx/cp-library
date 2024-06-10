@@ -9,7 +9,7 @@
  */
 
 template<class T>
-struct AddMinCountAction{
+struct MinCountAddAction{
     using InfoMonoid = MinCountMonoid<T>;
     using TagMonoid = AddMonoid<T>;
     using Info = typename InfoMonoid::value_type;

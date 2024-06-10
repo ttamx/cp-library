@@ -18,8 +18,8 @@ struct SegmentTree{
     void init(int n,T v=Monoid::unit()){init(vector<T>(n,v));}
     template<class U>
     void init(const vector<U> &a){
-        n=sz(a);
-        t.assign(4<<31-__builtin_clz(n),Monoid::unit());
+        n=(int)a.size();
+        t.assign(4<<(31-__builtin_clz(n)),Monoid::unit());
         function<void(int,int,int)> build=[&](int l,int r,int i){
             if(l==r)return void(t[i]=a[l]);
             int m=(l+r)/2;

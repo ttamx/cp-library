@@ -6,12 +6,9 @@ int main(){
     cin.tie(nullptr)->sync_with_stdio(false);
     int n,q;
     cin >> n >> q;
-    Fenwick<ll> f(n);
-    for(int i=0;i<n;i++){
-        int x;
-        cin >> x;
-        f.update(i,x);
-    }
+    vector<int> a(n);
+    for(auto &x:a)cin >> x;
+    Fenwick<ll> f(a);
     while(q--){
         int op;
         cin >> op;

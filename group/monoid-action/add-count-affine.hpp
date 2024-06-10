@@ -9,7 +9,7 @@
  */
 
 template<class T>
-struct AffineAddCountAction{
+struct AddCountAffineAction{
     using InfoMonoid = AddCountMonoid<T>;
     using TagMonoid = AffineMonoid<T>;
     using Info = typename InfoMonoid::value_type;

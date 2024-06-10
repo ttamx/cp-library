@@ -22,9 +22,10 @@ struct LazySegmentTree{
     void init(int n,Info v=InfoMonoid::unit()){init(vector<Info>(n,v));}
     template<class T>
     void init(const vector<T> &a){
-        n=sz(a);
-        t.assign(4<<31-__builtin_clz(n),InfoMonoid::unit());
-        lz.assign(4<<31-__builtin_clz(n),TagMonoid::unit());
+        n=(int)a.size();
+        int m=4<<(31-__builtin_clz(n));
+        t.assign(m,InfoMonoid::unit());
+        lz.assign(m,TagMonoid::unit());
         function<void(int,int,int)> build=[&](int l,int r,int i){
             if(l==r)return void(t[i]=a[l]);
             int m=(l+r)/2;

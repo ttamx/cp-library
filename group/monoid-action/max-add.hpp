@@ -9,7 +9,7 @@
  */
 
 template<class T>
-struct AddMaxAction{
+struct MaxAddAction{
     using InfoMonoid = MaxMonoid<T>;
     using TagMonoid = AddMonoid<T>;
     using Info = typename InfoMonoid::value_type;
