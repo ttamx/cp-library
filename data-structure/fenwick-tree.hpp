@@ -43,7 +43,7 @@ struct Fenwick{
         int x=0;
         T cur{};
         for(int i=1<<logn;i>0;i>>=1)
-            if(x+i<=n&&cur+t[x+i]<k)x+=i,cur=cur+t[x];
+            if(x+i<=n&&cur+t[x+i]<=k)x+=i,cur=cur+t[x];
         return x;
     }
 };
