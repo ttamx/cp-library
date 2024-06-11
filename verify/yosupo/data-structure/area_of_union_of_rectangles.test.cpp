@@ -3,8 +3,6 @@
 #include "data-structure/segment-tree/dynamic-segment-tree.hpp"
 #include "group/monoid-action/min-count-add.hpp"
 
-using namespace std;
-
 int main(){
     cin.tie(nullptr)->sync_with_stdio(false);
     int n;

@@ -62,3 +62,4 @@ struct BinaryTrie{
         return kth(size()-1,x);
     }
 };
+

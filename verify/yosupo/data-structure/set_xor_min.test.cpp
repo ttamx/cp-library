@@ -2,8 +2,6 @@
 #include "template.hpp"
 #include "data-structure/binary-trie.hpp"
 
-using namespace std;
-
 int main(){
     cin.tie(nullptr)->sync_with_stdio(false);
     int q;
