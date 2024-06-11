@@ -41,19 +41,19 @@ data:
     \            }else{\n                res|=T(1)<<i;\n                k-=get_cnt(t->ch[u]);\n\
     \                t=t->ch[u^1];\n            }\n        }\n        return res;\n\
     \    }\n    T min(T x){\n        return kth(0,x);\n    }\n    T max(T x){\n  \
-    \      return kth(size()-1,x);\n    }\n};\n#line 4 \"verify/yosupo/data-structure/set_xor_min.test.cpp\"\
-    \n\nusing namespace std;\n\nint main(){\n    cin.tie(nullptr)->sync_with_stdio(false);\n\
-    \    int q;\n    cin >> q;\n    set<int> s;\n    BinaryTrie<30> trie;\n    while(q--){\n\
-    \        int t,x;\n        cin >> t >> x;\n        if(t==0){\n            if(s.insert(x).second)trie.insert(x);\n\
+    \      return kth(size()-1,x);\n    }\n};\n\n#line 4 \"verify/yosupo/data-structure/set_xor_min.test.cpp\"\
+    \n\nint main(){\n    cin.tie(nullptr)->sync_with_stdio(false);\n    int q;\n \
+    \   cin >> q;\n    set<int> s;\n    BinaryTrie<30> trie;\n    while(q--){\n  \
+    \      int t,x;\n        cin >> t >> x;\n        if(t==0){\n            if(s.insert(x).second)trie.insert(x);\n\
     \        }else if(t==1){\n            auto it=s.find(x);\n            if(it!=s.end()){\n\
     \                s.erase(it);\n                trie.erase(x);\n            }\n\
     \        }else{\n            cout << trie.min(x) << \"\\n\";\n        }\n    }\n\
     }\n"
   code: "#define PROBLEM \"https://judge.yosupo.jp/problem/set_xor_min\"\n#include\
-    \ \"template.hpp\"\n#include \"data-structure/binary-trie.hpp\"\n\nusing namespace\
-    \ std;\n\nint main(){\n    cin.tie(nullptr)->sync_with_stdio(false);\n    int\
-    \ q;\n    cin >> q;\n    set<int> s;\n    BinaryTrie<30> trie;\n    while(q--){\n\
-    \        int t,x;\n        cin >> t >> x;\n        if(t==0){\n            if(s.insert(x).second)trie.insert(x);\n\
+    \ \"template.hpp\"\n#include \"data-structure/binary-trie.hpp\"\n\nint main(){\n\
+    \    cin.tie(nullptr)->sync_with_stdio(false);\n    int q;\n    cin >> q;\n  \
+    \  set<int> s;\n    BinaryTrie<30> trie;\n    while(q--){\n        int t,x;\n\
+    \        cin >> t >> x;\n        if(t==0){\n            if(s.insert(x).second)trie.insert(x);\n\
     \        }else if(t==1){\n            auto it=s.find(x);\n            if(it!=s.end()){\n\
     \                s.erase(it);\n                trie.erase(x);\n            }\n\
     \        }else{\n            cout << trie.min(x) << \"\\n\";\n        }\n    }\n\
@@ -64,7 +64,7 @@ data:
   isVerificationFile: true
   path: verify/yosupo/data-structure/set_xor_min.test.cpp
   requiredBy: []
-  timestamp: '2024-06-11 21:32:30+07:00'
+  timestamp: '2024-06-11 23:01:28+07:00'
   verificationStatus: TEST_ACCEPTED
   verifiedWith: []
 documentation_of: verify/yosupo/data-structure/set_xor_min.test.cpp

@@ -28,7 +28,7 @@ data:
     \            }else{\n                res|=T(1)<<i;\n                k-=get_cnt(t->ch[u]);\n\
     \                t=t->ch[u^1];\n            }\n        }\n        return res;\n\
     \    }\n    T min(T x){\n        return kth(0,x);\n    }\n    T max(T x){\n  \
-    \      return kth(size()-1,x);\n    }\n};\n"
+    \      return kth(size()-1,x);\n    }\n};\n\n"
   code: "#pragma once\n\n/**\n * Author: Teetat T.\n * Date: 2024-06-11\n * Description:\
     \ Binary Trie\n */\n\ntemplate<int BIT,class T = uint32_t,class S = int>\nstruct\
     \ BinaryTrie{\n    struct Node{\n        array<Node*,2> ch;\n        S cnt;\n\
@@ -46,12 +46,12 @@ data:
     \                k-=get_cnt(t->ch[u]);\n                t=t->ch[u^1];\n      \
     \      }\n        }\n        return res;\n    }\n    T min(T x){\n        return\
     \ kth(0,x);\n    }\n    T max(T x){\n        return kth(size()-1,x);\n    }\n\
-    };"
+    };\n\n"
   dependsOn: []
   isVerificationFile: false
   path: data-structure/binary-trie.hpp
   requiredBy: []
-  timestamp: '2024-06-11 21:32:30+07:00'
+  timestamp: '2024-06-11 23:01:28+07:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
   - verify/yosupo/data-structure/set_xor_min.test.cpp

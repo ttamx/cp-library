@@ -94,10 +94,10 @@ data:
     \ typename InfoMonoid::value_type;\n    using Tag = typename TagMonoid::value_type;\n\
     \    static constexpr Info op(const Info &a,const Tag &b){\n        if(a.first==InfoMonoid::unit().first)return\
     \ a;\n        return Info(a.first+b,a.second);\n    }\n};\n\n#line 5 \"verify/yosupo/data-structure/area_of_union_of_rectangles.test.cpp\"\
-    \n\nusing namespace std;\n\nint main(){\n    cin.tie(nullptr)->sync_with_stdio(false);\n\
-    \    int n;\n    cin >> n;\n    map<int,vector<tuple<int,int,int>>> qr;\n    for(int\
-    \ i=0;i<n;++i){\n        int lx,ly,rx,ry;\n        cin >> lx >> ly >> rx >> ry;\n\
-    \        ry--;\n        qr[lx].emplace_back(ly,ry,1);\n        qr[rx].emplace_back(ly,ry,-1);\n\
+    \n\nint main(){\n    cin.tie(nullptr)->sync_with_stdio(false);\n    int n;\n \
+    \   cin >> n;\n    map<int,vector<tuple<int,int,int>>> qr;\n    for(int i=0;i<n;++i){\n\
+    \        int lx,ly,rx,ry;\n        cin >> lx >> ly >> rx >> ry;\n        ry--;\n\
+    \        qr[lx].emplace_back(ly,ry,1);\n        qr[rx].emplace_back(ly,ry,-1);\n\
     \    }\n    const int X=1e9;\n    DynamicSegmentTree<MinCountAddAction<int>> s(0,X-1,[](int\
     \ l,int r){\n        return make_pair(0,r-l+1);\n    });\n    ll ans=0,pre=0;\n\
     \    for(auto &[x,v]:qr){\n        auto [val,cnt]=s.query(0,X);\n        if(val>0)cnt=0;\n\
@@ -105,11 +105,10 @@ data:
     \        pre=x;\n    }\n    cout << ans;\n}\n"
   code: "#define PROBLEM \"https://judge.yosupo.jp/problem/area_of_union_of_rectangles\"\
     \n#include \"template.hpp\"\n#include \"data-structure/segment-tree/dynamic-segment-tree.hpp\"\
-    \n#include \"group/monoid-action/min-count-add.hpp\"\n\nusing namespace std;\n\
-    \nint main(){\n    cin.tie(nullptr)->sync_with_stdio(false);\n    int n;\n   \
-    \ cin >> n;\n    map<int,vector<tuple<int,int,int>>> qr;\n    for(int i=0;i<n;++i){\n\
-    \        int lx,ly,rx,ry;\n        cin >> lx >> ly >> rx >> ry;\n        ry--;\n\
-    \        qr[lx].emplace_back(ly,ry,1);\n        qr[rx].emplace_back(ly,ry,-1);\n\
+    \n#include \"group/monoid-action/min-count-add.hpp\"\n\nint main(){\n    cin.tie(nullptr)->sync_with_stdio(false);\n\
+    \    int n;\n    cin >> n;\n    map<int,vector<tuple<int,int,int>>> qr;\n    for(int\
+    \ i=0;i<n;++i){\n        int lx,ly,rx,ry;\n        cin >> lx >> ly >> rx >> ry;\n\
+    \        ry--;\n        qr[lx].emplace_back(ly,ry,1);\n        qr[rx].emplace_back(ly,ry,-1);\n\
     \    }\n    const int X=1e9;\n    DynamicSegmentTree<MinCountAddAction<int>> s(0,X-1,[](int\
     \ l,int r){\n        return make_pair(0,r-l+1);\n    });\n    ll ans=0,pre=0;\n\
     \    for(auto &[x,v]:qr){\n        auto [val,cnt]=s.query(0,X);\n        if(val>0)cnt=0;\n\
@@ -124,7 +123,7 @@ data:
   isVerificationFile: true
   path: verify/yosupo/data-structure/area_of_union_of_rectangles.test.cpp
   requiredBy: []
-  timestamp: '2024-06-11 19:24:03+07:00'
+  timestamp: '2024-06-11 23:01:28+07:00'
   verificationStatus: TEST_ACCEPTED
   verifiedWith: []
 documentation_of: verify/yosupo/data-structure/area_of_union_of_rectangles.test.cpp
