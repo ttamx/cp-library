@@ -21,6 +21,9 @@ data:
   - icon: ':heavy_check_mark:'
     path: verify/yosupo/data-structure/range_reverse_range_sum.test.cpp
     title: verify/yosupo/data-structure/range_reverse_range_sum.test.cpp
+  - icon: ':heavy_check_mark:'
+    path: verify/yosupo/data-structure/set_xor_min.test.cpp
+    title: verify/yosupo/data-structure/set_xor_min.test.cpp
   _isVerificationFailed: false
   _pathExtension: hpp
   _verificationStatusIcon: ':heavy_check_mark:'
@@ -113,6 +116,7 @@ data:
   - verify/yosupo/data-structure/range_reverse_range_sum.test.cpp
   - verify/yosupo/data-structure/range_affine_range_sum.test.cpp
   - verify/yosupo/data-structure/point_set_range_composite.test.cpp
+  - verify/yosupo/data-structure/set_xor_min.test.cpp
 documentation_of: template.hpp
 layout: document
 redirect_from:

@@ -24,7 +24,7 @@ data:
     \    }\n    T query(int x){\n        T res{};\n        for(int i=x+1;i>0;i-=i&-i)res=res+t[i];\n\
     \        return res;\n    }\n    T query(int l,int r){\n        return query(r)-query(l-1);\n\
     \    }\n    int find(const T &k){\n        int x=0;\n        T cur{};\n      \
-    \  for(int i=1<<logn;i>0;i>>=1)\n            if(x+i<=n&&cur+t[x+i]<k)x+=i,cur=cur+t[x];\n\
+    \  for(int i=1<<logn;i>0;i>>=1)\n            if(x+i<=n&&cur+t[x+i]<=k)x+=i,cur=cur+t[x];\n\
     \        return x;\n    }\n};\n\n"
   code: "#pragma once\n\n/**\n * Author: Teetat T.\n * Date: 2024-01-15\n * Description:\
     \ Fenwick / Binary Indexed Tree\n */\n\ntemplate<class T>\nstruct Fenwick{\n \
@@ -38,13 +38,13 @@ data:
     \    }\n    T query(int x){\n        T res{};\n        for(int i=x+1;i>0;i-=i&-i)res=res+t[i];\n\
     \        return res;\n    }\n    T query(int l,int r){\n        return query(r)-query(l-1);\n\
     \    }\n    int find(const T &k){\n        int x=0;\n        T cur{};\n      \
-    \  for(int i=1<<logn;i>0;i>>=1)\n            if(x+i<=n&&cur+t[x+i]<k)x+=i,cur=cur+t[x];\n\
+    \  for(int i=1<<logn;i>0;i>>=1)\n            if(x+i<=n&&cur+t[x+i]<=k)x+=i,cur=cur+t[x];\n\
     \        return x;\n    }\n};\n\n"
   dependsOn: []
   isVerificationFile: false
   path: data-structure/fenwick-tree.hpp
   requiredBy: []
-  timestamp: '2024-06-10 17:34:10+07:00'
+  timestamp: '2024-06-11 21:32:30+07:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
   - verify/yosupo/data-structure/point_add_range_sum.test.cpp

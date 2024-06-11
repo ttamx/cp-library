@@ -4,6 +4,9 @@ data:
   - name: data-structure
     pages:
     - icon: ':heavy_check_mark:'
+      path: data-structure/binary-trie.hpp
+      title: data-structure/binary-trie.hpp
+    - icon: ':heavy_check_mark:'
       path: data-structure/fenwick-tree.hpp
       title: data-structure/fenwick-tree.hpp
   - name: data-structure/link-cut-tree
@@ -129,5 +132,8 @@ data:
     - icon: ':heavy_check_mark:'
       path: verify/yosupo/data-structure/range_reverse_range_sum.test.cpp
       title: verify/yosupo/data-structure/range_reverse_range_sum.test.cpp
+    - icon: ':heavy_check_mark:'
+      path: verify/yosupo/data-structure/set_xor_min.test.cpp
+      title: verify/yosupo/data-structure/set_xor_min.test.cpp
 layout: toppage
 ---
