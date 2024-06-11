@@ -31,7 +31,7 @@ data:
       title: data-structure/link-cut-tree/splay-tree-base.hpp
   - name: data-structure/segment-tree
     pages:
-    - icon: ':warning:'
+    - icon: ':heavy_check_mark:'
       path: data-structure/segment-tree/dynamic-segment-tree.hpp
       title: data-structure/segment-tree/dynamic-segment-tree.hpp
     - icon: ':heavy_check_mark:'
@@ -57,7 +57,7 @@ data:
     - icon: ':warning:'
       path: group/monoid/max.hpp
       title: group/monoid/max.hpp
-    - icon: ':warning:'
+    - icon: ':heavy_check_mark:'
       path: group/monoid/min-count.hpp
       title: group/monoid/min-count.hpp
     - icon: ':warning:'
@@ -89,7 +89,7 @@ data:
     - icon: ':warning:'
       path: group/monoid-action/min-add.hpp
       title: group/monoid-action/min-add.hpp
-    - icon: ':warning:'
+    - icon: ':heavy_check_mark:'
       path: group/monoid-action/min-count-add.hpp
       title: group/monoid-action/min-count-add.hpp
     - icon: ':warning:'
@@ -111,6 +111,9 @@ data:
   verificationCategories:
   - name: verify/yosupo/data-structure
     pages:
+    - icon: ':heavy_check_mark:'
+      path: verify/yosupo/data-structure/area_of_union_of_rectangles.test.cpp
+      title: verify/yosupo/data-structure/area_of_union_of_rectangles.test.cpp
     - icon: ':heavy_check_mark:'
       path: verify/yosupo/data-structure/dynamic_sequence_range_affine_range_sum.test.cpp
       title: verify/yosupo/data-structure/dynamic_sequence_range_affine_range_sum.test.cpp

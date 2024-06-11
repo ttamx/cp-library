@@ -2,13 +2,16 @@
 data:
   _extendedDependsOn: []
   _extendedRequiredBy:
-  - icon: ':warning:'
+  - icon: ':heavy_check_mark:'
     path: group/monoid-action/min-count-add.hpp
     title: group/monoid-action/min-count-add.hpp
-  _extendedVerifiedWith: []
+  _extendedVerifiedWith:
+  - icon: ':heavy_check_mark:'
+    path: verify/yosupo/data-structure/area_of_union_of_rectangles.test.cpp
+    title: verify/yosupo/data-structure/area_of_union_of_rectangles.test.cpp
   _isVerificationFailed: false
   _pathExtension: hpp
-  _verificationStatusIcon: ':warning:'
+  _verificationStatusIcon: ':heavy_check_mark:'
   attributes:
     links: []
   bundledCode: "#line 2 \"group/monoid/min-count.hpp\"\n\n/**\n * Author: Teetat T.\n\
@@ -31,8 +34,9 @@ data:
   requiredBy:
   - group/monoid-action/min-count-add.hpp
   timestamp: '2024-06-10 16:05:09+07:00'
-  verificationStatus: LIBRARY_NO_TESTS
-  verifiedWith: []
+  verificationStatus: LIBRARY_ALL_AC
+  verifiedWith:
+  - verify/yosupo/data-structure/area_of_union_of_rectangles.test.cpp
 documentation_of: group/monoid/min-count.hpp
 layout: document
 redirect_from:

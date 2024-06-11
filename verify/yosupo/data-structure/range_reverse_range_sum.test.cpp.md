@@ -32,20 +32,21 @@ data:
     using ll = long long;\nusing db = long double;\nusing vi = vector<int>;\nusing\
     \ vl = vector<ll>;\nusing vd = vector<db>;\nusing pii = pair<int,int>;\nusing\
     \ pll = pair<ll,ll>;\nusing pdd = pair<db,db>;\nconst int INF=0x3fffffff;\nconst\
-    \ int MOD=998244353;\nconst ll LINF=0x1fffffffffffffff;\nconst db DINF=numeric_limits<db>::infinity();\n\
-    const db EPS=1e-9;\nconst db PI=acos(db(-1));\n#line 2 \"data-structure/link-cut-tree/splay-tree-base.hpp\"\
-    \n\n/**\n * Author: Teetat T.\n * Date: 2024-04-13\n * Description: Splay Tree.\
-    \ splay(u) will make node u be the root of the tree in amortized O(log n) time.\n\
-    \ */\n\ntemplate<class Node>\nstruct SplayTreeBase{\n    using Ptr = Node*;\n\
-    \    bool is_root(Ptr t){\n        return !(t->p)||(t->p->l!=t&&t->p->r!=t);\n\
-    \    } // The parent of the root stores the path parant in link cut tree.\n  \
-    \  int size(Ptr t){\n        return t?t->size:0;\n    }\n    virtual void push(Ptr\
-    \ t){};\n    virtual void pull(Ptr t){};\n    int pos(Ptr t){\n        if(t->p){\n\
-    \            if(t->p->l==t)return -1;\n            if(t->p->r==t)return 1;\n \
-    \       }\n        return 0;\n    }\n    void rotate(Ptr t){\n        Ptr x=t->p,y=x->p;\n\
-    \        if(pos(t)==-1){\n            if((x->l=t->r))t->r->p=x;\n            t->r=x,x->p=t;\n\
-    \        }else{\n            if((x->r=t->l))t->l->p=x;\n            t->l=x,x->p=t;\n\
-    \        }\n        pull(x),pull(t);\n        if((t->p=y)){\n            if(y->l==x)y->l=t;\n\
+    \ int MOD=998244353;\nconst int MOD2=1000000007;\nconst ll LINF=0x1fffffffffffffff;\n\
+    const db DINF=numeric_limits<db>::infinity();\nconst db EPS=1e-9;\nconst db PI=acos(db(-1));\n\
+    #line 2 \"data-structure/link-cut-tree/splay-tree-base.hpp\"\n\n/**\n * Author:\
+    \ Teetat T.\n * Date: 2024-04-13\n * Description: Splay Tree. splay(u) will make\
+    \ node u be the root of the tree in amortized O(log n) time.\n */\n\ntemplate<class\
+    \ Node>\nstruct SplayTreeBase{\n    using Ptr = Node*;\n    bool is_root(Ptr t){\n\
+    \        return !(t->p)||(t->p->l!=t&&t->p->r!=t);\n    } // The parent of the\
+    \ root stores the path parant in link cut tree.\n    int size(Ptr t){\n      \
+    \  return t?t->size:0;\n    }\n    virtual void push(Ptr t){};\n    virtual void\
+    \ pull(Ptr t){};\n    int pos(Ptr t){\n        if(t->p){\n            if(t->p->l==t)return\
+    \ -1;\n            if(t->p->r==t)return 1;\n        }\n        return 0;\n   \
+    \ }\n    void rotate(Ptr t){\n        Ptr x=t->p,y=x->p;\n        if(pos(t)==-1){\n\
+    \            if((x->l=t->r))t->r->p=x;\n            t->r=x,x->p=t;\n        }else{\n\
+    \            if((x->r=t->l))t->l->p=x;\n            t->l=x,x->p=t;\n        }\n\
+    \        pull(x),pull(t);\n        if((t->p=y)){\n            if(y->l==x)y->l=t;\n\
     \            if(y->r==x)y->r=t;\n        }\n    }\n    void splay(Ptr t){\n  \
     \      if(!t)return;\n        push(t);\n        while(!is_root(t)){\n        \
     \    Ptr x=t->p;\n            if(is_root(x)){\n                push(x),push(t);\n\
@@ -132,7 +133,7 @@ data:
   isVerificationFile: true
   path: verify/yosupo/data-structure/range_reverse_range_sum.test.cpp
   requiredBy: []
-  timestamp: '2024-06-10 17:34:10+07:00'
+  timestamp: '2024-06-11 19:24:03+07:00'
   verificationStatus: TEST_ACCEPTED
   verifiedWith: []
 documentation_of: verify/yosupo/data-structure/range_reverse_range_sum.test.cpp

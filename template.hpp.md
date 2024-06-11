@@ -4,6 +4,9 @@ data:
   _extendedRequiredBy: []
   _extendedVerifiedWith:
   - icon: ':heavy_check_mark:'
+    path: verify/yosupo/data-structure/area_of_union_of_rectangles.test.cpp
+    title: verify/yosupo/data-structure/area_of_union_of_rectangles.test.cpp
+  - icon: ':heavy_check_mark:'
     path: verify/yosupo/data-structure/dynamic_sequence_range_affine_range_sum.test.cpp
     title: verify/yosupo/data-structure/dynamic_sequence_range_affine_range_sum.test.cpp
   - icon: ':heavy_check_mark:'
@@ -51,6 +54,8 @@ data:
 
     const int MOD=998244353;
 
+    const int MOD2=1000000007;
+
     const ll LINF=0x1fffffffffffffff;
 
     const db DINF=numeric_limits<db>::infinity();
@@ -86,6 +91,8 @@ data:
 
     const int MOD=998244353;
 
+    const int MOD2=1000000007;
+
     const ll LINF=0x1fffffffffffffff;
 
     const db DINF=numeric_limits<db>::infinity();
@@ -97,10 +104,11 @@ data:
   isVerificationFile: false
   path: template.hpp
   requiredBy: []
-  timestamp: '2024-06-10 16:05:09+07:00'
+  timestamp: '2024-06-11 19:24:03+07:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
   - verify/yosupo/data-structure/point_add_range_sum.test.cpp
+  - verify/yosupo/data-structure/area_of_union_of_rectangles.test.cpp
   - verify/yosupo/data-structure/dynamic_sequence_range_affine_range_sum.test.cpp
   - verify/yosupo/data-structure/range_reverse_range_sum.test.cpp
   - verify/yosupo/data-structure/range_affine_range_sum.test.cpp
