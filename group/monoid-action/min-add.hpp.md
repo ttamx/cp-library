@@ -4,7 +4,7 @@ data:
   - icon: ':heavy_check_mark:'
     path: group/monoid/add.hpp
     title: group/monoid/add.hpp
-  - icon: ':warning:'
+  - icon: ':heavy_check_mark:'
     path: group/monoid/min.hpp
     title: group/monoid/min.hpp
   _extendedRequiredBy: []

@@ -5,10 +5,13 @@ data:
   - icon: ':warning:'
     path: group/monoid-action/min-add.hpp
     title: group/monoid-action/min-add.hpp
-  _extendedVerifiedWith: []
+  _extendedVerifiedWith:
+  - icon: ':heavy_check_mark:'
+    path: verify/yosupo/data-structure/staticrmq.test.cpp
+    title: verify/yosupo/data-structure/staticrmq.test.cpp
   _isVerificationFailed: false
   _pathExtension: hpp
-  _verificationStatusIcon: ':warning:'
+  _verificationStatusIcon: ':heavy_check_mark:'
   attributes:
     links: []
   bundledCode: "#line 2 \"group/monoid/min.hpp\"\n\n/**\n * Author: Teetat T.\n *\
@@ -26,8 +29,9 @@ data:
   requiredBy:
   - group/monoid-action/min-add.hpp
   timestamp: '2024-06-10 16:05:09+07:00'
-  verificationStatus: LIBRARY_NO_TESTS
-  verifiedWith: []
+  verificationStatus: LIBRARY_ALL_AC
+  verifiedWith:
+  - verify/yosupo/data-structure/staticrmq.test.cpp
 documentation_of: group/monoid/min.hpp
 layout: document
 redirect_from:

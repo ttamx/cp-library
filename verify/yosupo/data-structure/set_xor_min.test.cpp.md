@@ -22,8 +22,8 @@ data:
     \n#include<bits/stdc++.h>\n\nusing namespace std;\n\nusing ll = long long;\nusing\
     \ db = long double;\nusing vi = vector<int>;\nusing vl = vector<ll>;\nusing vd\
     \ = vector<db>;\nusing pii = pair<int,int>;\nusing pll = pair<ll,ll>;\nusing pdd\
-    \ = pair<db,db>;\nconst int INF=0x3fffffff;\nconst int MOD=998244353;\nconst int\
-    \ MOD2=1000000007;\nconst ll LINF=0x1fffffffffffffff;\nconst db DINF=numeric_limits<db>::infinity();\n\
+    \ = pair<db,db>;\nconst int INF=INT_MAX/2;\nconst int MOD=998244353;\nconst int\
+    \ MOD2=1000000007;\nconst ll LINF=LLONG_MAX/2;\nconst db DINF=numeric_limits<db>::infinity();\n\
     const db EPS=1e-9;\nconst db PI=acos(db(-1));\n#line 2 \"data-structure/binary-trie.hpp\"\
     \n\n/**\n * Author: Teetat T.\n * Date: 2024-06-11\n * Description: Binary Trie\n\
     \ */\n\ntemplate<int BIT,class T = uint32_t,class S = int>\nstruct BinaryTrie{\n\
@@ -64,7 +64,7 @@ data:
   isVerificationFile: true
   path: verify/yosupo/data-structure/set_xor_min.test.cpp
   requiredBy: []
-  timestamp: '2024-06-11 23:01:28+07:00'
+  timestamp: '2024-06-12 17:31:48+07:00'
   verificationStatus: TEST_ACCEPTED
   verifiedWith: []
 documentation_of: verify/yosupo/data-structure/set_xor_min.test.cpp

@@ -28,8 +28,8 @@ data:
     \n#line 1 \"template.hpp\"\n#include<bits/stdc++.h>\n\nusing namespace std;\n\n\
     using ll = long long;\nusing db = long double;\nusing vi = vector<int>;\nusing\
     \ vl = vector<ll>;\nusing vd = vector<db>;\nusing pii = pair<int,int>;\nusing\
-    \ pll = pair<ll,ll>;\nusing pdd = pair<db,db>;\nconst int INF=0x3fffffff;\nconst\
-    \ int MOD=998244353;\nconst int MOD2=1000000007;\nconst ll LINF=0x1fffffffffffffff;\n\
+    \ pll = pair<ll,ll>;\nusing pdd = pair<db,db>;\nconst int INF=INT_MAX/2;\nconst\
+    \ int MOD=998244353;\nconst int MOD2=1000000007;\nconst ll LINF=LLONG_MAX/2;\n\
     const db DINF=numeric_limits<db>::infinity();\nconst db EPS=1e-9;\nconst db PI=acos(db(-1));\n\
     #line 2 \"modular-arithmetic/montgomery-modint.hpp\"\n\n/**\n * Author: Teetat\
     \ T.\n * Date: 2024-03-17\n * Description: modular arithmetic operators using\
@@ -73,9 +73,9 @@ data:
     \    }\n\n    friend istream &operator>>(istream &is,mint &o){\n        int64_t\
     \ v;\n        is >> v;\n        o=mint(v);\n        return is;\n    }\n    friend\
     \ ostream &operator<<(ostream &os,const mint &o){\n        return os << o.val();\n\
-    \    }\n};\nusing mint = MontgomeryModInt<MOD,3>;\nusing vm = vector<mint>;\n\n\
-    #line 2 \"data-structure/segment-tree/segment-tree.hpp\"\n\n/**\n * Author: Teetat\
-    \ T.\n * Date: 2024-01-15\n * Description: Segment Tree\n */\n\ntemplate<class\
+    \    }\n};\nusing mint998 = MontgomeryModInt<998244353,3>;\nusing mint107 = MontgomeryModInt<1000000007,5>;\n\
+    \n#line 2 \"data-structure/segment-tree/segment-tree.hpp\"\n\n/**\n * Author:\
+    \ Teetat T.\n * Date: 2024-01-15\n * Description: Segment Tree\n */\n\ntemplate<class\
     \ Monoid>\nstruct SegmentTree{\n    using T = typename Monoid::value_type;\n \
     \   int n;\n    vector<T> t;\n    SegmentTree(){}\n    SegmentTree(int n,T v=Monoid::unit()){init(n,v);}\n\
     \    template<class U>\n    SegmentTree(const vector<U> &a){init(a);}\n    void\
@@ -114,25 +114,25 @@ data:
     \    static constexpr P unit(){return P(T(1),T(0));}\n    static constexpr T eval(const\
     \ P &f,const T &x){\n        return f.first*x+f.second;\n    }\n};\n\n#line 6\
     \ \"verify/yosupo/data-structure/point_set_range_composite.test.cpp\"\n\nusing\
-    \ Monoid = AffineMonoid<mint>;\nusing T = Monoid::value_type;\n\nint main(){\n\
-    \    cin.tie(nullptr)->sync_with_stdio(false);\n    int n,q;\n    cin >> n >>\
-    \ q;\n    vector<T> a(n);\n    for(auto &[x,y]:a)cin >> x >> y;\n    SegmentTree<Monoid>\
-    \ s(a);\n    while(q--){\n        int op;\n        cin >> op;\n        if(op){\n\
-    \            int l,r,x;\n            cin >> l >> r >> x;\n            cout <<\
-    \ Monoid::eval(s.query(l,r-1),x) << \"\\n\";\n        }else{\n            int\
-    \ p,a,b;\n            cin >> p >> a >> b;\n            s.modify(p,T(a,b));\n \
-    \       }\n    }\n}\n"
+    \ mint = mint998;\nusing Monoid = AffineMonoid<mint>;\nusing T = Monoid::value_type;\n\
+    \nint main(){\n    cin.tie(nullptr)->sync_with_stdio(false);\n    int n,q;\n \
+    \   cin >> n >> q;\n    vector<T> a(n);\n    for(auto &[x,y]:a)cin >> x >> y;\n\
+    \    SegmentTree<Monoid> s(a);\n    while(q--){\n        int op;\n        cin\
+    \ >> op;\n        if(op){\n            int l,r,x;\n            cin >> l >> r >>\
+    \ x;\n            cout << Monoid::eval(s.query(l,r-1),x) << \"\\n\";\n       \
+    \ }else{\n            int p,a,b;\n            cin >> p >> a >> b;\n          \
+    \  s.modify(p,T(a,b));\n        }\n    }\n}\n"
   code: "#define PROBLEM \"https://judge.yosupo.jp/problem/point_set_range_composite\"\
     \n#include \"template.hpp\"\n#include \"modular-arithmetic/montgomery-modint.hpp\"\
     \n#include \"data-structure/segment-tree/segment-tree.hpp\"\n#include \"group/monoid/affine.hpp\"\
-    \n\nusing Monoid = AffineMonoid<mint>;\nusing T = Monoid::value_type;\n\nint main(){\n\
-    \    cin.tie(nullptr)->sync_with_stdio(false);\n    int n,q;\n    cin >> n >>\
-    \ q;\n    vector<T> a(n);\n    for(auto &[x,y]:a)cin >> x >> y;\n    SegmentTree<Monoid>\
-    \ s(a);\n    while(q--){\n        int op;\n        cin >> op;\n        if(op){\n\
-    \            int l,r,x;\n            cin >> l >> r >> x;\n            cout <<\
-    \ Monoid::eval(s.query(l,r-1),x) << \"\\n\";\n        }else{\n            int\
-    \ p,a,b;\n            cin >> p >> a >> b;\n            s.modify(p,T(a,b));\n \
-    \       }\n    }\n}"
+    \n\nusing mint = mint998;\nusing Monoid = AffineMonoid<mint>;\nusing T = Monoid::value_type;\n\
+    \nint main(){\n    cin.tie(nullptr)->sync_with_stdio(false);\n    int n,q;\n \
+    \   cin >> n >> q;\n    vector<T> a(n);\n    for(auto &[x,y]:a)cin >> x >> y;\n\
+    \    SegmentTree<Monoid> s(a);\n    while(q--){\n        int op;\n        cin\
+    \ >> op;\n        if(op){\n            int l,r,x;\n            cin >> l >> r >>\
+    \ x;\n            cout << Monoid::eval(s.query(l,r-1),x) << \"\\n\";\n       \
+    \ }else{\n            int p,a,b;\n            cin >> p >> a >> b;\n          \
+    \  s.modify(p,T(a,b));\n        }\n    }\n}"
   dependsOn:
   - template.hpp
   - modular-arithmetic/montgomery-modint.hpp
@@ -141,7 +141,7 @@ data:
   isVerificationFile: true
   path: verify/yosupo/data-structure/point_set_range_composite.test.cpp
   requiredBy: []
-  timestamp: '2024-06-11 19:24:03+07:00'
+  timestamp: '2024-06-12 17:31:48+07:00'
   verificationStatus: TEST_ACCEPTED
   verifiedWith: []
 documentation_of: verify/yosupo/data-structure/point_set_range_composite.test.cpp

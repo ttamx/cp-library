@@ -34,8 +34,8 @@ data:
     #line 1 \"template.hpp\"\n#include<bits/stdc++.h>\n\nusing namespace std;\n\n\
     using ll = long long;\nusing db = long double;\nusing vi = vector<int>;\nusing\
     \ vl = vector<ll>;\nusing vd = vector<db>;\nusing pii = pair<int,int>;\nusing\
-    \ pll = pair<ll,ll>;\nusing pdd = pair<db,db>;\nconst int INF=0x3fffffff;\nconst\
-    \ int MOD=998244353;\nconst int MOD2=1000000007;\nconst ll LINF=0x1fffffffffffffff;\n\
+    \ pll = pair<ll,ll>;\nusing pdd = pair<db,db>;\nconst int INF=INT_MAX/2;\nconst\
+    \ int MOD=998244353;\nconst int MOD2=1000000007;\nconst ll LINF=LLONG_MAX/2;\n\
     const db DINF=numeric_limits<db>::infinity();\nconst db EPS=1e-9;\nconst db PI=acos(db(-1));\n\
     #line 2 \"modular-arithmetic/montgomery-modint.hpp\"\n\n/**\n * Author: Teetat\
     \ T.\n * Date: 2024-03-17\n * Description: modular arithmetic operators using\
@@ -79,8 +79,8 @@ data:
     \    }\n\n    friend istream &operator>>(istream &is,mint &o){\n        int64_t\
     \ v;\n        is >> v;\n        o=mint(v);\n        return is;\n    }\n    friend\
     \ ostream &operator<<(ostream &os,const mint &o){\n        return os << o.val();\n\
-    \    }\n};\nusing mint = MontgomeryModInt<MOD,3>;\nusing vm = vector<mint>;\n\n\
-    #line 2 \"data-structure/segment-tree/lazy-segment-tree.hpp\"\n\n/**\n * Author:\
+    \    }\n};\nusing mint998 = MontgomeryModInt<998244353,3>;\nusing mint107 = MontgomeryModInt<1000000007,5>;\n\
+    \n#line 2 \"data-structure/segment-tree/lazy-segment-tree.hpp\"\n\n/**\n * Author:\
     \ Teetat T.\n * Date: 2024-01-15\n * Description: Segment Tree with Lazy Propagation\n\
     \ */\n\ntemplate<class MonoidAction>\nstruct LazySegmentTree{\n    using InfoMonoid\
     \ = typename MonoidAction::InfoMonoid;\n    using TagMonoid = typename MonoidAction::TagMonoid;\n\
@@ -140,25 +140,25 @@ data:
     \    using Info = typename InfoMonoid::value_type;\n    using Tag = typename TagMonoid::value_type;\n\
     \    static constexpr Info op(const Info &a,const Tag &b){\n        return Info(a.first*b.first+a.second*b.second,a.second);\n\
     \    }\n};\n\n#line 6 \"verify/yosupo/data-structure/range_affine_range_sum.test.cpp\"\
-    \n\nusing Monoid = AddCountMonoid<mint>;\nusing Action = AddCountAffineAction<mint>;\n\
-    using T = Monoid::value_type;\n\nint main(){\n    cin.tie(nullptr)->sync_with_stdio(false);\n\
+    \n\nusing mint = mint998;\nusing Monoid = AddCountMonoid<mint>;\nusing Action\
+    \ = AddCountAffineAction<mint>;\nusing T = Monoid::value_type;\n\nint main(){\n\
+    \    cin.tie(nullptr)->sync_with_stdio(false);\n    int n,q;\n    cin >> n >>\
+    \ q;\n    vector<T> a(n);\n    for(auto &[x,y]:a)cin >> x,y=1;\n    LazySegmentTree<Action>\
+    \ s(a);\n    while(q--){\n        int op;\n        cin >> op;\n        if(op){\n\
+    \            int l,r;\n            cin >> l >> r;\n            cout << s.query(l,r-1).first\
+    \ << \"\\n\";\n        }else{\n            int l,r,b,c;\n            cin >> l\
+    \ >> r >> b >> c;\n            s.update(l,r-1,T(b,c));\n        }\n    }\n}\n"
+  code: "#define PROBLEM \"https://judge.yosupo.jp/problem/range_affine_range_sum\"\
+    \n#include \"template.hpp\"\n#include \"modular-arithmetic/montgomery-modint.hpp\"\
+    \n#include \"data-structure/segment-tree/lazy-segment-tree.hpp\"\n#include \"\
+    group/monoid-action/add-count-affine.hpp\"\n\nusing mint = mint998;\nusing Monoid\
+    \ = AddCountMonoid<mint>;\nusing Action = AddCountAffineAction<mint>;\nusing T\
+    \ = Monoid::value_type;\n\nint main(){\n    cin.tie(nullptr)->sync_with_stdio(false);\n\
     \    int n,q;\n    cin >> n >> q;\n    vector<T> a(n);\n    for(auto &[x,y]:a)cin\
     \ >> x,y=1;\n    LazySegmentTree<Action> s(a);\n    while(q--){\n        int op;\n\
     \        cin >> op;\n        if(op){\n            int l,r;\n            cin >>\
     \ l >> r;\n            cout << s.query(l,r-1).first << \"\\n\";\n        }else{\n\
     \            int l,r,b,c;\n            cin >> l >> r >> b >> c;\n            s.update(l,r-1,T(b,c));\n\
-    \        }\n    }\n}\n"
-  code: "#define PROBLEM \"https://judge.yosupo.jp/problem/range_affine_range_sum\"\
-    \n#include \"template.hpp\"\n#include \"modular-arithmetic/montgomery-modint.hpp\"\
-    \n#include \"data-structure/segment-tree/lazy-segment-tree.hpp\"\n#include \"\
-    group/monoid-action/add-count-affine.hpp\"\n\nusing Monoid = AddCountMonoid<mint>;\n\
-    using Action = AddCountAffineAction<mint>;\nusing T = Monoid::value_type;\n\n\
-    int main(){\n    cin.tie(nullptr)->sync_with_stdio(false);\n    int n,q;\n   \
-    \ cin >> n >> q;\n    vector<T> a(n);\n    for(auto &[x,y]:a)cin >> x,y=1;\n \
-    \   LazySegmentTree<Action> s(a);\n    while(q--){\n        int op;\n        cin\
-    \ >> op;\n        if(op){\n            int l,r;\n            cin >> l >> r;\n\
-    \            cout << s.query(l,r-1).first << \"\\n\";\n        }else{\n      \
-    \      int l,r,b,c;\n            cin >> l >> r >> b >> c;\n            s.update(l,r-1,T(b,c));\n\
     \        }\n    }\n}"
   dependsOn:
   - template.hpp
@@ -170,7 +170,7 @@ data:
   isVerificationFile: true
   path: verify/yosupo/data-structure/range_affine_range_sum.test.cpp
   requiredBy: []
-  timestamp: '2024-06-11 19:24:03+07:00'
+  timestamp: '2024-06-12 17:31:48+07:00'
   verificationStatus: TEST_ACCEPTED
   verifiedWith: []
 documentation_of: verify/yosupo/data-structure/range_affine_range_sum.test.cpp

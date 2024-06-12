@@ -9,6 +9,17 @@ data:
     - icon: ':heavy_check_mark:'
       path: data-structure/fenwick-tree.hpp
       title: data-structure/fenwick-tree.hpp
+    - icon: ':heavy_check_mark:'
+      path: data-structure/sparse-table.hpp
+      title: data-structure/sparse-table.hpp
+  - name: data-structure/convex
+    pages:
+    - icon: ':heavy_check_mark:'
+      path: data-structure/convex/dynamic-li-chao-tree.hpp
+      title: data-structure/convex/dynamic-li-chao-tree.hpp
+    - icon: ':heavy_check_mark:'
+      path: data-structure/convex/li-chao-tree.hpp
+      title: data-structure/convex/li-chao-tree.hpp
   - name: data-structure/link-cut-tree
     pages:
     - icon: ':heavy_check_mark:'
@@ -63,7 +74,7 @@ data:
     - icon: ':heavy_check_mark:'
       path: group/monoid/min-count.hpp
       title: group/monoid/min-count.hpp
-    - icon: ':warning:'
+    - icon: ':heavy_check_mark:'
       path: group/monoid/min.hpp
       title: group/monoid/min.hpp
     - icon: ':warning:'
@@ -103,11 +114,17 @@ data:
     - icon: ':warning:'
       path: modular-arithmetic/modint.hpp
       title: modular-arithmetic/modint.hpp
+    - icon: ':warning:'
+      path: modular-arithmetic/modint64.hpp
+      title: modular-arithmetic/modint64.hpp
     - icon: ':heavy_check_mark:'
       path: modular-arithmetic/montgomery-modint.hpp
       title: modular-arithmetic/montgomery-modint.hpp
   - name: .
     pages:
+    - icon: ':warning:'
+      path: out.cpp
+      title: out.cpp
     - icon: ':heavy_check_mark:'
       path: template.hpp
       title: template.hpp
@@ -121,6 +138,9 @@ data:
       path: verify/yosupo/data-structure/dynamic_sequence_range_affine_range_sum.test.cpp
       title: verify/yosupo/data-structure/dynamic_sequence_range_affine_range_sum.test.cpp
     - icon: ':heavy_check_mark:'
+      path: verify/yosupo/data-structure/line_add_get_min.test.cpp
+      title: verify/yosupo/data-structure/line_add_get_min.test.cpp
+    - icon: ':heavy_check_mark:'
       path: verify/yosupo/data-structure/point_add_range_sum.test.cpp
       title: verify/yosupo/data-structure/point_add_range_sum.test.cpp
     - icon: ':heavy_check_mark:'
@@ -133,7 +153,16 @@ data:
       path: verify/yosupo/data-structure/range_reverse_range_sum.test.cpp
       title: verify/yosupo/data-structure/range_reverse_range_sum.test.cpp
     - icon: ':heavy_check_mark:'
+      path: verify/yosupo/data-structure/segment_add_get_min.test.cpp
+      title: verify/yosupo/data-structure/segment_add_get_min.test.cpp
+    - icon: ':heavy_check_mark:'
+      path: verify/yosupo/data-structure/segment_add_get_min_online.test.cpp
+      title: verify/yosupo/data-structure/segment_add_get_min_online.test.cpp
+    - icon: ':heavy_check_mark:'
       path: verify/yosupo/data-structure/set_xor_min.test.cpp
       title: verify/yosupo/data-structure/set_xor_min.test.cpp
+    - icon: ':heavy_check_mark:'
+      path: verify/yosupo/data-structure/staticrmq.test.cpp
+      title: verify/yosupo/data-structure/staticrmq.test.cpp
 layout: toppage
 ---

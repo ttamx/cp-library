@@ -59,7 +59,8 @@ data:
     \    }\n\n    friend istream &operator>>(istream &is,mint &o){\n        int64_t\
     \ v;\n        is >> v;\n        o=mint(v);\n        return is;\n    }\n    friend\
     \ ostream &operator<<(ostream &os,const mint &o){\n        return os << o.val();\n\
-    \    }\n};\nusing mint = MontgomeryModInt<MOD,3>;\nusing vm = vector<mint>;\n\n"
+    \    }\n};\nusing mint998 = MontgomeryModInt<998244353,3>;\nusing mint107 = MontgomeryModInt<1000000007,5>;\n\
+    \n"
   code: "#pragma once\n\n/**\n * Author: Teetat T.\n * Date: 2024-03-17\n * Description:\
     \ modular arithmetic operators using Montgomery space\n */\n\ntemplate<uint32_t\
     \ mod,uint32_t root=0>\nstruct MontgomeryModInt{\n    using mint = MontgomeryModInt;\n\
@@ -101,12 +102,13 @@ data:
     \    }\n\n    friend istream &operator>>(istream &is,mint &o){\n        int64_t\
     \ v;\n        is >> v;\n        o=mint(v);\n        return is;\n    }\n    friend\
     \ ostream &operator<<(ostream &os,const mint &o){\n        return os << o.val();\n\
-    \    }\n};\nusing mint = MontgomeryModInt<MOD,3>;\nusing vm = vector<mint>;\n\n"
+    \    }\n};\nusing mint998 = MontgomeryModInt<998244353,3>;\nusing mint107 = MontgomeryModInt<1000000007,5>;\n\
+    \n"
   dependsOn: []
   isVerificationFile: false
   path: modular-arithmetic/montgomery-modint.hpp
   requiredBy: []
-  timestamp: '2024-06-10 17:34:10+07:00'
+  timestamp: '2024-06-12 17:31:48+07:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
   - verify/yosupo/data-structure/dynamic_sequence_range_affine_range_sum.test.cpp

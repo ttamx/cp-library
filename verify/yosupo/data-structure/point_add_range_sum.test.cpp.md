@@ -22,9 +22,9 @@ data:
     \ 1 \"template.hpp\"\n#include<bits/stdc++.h>\n\nusing namespace std;\n\nusing\
     \ ll = long long;\nusing db = long double;\nusing vi = vector<int>;\nusing vl\
     \ = vector<ll>;\nusing vd = vector<db>;\nusing pii = pair<int,int>;\nusing pll\
-    \ = pair<ll,ll>;\nusing pdd = pair<db,db>;\nconst int INF=0x3fffffff;\nconst int\
-    \ MOD=998244353;\nconst int MOD2=1000000007;\nconst ll LINF=0x1fffffffffffffff;\n\
-    const db DINF=numeric_limits<db>::infinity();\nconst db EPS=1e-9;\nconst db PI=acos(db(-1));\n\
+    \ = pair<ll,ll>;\nusing pdd = pair<db,db>;\nconst int INF=INT_MAX/2;\nconst int\
+    \ MOD=998244353;\nconst int MOD2=1000000007;\nconst ll LINF=LLONG_MAX/2;\nconst\
+    \ db DINF=numeric_limits<db>::infinity();\nconst db EPS=1e-9;\nconst db PI=acos(db(-1));\n\
     #line 2 \"data-structure/fenwick-tree.hpp\"\n\n/**\n * Author: Teetat T.\n * Date:\
     \ 2024-01-15\n * Description: Fenwick / Binary Indexed Tree\n */\n\ntemplate<class\
     \ T>\nstruct Fenwick{\n    int n,logn;\n    vector<T> t;\n    Fenwick(){}\n  \
@@ -60,7 +60,7 @@ data:
   isVerificationFile: true
   path: verify/yosupo/data-structure/point_add_range_sum.test.cpp
   requiredBy: []
-  timestamp: '2024-06-11 21:32:30+07:00'
+  timestamp: '2024-06-12 17:31:48+07:00'
   verificationStatus: TEST_ACCEPTED
   verifiedWith: []
 documentation_of: verify/yosupo/data-structure/point_add_range_sum.test.cpp
