@@ -1,9 +1,13 @@
 {
-"verify/yosupo/data-structure/area_of_union_of_rectangles.test.cpp": "2024-06-11 23:01:28 +0700",
-"verify/yosupo/data-structure/dynamic_sequence_range_affine_range_sum.test.cpp": "2024-06-11 19:24:03 +0700",
-"verify/yosupo/data-structure/point_add_range_sum.test.cpp": "2024-06-11 21:32:30 +0700",
-"verify/yosupo/data-structure/point_set_range_composite.test.cpp": "2024-06-11 19:24:03 +0700",
-"verify/yosupo/data-structure/range_affine_range_sum.test.cpp": "2024-06-11 19:24:03 +0700",
-"verify/yosupo/data-structure/range_reverse_range_sum.test.cpp": "2024-06-11 19:24:03 +0700",
-"verify/yosupo/data-structure/set_xor_min.test.cpp": "2024-06-11 23:01:28 +0700"
+"verify/yosupo/data-structure/area_of_union_of_rectangles.test.cpp": "2024-06-12 17:31:48 +0700",
+"verify/yosupo/data-structure/dynamic_sequence_range_affine_range_sum.test.cpp": "2024-06-12 17:31:48 +0700",
+"verify/yosupo/data-structure/line_add_get_min.test.cpp": "2024-06-12 17:31:48 +0700",
+"verify/yosupo/data-structure/point_add_range_sum.test.cpp": "2024-06-12 17:31:48 +0700",
+"verify/yosupo/data-structure/point_set_range_composite.test.cpp": "2024-06-12 17:31:48 +0700",
+"verify/yosupo/data-structure/range_affine_range_sum.test.cpp": "2024-06-12 17:31:48 +0700",
+"verify/yosupo/data-structure/range_reverse_range_sum.test.cpp": "2024-06-12 17:31:48 +0700",
+"verify/yosupo/data-structure/segment_add_get_min.test.cpp": "2024-06-12 17:31:48 +0700",
+"verify/yosupo/data-structure/segment_add_get_min_online.test.cpp": "2024-06-12 17:31:48 +0700",
+"verify/yosupo/data-structure/set_xor_min.test.cpp": "2024-06-12 17:31:48 +0700",
+"verify/yosupo/data-structure/staticrmq.test.cpp": "2024-06-12 17:31:48 +0700"
 }
