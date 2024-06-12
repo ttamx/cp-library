@@ -10,8 +10,8 @@ template<int M,int root=0>
 struct ModInt{
     using mint = ModInt;
     int x;
-    constexpr mint():x(0){}
-    constexpr mint(ll x):x(norm(x%get_mod())){}
+    constexpr ModInt():x(0){}
+    constexpr ModInt(ll x):x(norm(x%get_mod())){}
     static int Mod;
     static constexpr int get_mod(){return M>0?M:Mod;}
     static constexpr void set_mod(int Mod_){Mod=Mod_;}

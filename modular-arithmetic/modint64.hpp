@@ -10,8 +10,8 @@ template<ll M,ll root=0>
 struct ModInt64{
     using mint = ModInt64;
     ll x;
-    constexpr mint():x(0){}
-    constexpr mint(ll x):x(norm(x%get_mod())){}
+    constexpr ModInt64():x(0){}
+    constexpr ModInt64(ll x):x(norm(x%get_mod())){}
     static ll Mod;
     static constexpr ll get_mod(){return M>0?M:Mod;}
     static constexpr void set_mod(ll Mod_){Mod=Mod_;}
