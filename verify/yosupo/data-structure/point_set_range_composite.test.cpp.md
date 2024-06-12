@@ -73,7 +73,7 @@ data:
     \    }\n\n    friend istream &operator>>(istream &is,mint &o){\n        int64_t\
     \ v;\n        is >> v;\n        o=mint(v);\n        return is;\n    }\n    friend\
     \ ostream &operator<<(ostream &os,const mint &o){\n        return os << o.val();\n\
-    \    }\n};\nusing mint998 = MontgomeryModInt<998244353,3>;\nusing mint107 = MontgomeryModInt<1000000007,5>;\n\
+    \    }\n};\nusing mint998 = MontgomeryModInt<998244353,3>;\nusing mint107 = MontgomeryModInt<1000000007>;\n\
     \n#line 2 \"data-structure/segment-tree/segment-tree.hpp\"\n\n/**\n * Author:\
     \ Teetat T.\n * Date: 2024-01-15\n * Description: Segment Tree\n */\n\ntemplate<class\
     \ Monoid>\nstruct SegmentTree{\n    using T = typename Monoid::value_type;\n \
@@ -141,7 +141,7 @@ data:
   isVerificationFile: true
   path: verify/yosupo/data-structure/point_set_range_composite.test.cpp
   requiredBy: []
-  timestamp: '2024-06-12 17:31:48+07:00'
+  timestamp: '2024-06-13 00:00:26+07:00'
   verificationStatus: TEST_ACCEPTED
   verifiedWith: []
 documentation_of: verify/yosupo/data-structure/point_set_range_composite.test.cpp

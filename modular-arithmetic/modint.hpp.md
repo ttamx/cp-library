@@ -11,7 +11,7 @@ data:
   bundledCode: "#line 2 \"modular-arithmetic/modint.hpp\"\n\n/**\n * Author: Teetat\
     \ T.\n * Date: 2024-03-17\n * Description: modular arithmetic operations\n */\n\
     \ntemplate<int M,int root=0>\nstruct ModInt{\n    using mint = ModInt;\n    int\
-    \ x;\n    constexpr mint():x(0){}\n    constexpr mint(ll x):x(norm(x%get_mod())){}\n\
+    \ x;\n    constexpr ModInt():x(0){}\n    constexpr ModInt(ll x):x(norm(x%get_mod())){}\n\
     \    static int Mod;\n    static constexpr int get_mod(){return M>0?M:Mod;}\n\
     \    static constexpr void set_mod(int Mod_){Mod=Mod_;}\n    static constexpr\
     \ mint get_root(){return mint(root);}\n    constexpr int norm(int x)const{if(x<0)x+=get_mod();if(x>=get_mod())x-=get_mod();return\
@@ -41,8 +41,8 @@ data:
     \ = ModInt<0>;\ntemplate<>\nint mint32::Mod=int(1e9)+7;\n\n"
   code: "#pragma once\n\n/**\n * Author: Teetat T.\n * Date: 2024-03-17\n * Description:\
     \ modular arithmetic operations\n */\n\ntemplate<int M,int root=0>\nstruct ModInt{\n\
-    \    using mint = ModInt;\n    int x;\n    constexpr mint():x(0){}\n    constexpr\
-    \ mint(ll x):x(norm(x%get_mod())){}\n    static int Mod;\n    static constexpr\
+    \    using mint = ModInt;\n    int x;\n    constexpr ModInt():x(0){}\n    constexpr\
+    \ ModInt(ll x):x(norm(x%get_mod())){}\n    static int Mod;\n    static constexpr\
     \ int get_mod(){return M>0?M:Mod;}\n    static constexpr void set_mod(int Mod_){Mod=Mod_;}\n\
     \    static constexpr mint get_root(){return mint(root);}\n    constexpr int norm(int\
     \ x)const{if(x<0)x+=get_mod();if(x>=get_mod())x-=get_mod();return x;}\n    explicit\
@@ -74,7 +74,7 @@ data:
   isVerificationFile: false
   path: modular-arithmetic/modint.hpp
   requiredBy: []
-  timestamp: '2024-06-12 17:31:48+07:00'
+  timestamp: '2024-06-13 00:00:26+07:00'
   verificationStatus: LIBRARY_NO_TESTS
   verifiedWith: []
 documentation_of: modular-arithmetic/modint.hpp
