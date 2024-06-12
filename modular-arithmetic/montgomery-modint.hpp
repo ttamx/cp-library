@@ -109,6 +109,6 @@ struct MontgomeryModInt{
         return os << o.val();
     }
 };
-using mint = MontgomeryModInt<MOD,3>;
-using vm = vector<mint>;
+using mint998 = MontgomeryModInt<998244353,3>;
+using mint107 = MontgomeryModInt<1000000007,5>;
 

@@ -4,6 +4,7 @@
 #include "data-structure/link-cut-tree/lazy-reversible-splay-tree.hpp"
 #include "group/monoid-action/add-count-affine.hpp"
 
+using mint = mint998;
 using Action = AddCountAffineAction<mint>;
 using Info = Action::Info;
 using Tag = Action::Tag;

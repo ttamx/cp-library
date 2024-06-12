@@ -4,6 +4,7 @@
 #include "data-structure/segment-tree/lazy-segment-tree.hpp"
 #include "group/monoid-action/add-count-affine.hpp"
 
+using mint = mint998;
 using Monoid = AddCountMonoid<mint>;
 using Action = AddCountAffineAction<mint>;
 using T = Monoid::value_type;

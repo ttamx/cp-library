@@ -6,22 +6,22 @@
  * Description: modular arithmetic operations
  */
 
-template<int M,int root=0>
-struct ModInt{
-    using mint = ModInt;
-    int x;
+template<ll M,ll root=0>
+struct ModInt64{
+    using mint = ModInt64;
+    ll x;
     constexpr mint():x(0){}
     constexpr mint(ll x):x(norm(x%get_mod())){}
-    static int Mod;
-    static constexpr int get_mod(){return M>0?M:Mod;}
-    static constexpr void set_mod(int Mod_){Mod=Mod_;}
+    static ll Mod;
+    static constexpr ll get_mod(){return M>0?M:Mod;}
+    static constexpr void set_mod(ll Mod_){Mod=Mod_;}
     static constexpr mint get_root(){return mint(root);}
-    constexpr int norm(int x)const{if(x<0)x+=get_mod();if(x>=get_mod())x-=get_mod();return x;}
-    explicit constexpr operator int()const{return x;}
+    constexpr ll norm(ll x)const{if(x<0)x+=get_mod();if(x>=get_mod())x-=get_mod();return x;}
+    explicit constexpr operator ll()const{return x;}
     constexpr mint operator-()const{return mint()-mint(*this);};
     constexpr mint operator+()const{return mint(*this);};
     constexpr mint inv()const{
-        int a=x,b=get_mod(),u=1,v=0,q=0;
+        ll a=x,b=get_mod(),u=1,v=0,q=0;
         while(b>0){
             q=a/b;
             a-=q*b;
@@ -31,7 +31,12 @@ struct ModInt{
         }
         return mint(u);
     }
-    constexpr int mul(int a,int b)const{return 1LL*a*b%get_mod();}
+    constexpr ll mul(ll a,ll b)const{
+        ll mod=get_mod();
+        ll res=(a*b-ll(1.l*a*b/mod)*mod)%mod;
+        if(res<0)res+=mod;
+        return res;
+    }
     constexpr mint &operator+=(const mint &rhs){x=norm(x+rhs.x);return *this;}
     constexpr mint &operator-=(const mint &rhs){x=norm(x-rhs.x);return *this;}
     constexpr mint &operator*=(const mint &rhs){x=mul(x,rhs.x);return *this;}
@@ -50,7 +55,7 @@ struct ModInt{
     friend constexpr bool operator!=(const mint &lhs,const mint &rhs){return lhs.x!=rhs.x;}
     friend constexpr bool operator<(const mint &lhs,const mint &rhs){return lhs.x<rhs.x;} // for std::map
 };
-using mint32 = ModInt<0>;
+using mint64 = ModInt64<0>;
 template<>
-int mint32::Mod=int(1e9)+7;
+ll mint64::Mod=ll(1e18)+9;
 

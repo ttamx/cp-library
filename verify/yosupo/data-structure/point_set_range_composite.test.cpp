@@ -4,6 +4,7 @@
 #include "data-structure/segment-tree/segment-tree.hpp"
 #include "group/monoid/affine.hpp"
 
+using mint = mint998;
 using Monoid = AffineMonoid<mint>;
 using T = Monoid::value_type;
 
