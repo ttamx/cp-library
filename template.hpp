@@ -17,3 +17,4 @@ const ll LINF=LLONG_MAX/2;
 const db DINF=numeric_limits<db>::infinity();
 const db EPS=1e-9;
 const db PI=acos(db(-1));
+
