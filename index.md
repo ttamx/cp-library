@@ -120,11 +120,25 @@ data:
     - icon: ':heavy_check_mark:'
       path: modular-arithmetic/montgomery-modint.hpp
       title: modular-arithmetic/montgomery-modint.hpp
+  - name: string
+    pages:
+    - icon: ':heavy_check_mark:'
+      path: string/manacher.hpp
+      title: string/manacher.hpp
+    - icon: ':warning:'
+      path: string/prefix-function.hpp
+      title: string/prefix-function.hpp
+    - icon: ':heavy_check_mark:'
+      path: string/suffix-array.hpp
+      title: string/suffix-array.hpp
+    - icon: ':heavy_check_mark:'
+      path: string/suffix-automaton.hpp
+      title: string/suffix-automaton.hpp
+    - icon: ':heavy_check_mark:'
+      path: string/z-algorithm.hpp
+      title: string/z-algorithm.hpp
   - name: .
     pages:
-    - icon: ':warning:'
-      path: out.cpp
-      title: out.cpp
     - icon: ':heavy_check_mark:'
       path: template.hpp
       title: template.hpp
@@ -164,5 +178,22 @@ data:
     - icon: ':heavy_check_mark:'
       path: verify/yosupo/data-structure/staticrmq.test.cpp
       title: verify/yosupo/data-structure/staticrmq.test.cpp
+  - name: verify/yosupo/string
+    pages:
+    - icon: ':heavy_check_mark:'
+      path: verify/yosupo/string/enumerate_palindromes.test.cpp
+      title: verify/yosupo/string/enumerate_palindromes.test.cpp
+    - icon: ':heavy_check_mark:'
+      path: verify/yosupo/string/number_of_substrings.test.cpp
+      title: verify/yosupo/string/number_of_substrings.test.cpp
+    - icon: ':heavy_check_mark:'
+      path: verify/yosupo/string/number_of_substrings2.test.cpp
+      title: verify/yosupo/string/number_of_substrings2.test.cpp
+    - icon: ':heavy_check_mark:'
+      path: verify/yosupo/string/suffixarray.test.cpp
+      title: verify/yosupo/string/suffixarray.test.cpp
+    - icon: ':heavy_check_mark:'
+      path: verify/yosupo/string/zalgorithm.test.cpp
+      title: verify/yosupo/string/zalgorithm.test.cpp
 layout: toppage
 ---

@@ -36,6 +36,21 @@ data:
   - icon: ':heavy_check_mark:'
     path: verify/yosupo/data-structure/staticrmq.test.cpp
     title: verify/yosupo/data-structure/staticrmq.test.cpp
+  - icon: ':heavy_check_mark:'
+    path: verify/yosupo/string/enumerate_palindromes.test.cpp
+    title: verify/yosupo/string/enumerate_palindromes.test.cpp
+  - icon: ':heavy_check_mark:'
+    path: verify/yosupo/string/number_of_substrings.test.cpp
+    title: verify/yosupo/string/number_of_substrings.test.cpp
+  - icon: ':heavy_check_mark:'
+    path: verify/yosupo/string/number_of_substrings2.test.cpp
+    title: verify/yosupo/string/number_of_substrings2.test.cpp
+  - icon: ':heavy_check_mark:'
+    path: verify/yosupo/string/suffixarray.test.cpp
+    title: verify/yosupo/string/suffixarray.test.cpp
+  - icon: ':heavy_check_mark:'
+    path: verify/yosupo/string/zalgorithm.test.cpp
+    title: verify/yosupo/string/zalgorithm.test.cpp
   _isVerificationFailed: false
   _pathExtension: hpp
   _verificationStatusIcon: ':heavy_check_mark:'
@@ -79,6 +94,7 @@ data:
 
     const db PI=acos(db(-1));
 
+
     '
   code: '#include<bits/stdc++.h>
 
@@ -114,12 +130,15 @@ data:
 
     const db EPS=1e-9;
 
-    const db PI=acos(db(-1));'
+    const db PI=acos(db(-1));
+
+
+    '
   dependsOn: []
   isVerificationFile: false
   path: template.hpp
   requiredBy: []
-  timestamp: '2024-06-12 17:31:48+07:00'
+  timestamp: '2024-06-15 00:08:38+07:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
   - verify/yosupo/data-structure/point_add_range_sum.test.cpp
@@ -133,6 +152,11 @@ data:
   - verify/yosupo/data-structure/point_set_range_composite.test.cpp
   - verify/yosupo/data-structure/set_xor_min.test.cpp
   - verify/yosupo/data-structure/segment_add_get_min.test.cpp
+  - verify/yosupo/string/number_of_substrings.test.cpp
+  - verify/yosupo/string/suffixarray.test.cpp
+  - verify/yosupo/string/number_of_substrings2.test.cpp
+  - verify/yosupo/string/enumerate_palindromes.test.cpp
+  - verify/yosupo/string/zalgorithm.test.cpp
 documentation_of: template.hpp
 layout: document
 redirect_from:

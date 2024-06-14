@@ -24,7 +24,7 @@ data:
     \ = vector<db>;\nusing pii = pair<int,int>;\nusing pll = pair<ll,ll>;\nusing pdd\
     \ = pair<db,db>;\nconst int INF=INT_MAX/2;\nconst int MOD=998244353;\nconst int\
     \ MOD2=1000000007;\nconst ll LINF=LLONG_MAX/2;\nconst db DINF=numeric_limits<db>::infinity();\n\
-    const db EPS=1e-9;\nconst db PI=acos(db(-1));\n#line 2 \"data-structure/binary-trie.hpp\"\
+    const db EPS=1e-9;\nconst db PI=acos(db(-1));\n\n#line 2 \"data-structure/binary-trie.hpp\"\
     \n\n/**\n * Author: Teetat T.\n * Date: 2024-06-11\n * Description: Binary Trie\n\
     \ */\n\ntemplate<int BIT,class T = uint32_t,class S = int>\nstruct BinaryTrie{\n\
     \    struct Node{\n        array<Node*,2> ch;\n        S cnt;\n        Node():ch{nullptr,nullptr},cnt(0){}\n\
@@ -64,7 +64,7 @@ data:
   isVerificationFile: true
   path: verify/yosupo/data-structure/set_xor_min.test.cpp
   requiredBy: []
-  timestamp: '2024-06-12 17:31:48+07:00'
+  timestamp: '2024-06-15 00:08:38+07:00'
   verificationStatus: TEST_ACCEPTED
   verifiedWith: []
 documentation_of: verify/yosupo/data-structure/set_xor_min.test.cpp

@@ -34,9 +34,9 @@ data:
     \ pll = pair<ll,ll>;\nusing pdd = pair<db,db>;\nconst int INF=INT_MAX/2;\nconst\
     \ int MOD=998244353;\nconst int MOD2=1000000007;\nconst ll LINF=LLONG_MAX/2;\n\
     const db DINF=numeric_limits<db>::infinity();\nconst db EPS=1e-9;\nconst db PI=acos(db(-1));\n\
-    #line 2 \"data-structure/segment-tree/dynamic-segment-tree.hpp\"\n\n/**\n * Author:\
-    \ Teetat T.\n * Date: 2024-01-15\n * Description: Dynamic Segment Tree\n */\n\n\
-    template<class MonoidAction>\nstruct DynamicSegmentTree{\n    using InfoMonoid\
+    \n#line 2 \"data-structure/segment-tree/dynamic-segment-tree.hpp\"\n\n/**\n *\
+    \ Author: Teetat T.\n * Date: 2024-01-15\n * Description: Dynamic Segment Tree\n\
+    \ */\n\ntemplate<class MonoidAction>\nstruct DynamicSegmentTree{\n    using InfoMonoid\
     \ = typename MonoidAction::InfoMonoid;\n    using TagMonoid = typename MonoidAction::TagMonoid;\n\
     \    using Info = typename MonoidAction::Info;\n    using Tag = typename MonoidAction::Tag;\n\
     \    struct Node;\n    using Ptr = Node*;\n    struct Node{\n        Info val;\n\
@@ -123,7 +123,7 @@ data:
   isVerificationFile: true
   path: verify/yosupo/data-structure/area_of_union_of_rectangles.test.cpp
   requiredBy: []
-  timestamp: '2024-06-12 17:31:48+07:00'
+  timestamp: '2024-06-15 00:08:38+07:00'
   verificationStatus: TEST_ACCEPTED
   verifiedWith: []
 documentation_of: verify/yosupo/data-structure/area_of_union_of_rectangles.test.cpp

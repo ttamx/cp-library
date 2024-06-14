@@ -27,7 +27,7 @@ data:
     \ = vector<db>;\nusing pii = pair<int,int>;\nusing pll = pair<ll,ll>;\nusing pdd\
     \ = pair<db,db>;\nconst int INF=INT_MAX/2;\nconst int MOD=998244353;\nconst int\
     \ MOD2=1000000007;\nconst ll LINF=LLONG_MAX/2;\nconst db DINF=numeric_limits<db>::infinity();\n\
-    const db EPS=1e-9;\nconst db PI=acos(db(-1));\n#line 2 \"data-structure/sparse-table.hpp\"\
+    const db EPS=1e-9;\nconst db PI=acos(db(-1));\n\n#line 2 \"data-structure/sparse-table.hpp\"\
     \n\n/**\n * Author: Teetat T.\n * Date: 2024-06-12\n * Description: Sparse Table\
     \ class.\n */\n\ntemplate<class Monoid>\nstruct SparseTable{\n    using T = typename\
     \ Monoid::value_type;\n    int n;\n    vector<vector<T>> t;\n    SparseTable(){}\n\
@@ -59,7 +59,7 @@ data:
   isVerificationFile: true
   path: verify/yosupo/data-structure/staticrmq.test.cpp
   requiredBy: []
-  timestamp: '2024-06-12 17:31:48+07:00'
+  timestamp: '2024-06-15 00:08:38+07:00'
   verificationStatus: TEST_ACCEPTED
   verifiedWith: []
 documentation_of: verify/yosupo/data-structure/staticrmq.test.cpp

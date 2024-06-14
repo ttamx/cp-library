@@ -37,7 +37,7 @@ data:
     \ pll = pair<ll,ll>;\nusing pdd = pair<db,db>;\nconst int INF=INT_MAX/2;\nconst\
     \ int MOD=998244353;\nconst int MOD2=1000000007;\nconst ll LINF=LLONG_MAX/2;\n\
     const db DINF=numeric_limits<db>::infinity();\nconst db EPS=1e-9;\nconst db PI=acos(db(-1));\n\
-    #line 2 \"modular-arithmetic/montgomery-modint.hpp\"\n\n/**\n * Author: Teetat\
+    \n#line 2 \"modular-arithmetic/montgomery-modint.hpp\"\n\n/**\n * Author: Teetat\
     \ T.\n * Date: 2024-03-17\n * Description: modular arithmetic operators using\
     \ Montgomery space\n */\n\ntemplate<uint32_t mod,uint32_t root=0>\nstruct MontgomeryModInt{\n\
     \    using mint = MontgomeryModInt;\n    using i32 = int32_t;\n    using u32 =\
@@ -170,7 +170,7 @@ data:
   isVerificationFile: true
   path: verify/yosupo/data-structure/range_affine_range_sum.test.cpp
   requiredBy: []
-  timestamp: '2024-06-13 00:00:26+07:00'
+  timestamp: '2024-06-15 00:08:38+07:00'
   verificationStatus: TEST_ACCEPTED
   verifiedWith: []
 documentation_of: verify/yosupo/data-structure/range_affine_range_sum.test.cpp
