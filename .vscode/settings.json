@@ -76,6 +76,27 @@
         "ranges": "cpp",
         "span": "cpp",
         "regex": "cpp",
-        "forward_list": "cpp"
+        "forward_list": "cpp",
+        "any": "cpp",
+        "cfenv": "cpp",
+        "charconv": "cpp",
+        "cinttypes": "cpp",
+        "codecvt": "cpp",
+        "complex": "cpp",
+        "coroutine": "cpp",
+        "csetjmp": "cpp",
+        "csignal": "cpp",
+        "cuchar": "cpp",
+        "algorithm": "cpp",
+        "source_location": "cpp",
+        "fstream": "cpp",
+        "future": "cpp",
+        "iomanip": "cpp",
+        "scoped_allocator": "cpp",
+        "shared_mutex": "cpp",
+        "sstream": "cpp",
+        "stop_token": "cpp",
+        "syncstream": "cpp",
+        "typeindex": "cpp"
     }
 }
