@@ -10,7 +10,7 @@
 using mint = mint998;
 using Mon = AffineMonoid<mint>;
 using Rev = MonoidReverse<Mon>;
-using T=Mon::value_type;
+using T = Mon::value_type;
 
 int main(){
     cin.tie(nullptr)->sync_with_stdio(false);
