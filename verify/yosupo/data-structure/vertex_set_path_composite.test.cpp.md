@@ -192,7 +192,7 @@ data:
     \    template<class F>\n    int findlast(int x,int y,const F &f){\n        return\
     \ findlast(0,n-1,1,x,y,f);\n    }\n};\n\n#line 9 \"verify/yosupo/data-structure/vertex_set_path_composite.test.cpp\"\
     \n\nusing mint = mint998;\nusing Mon = AffineMonoid<mint>;\nusing Rev = MonoidReverse<Mon>;\n\
-    using T=Mon::value_type;\n\nint main(){\n    cin.tie(nullptr)->sync_with_stdio(false);\n\
+    using T = Mon::value_type;\n\nint main(){\n    cin.tie(nullptr)->sync_with_stdio(false);\n\
     \    int n,q;\n    cin >> n >> q;\n    vector<T> a(n);\n    for(auto &[x,y]:a)cin\
     \ >> x >> y;\n    auto g=read_tree(n,0);\n    HLD hld(g);\n    auto b=a;\n   \
     \ for(int i=0;i<n;i++)a[hld.tin[i]]=b[i];\n    SegmentTree<Mon> s(a);\n    SegmentTree<Rev>\
@@ -210,7 +210,7 @@ data:
     \n#include \"group/monoid/affine.hpp\"\n#include \"group/monoid/monoid-reverse.hpp\"\
     \n#include \"modular-arithmetic/montgomery-modint.hpp\"\n#include \"data-structure/segment-tree/segment-tree.hpp\"\
     \n\nusing mint = mint998;\nusing Mon = AffineMonoid<mint>;\nusing Rev = MonoidReverse<Mon>;\n\
-    using T=Mon::value_type;\n\nint main(){\n    cin.tie(nullptr)->sync_with_stdio(false);\n\
+    using T = Mon::value_type;\n\nint main(){\n    cin.tie(nullptr)->sync_with_stdio(false);\n\
     \    int n,q;\n    cin >> n >> q;\n    vector<T> a(n);\n    for(auto &[x,y]:a)cin\
     \ >> x >> y;\n    auto g=read_tree(n,0);\n    HLD hld(g);\n    auto b=a;\n   \
     \ for(int i=0;i<n;i++)a[hld.tin[i]]=b[i];\n    SegmentTree<Mon> s(a);\n    SegmentTree<Rev>\
@@ -234,7 +234,7 @@ data:
   isVerificationFile: true
   path: verify/yosupo/data-structure/vertex_set_path_composite.test.cpp
   requiredBy: []
-  timestamp: '2024-06-16 02:15:01+07:00'
+  timestamp: '2024-06-16 02:21:52+07:00'
   verificationStatus: TEST_ACCEPTED
   verifiedWith: []
 documentation_of: verify/yosupo/data-structure/vertex_set_path_composite.test.cpp
