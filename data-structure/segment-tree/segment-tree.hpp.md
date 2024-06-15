@@ -6,6 +6,9 @@ data:
   - icon: ':heavy_check_mark:'
     path: verify/yosupo/data-structure/point_set_range_composite.test.cpp
     title: verify/yosupo/data-structure/point_set_range_composite.test.cpp
+  - icon: ':heavy_check_mark:'
+    path: verify/yosupo/data-structure/vertex_set_path_composite.test.cpp
+    title: verify/yosupo/data-structure/vertex_set_path_composite.test.cpp
   _isVerificationFailed: false
   _pathExtension: hpp
   _verificationStatusIcon: ':heavy_check_mark:'
@@ -84,6 +87,7 @@ data:
   timestamp: '2024-06-10 17:34:10+07:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
+  - verify/yosupo/data-structure/vertex_set_path_composite.test.cpp
   - verify/yosupo/data-structure/point_set_range_composite.test.cpp
 documentation_of: data-structure/segment-tree/segment-tree.hpp
 layout: document

@@ -12,6 +12,9 @@ data:
   - icon: ':heavy_check_mark:'
     path: verify/yosupo/data-structure/range_affine_range_sum.test.cpp
     title: verify/yosupo/data-structure/range_affine_range_sum.test.cpp
+  - icon: ':heavy_check_mark:'
+    path: verify/yosupo/data-structure/vertex_set_path_composite.test.cpp
+    title: verify/yosupo/data-structure/vertex_set_path_composite.test.cpp
   _isVerificationFailed: false
   _pathExtension: hpp
   _verificationStatusIcon: ':heavy_check_mark:'
@@ -112,6 +115,7 @@ data:
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
   - verify/yosupo/data-structure/dynamic_sequence_range_affine_range_sum.test.cpp
+  - verify/yosupo/data-structure/vertex_set_path_composite.test.cpp
   - verify/yosupo/data-structure/range_affine_range_sum.test.cpp
   - verify/yosupo/data-structure/point_set_range_composite.test.cpp
 documentation_of: modular-arithmetic/montgomery-modint.hpp

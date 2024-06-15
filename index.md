@@ -54,6 +54,11 @@ data:
     - icon: ':heavy_check_mark:'
       path: data-structure/segment-tree/segment-tree.hpp
       title: data-structure/segment-tree/segment-tree.hpp
+  - name: graph
+    pages:
+    - icon: ':heavy_check_mark:'
+      path: graph/graph-base.hpp
+      title: graph/graph-base.hpp
   - name: group/monoid
     pages:
     - icon: ':heavy_check_mark:'
@@ -80,6 +85,9 @@ data:
     - icon: ':warning:'
       path: group/monoid/monoid-base.hpp
       title: group/monoid/monoid-base.hpp
+    - icon: ':heavy_check_mark:'
+      path: group/monoid/monoid-reverse.hpp
+      title: group/monoid/monoid-reverse.hpp
     - icon: ':warning:'
       path: group/monoid/set.hpp
       title: group/monoid/set.hpp
@@ -142,6 +150,11 @@ data:
     - icon: ':heavy_check_mark:'
       path: template.hpp
       title: template.hpp
+  - name: tree
+    pages:
+    - icon: ':heavy_check_mark:'
+      path: tree/hld.hpp
+      title: tree/hld.hpp
   verificationCategories:
   - name: verify/yosupo/data-structure
     pages:
@@ -178,6 +191,15 @@ data:
     - icon: ':heavy_check_mark:'
       path: verify/yosupo/data-structure/staticrmq.test.cpp
       title: verify/yosupo/data-structure/staticrmq.test.cpp
+    - icon: ':heavy_check_mark:'
+      path: verify/yosupo/data-structure/vertex_add_path_sum.test.cpp
+      title: verify/yosupo/data-structure/vertex_add_path_sum.test.cpp
+    - icon: ':heavy_check_mark:'
+      path: verify/yosupo/data-structure/vertex_add_subtree_sum.test.cpp
+      title: verify/yosupo/data-structure/vertex_add_subtree_sum.test.cpp
+    - icon: ':heavy_check_mark:'
+      path: verify/yosupo/data-structure/vertex_set_path_composite.test.cpp
+      title: verify/yosupo/data-structure/vertex_set_path_composite.test.cpp
   - name: verify/yosupo/string
     pages:
     - icon: ':heavy_check_mark:'
@@ -195,5 +217,10 @@ data:
     - icon: ':heavy_check_mark:'
       path: verify/yosupo/string/zalgorithm.test.cpp
       title: verify/yosupo/string/zalgorithm.test.cpp
+  - name: verify/yosupo/tree
+    pages:
+    - icon: ':heavy_check_mark:'
+      path: verify/yosupo/tree/lca.test.cpp
+      title: verify/yosupo/tree/lca.test.cpp
 layout: toppage
 ---

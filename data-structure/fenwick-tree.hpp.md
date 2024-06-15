@@ -6,6 +6,12 @@ data:
   - icon: ':heavy_check_mark:'
     path: verify/yosupo/data-structure/point_add_range_sum.test.cpp
     title: verify/yosupo/data-structure/point_add_range_sum.test.cpp
+  - icon: ':heavy_check_mark:'
+    path: verify/yosupo/data-structure/vertex_add_path_sum.test.cpp
+    title: verify/yosupo/data-structure/vertex_add_path_sum.test.cpp
+  - icon: ':heavy_check_mark:'
+    path: verify/yosupo/data-structure/vertex_add_subtree_sum.test.cpp
+    title: verify/yosupo/data-structure/vertex_add_subtree_sum.test.cpp
   _isVerificationFailed: false
   _pathExtension: hpp
   _verificationStatusIcon: ':heavy_check_mark:'
@@ -48,6 +54,8 @@ data:
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
   - verify/yosupo/data-structure/point_add_range_sum.test.cpp
+  - verify/yosupo/data-structure/vertex_add_subtree_sum.test.cpp
+  - verify/yosupo/data-structure/vertex_add_path_sum.test.cpp
 documentation_of: data-structure/fenwick-tree.hpp
 layout: document
 redirect_from:
