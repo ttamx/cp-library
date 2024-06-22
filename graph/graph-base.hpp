@@ -10,15 +10,7 @@ template<class T>
 struct Edge{
     int from,to,id;
     T cost;
-    Edge(int _from,int _to,int _id):from(_from),to(_to),cost(),id(_id){}
     Edge(int _from,int _to,T _cost,int _id):from(_from),to(_to),cost(_cost),id(_id){}
-    operator int()const{return to;}
-};
-template<>
-struct Edge<void>{
-    int from,to,id;
-    Edge(int _from,int _to,int _id):from(_from),to(_to),id(_id){}
-    Edge(int _from,int _to,int,int _id):from(_from),to(_to),id(_id){}
     operator int()const{return to;}
 };
 
@@ -27,7 +19,7 @@ struct Graph{
     static constexpr bool is_directed=directed;
     static constexpr bool is_weighted=!is_same<T,void>::value;
     using cost_type = std::conditional_t<is_weighted,T,int>;
-    using edge_type = Edge<T>;
+    using edge_type = Edge<cost_type>;
     int n,m;
     vector<edge_type> edges;
     vector<vector<edge_type>> g;
@@ -35,17 +27,7 @@ struct Graph{
     Graph():n(0),m(0){}
     Graph(int _n):n(_n),m(0),g(_n){}
     vector<edge_type> &operator[](int u){return g[u];}
-    void add_edge(int from,int to,int id=-1){
-        assert(!is_weighted);
-        assert(0<=from&&from<n&&0<=to&&to<n);
-        if(id==-1)id=m;
-        edges.emplace_back(edge_type(from,to,id));
-        g[from].emplace_back(edge_type(from,to,id));
-        if(!is_directed)g[to].emplace_back(edge_type(to,from,id));
-        m++;
-    }
-    void add_weighted_edge(int from,int to,const cost_type &cost,int id=-1){
-        assert(is_weighted);
+    void add_edge(int from,int to,cost_type cost=1,int id=-1){
         assert(0<=from&&from<n&&0<=to&&to<n);
         if(id==-1)id=m;
         edges.emplace_back(edge_type(from,to,cost,id));
@@ -80,15 +62,12 @@ struct Graph{
     Graph reverse(){
         assert(is_directed);
         Graph res(n);
-        for(auto &e:edges){
-            if(is_weighted)res.add_edge(e.to,e.from,e.cost,e.id);
-            else res.add_edge(e.to,e.from,e.id);
-        }
+        for(auto &e:edges)res.add_edge(e.to,e.from,e.cost,e.id);
         return res;
     }
 };
 
-template<class T = void,bool directed=false>
+template<class T=void,bool directed=false>
 Graph<T,directed> read_graph(int n,int m,int offset=1){
     using G = Graph<T,directed>;
     G g(n);
@@ -106,7 +85,7 @@ Graph<T,directed> read_graph(int n,int m,int offset=1){
     }
     return g;
 }
-template<class T = void,bool directed=false>
+template<class T=void,bool directed=false>
 Graph<T,directed> read_tree(int n,int offset=1){
     return read_graph<T,directed>(n,n-1,offset);
 }
