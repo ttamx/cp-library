@@ -220,6 +220,9 @@ data:
   - name: verify/yosupo/tree
     pages:
     - icon: ':heavy_check_mark:'
+      path: verify/yosupo/tree/jump_on_tree.test.cpp
+      title: verify/yosupo/tree/jump_on_tree.test.cpp
+    - icon: ':heavy_check_mark:'
       path: verify/yosupo/tree/lca.test.cpp
       title: verify/yosupo/tree/lca.test.cpp
 layout: toppage

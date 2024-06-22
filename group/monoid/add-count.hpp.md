@@ -43,8 +43,8 @@ data:
   timestamp: '2024-06-10 16:05:09+07:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
-  - verify/yosupo/data-structure/dynamic_sequence_range_affine_range_sum.test.cpp
   - verify/yosupo/data-structure/range_affine_range_sum.test.cpp
+  - verify/yosupo/data-structure/dynamic_sequence_range_affine_range_sum.test.cpp
 documentation_of: group/monoid/add-count.hpp
 layout: document
 redirect_from:

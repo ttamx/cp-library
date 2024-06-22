@@ -17,19 +17,20 @@ data:
   _verificationStatusIcon: ':heavy_check_mark:'
   attributes:
     '*NOT_SPECIAL_COMMENTS*': ''
-    PROBLEM: https://judge.yosupo.jp/problem/lca
+    PROBLEM: https://judge.yosupo.jp/problem/jump_on_tree
     links:
-    - https://judge.yosupo.jp/problem/lca
-  bundledCode: "#line 1 \"verify/yosupo/tree/lca.test.cpp\"\n#define PROBLEM \"https://judge.yosupo.jp/problem/lca\"\
-    \n#line 1 \"template.hpp\"\n#include<bits/stdc++.h>\n\nusing namespace std;\n\n\
-    using ll = long long;\nusing db = long double;\nusing vi = vector<int>;\nusing\
-    \ vl = vector<ll>;\nusing vd = vector<db>;\nusing pii = pair<int,int>;\nusing\
-    \ pll = pair<ll,ll>;\nusing pdd = pair<db,db>;\nconst int INF=INT_MAX/2;\nconst\
-    \ int MOD=998244353;\nconst int MOD2=1000000007;\nconst ll LINF=LLONG_MAX/2;\n\
-    const db DINF=numeric_limits<db>::infinity();\nconst db EPS=1e-9;\nconst db PI=acos(db(-1));\n\
-    \n#line 2 \"graph/graph-base.hpp\"\n\n/**\n * Author: Teetat T.\n * Date: 2024-06-15\n\
-    \ * Description: Graph Base\n */\n\ntemplate<class T>\nstruct Edge{\n    int from,to,id;\n\
-    \    T cost;\n    Edge(int _from,int _to,T _cost,int _id):from(_from),to(_to),cost(_cost),id(_id){}\n\
+    - https://judge.yosupo.jp/problem/jump_on_tree
+  bundledCode: "#line 1 \"verify/yosupo/tree/jump_on_tree.test.cpp\"\n#define PROBLEM\
+    \ \"https://judge.yosupo.jp/problem/jump_on_tree\"\n#line 1 \"template.hpp\"\n\
+    #include<bits/stdc++.h>\n\nusing namespace std;\n\nusing ll = long long;\nusing\
+    \ db = long double;\nusing vi = vector<int>;\nusing vl = vector<ll>;\nusing vd\
+    \ = vector<db>;\nusing pii = pair<int,int>;\nusing pll = pair<ll,ll>;\nusing pdd\
+    \ = pair<db,db>;\nconst int INF=INT_MAX/2;\nconst int MOD=998244353;\nconst int\
+    \ MOD2=1000000007;\nconst ll LINF=LLONG_MAX/2;\nconst db DINF=numeric_limits<db>::infinity();\n\
+    const db EPS=1e-9;\nconst db PI=acos(db(-1));\n\n#line 2 \"graph/graph-base.hpp\"\
+    \n\n/**\n * Author: Teetat T.\n * Date: 2024-06-15\n * Description: Graph Base\n\
+    \ */\n\ntemplate<class T>\nstruct Edge{\n    int from,to,id;\n    T cost;\n  \
+    \  Edge(int _from,int _to,T _cost,int _id):from(_from),to(_to),cost(_cost),id(_id){}\n\
     \    operator int()const{return to;}\n};\n\ntemplate<class T=void,bool directed=false>\n\
     struct Graph{\n    static constexpr bool is_directed=directed;\n    static constexpr\
     \ bool is_weighted=!is_same<T,void>::value;\n    using cost_type = std::conditional_t<is_weighted,T,int>;\n\
@@ -86,33 +87,31 @@ data:
     \        if(k>d)return -1;\n        if(k>dep[u]-dep[w]){\n            k=d-k;\n\
     \            swap(u,v);\n        }\n        while(k>=dep[u]-dep[head[u]]+1){\n\
     \            k-=dep[u]-dep[head[u]]+1;\n            u=par[head[u]];\n        }\n\
-    \        return ord[tin[u]-k];\n    }\n};\n\n#line 5 \"verify/yosupo/tree/lca.test.cpp\"\
+    \        return ord[tin[u]-k];\n    }\n};\n\n#line 5 \"verify/yosupo/tree/jump_on_tree.test.cpp\"\
     \n\nint main(){\n    cin.tie(nullptr)->sync_with_stdio(false);\n    int n,q;\n\
-    \    cin >> n >> q;\n    Graph g(n);\n    for(int i=1;i<n;i++){\n        int p;\n\
-    \        cin >> p;\n        g.add_edge(i,p);\n    }\n    HLD hld(g);\n    while(q--){\n\
-    \        int u,v;\n        cin >> u >> v;\n        cout << hld.lca(u,v) << '\\\
-    n';\n    }\n}\n"
-  code: "#define PROBLEM \"https://judge.yosupo.jp/problem/lca\"\n#include \"template.hpp\"\
-    \n#include \"graph/graph-base.hpp\"\n#include \"tree/hld.hpp\"\n\nint main(){\n\
-    \    cin.tie(nullptr)->sync_with_stdio(false);\n    int n,q;\n    cin >> n >>\
-    \ q;\n    Graph g(n);\n    for(int i=1;i<n;i++){\n        int p;\n        cin\
-    \ >> p;\n        g.add_edge(i,p);\n    }\n    HLD hld(g);\n    while(q--){\n \
-    \       int u,v;\n        cin >> u >> v;\n        cout << hld.lca(u,v) << '\\\
-    n';\n    }\n}"
+    \    cin >> n >> q;\n    Graph g=read_tree(n,0);\n    HLD hld(g);\n    while(q--){\n\
+    \        int u,v,k;\n        cin >> u >> v >> k;\n        cout << hld.jump(u,v,k)\
+    \ << '\\n';\n    }\n}\n"
+  code: "#define PROBLEM \"https://judge.yosupo.jp/problem/jump_on_tree\"\n#include\
+    \ \"template.hpp\"\n#include \"graph/graph-base.hpp\"\n#include \"tree/hld.hpp\"\
+    \n\nint main(){\n    cin.tie(nullptr)->sync_with_stdio(false);\n    int n,q;\n\
+    \    cin >> n >> q;\n    Graph g=read_tree(n,0);\n    HLD hld(g);\n    while(q--){\n\
+    \        int u,v,k;\n        cin >> u >> v >> k;\n        cout << hld.jump(u,v,k)\
+    \ << '\\n';\n    }\n}"
   dependsOn:
   - template.hpp
   - graph/graph-base.hpp
   - tree/hld.hpp
   isVerificationFile: true
-  path: verify/yosupo/tree/lca.test.cpp
+  path: verify/yosupo/tree/jump_on_tree.test.cpp
   requiredBy: []
   timestamp: '2024-06-22 18:46:46+07:00'
   verificationStatus: TEST_ACCEPTED
   verifiedWith: []
-documentation_of: verify/yosupo/tree/lca.test.cpp
+documentation_of: verify/yosupo/tree/jump_on_tree.test.cpp
 layout: document
 redirect_from:
-- /verify/verify/yosupo/tree/lca.test.cpp
-- /verify/verify/yosupo/tree/lca.test.cpp.html
-title: verify/yosupo/tree/lca.test.cpp
+- /verify/verify/yosupo/tree/jump_on_tree.test.cpp
+- /verify/verify/yosupo/tree/jump_on_tree.test.cpp.html
+title: verify/yosupo/tree/jump_on_tree.test.cpp
 ---
