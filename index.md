@@ -1,6 +1,23 @@
 ---
 data:
   libraryCategories:
+  - name: convolution
+    pages:
+    - icon: ':heavy_check_mark:'
+      path: convolution/and-convolution.hpp
+      title: convolution/and-convolution.hpp
+    - icon: ':heavy_check_mark:'
+      path: convolution/gcd-convolution.hpp
+      title: convolution/gcd-convolution.hpp
+    - icon: ':heavy_check_mark:'
+      path: convolution/lcm-convolution.hpp
+      title: convolution/lcm-convolution.hpp
+    - icon: ':heavy_check_mark:'
+      path: convolution/or-convolution.hpp
+      title: convolution/or-convolution.hpp
+    - icon: ':heavy_check_mark:'
+      path: convolution/xor-convolution.hpp
+      title: convolution/xor-convolution.hpp
   - name: data-structure
     pages:
     - icon: ':heavy_check_mark:'
@@ -206,6 +223,23 @@ data:
       path: verify/spoj/FASTFLOW.cpp
       title: verify/spoj/FASTFLOW.cpp
   verificationCategories:
+  - name: verify/yosupo/convolution
+    pages:
+    - icon: ':heavy_check_mark:'
+      path: verify/yosupo/convolution/bitwise_and_convolution.test.cpp
+      title: verify/yosupo/convolution/bitwise_and_convolution.test.cpp
+    - icon: ':heavy_check_mark:'
+      path: verify/yosupo/convolution/bitwise_or_convolution.test.cpp
+      title: verify/yosupo/convolution/bitwise_or_convolution.test.cpp
+    - icon: ':heavy_check_mark:'
+      path: verify/yosupo/convolution/bitwise_xor_convolution.test.cpp
+      title: verify/yosupo/convolution/bitwise_xor_convolution.test.cpp
+    - icon: ':heavy_check_mark:'
+      path: verify/yosupo/convolution/gcd_convolution.test.cpp
+      title: verify/yosupo/convolution/gcd_convolution.test.cpp
+    - icon: ':heavy_check_mark:'
+      path: verify/yosupo/convolution/lcm_convolution.test.cpp
+      title: verify/yosupo/convolution/lcm_convolution.test.cpp
   - name: verify/yosupo/data-structure
     pages:
     - icon: ':heavy_check_mark:'

@@ -19,6 +19,21 @@ data:
     title: verify/spoj/FASTFLOW.cpp
   _extendedVerifiedWith:
   - icon: ':heavy_check_mark:'
+    path: verify/yosupo/convolution/bitwise_and_convolution.test.cpp
+    title: verify/yosupo/convolution/bitwise_and_convolution.test.cpp
+  - icon: ':heavy_check_mark:'
+    path: verify/yosupo/convolution/bitwise_or_convolution.test.cpp
+    title: verify/yosupo/convolution/bitwise_or_convolution.test.cpp
+  - icon: ':heavy_check_mark:'
+    path: verify/yosupo/convolution/bitwise_xor_convolution.test.cpp
+    title: verify/yosupo/convolution/bitwise_xor_convolution.test.cpp
+  - icon: ':heavy_check_mark:'
+    path: verify/yosupo/convolution/gcd_convolution.test.cpp
+    title: verify/yosupo/convolution/gcd_convolution.test.cpp
+  - icon: ':heavy_check_mark:'
+    path: verify/yosupo/convolution/lcm_convolution.test.cpp
+    title: verify/yosupo/convolution/lcm_convolution.test.cpp
+  - icon: ':heavy_check_mark:'
     path: verify/yosupo/data-structure/area_of_union_of_rectangles.test.cpp
     title: verify/yosupo/data-structure/area_of_union_of_rectangles.test.cpp
   - icon: ':heavy_check_mark:'
@@ -207,6 +222,11 @@ data:
   - verify/yosupo/string/number_of_substrings2.test.cpp
   - verify/yosupo/string/enumerate_palindromes.test.cpp
   - verify/yosupo/string/number_of_substrings.test.cpp
+  - verify/yosupo/convolution/bitwise_and_convolution.test.cpp
+  - verify/yosupo/convolution/gcd_convolution.test.cpp
+  - verify/yosupo/convolution/bitwise_xor_convolution.test.cpp
+  - verify/yosupo/convolution/lcm_convolution.test.cpp
+  - verify/yosupo/convolution/bitwise_or_convolution.test.cpp
   - verify/yosupo/tree/lca.test.cpp
   - verify/yosupo/tree/jump_on_tree.test.cpp
 documentation_of: template.hpp

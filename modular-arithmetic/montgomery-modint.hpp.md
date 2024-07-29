@@ -4,6 +4,21 @@ data:
   _extendedRequiredBy: []
   _extendedVerifiedWith:
   - icon: ':heavy_check_mark:'
+    path: verify/yosupo/convolution/bitwise_and_convolution.test.cpp
+    title: verify/yosupo/convolution/bitwise_and_convolution.test.cpp
+  - icon: ':heavy_check_mark:'
+    path: verify/yosupo/convolution/bitwise_or_convolution.test.cpp
+    title: verify/yosupo/convolution/bitwise_or_convolution.test.cpp
+  - icon: ':heavy_check_mark:'
+    path: verify/yosupo/convolution/bitwise_xor_convolution.test.cpp
+    title: verify/yosupo/convolution/bitwise_xor_convolution.test.cpp
+  - icon: ':heavy_check_mark:'
+    path: verify/yosupo/convolution/gcd_convolution.test.cpp
+    title: verify/yosupo/convolution/gcd_convolution.test.cpp
+  - icon: ':heavy_check_mark:'
+    path: verify/yosupo/convolution/lcm_convolution.test.cpp
+    title: verify/yosupo/convolution/lcm_convolution.test.cpp
+  - icon: ':heavy_check_mark:'
     path: verify/yosupo/data-structure/dynamic_sequence_range_affine_range_sum.test.cpp
     title: verify/yosupo/data-structure/dynamic_sequence_range_affine_range_sum.test.cpp
   - icon: ':heavy_check_mark:'
@@ -118,6 +133,11 @@ data:
   - verify/yosupo/data-structure/point_set_range_composite.test.cpp
   - verify/yosupo/data-structure/range_affine_range_sum.test.cpp
   - verify/yosupo/data-structure/dynamic_sequence_range_affine_range_sum.test.cpp
+  - verify/yosupo/convolution/bitwise_and_convolution.test.cpp
+  - verify/yosupo/convolution/gcd_convolution.test.cpp
+  - verify/yosupo/convolution/bitwise_xor_convolution.test.cpp
+  - verify/yosupo/convolution/lcm_convolution.test.cpp
+  - verify/yosupo/convolution/bitwise_or_convolution.test.cpp
 documentation_of: modular-arithmetic/montgomery-modint.hpp
 layout: document
 redirect_from:
