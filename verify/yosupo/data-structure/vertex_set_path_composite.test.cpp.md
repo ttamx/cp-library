@@ -7,16 +7,16 @@ data:
   - icon: ':heavy_check_mark:'
     path: graph/graph-base.hpp
     title: graph/graph-base.hpp
-  - icon: ':question:'
+  - icon: ':heavy_check_mark:'
     path: group/monoid/affine.hpp
     title: group/monoid/affine.hpp
   - icon: ':heavy_check_mark:'
     path: group/monoid/monoid-reverse.hpp
     title: group/monoid/monoid-reverse.hpp
-  - icon: ':question:'
+  - icon: ':heavy_check_mark:'
     path: modular-arithmetic/montgomery-modint.hpp
     title: modular-arithmetic/montgomery-modint.hpp
-  - icon: ':question:'
+  - icon: ':heavy_check_mark:'
     path: template.hpp
     title: template.hpp
   - icon: ':heavy_check_mark:'

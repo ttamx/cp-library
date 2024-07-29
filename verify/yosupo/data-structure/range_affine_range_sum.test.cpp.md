@@ -1,29 +1,29 @@
 ---
 data:
   _extendedDependsOn:
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: data-structure/segment-tree/lazy-segment-tree.hpp
     title: data-structure/segment-tree/lazy-segment-tree.hpp
-  - icon: ':question:'
+  - icon: ':heavy_check_mark:'
     path: group/monoid-action/add-count-affine.hpp
     title: group/monoid-action/add-count-affine.hpp
-  - icon: ':question:'
+  - icon: ':heavy_check_mark:'
     path: group/monoid/add-count.hpp
     title: group/monoid/add-count.hpp
-  - icon: ':question:'
+  - icon: ':heavy_check_mark:'
     path: group/monoid/affine.hpp
     title: group/monoid/affine.hpp
-  - icon: ':question:'
+  - icon: ':heavy_check_mark:'
     path: modular-arithmetic/montgomery-modint.hpp
     title: modular-arithmetic/montgomery-modint.hpp
-  - icon: ':question:'
+  - icon: ':heavy_check_mark:'
     path: template.hpp
     title: template.hpp
   _extendedRequiredBy: []
   _extendedVerifiedWith: []
-  _isVerificationFailed: true
+  _isVerificationFailed: false
   _pathExtension: cpp
-  _verificationStatusIcon: ':x:'
+  _verificationStatusIcon: ':heavy_check_mark:'
   attributes:
     '*NOT_SPECIAL_COMMENTS*': ''
     PROBLEM: https://judge.yosupo.jp/problem/range_affine_range_sum
@@ -86,7 +86,7 @@ data:
     \ = typename MonoidAction::InfoMonoid;\n    using TagMonoid = typename MonoidAction::TagMonoid;\n\
     \    using Info = typename MonoidAction::Info;\n    using Tag = typename MonoidAction::Tag;\n\
     \    int n;\n    vector<Info> t;\n    vector<Tag> lz;\n    LazySegmentTree(){}\n\
-    \    SegmentTree(int n,function<Info(int)> create){init(n,create);}\n    LazySegmentTree(int\
+    \    LazySegmentTree(int n,function<Info(int)> create){init(n,create);}\n    LazySegmentTree(int\
     \ n,Info v=InfoMonoid::unit()){init(n,[&](int){return v;});}\n    template<class\
     \ T>\n    LazySegmentTree(const vector<T> &a){init((int)a.size(),[&](int i){return\
     \ Info(a[i]);});}\n    void init(int _n,function<Info(int)> create){\n       \
@@ -144,23 +144,24 @@ data:
     \n\nusing mint = mint998;\nusing Monoid = AddCountMonoid<mint>;\nusing Action\
     \ = AddCountAffineAction<mint>;\nusing T = Monoid::value_type;\n\nint main(){\n\
     \    cin.tie(nullptr)->sync_with_stdio(false);\n    int n,q;\n    cin >> n >>\
-    \ q;\n    vector<T> a(n);\n    for(auto &[x,y]:a)cin >> x,y=1;\n    LazySegmentTree<Action>\
-    \ s(a);\n    while(q--){\n        int op;\n        cin >> op;\n        if(op){\n\
-    \            int l,r;\n            cin >> l >> r;\n            cout << s.query(l,r-1).first\
-    \ << \"\\n\";\n        }else{\n            int l,r,b,c;\n            cin >> l\
-    \ >> r >> b >> c;\n            s.update(l,r-1,T(b,c));\n        }\n    }\n}\n"
+    \ q;\n    vector<mint> a(n);\n    for(auto &x:a)cin >> x;\n    LazySegmentTree<Action>\
+    \ s(n,[&](int i){return Monoid::make(a[i]);});\n    while(q--){\n        int op;\n\
+    \        cin >> op;\n        if(op){\n            int l,r;\n            cin >>\
+    \ l >> r;\n            cout << s.query(l,r-1).first << \"\\n\";\n        }else{\n\
+    \            int l,r,b,c;\n            cin >> l >> r >> b >> c;\n            s.update(l,r-1,T(b,c));\n\
+    \        }\n    }\n}\n"
   code: "#define PROBLEM \"https://judge.yosupo.jp/problem/range_affine_range_sum\"\
     \n#include \"template.hpp\"\n#include \"modular-arithmetic/montgomery-modint.hpp\"\
     \n#include \"data-structure/segment-tree/lazy-segment-tree.hpp\"\n#include \"\
     group/monoid-action/add-count-affine.hpp\"\n\nusing mint = mint998;\nusing Monoid\
     \ = AddCountMonoid<mint>;\nusing Action = AddCountAffineAction<mint>;\nusing T\
     \ = Monoid::value_type;\n\nint main(){\n    cin.tie(nullptr)->sync_with_stdio(false);\n\
-    \    int n,q;\n    cin >> n >> q;\n    vector<T> a(n);\n    for(auto &[x,y]:a)cin\
-    \ >> x,y=1;\n    LazySegmentTree<Action> s(a);\n    while(q--){\n        int op;\n\
-    \        cin >> op;\n        if(op){\n            int l,r;\n            cin >>\
-    \ l >> r;\n            cout << s.query(l,r-1).first << \"\\n\";\n        }else{\n\
-    \            int l,r,b,c;\n            cin >> l >> r >> b >> c;\n            s.update(l,r-1,T(b,c));\n\
-    \        }\n    }\n}"
+    \    int n,q;\n    cin >> n >> q;\n    vector<mint> a(n);\n    for(auto &x:a)cin\
+    \ >> x;\n    LazySegmentTree<Action> s(n,[&](int i){return Monoid::make(a[i]);});\n\
+    \    while(q--){\n        int op;\n        cin >> op;\n        if(op){\n     \
+    \       int l,r;\n            cin >> l >> r;\n            cout << s.query(l,r-1).first\
+    \ << \"\\n\";\n        }else{\n            int l,r,b,c;\n            cin >> l\
+    \ >> r >> b >> c;\n            s.update(l,r-1,T(b,c));\n        }\n    }\n}"
   dependsOn:
   - template.hpp
   - modular-arithmetic/montgomery-modint.hpp
@@ -171,8 +172,8 @@ data:
   isVerificationFile: true
   path: verify/yosupo/data-structure/range_affine_range_sum.test.cpp
   requiredBy: []
-  timestamp: '2024-07-29 18:44:45+07:00'
-  verificationStatus: TEST_WRONG_ANSWER
+  timestamp: '2024-07-29 18:56:36+07:00'
+  verificationStatus: TEST_ACCEPTED
   verifiedWith: []
 documentation_of: verify/yosupo/data-structure/range_affine_range_sum.test.cpp
 layout: document

@@ -39,7 +39,7 @@ data:
   - icon: ':heavy_check_mark:'
     path: verify/yosupo/data-structure/point_set_range_composite.test.cpp
     title: verify/yosupo/data-structure/point_set_range_composite.test.cpp
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: verify/yosupo/data-structure/range_affine_range_sum.test.cpp
     title: verify/yosupo/data-structure/range_affine_range_sum.test.cpp
   - icon: ':heavy_check_mark:'
@@ -90,9 +90,9 @@ data:
   - icon: ':heavy_check_mark:'
     path: verify/yosupo/tree/lca.test.cpp
     title: verify/yosupo/tree/lca.test.cpp
-  _isVerificationFailed: true
+  _isVerificationFailed: false
   _pathExtension: hpp
-  _verificationStatusIcon: ':question:'
+  _verificationStatusIcon: ':heavy_check_mark:'
   attributes:
     links: []
   bundledCode: '#line 1 "template.hpp"
@@ -185,7 +185,7 @@ data:
   - verify/yosupo/data-structure/unionfind.cpp
   - verify/yosupo/data-structure/persistent_queue.cpp
   timestamp: '2024-06-15 00:08:38+07:00'
-  verificationStatus: LIBRARY_SOME_WA
+  verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
   - verify/yosupo/data-structure/segment_add_get_min.test.cpp
   - verify/yosupo/data-structure/range_reverse_range_sum.test.cpp

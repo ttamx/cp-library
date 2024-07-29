@@ -54,7 +54,7 @@ data:
     - icon: ':heavy_check_mark:'
       path: data-structure/segment-tree/dynamic-segment-tree.hpp
       title: data-structure/segment-tree/dynamic-segment-tree.hpp
-    - icon: ':x:'
+    - icon: ':heavy_check_mark:'
       path: data-structure/segment-tree/lazy-segment-tree.hpp
       title: data-structure/segment-tree/lazy-segment-tree.hpp
     - icon: ':heavy_check_mark:'
@@ -84,13 +84,13 @@ data:
       title: graph/strongly-connected-component.hpp
   - name: group/monoid
     pages:
-    - icon: ':question:'
+    - icon: ':heavy_check_mark:'
       path: group/monoid/add-count.hpp
       title: group/monoid/add-count.hpp
     - icon: ':heavy_check_mark:'
       path: group/monoid/add.hpp
       title: group/monoid/add.hpp
-    - icon: ':question:'
+    - icon: ':heavy_check_mark:'
       path: group/monoid/affine.hpp
       title: group/monoid/affine.hpp
     - icon: ':warning:'
@@ -125,7 +125,7 @@ data:
     - icon: ':warning:'
       path: group/monoid-action/add-count-add.hpp
       title: group/monoid-action/add-count-add.hpp
-    - icon: ':question:'
+    - icon: ':heavy_check_mark:'
       path: group/monoid-action/add-count-affine.hpp
       title: group/monoid-action/add-count-affine.hpp
     - icon: ':warning:'
@@ -154,7 +154,7 @@ data:
     - icon: ':warning:'
       path: modular-arithmetic/modint64.hpp
       title: modular-arithmetic/modint64.hpp
-    - icon: ':question:'
+    - icon: ':heavy_check_mark:'
       path: modular-arithmetic/montgomery-modint.hpp
       title: modular-arithmetic/montgomery-modint.hpp
   - name: string
@@ -176,7 +176,7 @@ data:
       title: string/z-algorithm.hpp
   - name: .
     pages:
-    - icon: ':question:'
+    - icon: ':heavy_check_mark:'
       path: template.hpp
       title: template.hpp
   - name: tree
@@ -231,7 +231,7 @@ data:
     - icon: ':heavy_check_mark:'
       path: verify/yosupo/data-structure/point_set_range_composite.test.cpp
       title: verify/yosupo/data-structure/point_set_range_composite.test.cpp
-    - icon: ':x:'
+    - icon: ':heavy_check_mark:'
       path: verify/yosupo/data-structure/range_affine_range_sum.test.cpp
       title: verify/yosupo/data-structure/range_affine_range_sum.test.cpp
     - icon: ':heavy_check_mark:'

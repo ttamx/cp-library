@@ -4,7 +4,7 @@ data:
   - icon: ':warning:'
     path: data-structure/persistent-queue.hpp
     title: data-structure/persistent-queue.hpp
-  - icon: ':question:'
+  - icon: ':heavy_check_mark:'
     path: template.hpp
     title: template.hpp
   _extendedRequiredBy: []

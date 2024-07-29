@@ -4,7 +4,7 @@ data:
   - icon: ':warning:'
     path: data-structure/dsu.hpp
     title: data-structure/dsu.hpp
-  - icon: ':question:'
+  - icon: ':heavy_check_mark:'
     path: template.hpp
     title: template.hpp
   _extendedRequiredBy: []

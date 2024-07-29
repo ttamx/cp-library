@@ -3,12 +3,12 @@ data:
   _extendedDependsOn: []
   _extendedRequiredBy: []
   _extendedVerifiedWith:
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: verify/yosupo/data-structure/range_affine_range_sum.test.cpp
     title: verify/yosupo/data-structure/range_affine_range_sum.test.cpp
-  _isVerificationFailed: true
+  _isVerificationFailed: false
   _pathExtension: hpp
-  _verificationStatusIcon: ':x:'
+  _verificationStatusIcon: ':heavy_check_mark:'
   attributes:
     links: []
   bundledCode: "#line 2 \"data-structure/segment-tree/lazy-segment-tree.hpp\"\n\n\
@@ -17,7 +17,7 @@ data:
     \    using InfoMonoid = typename MonoidAction::InfoMonoid;\n    using TagMonoid\
     \ = typename MonoidAction::TagMonoid;\n    using Info = typename MonoidAction::Info;\n\
     \    using Tag = typename MonoidAction::Tag;\n    int n;\n    vector<Info> t;\n\
-    \    vector<Tag> lz;\n    LazySegmentTree(){}\n    SegmentTree(int n,function<Info(int)>\
+    \    vector<Tag> lz;\n    LazySegmentTree(){}\n    LazySegmentTree(int n,function<Info(int)>\
     \ create){init(n,create);}\n    LazySegmentTree(int n,Info v=InfoMonoid::unit()){init(n,[&](int){return\
     \ v;});}\n    template<class T>\n    LazySegmentTree(const vector<T> &a){init((int)a.size(),[&](int\
     \ i){return Info(a[i]);});}\n    void init(int _n,function<Info(int)> create){\n\
@@ -58,7 +58,7 @@ data:
     \ LazySegmentTree{\n    using InfoMonoid = typename MonoidAction::InfoMonoid;\n\
     \    using TagMonoid = typename MonoidAction::TagMonoid;\n    using Info = typename\
     \ MonoidAction::Info;\n    using Tag = typename MonoidAction::Tag;\n    int n;\n\
-    \    vector<Info> t;\n    vector<Tag> lz;\n    LazySegmentTree(){}\n    SegmentTree(int\
+    \    vector<Info> t;\n    vector<Tag> lz;\n    LazySegmentTree(){}\n    LazySegmentTree(int\
     \ n,function<Info(int)> create){init(n,create);}\n    LazySegmentTree(int n,Info\
     \ v=InfoMonoid::unit()){init(n,[&](int){return v;});}\n    template<class T>\n\
     \    LazySegmentTree(const vector<T> &a){init((int)a.size(),[&](int i){return\
@@ -99,8 +99,8 @@ data:
   isVerificationFile: false
   path: data-structure/segment-tree/lazy-segment-tree.hpp
   requiredBy: []
-  timestamp: '2024-07-29 18:44:45+07:00'
-  verificationStatus: LIBRARY_ALL_WA
+  timestamp: '2024-07-29 18:56:36+07:00'
+  verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
   - verify/yosupo/data-structure/range_affine_range_sum.test.cpp
 documentation_of: data-structure/segment-tree/lazy-segment-tree.hpp
