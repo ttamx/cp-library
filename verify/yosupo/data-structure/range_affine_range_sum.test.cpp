@@ -13,9 +13,9 @@ int main(){
     cin.tie(nullptr)->sync_with_stdio(false);
     int n,q;
     cin >> n >> q;
-    vector<T> a(n);
-    for(auto &[x,y]:a)cin >> x,y=1;
-    LazySegmentTree<Action> s(a);
+    vector<mint> a(n);
+    for(auto &x:a)cin >> x;
+    LazySegmentTree<Action> s(n,[&](int i){return Monoid::make(a[i]);});
     while(q--){
         int op;
         cin >> op;

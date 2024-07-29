@@ -16,7 +16,7 @@ struct LazySegmentTree{
     vector<Info> t;
     vector<Tag> lz;
     LazySegmentTree(){}
-    SegmentTree(int n,function<Info(int)> create){init(n,create);}
+    LazySegmentTree(int n,function<Info(int)> create){init(n,create);}
     LazySegmentTree(int n,Info v=InfoMonoid::unit()){init(n,[&](int){return v;});}
     template<class T>
     LazySegmentTree(const vector<T> &a){init((int)a.size(),[&](int i){return Info(a[i]);});}
