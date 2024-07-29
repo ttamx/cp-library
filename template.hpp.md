@@ -17,12 +17,6 @@ data:
   - icon: ':warning:'
     path: verify/spoj/FASTFLOW.cpp
     title: verify/spoj/FASTFLOW.cpp
-  - icon: ':warning:'
-    path: verify/yosupo/data-structure/persistent_queue.cpp
-    title: verify/yosupo/data-structure/persistent_queue.cpp
-  - icon: ':warning:'
-    path: verify/yosupo/data-structure/unionfind.cpp
-    title: verify/yosupo/data-structure/unionfind.cpp
   _extendedVerifiedWith:
   - icon: ':heavy_check_mark:'
     path: verify/yosupo/data-structure/area_of_union_of_rectangles.test.cpp
@@ -33,6 +27,9 @@ data:
   - icon: ':heavy_check_mark:'
     path: verify/yosupo/data-structure/line_add_get_min.test.cpp
     title: verify/yosupo/data-structure/line_add_get_min.test.cpp
+  - icon: ':heavy_check_mark:'
+    path: verify/yosupo/data-structure/persistent_queue.test.cpp
+    title: verify/yosupo/data-structure/persistent_queue.test.cpp
   - icon: ':heavy_check_mark:'
     path: verify/yosupo/data-structure/point_add_range_sum.test.cpp
     title: verify/yosupo/data-structure/point_add_range_sum.test.cpp
@@ -57,6 +54,9 @@ data:
   - icon: ':heavy_check_mark:'
     path: verify/yosupo/data-structure/staticrmq.test.cpp
     title: verify/yosupo/data-structure/staticrmq.test.cpp
+  - icon: ':heavy_check_mark:'
+    path: verify/yosupo/data-structure/unionfind.test.cpp
+    title: verify/yosupo/data-structure/unionfind.test.cpp
   - icon: ':heavy_check_mark:'
     path: verify/yosupo/data-structure/vertex_add_path_sum.test.cpp
     title: verify/yosupo/data-structure/vertex_add_path_sum.test.cpp
@@ -182,8 +182,6 @@ data:
   - verify/atcoder/abc259_g.cpp
   - verify/atcoder/abc193_f.cpp
   - verify/atcoder/abc347_g.cpp
-  - verify/yosupo/data-structure/unionfind.cpp
-  - verify/yosupo/data-structure/persistent_queue.cpp
   timestamp: '2024-06-15 00:08:38+07:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
@@ -192,6 +190,7 @@ data:
   - verify/yosupo/data-structure/vertex_set_path_composite.test.cpp
   - verify/yosupo/data-structure/staticrmq.test.cpp
   - verify/yosupo/data-structure/line_add_get_min.test.cpp
+  - verify/yosupo/data-structure/persistent_queue.test.cpp
   - verify/yosupo/data-structure/area_of_union_of_rectangles.test.cpp
   - verify/yosupo/data-structure/point_set_range_composite.test.cpp
   - verify/yosupo/data-structure/vertex_add_path_sum.test.cpp
@@ -200,6 +199,7 @@ data:
   - verify/yosupo/data-structure/range_affine_range_sum.test.cpp
   - verify/yosupo/data-structure/dynamic_sequence_range_affine_range_sum.test.cpp
   - verify/yosupo/data-structure/point_add_range_sum.test.cpp
+  - verify/yosupo/data-structure/unionfind.test.cpp
   - verify/yosupo/data-structure/segment_add_get_min_online.test.cpp
   - verify/yosupo/graph/scc.test.cpp
   - verify/yosupo/string/zalgorithm.test.cpp

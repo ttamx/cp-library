@@ -6,13 +6,13 @@ data:
     - icon: ':heavy_check_mark:'
       path: data-structure/binary-trie.hpp
       title: data-structure/binary-trie.hpp
-    - icon: ':warning:'
+    - icon: ':heavy_check_mark:'
       path: data-structure/dsu.hpp
       title: data-structure/dsu.hpp
     - icon: ':heavy_check_mark:'
       path: data-structure/fenwick-tree.hpp
       title: data-structure/fenwick-tree.hpp
-    - icon: ':warning:'
+    - icon: ':heavy_check_mark:'
       path: data-structure/persistent-queue.hpp
       title: data-structure/persistent-queue.hpp
     - icon: ':heavy_check_mark:'
@@ -205,14 +205,6 @@ data:
     - icon: ':warning:'
       path: verify/spoj/FASTFLOW.cpp
       title: verify/spoj/FASTFLOW.cpp
-  - name: verify/yosupo/data-structure
-    pages:
-    - icon: ':warning:'
-      path: verify/yosupo/data-structure/persistent_queue.cpp
-      title: verify/yosupo/data-structure/persistent_queue.cpp
-    - icon: ':warning:'
-      path: verify/yosupo/data-structure/unionfind.cpp
-      title: verify/yosupo/data-structure/unionfind.cpp
   verificationCategories:
   - name: verify/yosupo/data-structure
     pages:
@@ -225,6 +217,9 @@ data:
     - icon: ':heavy_check_mark:'
       path: verify/yosupo/data-structure/line_add_get_min.test.cpp
       title: verify/yosupo/data-structure/line_add_get_min.test.cpp
+    - icon: ':heavy_check_mark:'
+      path: verify/yosupo/data-structure/persistent_queue.test.cpp
+      title: verify/yosupo/data-structure/persistent_queue.test.cpp
     - icon: ':heavy_check_mark:'
       path: verify/yosupo/data-structure/point_add_range_sum.test.cpp
       title: verify/yosupo/data-structure/point_add_range_sum.test.cpp
@@ -249,6 +244,9 @@ data:
     - icon: ':heavy_check_mark:'
       path: verify/yosupo/data-structure/staticrmq.test.cpp
       title: verify/yosupo/data-structure/staticrmq.test.cpp
+    - icon: ':heavy_check_mark:'
+      path: verify/yosupo/data-structure/unionfind.test.cpp
+      title: verify/yosupo/data-structure/unionfind.test.cpp
     - icon: ':heavy_check_mark:'
       path: verify/yosupo/data-structure/vertex_add_path_sum.test.cpp
       title: verify/yosupo/data-structure/vertex_add_path_sum.test.cpp

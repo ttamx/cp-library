@@ -1,14 +1,14 @@
 ---
 data:
   _extendedDependsOn: []
-  _extendedRequiredBy:
-  - icon: ':warning:'
-    path: verify/yosupo/data-structure/persistent_queue.cpp
-    title: verify/yosupo/data-structure/persistent_queue.cpp
-  _extendedVerifiedWith: []
+  _extendedRequiredBy: []
+  _extendedVerifiedWith:
+  - icon: ':heavy_check_mark:'
+    path: verify/yosupo/data-structure/persistent_queue.test.cpp
+    title: verify/yosupo/data-structure/persistent_queue.test.cpp
   _isVerificationFailed: false
   _pathExtension: hpp
-  _verificationStatusIcon: ':warning:'
+  _verificationStatusIcon: ':heavy_check_mark:'
   attributes:
     links: []
   bundledCode: "#line 2 \"data-structure/persistent-queue.hpp\"\n\n/**\n * Author:\
@@ -44,11 +44,11 @@ data:
   dependsOn: []
   isVerificationFile: false
   path: data-structure/persistent-queue.hpp
-  requiredBy:
-  - verify/yosupo/data-structure/persistent_queue.cpp
+  requiredBy: []
   timestamp: '2024-07-29 18:44:45+07:00'
-  verificationStatus: LIBRARY_NO_TESTS
-  verifiedWith: []
+  verificationStatus: LIBRARY_ALL_AC
+  verifiedWith:
+  - verify/yosupo/data-structure/persistent_queue.test.cpp
 documentation_of: data-structure/persistent-queue.hpp
 layout: document
 redirect_from:
