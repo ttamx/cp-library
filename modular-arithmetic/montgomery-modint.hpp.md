@@ -9,15 +9,15 @@ data:
   - icon: ':heavy_check_mark:'
     path: verify/yosupo/data-structure/point_set_range_composite.test.cpp
     title: verify/yosupo/data-structure/point_set_range_composite.test.cpp
-  - icon: ':heavy_check_mark:'
+  - icon: ':x:'
     path: verify/yosupo/data-structure/range_affine_range_sum.test.cpp
     title: verify/yosupo/data-structure/range_affine_range_sum.test.cpp
   - icon: ':heavy_check_mark:'
     path: verify/yosupo/data-structure/vertex_set_path_composite.test.cpp
     title: verify/yosupo/data-structure/vertex_set_path_composite.test.cpp
-  _isVerificationFailed: false
+  _isVerificationFailed: true
   _pathExtension: hpp
-  _verificationStatusIcon: ':heavy_check_mark:'
+  _verificationStatusIcon: ':question:'
   attributes:
     links: []
   bundledCode: "#line 2 \"modular-arithmetic/montgomery-modint.hpp\"\n\n/**\n * Author:\
@@ -31,8 +31,8 @@ data:
     \    static_assert(r*mod==1);\n\n    u32 x;\n\n    constexpr MontgomeryModInt():x(0){}\n\
     \    constexpr MontgomeryModInt(const int64_t &v):x(reduce(u64(v%mod+mod)*n2)){}\n\
     \n    static constexpr u32 get_mod(){return mod;}\n    static constexpr mint get_root(){return\
-    \ mint(root);}\n    explicit constexpr operator ll()const{return val();}\n\n \
-    \   static constexpr u32 reduce(const u64 &v){\n        return (v+u64(u32(v)*u32(-r))*mod)>>32;\n\
+    \ mint(root);}\n    explicit constexpr operator int64_t()const{return val();}\n\
+    \n    static constexpr u32 reduce(const u64 &v){\n        return (v+u64(u32(v)*u32(-r))*mod)>>32;\n\
     \    }\n\n    constexpr u32 val()const{\n        u32 res=reduce(x);\n        return\
     \ res>=mod?res-mod:res;\n    }\n\n    constexpr mint inv()const{\n        int\
     \ a=val(),b=mod,u=1,v=0,q=0;\n        while(b>0){\n            q=a/b;\n      \
@@ -74,8 +74,8 @@ data:
     \    static_assert(r*mod==1);\n\n    u32 x;\n\n    constexpr MontgomeryModInt():x(0){}\n\
     \    constexpr MontgomeryModInt(const int64_t &v):x(reduce(u64(v%mod+mod)*n2)){}\n\
     \n    static constexpr u32 get_mod(){return mod;}\n    static constexpr mint get_root(){return\
-    \ mint(root);}\n    explicit constexpr operator ll()const{return val();}\n\n \
-    \   static constexpr u32 reduce(const u64 &v){\n        return (v+u64(u32(v)*u32(-r))*mod)>>32;\n\
+    \ mint(root);}\n    explicit constexpr operator int64_t()const{return val();}\n\
+    \n    static constexpr u32 reduce(const u64 &v){\n        return (v+u64(u32(v)*u32(-r))*mod)>>32;\n\
     \    }\n\n    constexpr u32 val()const{\n        u32 res=reduce(x);\n        return\
     \ res>=mod?res-mod:res;\n    }\n\n    constexpr mint inv()const{\n        int\
     \ a=val(),b=mod,u=1,v=0,q=0;\n        while(b>0){\n            q=a/b;\n      \
@@ -111,13 +111,13 @@ data:
   isVerificationFile: false
   path: modular-arithmetic/montgomery-modint.hpp
   requiredBy: []
-  timestamp: '2024-06-13 00:00:26+07:00'
-  verificationStatus: LIBRARY_ALL_AC
+  timestamp: '2024-07-29 18:44:45+07:00'
+  verificationStatus: LIBRARY_SOME_WA
   verifiedWith:
-  - verify/yosupo/data-structure/range_affine_range_sum.test.cpp
-  - verify/yosupo/data-structure/point_set_range_composite.test.cpp
-  - verify/yosupo/data-structure/dynamic_sequence_range_affine_range_sum.test.cpp
   - verify/yosupo/data-structure/vertex_set_path_composite.test.cpp
+  - verify/yosupo/data-structure/point_set_range_composite.test.cpp
+  - verify/yosupo/data-structure/range_affine_range_sum.test.cpp
+  - verify/yosupo/data-structure/dynamic_sequence_range_affine_range_sum.test.cpp
 documentation_of: modular-arithmetic/montgomery-modint.hpp
 layout: document
 redirect_from:

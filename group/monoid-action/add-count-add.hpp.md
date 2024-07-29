@@ -1,7 +1,7 @@
 ---
 data:
   _extendedDependsOn:
-  - icon: ':heavy_check_mark:'
+  - icon: ':question:'
     path: group/monoid/add-count.hpp
     title: group/monoid/add-count.hpp
   - icon: ':heavy_check_mark:'

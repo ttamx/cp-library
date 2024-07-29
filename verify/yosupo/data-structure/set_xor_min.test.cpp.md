@@ -4,7 +4,7 @@ data:
   - icon: ':heavy_check_mark:'
     path: data-structure/binary-trie.hpp
     title: data-structure/binary-trie.hpp
-  - icon: ':heavy_check_mark:'
+  - icon: ':question:'
     path: template.hpp
     title: template.hpp
   _extendedRequiredBy: []
@@ -27,24 +27,26 @@ data:
     const db EPS=1e-9;\nconst db PI=acos(db(-1));\n\n#line 2 \"data-structure/binary-trie.hpp\"\
     \n\n/**\n * Author: Teetat T.\n * Date: 2024-06-11\n * Description: Binary Trie\n\
     \ */\n\ntemplate<int BIT,class T = uint32_t,class S = int>\nstruct BinaryTrie{\n\
-    \    struct Node{\n        array<Node*,2> ch;\n        S cnt;\n        Node():ch{nullptr,nullptr},cnt(0){}\n\
-    \    };\n    Node* root;\n    BinaryTrie():root(new Node()){}\n    S size(){\n\
-    \        return root->cnt;\n    }\n    S get_cnt(Node* t){\n        return t?t->cnt:0;\n\
-    \    }\n    void insert(T x,S k=1){\n        Node* t=root;\n        t->cnt+=k;\n\
-    \        for(int i=BIT-1;i>=0;i--){\n            int u=x>>i&1;\n            if(!t->ch[u])t->ch[u]=new\
-    \ Node();\n            t=t->ch[u];\n            t->cnt+=k;\n        }\n    }\n\
-    \    void erase(T x,S k=1){\n        Node* t=root;\n        t->cnt-=k;\n     \
-    \   for(int i=BIT-1;i>=0;i--){\n            int u=x>>i&1;\n            t=t->ch[u];\n\
-    \            t->cnt-=k;\n        }\n    }\n    T kth(S k,T x=0){\n        Node*\
-    \ t=root;\n        T res=0;\n        for(int i=BIT-1;i>=0;i--){\n            int\
-    \ u=x>>i&1;\n            if(k<get_cnt(t->ch[u])){\n                t=t->ch[u];\n\
-    \            }else{\n                res|=T(1)<<i;\n                k-=get_cnt(t->ch[u]);\n\
-    \                t=t->ch[u^1];\n            }\n        }\n        return res;\n\
-    \    }\n    T min(T x){\n        return kth(0,x);\n    }\n    T max(T x){\n  \
-    \      return kth(size()-1,x);\n    }\n};\n\n#line 4 \"verify/yosupo/data-structure/set_xor_min.test.cpp\"\
-    \n\nint main(){\n    cin.tie(nullptr)->sync_with_stdio(false);\n    int q;\n \
-    \   cin >> q;\n    set<int> s;\n    BinaryTrie<30> trie;\n    while(q--){\n  \
-    \      int t,x;\n        cin >> t >> x;\n        if(t==0){\n            if(s.insert(x).second)trie.insert(x);\n\
+    \    struct Node{\n        array<int,2> ch;\n        S cnt;\n        Node():ch{-1,-1},cnt(0){}\n\
+    \    };\n    vector<Node> t;\n    BinaryTrie():t{Node()}{}\n    int new_node(){\n\
+    \        t.emplace_back(Node());\n        return t.size()-1;\n    }\n    S size(){\n\
+    \        return t[0].cnt;\n    }\n    bool empty(){\n        return size()==0;\n\
+    \    }\n    S get_cnt(int i){\n        return i!=-1?t[i].cnt:S(0);\n    }\n  \
+    \  void insert(T x,S k=1){\n        int u=0;\n        t[u].cnt+=k;\n        for(int\
+    \ i=BIT-1;i>=0;i--){\n            int v=x>>i&1;\n            if(t[u].ch[v]==-1)t[u].ch[v]=new_node();\n\
+    \            u=t[u].ch[v];\n            t[u].cnt+=k;\n        }\n    }\n    void\
+    \ erase(T x,S k=1){\n        int u=0;\n        t[u].cnt-=k;\n        for(int i=BIT-1;i>=0;i--){\n\
+    \            int v=x>>i&1;\n            u=t[u].ch[v];\n            t[u].cnt-=k;\n\
+    \        }\n    }\n    T kth(S k,T x=0){\n        int u=0;\n        T res=0;\n\
+    \        for(int i=BIT-1;i>=0;i--){\n            int v=x>>i&1;\n            if(k<get_cnt(t[u].ch[v])){\n\
+    \                u=t[u].ch[v];\n            }else{\n                res|=T(1)<<i;\n\
+    \                k-=get_cnt(t[u].ch[v]);\n                u=t[u].ch[v^1];\n  \
+    \          }\n        }\n        return res;\n    }\n    T min(T x){\n       \
+    \ return kth(0,x);\n    }\n    T max(T x){\n        return kth(size()-1,x);\n\
+    \    }\n};\n\n#line 4 \"verify/yosupo/data-structure/set_xor_min.test.cpp\"\n\n\
+    int main(){\n    cin.tie(nullptr)->sync_with_stdio(false);\n    int q;\n    cin\
+    \ >> q;\n    set<int> s;\n    BinaryTrie<30> trie;\n    while(q--){\n        int\
+    \ t,x;\n        cin >> t >> x;\n        if(t==0){\n            if(s.insert(x).second)trie.insert(x);\n\
     \        }else if(t==1){\n            auto it=s.find(x);\n            if(it!=s.end()){\n\
     \                s.erase(it);\n                trie.erase(x);\n            }\n\
     \        }else{\n            cout << trie.min(x) << \"\\n\";\n        }\n    }\n\
@@ -64,7 +66,7 @@ data:
   isVerificationFile: true
   path: verify/yosupo/data-structure/set_xor_min.test.cpp
   requiredBy: []
-  timestamp: '2024-06-15 00:08:38+07:00'
+  timestamp: '2024-07-29 18:44:45+07:00'
   verificationStatus: TEST_ACCEPTED
   verifiedWith: []
 documentation_of: verify/yosupo/data-structure/set_xor_min.test.cpp

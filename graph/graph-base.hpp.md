@@ -13,6 +13,9 @@ data:
     path: verify/yosupo/data-structure/vertex_set_path_composite.test.cpp
     title: verify/yosupo/data-structure/vertex_set_path_composite.test.cpp
   - icon: ':heavy_check_mark:'
+    path: verify/yosupo/graph/scc.test.cpp
+    title: verify/yosupo/graph/scc.test.cpp
+  - icon: ':heavy_check_mark:'
     path: verify/yosupo/tree/jump_on_tree.test.cpp
     title: verify/yosupo/tree/jump_on_tree.test.cpp
   - icon: ':heavy_check_mark:'
@@ -92,11 +95,12 @@ data:
   timestamp: '2024-06-22 18:46:46+07:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
-  - verify/yosupo/tree/jump_on_tree.test.cpp
-  - verify/yosupo/tree/lca.test.cpp
+  - verify/yosupo/data-structure/vertex_set_path_composite.test.cpp
   - verify/yosupo/data-structure/vertex_add_path_sum.test.cpp
   - verify/yosupo/data-structure/vertex_add_subtree_sum.test.cpp
-  - verify/yosupo/data-structure/vertex_set_path_composite.test.cpp
+  - verify/yosupo/graph/scc.test.cpp
+  - verify/yosupo/tree/lca.test.cpp
+  - verify/yosupo/tree/jump_on_tree.test.cpp
 documentation_of: graph/graph-base.hpp
 layout: document
 redirect_from:

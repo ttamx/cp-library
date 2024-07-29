@@ -1,10 +1,10 @@
 ---
 data:
   _extendedDependsOn:
-  - icon: ':heavy_check_mark:'
+  - icon: ':question:'
     path: group/monoid/add-count.hpp
     title: group/monoid/add-count.hpp
-  - icon: ':heavy_check_mark:'
+  - icon: ':question:'
     path: group/monoid/affine.hpp
     title: group/monoid/affine.hpp
   _extendedRequiredBy: []
@@ -12,12 +12,12 @@ data:
   - icon: ':heavy_check_mark:'
     path: verify/yosupo/data-structure/dynamic_sequence_range_affine_range_sum.test.cpp
     title: verify/yosupo/data-structure/dynamic_sequence_range_affine_range_sum.test.cpp
-  - icon: ':heavy_check_mark:'
+  - icon: ':x:'
     path: verify/yosupo/data-structure/range_affine_range_sum.test.cpp
     title: verify/yosupo/data-structure/range_affine_range_sum.test.cpp
-  _isVerificationFailed: false
+  _isVerificationFailed: true
   _pathExtension: hpp
-  _verificationStatusIcon: ':heavy_check_mark:'
+  _verificationStatusIcon: ':question:'
   attributes:
     links: []
   bundledCode: "#line 2 \"group/monoid/affine.hpp\"\n\n/**\n * Author: Teetat T.\n\
@@ -54,7 +54,7 @@ data:
   path: group/monoid-action/add-count-affine.hpp
   requiredBy: []
   timestamp: '2024-06-10 17:34:10+07:00'
-  verificationStatus: LIBRARY_ALL_AC
+  verificationStatus: LIBRARY_SOME_WA
   verifiedWith:
   - verify/yosupo/data-structure/range_affine_range_sum.test.cpp
   - verify/yosupo/data-structure/dynamic_sequence_range_affine_range_sum.test.cpp

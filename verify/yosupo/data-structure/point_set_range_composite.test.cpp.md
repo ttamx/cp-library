@@ -4,13 +4,13 @@ data:
   - icon: ':heavy_check_mark:'
     path: data-structure/segment-tree/segment-tree.hpp
     title: data-structure/segment-tree/segment-tree.hpp
-  - icon: ':heavy_check_mark:'
+  - icon: ':question:'
     path: group/monoid/affine.hpp
     title: group/monoid/affine.hpp
-  - icon: ':heavy_check_mark:'
+  - icon: ':question:'
     path: modular-arithmetic/montgomery-modint.hpp
     title: modular-arithmetic/montgomery-modint.hpp
-  - icon: ':heavy_check_mark:'
+  - icon: ':question:'
     path: template.hpp
     title: template.hpp
   _extendedRequiredBy: []
@@ -42,28 +42,28 @@ data:
     \n    u32 x;\n\n    constexpr MontgomeryModInt():x(0){}\n    constexpr MontgomeryModInt(const\
     \ int64_t &v):x(reduce(u64(v%mod+mod)*n2)){}\n\n    static constexpr u32 get_mod(){return\
     \ mod;}\n    static constexpr mint get_root(){return mint(root);}\n    explicit\
-    \ constexpr operator ll()const{return val();}\n\n    static constexpr u32 reduce(const\
-    \ u64 &v){\n        return (v+u64(u32(v)*u32(-r))*mod)>>32;\n    }\n\n    constexpr\
-    \ u32 val()const{\n        u32 res=reduce(x);\n        return res>=mod?res-mod:res;\n\
-    \    }\n\n    constexpr mint inv()const{\n        int a=val(),b=mod,u=1,v=0,q=0;\n\
-    \        while(b>0){\n            q=a/b;\n            a-=q*b;\n            u-=q*v;\n\
-    \            swap(a,b);\n            swap(u,v);\n        }\n        return mint(u);\n\
-    \    }\n\n    constexpr mint &operator+=(const mint &rhs){\n        if(i32(x+=rhs.x-2*mod)<0)x+=2*mod;\n\
-    \        return *this;\n    }\n    constexpr mint &operator-=(const mint &rhs){\n\
-    \        if(i32(x-=rhs.x)<0)x+=2*mod;\n        return *this;\n    }\n    constexpr\
-    \ mint &operator*=(const mint &rhs){\n        x=reduce(u64(x)*rhs.x);\n      \
-    \  return *this;\n    }\n    constexpr mint &operator/=(const mint &rhs){\n  \
-    \      return *this*=rhs.inv();\n    }\n\n    constexpr mint &operator++(){return\
-    \ *this+=mint(1);}\n    constexpr mint &operator--(){return *this-=mint(1);}\n\
-    \    constexpr mint operator++(int){\n        mint res=*this;\n        return\
-    \ *this+=mint(1),res;\n    }\n    constexpr mint operator--(int){\n        mint\
-    \ res=*this;\n        return *this-=mint(1),res;\n    }\n\n    constexpr mint\
-    \ operator-()const{return mint()-mint(*this);};\n    constexpr mint operator+()const{return\
-    \ mint(*this);};\n\n    friend constexpr mint operator+(const mint &lhs,const\
-    \ mint &rhs){return mint(lhs)+=rhs;}\n    friend constexpr mint operator-(const\
-    \ mint &lhs,const mint &rhs){return mint(lhs)-=rhs;}\n    friend constexpr mint\
-    \ operator*(const mint &lhs,const mint &rhs){return mint(lhs)*=rhs;}\n    friend\
-    \ constexpr mint operator/(const mint &lhs,const mint &rhs){return mint(lhs)/=rhs;}\n\
+    \ constexpr operator int64_t()const{return val();}\n\n    static constexpr u32\
+    \ reduce(const u64 &v){\n        return (v+u64(u32(v)*u32(-r))*mod)>>32;\n   \
+    \ }\n\n    constexpr u32 val()const{\n        u32 res=reduce(x);\n        return\
+    \ res>=mod?res-mod:res;\n    }\n\n    constexpr mint inv()const{\n        int\
+    \ a=val(),b=mod,u=1,v=0,q=0;\n        while(b>0){\n            q=a/b;\n      \
+    \      a-=q*b;\n            u-=q*v;\n            swap(a,b);\n            swap(u,v);\n\
+    \        }\n        return mint(u);\n    }\n\n    constexpr mint &operator+=(const\
+    \ mint &rhs){\n        if(i32(x+=rhs.x-2*mod)<0)x+=2*mod;\n        return *this;\n\
+    \    }\n    constexpr mint &operator-=(const mint &rhs){\n        if(i32(x-=rhs.x)<0)x+=2*mod;\n\
+    \        return *this;\n    }\n    constexpr mint &operator*=(const mint &rhs){\n\
+    \        x=reduce(u64(x)*rhs.x);\n        return *this;\n    }\n    constexpr\
+    \ mint &operator/=(const mint &rhs){\n        return *this*=rhs.inv();\n    }\n\
+    \n    constexpr mint &operator++(){return *this+=mint(1);}\n    constexpr mint\
+    \ &operator--(){return *this-=mint(1);}\n    constexpr mint operator++(int){\n\
+    \        mint res=*this;\n        return *this+=mint(1),res;\n    }\n    constexpr\
+    \ mint operator--(int){\n        mint res=*this;\n        return *this-=mint(1),res;\n\
+    \    }\n\n    constexpr mint operator-()const{return mint()-mint(*this);};\n \
+    \   constexpr mint operator+()const{return mint(*this);};\n\n    friend constexpr\
+    \ mint operator+(const mint &lhs,const mint &rhs){return mint(lhs)+=rhs;}\n  \
+    \  friend constexpr mint operator-(const mint &lhs,const mint &rhs){return mint(lhs)-=rhs;}\n\
+    \    friend constexpr mint operator*(const mint &lhs,const mint &rhs){return mint(lhs)*=rhs;}\n\
+    \    friend constexpr mint operator/(const mint &lhs,const mint &rhs){return mint(lhs)/=rhs;}\n\
     \    friend constexpr bool operator==(const mint &lhs,const mint &rhs){\n    \
     \    return (lhs.x>=mod?lhs.x-mod:lhs.x)==(rhs.x>=mod?rhs.x-mod:rhs.x);\n    }\n\
     \    friend constexpr bool operator!=(const mint &lhs,const mint &rhs){\n    \
@@ -77,12 +77,13 @@ data:
     \n#line 2 \"data-structure/segment-tree/segment-tree.hpp\"\n\n/**\n * Author:\
     \ Teetat T.\n * Date: 2024-01-15\n * Description: Segment Tree\n */\n\ntemplate<class\
     \ Monoid>\nstruct SegmentTree{\n    using T = typename Monoid::value_type;\n \
-    \   int n;\n    vector<T> t;\n    SegmentTree(){}\n    SegmentTree(int n,T v=Monoid::unit()){init(n,v);}\n\
-    \    template<class U>\n    SegmentTree(const vector<U> &a){init(a);}\n    void\
-    \ init(int n,T v=Monoid::unit()){init(vector<T>(n,v));}\n    template<class U>\n\
-    \    void init(const vector<U> &a){\n        n=(int)a.size();\n        t.assign(4<<(31-__builtin_clz(n)),Monoid::unit());\n\
-    \        function<void(int,int,int)> build=[&](int l,int r,int i){\n         \
-    \   if(l==r)return void(t[i]=a[l]);\n            int m=(l+r)/2;\n            build(l,m,i*2);\n\
+    \   int n;\n    vector<T> t;\n    SegmentTree(){}\n    SegmentTree(int n,function<T(int)>\
+    \ create){init(n,create);}\n    SegmentTree(int n,T v=Monoid::unit()){init(n,[&](int){return\
+    \ v;});}\n    template<class U>\n    SegmentTree(const vector<U> &a){init((int)a.size(),[&](int\
+    \ i){return T(a[i]);});}\n    void init(int _n,function<T(int)> create){\n   \
+    \     n=_n;\n        t.assign(4<<(31-__builtin_clz(n)),Monoid::unit());\n    \
+    \    function<void(int,int,int)> build=[&](int l,int r,int i){\n            if(l==r)return\
+    \ void(t[i]=create(l));\n            int m=(l+r)/2;\n            build(l,m,i*2);\n\
     \            build(m+1,r,i*2+1);\n            pull(i);\n        };\n        build(0,n-1,1);\n\
     \    }\n    void pull(int i){\n        t[i]=Monoid::op(t[i*2],t[i*2+1]);\n   \
     \ }\n    void modify(int l,int r,int i,int x,const T &v){\n        if(x<l||r<x)return;\n\
@@ -98,11 +99,11 @@ data:
     \        return Monoid::op(query(l,m,i*2,x,y),query(m+1,r,i*2+1,x,y));\n    }\n\
     \    T query(int x,int y){\n        return query(0,n-1,1,x,y);\n    }\n    template<class\
     \ F>\n    int findfirst(int l,int r,int i,int x,int y,const F &f){\n        if(y<l||r<x||!f(t[i]))return\
-    \ -1;\n        if(l==r)return l;\n        int m=(l+r)/2;\n        int res=findfirst(l,m,i*2,x,y,f);\n\
-    \        if(res==-1)res=findfirst(m+1,r,i*2+1,x,y,f);\n        return res;\n \
-    \   }\n    template<class F>\n    int findfirst(int x,int y,const F &f){\n   \
-    \     return findfirst(0,n-1,1,x,y,f);\n    }\n    template<class F>\n    int\
-    \ findlast(int l,int r,int i,int x,int y,const F &f){\n        if(y<l||r<x||!f(t[i]))return\
+    \ n;\n        if(l==r)return l;\n        int m=(l+r)/2;\n        int res=findfirst(l,m,i*2,x,y,f);\n\
+    \        if(res==n)res=findfirst(m+1,r,i*2+1,x,y,f);\n        return res;\n  \
+    \  }\n    template<class F>\n    int findfirst(int x,int y,const F &f){\n    \
+    \    return findfirst(0,n-1,1,x,y,f);\n    }\n    template<class F>\n    int findlast(int\
+    \ l,int r,int i,int x,int y,const F &f){\n        if(y<l||r<x||!f(t[i]))return\
     \ -1;\n        if(l==r)return l;\n        int m=(l+r)/2;\n        int res=findlast(m+1,r,i*2+1,x,y,f);\n\
     \        if(res==-1)res=findlast(l,m,i*2,x,y,f);\n        return res;\n    }\n\
     \    template<class F>\n    int findlast(int x,int y,const F &f){\n        return\
@@ -141,7 +142,7 @@ data:
   isVerificationFile: true
   path: verify/yosupo/data-structure/point_set_range_composite.test.cpp
   requiredBy: []
-  timestamp: '2024-06-15 00:08:38+07:00'
+  timestamp: '2024-07-29 18:44:45+07:00'
   verificationStatus: TEST_ACCEPTED
   verifiedWith: []
 documentation_of: verify/yosupo/data-structure/point_set_range_composite.test.cpp

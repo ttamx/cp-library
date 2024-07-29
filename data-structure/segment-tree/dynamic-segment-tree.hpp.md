@@ -20,10 +20,10 @@ data:
     \ Node*;\n    struct Node{\n        Info val;\n        Tag lz;\n        Ptr l,r;\n\
     \        Node(Info v):val(v),lz(TagMonoid::unit()),l(nullptr),r(nullptr){}\n \
     \       Node(Info v,Tag t):val(v),lz(t),l(nullptr),r(nullptr){}\n    };\n    ll\
-    \ lb,ub;\n    Ptr rt;\n    function<Info(int,int)> create;\n    DynamicSegmentTree(){init(0,0);}\n\
+    \ lb,ub;\n    Ptr rt;\n    function<Info(ll,ll)> create;\n    DynamicSegmentTree(){init(0,0);}\n\
     \    DynamicSegmentTree(ll n){init(0,n-1);}\n    DynamicSegmentTree(ll lb,ll ub){init(lb,ub);}\n\
-    \    DynamicSegmentTree(ll lb,ll ub,function<Info(int,int)> create){init(lb,ub,create);}\n\
-    \    void init(ll _lb,ll _ub,function<Info(int,int)> _create=[](int l,int r){return\
+    \    DynamicSegmentTree(ll lb,ll ub,function<Info(ll,ll)> create){init(lb,ub,create);}\n\
+    \    void init(ll _lb,ll _ub,function<Info(ll,ll)> _create=[](ll l,ll r){return\
     \ InfoMonoid::unit();}){\n        lb=_lb,ub=_ub;\n        create=_create;\n  \
     \      rt=new Node(create(lb,ub));\n    }\n    Info val(Ptr t){\n        return\
     \ t?t->val:InfoMonoid::unit();\n    }\n    void pull(Ptr &t){\n        t->val=InfoMonoid::op(val(t->l),val(t->r));\n\
@@ -62,10 +62,10 @@ data:
     \ = Node*;\n    struct Node{\n        Info val;\n        Tag lz;\n        Ptr\
     \ l,r;\n        Node(Info v):val(v),lz(TagMonoid::unit()),l(nullptr),r(nullptr){}\n\
     \        Node(Info v,Tag t):val(v),lz(t),l(nullptr),r(nullptr){}\n    };\n   \
-    \ ll lb,ub;\n    Ptr rt;\n    function<Info(int,int)> create;\n    DynamicSegmentTree(){init(0,0);}\n\
+    \ ll lb,ub;\n    Ptr rt;\n    function<Info(ll,ll)> create;\n    DynamicSegmentTree(){init(0,0);}\n\
     \    DynamicSegmentTree(ll n){init(0,n-1);}\n    DynamicSegmentTree(ll lb,ll ub){init(lb,ub);}\n\
-    \    DynamicSegmentTree(ll lb,ll ub,function<Info(int,int)> create){init(lb,ub,create);}\n\
-    \    void init(ll _lb,ll _ub,function<Info(int,int)> _create=[](int l,int r){return\
+    \    DynamicSegmentTree(ll lb,ll ub,function<Info(ll,ll)> create){init(lb,ub,create);}\n\
+    \    void init(ll _lb,ll _ub,function<Info(ll,ll)> _create=[](ll l,ll r){return\
     \ InfoMonoid::unit();}){\n        lb=_lb,ub=_ub;\n        create=_create;\n  \
     \      rt=new Node(create(lb,ub));\n    }\n    Info val(Ptr t){\n        return\
     \ t?t->val:InfoMonoid::unit();\n    }\n    void pull(Ptr &t){\n        t->val=InfoMonoid::op(val(t->l),val(t->r));\n\
@@ -100,7 +100,7 @@ data:
   isVerificationFile: false
   path: data-structure/segment-tree/dynamic-segment-tree.hpp
   requiredBy: []
-  timestamp: '2024-06-11 19:24:03+07:00'
+  timestamp: '2024-07-29 18:44:45+07:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
   - verify/yosupo/data-structure/area_of_union_of_rectangles.test.cpp

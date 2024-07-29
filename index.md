@@ -6,9 +6,15 @@ data:
     - icon: ':heavy_check_mark:'
       path: data-structure/binary-trie.hpp
       title: data-structure/binary-trie.hpp
+    - icon: ':warning:'
+      path: data-structure/dsu.hpp
+      title: data-structure/dsu.hpp
     - icon: ':heavy_check_mark:'
       path: data-structure/fenwick-tree.hpp
       title: data-structure/fenwick-tree.hpp
+    - icon: ':warning:'
+      path: data-structure/persistent-queue.hpp
+      title: data-structure/persistent-queue.hpp
     - icon: ':heavy_check_mark:'
       path: data-structure/sparse-table.hpp
       title: data-structure/sparse-table.hpp
@@ -48,37 +54,60 @@ data:
     - icon: ':heavy_check_mark:'
       path: data-structure/segment-tree/dynamic-segment-tree.hpp
       title: data-structure/segment-tree/dynamic-segment-tree.hpp
-    - icon: ':heavy_check_mark:'
+    - icon: ':x:'
       path: data-structure/segment-tree/lazy-segment-tree.hpp
       title: data-structure/segment-tree/lazy-segment-tree.hpp
     - icon: ':heavy_check_mark:'
       path: data-structure/segment-tree/segment-tree.hpp
       title: data-structure/segment-tree/segment-tree.hpp
+  - name: flow
+    pages:
+    - icon: ':warning:'
+      path: flow/binary-optimization.hpp
+      title: flow/binary-optimization.hpp
+    - icon: ':warning:'
+      path: flow/dinic.hpp
+      title: flow/dinic.hpp
+    - icon: ':warning:'
+      path: flow/k-ary-optimization.hpp
+      title: flow/k-ary-optimization.hpp
   - name: graph
     pages:
     - icon: ':heavy_check_mark:'
       path: graph/graph-base.hpp
       title: graph/graph-base.hpp
+    - icon: ':warning:'
+      path: graph/low-link.hpp
+      title: graph/low-link.hpp
+    - icon: ':heavy_check_mark:'
+      path: graph/strongly-connected-component.hpp
+      title: graph/strongly-connected-component.hpp
   - name: group/monoid
     pages:
-    - icon: ':heavy_check_mark:'
+    - icon: ':question:'
       path: group/monoid/add-count.hpp
       title: group/monoid/add-count.hpp
     - icon: ':heavy_check_mark:'
       path: group/monoid/add.hpp
       title: group/monoid/add.hpp
-    - icon: ':heavy_check_mark:'
+    - icon: ':question:'
       path: group/monoid/affine.hpp
       title: group/monoid/affine.hpp
     - icon: ':warning:'
       path: group/monoid/max-count.hpp
       title: group/monoid/max-count.hpp
     - icon: ':warning:'
+      path: group/monoid/max-idx.hpp
+      title: group/monoid/max-idx.hpp
+    - icon: ':warning:'
       path: group/monoid/max.hpp
       title: group/monoid/max.hpp
     - icon: ':heavy_check_mark:'
       path: group/monoid/min-count.hpp
       title: group/monoid/min-count.hpp
+    - icon: ':warning:'
+      path: group/monoid/min-idx.hpp
+      title: group/monoid/min-idx.hpp
     - icon: ':heavy_check_mark:'
       path: group/monoid/min.hpp
       title: group/monoid/min.hpp
@@ -96,7 +125,7 @@ data:
     - icon: ':warning:'
       path: group/monoid-action/add-count-add.hpp
       title: group/monoid-action/add-count-add.hpp
-    - icon: ':heavy_check_mark:'
+    - icon: ':question:'
       path: group/monoid-action/add-count-affine.hpp
       title: group/monoid-action/add-count-affine.hpp
     - icon: ':warning:'
@@ -125,7 +154,7 @@ data:
     - icon: ':warning:'
       path: modular-arithmetic/modint64.hpp
       title: modular-arithmetic/modint64.hpp
-    - icon: ':heavy_check_mark:'
+    - icon: ':question:'
       path: modular-arithmetic/montgomery-modint.hpp
       title: modular-arithmetic/montgomery-modint.hpp
   - name: string
@@ -147,7 +176,7 @@ data:
       title: string/z-algorithm.hpp
   - name: .
     pages:
-    - icon: ':heavy_check_mark:'
+    - icon: ':question:'
       path: template.hpp
       title: template.hpp
   - name: tree
@@ -155,6 +184,35 @@ data:
     - icon: ':heavy_check_mark:'
       path: tree/hld.hpp
       title: tree/hld.hpp
+  - name: verify/atcoder
+    pages:
+    - icon: ':warning:'
+      path: verify/atcoder/abc193_f.cpp
+      title: verify/atcoder/abc193_f.cpp
+    - icon: ':warning:'
+      path: verify/atcoder/abc259_g.cpp
+      title: verify/atcoder/abc259_g.cpp
+    - icon: ':warning:'
+      path: verify/atcoder/abc347_g.cpp
+      title: verify/atcoder/abc347_g.cpp
+  - name: verify/kattis
+    pages:
+    - icon: ':warning:'
+      path: verify/kattis/thekingofthenorth.cpp
+      title: verify/kattis/thekingofthenorth.cpp
+  - name: verify/spoj
+    pages:
+    - icon: ':warning:'
+      path: verify/spoj/FASTFLOW.cpp
+      title: verify/spoj/FASTFLOW.cpp
+  - name: verify/yosupo/data-structure
+    pages:
+    - icon: ':warning:'
+      path: verify/yosupo/data-structure/persistent_queue.cpp
+      title: verify/yosupo/data-structure/persistent_queue.cpp
+    - icon: ':warning:'
+      path: verify/yosupo/data-structure/unionfind.cpp
+      title: verify/yosupo/data-structure/unionfind.cpp
   verificationCategories:
   - name: verify/yosupo/data-structure
     pages:
@@ -173,7 +231,7 @@ data:
     - icon: ':heavy_check_mark:'
       path: verify/yosupo/data-structure/point_set_range_composite.test.cpp
       title: verify/yosupo/data-structure/point_set_range_composite.test.cpp
-    - icon: ':heavy_check_mark:'
+    - icon: ':x:'
       path: verify/yosupo/data-structure/range_affine_range_sum.test.cpp
       title: verify/yosupo/data-structure/range_affine_range_sum.test.cpp
     - icon: ':heavy_check_mark:'
@@ -200,6 +258,11 @@ data:
     - icon: ':heavy_check_mark:'
       path: verify/yosupo/data-structure/vertex_set_path_composite.test.cpp
       title: verify/yosupo/data-structure/vertex_set_path_composite.test.cpp
+  - name: verify/yosupo/graph
+    pages:
+    - icon: ':heavy_check_mark:'
+      path: verify/yosupo/graph/scc.test.cpp
+      title: verify/yosupo/graph/scc.test.cpp
   - name: verify/yosupo/string
     pages:
     - icon: ':heavy_check_mark:'

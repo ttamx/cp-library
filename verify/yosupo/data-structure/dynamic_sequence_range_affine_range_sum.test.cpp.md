@@ -10,19 +10,19 @@ data:
   - icon: ':heavy_check_mark:'
     path: data-structure/link-cut-tree/splay-tree-base.hpp
     title: data-structure/link-cut-tree/splay-tree-base.hpp
-  - icon: ':heavy_check_mark:'
+  - icon: ':question:'
     path: group/monoid-action/add-count-affine.hpp
     title: group/monoid-action/add-count-affine.hpp
-  - icon: ':heavy_check_mark:'
+  - icon: ':question:'
     path: group/monoid/add-count.hpp
     title: group/monoid/add-count.hpp
-  - icon: ':heavy_check_mark:'
+  - icon: ':question:'
     path: group/monoid/affine.hpp
     title: group/monoid/affine.hpp
-  - icon: ':heavy_check_mark:'
+  - icon: ':question:'
     path: modular-arithmetic/montgomery-modint.hpp
     title: modular-arithmetic/montgomery-modint.hpp
-  - icon: ':heavy_check_mark:'
+  - icon: ':question:'
     path: template.hpp
     title: template.hpp
   _extendedRequiredBy: []
@@ -54,28 +54,28 @@ data:
     \n    u32 x;\n\n    constexpr MontgomeryModInt():x(0){}\n    constexpr MontgomeryModInt(const\
     \ int64_t &v):x(reduce(u64(v%mod+mod)*n2)){}\n\n    static constexpr u32 get_mod(){return\
     \ mod;}\n    static constexpr mint get_root(){return mint(root);}\n    explicit\
-    \ constexpr operator ll()const{return val();}\n\n    static constexpr u32 reduce(const\
-    \ u64 &v){\n        return (v+u64(u32(v)*u32(-r))*mod)>>32;\n    }\n\n    constexpr\
-    \ u32 val()const{\n        u32 res=reduce(x);\n        return res>=mod?res-mod:res;\n\
-    \    }\n\n    constexpr mint inv()const{\n        int a=val(),b=mod,u=1,v=0,q=0;\n\
-    \        while(b>0){\n            q=a/b;\n            a-=q*b;\n            u-=q*v;\n\
-    \            swap(a,b);\n            swap(u,v);\n        }\n        return mint(u);\n\
-    \    }\n\n    constexpr mint &operator+=(const mint &rhs){\n        if(i32(x+=rhs.x-2*mod)<0)x+=2*mod;\n\
-    \        return *this;\n    }\n    constexpr mint &operator-=(const mint &rhs){\n\
-    \        if(i32(x-=rhs.x)<0)x+=2*mod;\n        return *this;\n    }\n    constexpr\
-    \ mint &operator*=(const mint &rhs){\n        x=reduce(u64(x)*rhs.x);\n      \
-    \  return *this;\n    }\n    constexpr mint &operator/=(const mint &rhs){\n  \
-    \      return *this*=rhs.inv();\n    }\n\n    constexpr mint &operator++(){return\
-    \ *this+=mint(1);}\n    constexpr mint &operator--(){return *this-=mint(1);}\n\
-    \    constexpr mint operator++(int){\n        mint res=*this;\n        return\
-    \ *this+=mint(1),res;\n    }\n    constexpr mint operator--(int){\n        mint\
-    \ res=*this;\n        return *this-=mint(1),res;\n    }\n\n    constexpr mint\
-    \ operator-()const{return mint()-mint(*this);};\n    constexpr mint operator+()const{return\
-    \ mint(*this);};\n\n    friend constexpr mint operator+(const mint &lhs,const\
-    \ mint &rhs){return mint(lhs)+=rhs;}\n    friend constexpr mint operator-(const\
-    \ mint &lhs,const mint &rhs){return mint(lhs)-=rhs;}\n    friend constexpr mint\
-    \ operator*(const mint &lhs,const mint &rhs){return mint(lhs)*=rhs;}\n    friend\
-    \ constexpr mint operator/(const mint &lhs,const mint &rhs){return mint(lhs)/=rhs;}\n\
+    \ constexpr operator int64_t()const{return val();}\n\n    static constexpr u32\
+    \ reduce(const u64 &v){\n        return (v+u64(u32(v)*u32(-r))*mod)>>32;\n   \
+    \ }\n\n    constexpr u32 val()const{\n        u32 res=reduce(x);\n        return\
+    \ res>=mod?res-mod:res;\n    }\n\n    constexpr mint inv()const{\n        int\
+    \ a=val(),b=mod,u=1,v=0,q=0;\n        while(b>0){\n            q=a/b;\n      \
+    \      a-=q*b;\n            u-=q*v;\n            swap(a,b);\n            swap(u,v);\n\
+    \        }\n        return mint(u);\n    }\n\n    constexpr mint &operator+=(const\
+    \ mint &rhs){\n        if(i32(x+=rhs.x-2*mod)<0)x+=2*mod;\n        return *this;\n\
+    \    }\n    constexpr mint &operator-=(const mint &rhs){\n        if(i32(x-=rhs.x)<0)x+=2*mod;\n\
+    \        return *this;\n    }\n    constexpr mint &operator*=(const mint &rhs){\n\
+    \        x=reduce(u64(x)*rhs.x);\n        return *this;\n    }\n    constexpr\
+    \ mint &operator/=(const mint &rhs){\n        return *this*=rhs.inv();\n    }\n\
+    \n    constexpr mint &operator++(){return *this+=mint(1);}\n    constexpr mint\
+    \ &operator--(){return *this-=mint(1);}\n    constexpr mint operator++(int){\n\
+    \        mint res=*this;\n        return *this+=mint(1),res;\n    }\n    constexpr\
+    \ mint operator--(int){\n        mint res=*this;\n        return *this-=mint(1),res;\n\
+    \    }\n\n    constexpr mint operator-()const{return mint()-mint(*this);};\n \
+    \   constexpr mint operator+()const{return mint(*this);};\n\n    friend constexpr\
+    \ mint operator+(const mint &lhs,const mint &rhs){return mint(lhs)+=rhs;}\n  \
+    \  friend constexpr mint operator-(const mint &lhs,const mint &rhs){return mint(lhs)-=rhs;}\n\
+    \    friend constexpr mint operator*(const mint &lhs,const mint &rhs){return mint(lhs)*=rhs;}\n\
+    \    friend constexpr mint operator/(const mint &lhs,const mint &rhs){return mint(lhs)/=rhs;}\n\
     \    friend constexpr bool operator==(const mint &lhs,const mint &rhs){\n    \
     \    return (lhs.x>=mod?lhs.x-mod:lhs.x)==(rhs.x>=mod?rhs.x-mod:rhs.x);\n    }\n\
     \    friend constexpr bool operator!=(const mint &lhs,const mint &rhs){\n    \
@@ -230,7 +230,7 @@ data:
   isVerificationFile: true
   path: verify/yosupo/data-structure/dynamic_sequence_range_affine_range_sum.test.cpp
   requiredBy: []
-  timestamp: '2024-06-15 00:08:38+07:00'
+  timestamp: '2024-07-29 18:44:45+07:00'
   verificationStatus: TEST_ACCEPTED
   verifiedWith: []
 documentation_of: verify/yosupo/data-structure/dynamic_sequence_range_affine_range_sum.test.cpp
