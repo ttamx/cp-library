@@ -23,12 +23,12 @@ struct DynamicSegmentTree{
     };
     ll lb,ub;
     Ptr rt;
-    function<Info(int,int)> create;
+    function<Info(ll,ll)> create;
     DynamicSegmentTree(){init(0,0);}
     DynamicSegmentTree(ll n){init(0,n-1);}
     DynamicSegmentTree(ll lb,ll ub){init(lb,ub);}
-    DynamicSegmentTree(ll lb,ll ub,function<Info(int,int)> create){init(lb,ub,create);}
-    void init(ll _lb,ll _ub,function<Info(int,int)> _create=[](int l,int r){return InfoMonoid::unit();}){
+    DynamicSegmentTree(ll lb,ll ub,function<Info(ll,ll)> create){init(lb,ub,create);}
+    void init(ll _lb,ll _ub,function<Info(ll,ll)> _create=[](ll l,ll r){return InfoMonoid::unit();}){
         lb=_lb,ub=_ub;
         create=_create;
         rt=new Node(create(lb,ub));

@@ -9,48 +9,55 @@
 template<int BIT,class T = uint32_t,class S = int>
 struct BinaryTrie{
     struct Node{
-        array<Node*,2> ch;
+        array<int,2> ch;
         S cnt;
-        Node():ch{nullptr,nullptr},cnt(0){}
+        Node():ch{-1,-1},cnt(0){}
     };
-    Node* root;
-    BinaryTrie():root(new Node()){}
-    S size(){
-        return root->cnt;
+    vector<Node> t;
+    BinaryTrie():t{Node()}{}
+    int new_node(){
+        t.emplace_back(Node());
+        return t.size()-1;
     }
-    S get_cnt(Node* t){
-        return t?t->cnt:0;
+    S size(){
+        return t[0].cnt;
+    }
+    bool empty(){
+        return size()==0;
+    }
+    S get_cnt(int i){
+        return i!=-1?t[i].cnt:S(0);
     }
     void insert(T x,S k=1){
-        Node* t=root;
-        t->cnt+=k;
+        int u=0;
+        t[u].cnt+=k;
         for(int i=BIT-1;i>=0;i--){
-            int u=x>>i&1;
-            if(!t->ch[u])t->ch[u]=new Node();
-            t=t->ch[u];
-            t->cnt+=k;
+            int v=x>>i&1;
+            if(t[u].ch[v]==-1)t[u].ch[v]=new_node();
+            u=t[u].ch[v];
+            t[u].cnt+=k;
         }
     }
     void erase(T x,S k=1){
-        Node* t=root;
-        t->cnt-=k;
+        int u=0;
+        t[u].cnt-=k;
         for(int i=BIT-1;i>=0;i--){
-            int u=x>>i&1;
-            t=t->ch[u];
-            t->cnt-=k;
+            int v=x>>i&1;
+            u=t[u].ch[v];
+            t[u].cnt-=k;
         }
     }
     T kth(S k,T x=0){
-        Node* t=root;
+        int u=0;
         T res=0;
         for(int i=BIT-1;i>=0;i--){
-            int u=x>>i&1;
-            if(k<get_cnt(t->ch[u])){
-                t=t->ch[u];
+            int v=x>>i&1;
+            if(k<get_cnt(t[u].ch[v])){
+                u=t[u].ch[v];
             }else{
                 res|=T(1)<<i;
-                k-=get_cnt(t->ch[u]);
-                t=t->ch[u^1];
+                k-=get_cnt(t[u].ch[v]);
+                u=t[u].ch[v^1];
             }
         }
         return res;

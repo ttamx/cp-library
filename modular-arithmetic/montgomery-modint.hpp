@@ -32,7 +32,7 @@ struct MontgomeryModInt{
 
     static constexpr u32 get_mod(){return mod;}
     static constexpr mint get_root(){return mint(root);}
-    explicit constexpr operator ll()const{return val();}
+    explicit constexpr operator int64_t()const{return val();}
 
     static constexpr u32 reduce(const u64 &v){
         return (v+u64(u32(v)*u32(-r))*mod)>>32;
