@@ -40,14 +40,17 @@ struct BinaryTrie{
     }
     void erase(T x,S k=1){
         int u=0;
+        assert(t[u].cnt>=k);
         t[u].cnt-=k;
         for(int i=BIT-1;i>=0;i--){
             int v=x>>i&1;
             u=t[u].ch[v];
+            assert(u!=-1&&t[u].cnt>=k);
             t[u].cnt-=k;
         }
     }
     T kth(S k,T x=0){
+        assert(k<size());
         int u=0;
         T res=0;
         for(int i=BIT-1;i>=0;i--){
