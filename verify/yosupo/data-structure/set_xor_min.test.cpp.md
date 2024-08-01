@@ -35,18 +35,19 @@ data:
     \  void insert(T x,S k=1){\n        int u=0;\n        t[u].cnt+=k;\n        for(int\
     \ i=BIT-1;i>=0;i--){\n            int v=x>>i&1;\n            if(t[u].ch[v]==-1)t[u].ch[v]=new_node();\n\
     \            u=t[u].ch[v];\n            t[u].cnt+=k;\n        }\n    }\n    void\
-    \ erase(T x,S k=1){\n        int u=0;\n        t[u].cnt-=k;\n        for(int i=BIT-1;i>=0;i--){\n\
-    \            int v=x>>i&1;\n            u=t[u].ch[v];\n            t[u].cnt-=k;\n\
-    \        }\n    }\n    T kth(S k,T x=0){\n        int u=0;\n        T res=0;\n\
-    \        for(int i=BIT-1;i>=0;i--){\n            int v=x>>i&1;\n            if(k<get_cnt(t[u].ch[v])){\n\
-    \                u=t[u].ch[v];\n            }else{\n                res|=T(1)<<i;\n\
-    \                k-=get_cnt(t[u].ch[v]);\n                u=t[u].ch[v^1];\n  \
-    \          }\n        }\n        return res;\n    }\n    T min(T x){\n       \
-    \ return kth(0,x);\n    }\n    T max(T x){\n        return kth(size()-1,x);\n\
-    \    }\n};\n\n#line 4 \"verify/yosupo/data-structure/set_xor_min.test.cpp\"\n\n\
-    int main(){\n    cin.tie(nullptr)->sync_with_stdio(false);\n    int q;\n    cin\
-    \ >> q;\n    set<int> s;\n    BinaryTrie<30> trie;\n    while(q--){\n        int\
-    \ t,x;\n        cin >> t >> x;\n        if(t==0){\n            if(s.insert(x).second)trie.insert(x);\n\
+    \ erase(T x,S k=1){\n        int u=0;\n        assert(t[u].cnt>=k);\n        t[u].cnt-=k;\n\
+    \        for(int i=BIT-1;i>=0;i--){\n            int v=x>>i&1;\n            u=t[u].ch[v];\n\
+    \            assert(u!=-1&&t[u].cnt>=k);\n            t[u].cnt-=k;\n        }\n\
+    \    }\n    T kth(S k,T x=0){\n        assert(k<size());\n        int u=0;\n \
+    \       T res=0;\n        for(int i=BIT-1;i>=0;i--){\n            int v=x>>i&1;\n\
+    \            if(k<get_cnt(t[u].ch[v])){\n                u=t[u].ch[v];\n     \
+    \       }else{\n                res|=T(1)<<i;\n                k-=get_cnt(t[u].ch[v]);\n\
+    \                u=t[u].ch[v^1];\n            }\n        }\n        return res;\n\
+    \    }\n    T min(T x){\n        return kth(0,x);\n    }\n    T max(T x){\n  \
+    \      return kth(size()-1,x);\n    }\n};\n\n#line 4 \"verify/yosupo/data-structure/set_xor_min.test.cpp\"\
+    \n\nint main(){\n    cin.tie(nullptr)->sync_with_stdio(false);\n    int q;\n \
+    \   cin >> q;\n    set<int> s;\n    BinaryTrie<30> trie;\n    while(q--){\n  \
+    \      int t,x;\n        cin >> t >> x;\n        if(t==0){\n            if(s.insert(x).second)trie.insert(x);\n\
     \        }else if(t==1){\n            auto it=s.find(x);\n            if(it!=s.end()){\n\
     \                s.erase(it);\n                trie.erase(x);\n            }\n\
     \        }else{\n            cout << trie.min(x) << \"\\n\";\n        }\n    }\n\
@@ -66,7 +67,7 @@ data:
   isVerificationFile: true
   path: verify/yosupo/data-structure/set_xor_min.test.cpp
   requiredBy: []
-  timestamp: '2024-07-29 18:44:45+07:00'
+  timestamp: '2024-08-02 02:29:01+07:00'
   verificationStatus: TEST_ACCEPTED
   verifiedWith: []
 documentation_of: verify/yosupo/data-structure/set_xor_min.test.cpp
