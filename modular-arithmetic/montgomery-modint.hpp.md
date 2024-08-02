@@ -28,6 +28,9 @@ data:
     path: verify/yosupo/data-structure/range_affine_range_sum.test.cpp
     title: verify/yosupo/data-structure/range_affine_range_sum.test.cpp
   - icon: ':heavy_check_mark:'
+    path: verify/yosupo/data-structure/range_affine_range_sum_lct.test.cpp
+    title: verify/yosupo/data-structure/range_affine_range_sum_lct.test.cpp
+  - icon: ':heavy_check_mark:'
     path: verify/yosupo/data-structure/vertex_set_path_composite.test.cpp
     title: verify/yosupo/data-structure/vertex_set_path_composite.test.cpp
   _isVerificationFailed: false
@@ -129,6 +132,7 @@ data:
   timestamp: '2024-07-29 18:44:45+07:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
+  - verify/yosupo/data-structure/range_affine_range_sum_lct.test.cpp
   - verify/yosupo/data-structure/vertex_set_path_composite.test.cpp
   - verify/yosupo/data-structure/point_set_range_composite.test.cpp
   - verify/yosupo/data-structure/range_affine_range_sum.test.cpp

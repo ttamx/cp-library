@@ -55,6 +55,9 @@ data:
     path: verify/yosupo/data-structure/range_affine_range_sum.test.cpp
     title: verify/yosupo/data-structure/range_affine_range_sum.test.cpp
   - icon: ':heavy_check_mark:'
+    path: verify/yosupo/data-structure/range_affine_range_sum_lct.test.cpp
+    title: verify/yosupo/data-structure/range_affine_range_sum_lct.test.cpp
+  - icon: ':heavy_check_mark:'
     path: verify/yosupo/data-structure/range_reverse_range_sum.test.cpp
     title: verify/yosupo/data-structure/range_reverse_range_sum.test.cpp
   - icon: ':heavy_check_mark:'
@@ -200,6 +203,7 @@ data:
   timestamp: '2024-06-15 00:08:38+07:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
+  - verify/yosupo/data-structure/range_affine_range_sum_lct.test.cpp
   - verify/yosupo/data-structure/segment_add_get_min.test.cpp
   - verify/yosupo/data-structure/range_reverse_range_sum.test.cpp
   - verify/yosupo/data-structure/vertex_set_path_composite.test.cpp

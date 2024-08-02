@@ -1,7 +1,7 @@
 ---
 data:
   _extendedDependsOn:
-  - icon: ':warning:'
+  - icon: ':heavy_check_mark:'
     path: data-structure/link-cut-tree/link-cut-tree-base.hpp
     title: data-structure/link-cut-tree/link-cut-tree-base.hpp
   - icon: ':heavy_check_mark:'
