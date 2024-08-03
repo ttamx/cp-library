@@ -53,9 +53,9 @@ data:
   timestamp: '2024-06-11 21:32:30+07:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
-  - verify/yosupo/data-structure/vertex_add_path_sum.test.cpp
   - verify/yosupo/data-structure/vertex_add_subtree_sum.test.cpp
   - verify/yosupo/data-structure/point_add_range_sum.test.cpp
+  - verify/yosupo/data-structure/vertex_add_path_sum.test.cpp
 documentation_of: data-structure/fenwick-tree.hpp
 layout: document
 redirect_from:

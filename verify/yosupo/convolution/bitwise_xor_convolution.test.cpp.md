@@ -73,8 +73,8 @@ data:
     \    }\n};\nusing mint998 = MontgomeryModInt<998244353,3>;\nusing mint107 = MontgomeryModInt<1000000007>;\n\
     \n#line 2 \"convolution/xor-convolution.hpp\"\n\n/**\n * Author: Teetat T.\n *\
     \ Date: 2024-07-29\n * Description: Bitwise XOR Convolution.\n * Fast Walsh-Hadamard\
-    \ Transform: $A^\\prime[S]=\\sum_T(-1)^{|S\\oplus T|}A[T]$.\n * Time: $O(N\\log\
-    \ N)$.\n */\n\ntemplate<class T>\nvoid fwht(vector<T> &a){\n    int n=(int)a.size();\n\
+    \ Transform: $A^\\prime[S]=\\sum_T(-1)^{|S\\&T|}A[T]$.\n * Time: $O(N\\log N)$.\n\
+    \ */\n\ntemplate<class T>\nvoid fwht(vector<T> &a){\n    int n=(int)a.size();\n\
     \    assert(n==(n&-n));\n    for(int i=1;i<n;i<<=1){\n        for(int j=0;j<n;j++){\n\
     \            if(j&i){\n                T &u=a[j^i],&v=a[j];\n                tie(u,v)=make_pair(u+v,u-v);\n\
     \            }\n        }\n    }\n}\n\ntemplate<class T>\nvector<T> xor_convolution(vector<T>\
@@ -100,7 +100,7 @@ data:
   isVerificationFile: true
   path: verify/yosupo/convolution/bitwise_xor_convolution.test.cpp
   requiredBy: []
-  timestamp: '2024-07-30 03:30:30+07:00'
+  timestamp: '2024-08-04 01:01:28+07:00'
   verificationStatus: TEST_ACCEPTED
   verifiedWith: []
 documentation_of: verify/yosupo/convolution/bitwise_xor_convolution.test.cpp

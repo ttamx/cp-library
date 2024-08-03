@@ -36,8 +36,8 @@ data:
   isVerificationFile: false
   path: group/monoid/min.hpp
   requiredBy:
-  - group/monoid-action/min-add.hpp
   - string/suffix-array.hpp
+  - group/monoid-action/min-add.hpp
   timestamp: '2024-06-10 16:05:09+07:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:

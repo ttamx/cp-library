@@ -127,7 +127,7 @@ data:
     \    }\n    T get_val(Ptr t){\n        this->evert(t);\n        return t->val;\n\
     \    }\n    T fold(Ptr u,Ptr v){\n        evert(u);\n        expose(v);\n    \
     \    return v->sum;\n    }\n};\n\n#line 4 \"data-structure/link-cut-tree/lazy-link-cut-tree.hpp\"\
-    \n\n/**\n * Author: Teetat T.\n * Date: 2024-05-19\n * Description: Lazy Link\
+    \n\n/**\n * Author: Teetat T.\n * Date: 2024-08-02\n * Description: Lazy Link\
     \ Cut Tree.\n * Usage: using Lct = LazyLinkCutTree<Action>;\n *  using Ptr = Lct::Ptr;\n\
     \ *  using Node = Lct::Node;\n *  vector<Ptr> ptr(n);\n *  for(int i=0;i<n;i++)ptr[i]=new\
     \ Node(val[i]);\n *  auto link=[&](int u,int v){\n *      Lct::link(ptr[u],ptr[v]);\n\
@@ -141,7 +141,7 @@ data:
     \   this->expose(v);\n        this->propagate(v,val);\n    }\n};\n\n"
   code: "#pragma once\n#include \"data-structure/link-cut-tree/lazy-reversible-splay-tree.hpp\"\
     \n#include \"data-structure/link-cut-tree/link-cut-tree-base.hpp\"\n\n/**\n *\
-    \ Author: Teetat T.\n * Date: 2024-05-19\n * Description: Lazy Link Cut Tree.\n\
+    \ Author: Teetat T.\n * Date: 2024-08-02\n * Description: Lazy Link Cut Tree.\n\
     \ * Usage: using Lct = LazyLinkCutTree<Action>;\n *  using Ptr = Lct::Ptr;\n *\
     \  using Node = Lct::Node;\n *  vector<Ptr> ptr(n);\n *  for(int i=0;i<n;i++)ptr[i]=new\
     \ Node(val[i]);\n *  auto link=[&](int u,int v){\n *      Lct::link(ptr[u],ptr[v]);\n\
@@ -161,7 +161,7 @@ data:
   isVerificationFile: false
   path: data-structure/link-cut-tree/lazy-link-cut-tree.hpp
   requiredBy: []
-  timestamp: '2024-08-02 13:49:14+07:00'
+  timestamp: '2024-08-04 01:01:28+07:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
   - verify/yosupo/data-structure/range_affine_range_sum_lct.test.cpp
