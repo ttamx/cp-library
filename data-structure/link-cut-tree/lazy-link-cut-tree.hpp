@@ -4,7 +4,7 @@
 
 /**
  * Author: Teetat T.
- * Date: 2024-05-19
+ * Date: 2024-08-02
  * Description: Lazy Link Cut Tree.
  * Usage: using Lct = LazyLinkCutTree<Action>;
  *  using Ptr = Lct::Ptr;
