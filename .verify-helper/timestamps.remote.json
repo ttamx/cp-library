@@ -1,7 +1,7 @@
 {
 "verify/yosupo/convolution/bitwise_and_convolution.test.cpp": "2024-07-30 03:30:30 +0700",
 "verify/yosupo/convolution/bitwise_or_convolution.test.cpp": "2024-07-30 03:30:30 +0700",
-"verify/yosupo/convolution/bitwise_xor_convolution.test.cpp": "2024-07-30 03:30:30 +0700",
+"verify/yosupo/convolution/bitwise_xor_convolution.test.cpp": "2024-08-04 01:01:28 +0700",
 "verify/yosupo/convolution/gcd_convolution.test.cpp": "2024-07-30 03:30:30 +0700",
 "verify/yosupo/convolution/lcm_convolution.test.cpp": "2024-07-30 03:30:30 +0700",
 "verify/yosupo/data-structure/area_of_union_of_rectangles.test.cpp": "2024-07-29 18:44:45 +0700",
@@ -11,7 +11,7 @@
 "verify/yosupo/data-structure/point_add_range_sum.test.cpp": "2024-06-15 00:08:38 +0700",
 "verify/yosupo/data-structure/point_set_range_composite.test.cpp": "2024-07-29 18:44:45 +0700",
 "verify/yosupo/data-structure/range_affine_range_sum.test.cpp": "2024-07-29 18:56:36 +0700",
-"verify/yosupo/data-structure/range_affine_range_sum_lct.test.cpp": "2024-08-02 13:49:14 +0700",
+"verify/yosupo/data-structure/range_affine_range_sum_lct.test.cpp": "2024-08-04 01:01:28 +0700",
 "verify/yosupo/data-structure/range_reverse_range_sum.test.cpp": "2024-06-15 00:08:38 +0700",
 "verify/yosupo/data-structure/segment_add_get_min.test.cpp": "2024-06-15 00:08:38 +0700",
 "verify/yosupo/data-structure/segment_add_get_min_online.test.cpp": "2024-06-15 00:08:38 +0700",
