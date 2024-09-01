@@ -50,9 +50,9 @@ data:
   verifiedWith:
   - verify/yosupo/data-structure/point_set_range_composite.test.cpp
   - verify/yosupo/data-structure/vertex_set_path_composite.test.cpp
+  - verify/yosupo/data-structure/range_affine_range_sum_lct.test.cpp
   - verify/yosupo/data-structure/range_affine_range_sum.test.cpp
   - verify/yosupo/data-structure/dynamic_sequence_range_affine_range_sum.test.cpp
-  - verify/yosupo/data-structure/range_affine_range_sum_lct.test.cpp
 documentation_of: group/monoid/affine.hpp
 layout: document
 redirect_from:

@@ -99,7 +99,8 @@ data:
     \        if(k>d)return -1;\n        if(k>dep[u]-dep[w]){\n            k=d-k;\n\
     \            swap(u,v);\n        }\n        while(k>=dep[u]-dep[head[u]]+1){\n\
     \            k-=dep[u]-dep[head[u]]+1;\n            u=par[head[u]];\n        }\n\
-    \        return ord[tin[u]-k];\n    }\n};\n\n#line 2 \"group/monoid/affine.hpp\"\
+    \        return ord[tin[u]-k];\n    }\n    bool is_ancestor(int u,int v){\n  \
+    \      return tin[u]<=tin[v]&&tout[v]<=tout[u];\n    }\n};\n\n#line 2 \"group/monoid/affine.hpp\"\
     \n\n/**\n * Author: Teetat T.\n * Date: 2024-04-14\n * Description: Affine Transfomation\
     \ Monoid class.\n */\n\ntemplate<class T>\nstruct AffineMonoid{\n    using P =\
     \ pair<T,T>;\n    using value_type = P;\n    static constexpr P op(const P &x,const\
@@ -231,7 +232,7 @@ data:
   isVerificationFile: true
   path: verify/yosupo/data-structure/vertex_set_path_composite.test.cpp
   requiredBy: []
-  timestamp: '2024-07-29 18:44:45+07:00'
+  timestamp: '2024-09-02 00:35:52+07:00'
   verificationStatus: TEST_ACCEPTED
   verifiedWith: []
 documentation_of: verify/yosupo/data-structure/vertex_set_path_composite.test.cpp

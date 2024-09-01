@@ -13,6 +13,9 @@ data:
       path: convolution/lcm-convolution.hpp
       title: convolution/lcm-convolution.hpp
     - icon: ':heavy_check_mark:'
+      path: convolution/max-plus-convolution.hpp
+      title: convolution/max-plus-convolution.hpp
+    - icon: ':heavy_check_mark:'
       path: convolution/or-convolution.hpp
       title: convolution/or-convolution.hpp
     - icon: ':heavy_check_mark:'
@@ -243,6 +246,9 @@ data:
     - icon: ':heavy_check_mark:'
       path: verify/yosupo/convolution/lcm_convolution.test.cpp
       title: verify/yosupo/convolution/lcm_convolution.test.cpp
+    - icon: ':heavy_check_mark:'
+      path: verify/yosupo/convolution/min_plus_convolution_convex_arbitrary.test.cpp
+      title: verify/yosupo/convolution/min_plus_convolution_convex_arbitrary.test.cpp
   - name: verify/yosupo/data-structure
     pages:
     - icon: ':heavy_check_mark:'

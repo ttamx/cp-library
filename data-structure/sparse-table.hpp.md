@@ -48,9 +48,9 @@ data:
   timestamp: '2024-06-12 17:31:48+07:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
-  - verify/yosupo/data-structure/staticrmq.test.cpp
-  - verify/yosupo/string/suffixarray.test.cpp
   - verify/yosupo/string/number_of_substrings2.test.cpp
+  - verify/yosupo/string/suffixarray.test.cpp
+  - verify/yosupo/data-structure/staticrmq.test.cpp
 documentation_of: data-structure/sparse-table.hpp
 layout: document
 redirect_from:

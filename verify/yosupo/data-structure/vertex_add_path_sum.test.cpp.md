@@ -90,7 +90,8 @@ data:
     \        if(k>d)return -1;\n        if(k>dep[u]-dep[w]){\n            k=d-k;\n\
     \            swap(u,v);\n        }\n        while(k>=dep[u]-dep[head[u]]+1){\n\
     \            k-=dep[u]-dep[head[u]]+1;\n            u=par[head[u]];\n        }\n\
-    \        return ord[tin[u]-k];\n    }\n};\n\n#line 2 \"data-structure/fenwick-tree.hpp\"\
+    \        return ord[tin[u]-k];\n    }\n    bool is_ancestor(int u,int v){\n  \
+    \      return tin[u]<=tin[v]&&tout[v]<=tout[u];\n    }\n};\n\n#line 2 \"data-structure/fenwick-tree.hpp\"\
     \n\n/**\n * Author: Teetat T.\n * Date: 2024-01-15\n * Description: Fenwick /\
     \ Binary Indexed Tree\n */\n\ntemplate<class T>\nstruct Fenwick{\n    int n,logn;\n\
     \    vector<T> t;\n    Fenwick(){}\n    Fenwick(int _n){init(vector<T>(_n,T{}));}\n\
@@ -132,7 +133,7 @@ data:
   isVerificationFile: true
   path: verify/yosupo/data-structure/vertex_add_path_sum.test.cpp
   requiredBy: []
-  timestamp: '2024-06-22 18:46:46+07:00'
+  timestamp: '2024-09-02 00:35:52+07:00'
   verificationStatus: TEST_ACCEPTED
   verifiedWith: []
 documentation_of: verify/yosupo/data-structure/vertex_add_path_sum.test.cpp

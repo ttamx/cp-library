@@ -86,7 +86,8 @@ data:
     \        if(k>d)return -1;\n        if(k>dep[u]-dep[w]){\n            k=d-k;\n\
     \            swap(u,v);\n        }\n        while(k>=dep[u]-dep[head[u]]+1){\n\
     \            k-=dep[u]-dep[head[u]]+1;\n            u=par[head[u]];\n        }\n\
-    \        return ord[tin[u]-k];\n    }\n};\n\n#line 5 \"verify/yosupo/tree/lca.test.cpp\"\
+    \        return ord[tin[u]-k];\n    }\n    bool is_ancestor(int u,int v){\n  \
+    \      return tin[u]<=tin[v]&&tout[v]<=tout[u];\n    }\n};\n\n#line 5 \"verify/yosupo/tree/lca.test.cpp\"\
     \n\nint main(){\n    cin.tie(nullptr)->sync_with_stdio(false);\n    int n,q;\n\
     \    cin >> n >> q;\n    Graph g(n);\n    for(int i=1;i<n;i++){\n        int p;\n\
     \        cin >> p;\n        g.add_edge(i,p);\n    }\n    HLD hld(g);\n    while(q--){\n\
@@ -106,7 +107,7 @@ data:
   isVerificationFile: true
   path: verify/yosupo/tree/lca.test.cpp
   requiredBy: []
-  timestamp: '2024-06-22 18:46:46+07:00'
+  timestamp: '2024-09-02 00:35:52+07:00'
   verificationStatus: TEST_ACCEPTED
   verifiedWith: []
 documentation_of: verify/yosupo/tree/lca.test.cpp

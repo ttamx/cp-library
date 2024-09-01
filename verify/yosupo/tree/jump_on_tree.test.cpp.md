@@ -87,7 +87,8 @@ data:
     \        if(k>d)return -1;\n        if(k>dep[u]-dep[w]){\n            k=d-k;\n\
     \            swap(u,v);\n        }\n        while(k>=dep[u]-dep[head[u]]+1){\n\
     \            k-=dep[u]-dep[head[u]]+1;\n            u=par[head[u]];\n        }\n\
-    \        return ord[tin[u]-k];\n    }\n};\n\n#line 5 \"verify/yosupo/tree/jump_on_tree.test.cpp\"\
+    \        return ord[tin[u]-k];\n    }\n    bool is_ancestor(int u,int v){\n  \
+    \      return tin[u]<=tin[v]&&tout[v]<=tout[u];\n    }\n};\n\n#line 5 \"verify/yosupo/tree/jump_on_tree.test.cpp\"\
     \n\nint main(){\n    cin.tie(nullptr)->sync_with_stdio(false);\n    int n,q;\n\
     \    cin >> n >> q;\n    Graph g=read_tree(n,0);\n    HLD hld(g);\n    while(q--){\n\
     \        int u,v,k;\n        cin >> u >> v >> k;\n        cout << hld.jump(u,v,k)\
@@ -105,7 +106,7 @@ data:
   isVerificationFile: true
   path: verify/yosupo/tree/jump_on_tree.test.cpp
   requiredBy: []
-  timestamp: '2024-06-22 18:46:46+07:00'
+  timestamp: '2024-09-02 00:35:52+07:00'
   verificationStatus: TEST_ACCEPTED
   verifiedWith: []
 documentation_of: verify/yosupo/tree/jump_on_tree.test.cpp
