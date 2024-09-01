@@ -82,5 +82,8 @@ struct HLD{
         }
         return ord[tin[u]-k];
     }
+    bool is_ancestor(int u,int v){
+        return tin[u]<=tin[v]&&tout[v]<=tout[u];
+    }
 };
 
