@@ -91,6 +91,9 @@ data:
     path: verify/yosupo/graph/scc.test.cpp
     title: verify/yosupo/graph/scc.test.cpp
   - icon: ':heavy_check_mark:'
+    path: verify/yosupo/number-theory/sum_of_floor_of_linear.test.cpp
+    title: verify/yosupo/number-theory/sum_of_floor_of_linear.test.cpp
+  - icon: ':heavy_check_mark:'
     path: verify/yosupo/string/enumerate_palindromes.test.cpp
     title: verify/yosupo/string/enumerate_palindromes.test.cpp
   - icon: ':heavy_check_mark:'
@@ -229,6 +232,7 @@ data:
   - verify/yosupo/string/zalgorithm.test.cpp
   - verify/yosupo/string/suffixarray.test.cpp
   - verify/yosupo/graph/scc.test.cpp
+  - verify/yosupo/number-theory/sum_of_floor_of_linear.test.cpp
   - verify/yosupo/tree/jump_on_tree.test.cpp
   - verify/yosupo/tree/lca.test.cpp
   - verify/yosupo/convolution/lcm_convolution.test.cpp

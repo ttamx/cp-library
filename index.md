@@ -189,6 +189,11 @@ data:
     - icon: ':heavy_check_mark:'
       path: modular-arithmetic/montgomery-modint.hpp
       title: modular-arithmetic/montgomery-modint.hpp
+  - name: number-theory
+    pages:
+    - icon: ':heavy_check_mark:'
+      path: number-theory/floor-sum.hpp
+      title: number-theory/floor-sum.hpp
   - name: string
     pages:
     - icon: ':heavy_check_mark:'
@@ -318,7 +323,7 @@ data:
       title: verify/yosupo/graph/scc.test.cpp
   - name: verify/yosupo/number-theory
     pages:
-    - icon: ':x:'
+    - icon: ':heavy_check_mark:'
       path: verify/yosupo/number-theory/sum_of_floor_of_linear.test.cpp
       title: verify/yosupo/number-theory/sum_of_floor_of_linear.test.cpp
   - name: verify/yosupo/string
