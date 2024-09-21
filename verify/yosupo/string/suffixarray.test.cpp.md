@@ -45,8 +45,8 @@ data:
     \    using value_type = T;\n    static constexpr T op(const T &x,const T &y){return\
     \ min(x,y);}\n    static constexpr T unit(){return numeric_limits<T>::max();}\n\
     };\n\n#line 4 \"string/suffix-array.hpp\"\n\n/**\n * Author: Teetat T.\n * Date:\
-    \ 2024-06-14\n * Description: Suffix Automaton.\n */\n\ntemplate<class STR>\n\
-    struct SuffixArray{\n    int n;\n    vector<int> sa,isa,lcp;\n    SparseTable<MinMonoid<int>>\
+    \ 2024-06-14\n * Description: Suffix Array.\n */\n\ntemplate<class STR>\nstruct\
+    \ SuffixArray{\n    int n;\n    vector<int> sa,isa,lcp;\n    SparseTable<MinMonoid<int>>\
     \ st;\n    SuffixArray(){}\n    SuffixArray(const STR &s){init(s);}\n    void\
     \ init(const STR &s){\n        n=(int)s.size();\n        sa=isa=lcp=vector<int>(n+1);\n\
     \        sa[0]=n;\n        iota(sa.begin()+1,sa.end(),0);\n        sort(sa.begin()+1,sa.end(),[&](int\
@@ -75,7 +75,7 @@ data:
   isVerificationFile: true
   path: verify/yosupo/string/suffixarray.test.cpp
   requiredBy: []
-  timestamp: '2024-06-15 00:08:38+07:00'
+  timestamp: '2024-09-21 22:51:04+07:00'
   verificationStatus: TEST_ACCEPTED
   verifiedWith: []
 documentation_of: verify/yosupo/string/suffixarray.test.cpp
