@@ -12,11 +12,17 @@ data:
     path: group/monoid-action/max-count-add.hpp
     title: group/monoid-action/max-count-add.hpp
   - icon: ':warning:'
+    path: group/monoid-action/max-idx-add.hpp
+    title: group/monoid-action/max-idx-add.hpp
+  - icon: ':warning:'
     path: group/monoid-action/min-add.hpp
     title: group/monoid-action/min-add.hpp
   - icon: ':heavy_check_mark:'
     path: group/monoid-action/min-count-add.hpp
     title: group/monoid-action/min-count-add.hpp
+  - icon: ':warning:'
+    path: group/monoid-action/min-idx-add.hpp
+    title: group/monoid-action/min-idx-add.hpp
   _extendedVerifiedWith:
   - icon: ':heavy_check_mark:'
     path: verify/yosupo/data-structure/area_of_union_of_rectangles.test.cpp
@@ -43,16 +49,18 @@ data:
   isVerificationFile: false
   path: group/monoid/add.hpp
   requiredBy:
+  - group/monoid-action/max-idx-add.hpp
   - group/monoid-action/add-count-add.hpp
-  - group/monoid-action/min-add.hpp
-  - group/monoid-action/max-count-add.hpp
-  - group/monoid-action/max-add.hpp
   - group/monoid-action/min-count-add.hpp
+  - group/monoid-action/max-count-add.hpp
+  - group/monoid-action/min-add.hpp
+  - group/monoid-action/min-idx-add.hpp
+  - group/monoid-action/max-add.hpp
   timestamp: '2024-06-10 16:05:09+07:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
-  - verify/yosupo/data-structure/range_reverse_range_sum.test.cpp
   - verify/yosupo/data-structure/area_of_union_of_rectangles.test.cpp
+  - verify/yosupo/data-structure/range_reverse_range_sum.test.cpp
 documentation_of: group/monoid/add.hpp
 layout: document
 redirect_from:

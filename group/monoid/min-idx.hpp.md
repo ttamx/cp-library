@@ -1,7 +1,10 @@
 ---
 data:
   _extendedDependsOn: []
-  _extendedRequiredBy: []
+  _extendedRequiredBy:
+  - icon: ':warning:'
+    path: group/monoid-action/min-idx-add.hpp
+    title: group/monoid-action/min-idx-add.hpp
   _extendedVerifiedWith: []
   _isVerificationFailed: false
   _pathExtension: hpp
@@ -25,7 +28,8 @@ data:
   dependsOn: []
   isVerificationFile: false
   path: group/monoid/min-idx.hpp
-  requiredBy: []
+  requiredBy:
+  - group/monoid-action/min-idx-add.hpp
   timestamp: '2024-07-29 18:44:45+07:00'
   verificationStatus: LIBRARY_NO_TESTS
   verifiedWith: []

@@ -46,6 +46,9 @@ data:
     - icon: ':heavy_check_mark:'
       path: data-structure/convex/li-chao-tree.hpp
       title: data-structure/convex/li-chao-tree.hpp
+    - icon: ':warning:'
+      path: data-structure/convex/line-container.hpp
+      title: data-structure/convex/line-container.hpp
   - name: data-structure/link-cut-tree
     pages:
     - icon: ':heavy_check_mark:'
@@ -161,11 +164,17 @@ data:
       path: group/monoid-action/max-count-add.hpp
       title: group/monoid-action/max-count-add.hpp
     - icon: ':warning:'
+      path: group/monoid-action/max-idx-add.hpp
+      title: group/monoid-action/max-idx-add.hpp
+    - icon: ':warning:'
       path: group/monoid-action/min-add.hpp
       title: group/monoid-action/min-add.hpp
     - icon: ':heavy_check_mark:'
       path: group/monoid-action/min-count-add.hpp
       title: group/monoid-action/min-count-add.hpp
+    - icon: ':warning:'
+      path: group/monoid-action/min-idx-add.hpp
+      title: group/monoid-action/min-idx-add.hpp
     - icon: ':warning:'
       path: group/monoid-action/monoid-action-base.hpp
       title: group/monoid-action/monoid-action-base.hpp

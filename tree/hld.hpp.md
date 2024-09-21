@@ -90,11 +90,11 @@ data:
   timestamp: '2024-09-02 00:35:52+07:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
-  - verify/yosupo/tree/lca.test.cpp
-  - verify/yosupo/tree/jump_on_tree.test.cpp
   - verify/yosupo/data-structure/vertex_set_path_composite.test.cpp
   - verify/yosupo/data-structure/vertex_add_path_sum.test.cpp
   - verify/yosupo/data-structure/vertex_add_subtree_sum.test.cpp
+  - verify/yosupo/tree/jump_on_tree.test.cpp
+  - verify/yosupo/tree/lca.test.cpp
 documentation_of: tree/hld.hpp
 layout: document
 redirect_from:
