@@ -316,6 +316,11 @@ data:
     - icon: ':heavy_check_mark:'
       path: verify/yosupo/graph/scc.test.cpp
       title: verify/yosupo/graph/scc.test.cpp
+  - name: verify/yosupo/number-theory
+    pages:
+    - icon: ':x:'
+      path: verify/yosupo/number-theory/sum_of_floor_of_linear.test.cpp
+      title: verify/yosupo/number-theory/sum_of_floor_of_linear.test.cpp
   - name: verify/yosupo/string
     pages:
     - icon: ':heavy_check_mark:'
