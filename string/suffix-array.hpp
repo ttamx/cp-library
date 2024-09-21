@@ -5,7 +5,7 @@
 /**
  * Author: Teetat T.
  * Date: 2024-06-14
- * Description: Suffix Automaton.
+ * Description: Suffix Array.
  */
 
 template<class STR>
