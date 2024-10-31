@@ -17,5 +17,6 @@
 "verify/yosupo/data-structure/segment_add_get_min_online.test.cpp": "2024-10-31 23:18:18 +0700",
 "verify/yosupo/data-structure/set_xor_min.test.cpp": "2024-10-31 23:18:18 +0700",
 "verify/yosupo/data-structure/staticrmq.test.cpp": "2024-10-31 23:18:18 +0700",
-"verify/yosupo/data-structure/unionfind.test.cpp": "2024-10-31 23:18:18 +0700"
+"verify/yosupo/data-structure/unionfind.test.cpp": "2024-10-31 23:18:18 +0700",
+"verify/yosupo/data-structure/vertex_add_path_sum.test.cpp": "2024-10-31 23:18:18 +0700"
 }
