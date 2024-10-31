@@ -1,13 +1,13 @@
 ---
 data:
   _extendedDependsOn:
-  - icon: ':heavy_check_mark:'
+  - icon: ':question:'
     path: data-structure/sparse-table.hpp
     title: data-structure/sparse-table.hpp
-  - icon: ':heavy_check_mark:'
+  - icon: ':question:'
     path: group/monoid/min.hpp
     title: group/monoid/min.hpp
-  - icon: ':heavy_check_mark:'
+  - icon: ':question:'
     path: template.hpp
     title: template.hpp
   _extendedRequiredBy: []
@@ -22,12 +22,17 @@ data:
     - https://judge.yosupo.jp/problem/staticrmq
   bundledCode: "#line 1 \"verify/yosupo/data-structure/staticrmq.test.cpp\"\n#define\
     \ PROBLEM \"https://judge.yosupo.jp/problem/staticrmq\"\n#line 1 \"template.hpp\"\
-    \n#include<bits/stdc++.h>\n\nusing namespace std;\n\nusing ll = long long;\nusing\
-    \ db = long double;\nusing vi = vector<int>;\nusing vl = vector<ll>;\nusing vd\
-    \ = vector<db>;\nusing pii = pair<int,int>;\nusing pll = pair<ll,ll>;\nusing pdd\
-    \ = pair<db,db>;\nconst int INF=INT_MAX/2;\nconst int MOD=998244353;\nconst int\
-    \ MOD2=1000000007;\nconst ll LINF=LLONG_MAX/2;\nconst db DINF=numeric_limits<db>::infinity();\n\
-    const db EPS=1e-9;\nconst db PI=acos(db(-1));\n\n#line 2 \"data-structure/sparse-table.hpp\"\
+    \n#include<bits/stdc++.h>\n#include<ext/pb_ds/assoc_container.hpp>\n#include<ext/pb_ds/tree_policy.hpp>\n\
+    \nusing namespace std;\nusing namespace __gnu_pbds;\n\nusing ll = long long;\n\
+    using db = long double;\nusing vi = vector<int>;\nusing vl = vector<ll>;\nusing\
+    \ vd = vector<db>;\nusing pii = pair<int,int>;\nusing pll = pair<ll,ll>;\nusing\
+    \ pdd = pair<db,db>;\nconst int INF=INT_MAX/2;\nconst int MOD=998244353;\nconst\
+    \ int MOD2=1000000007;\nconst ll LINF=LLONG_MAX/2;\nconst db DINF=numeric_limits<db>::infinity();\n\
+    const db EPS=1e-9;\nconst db PI=acos(db(-1));\n\ntemplate<class T>\nusing ordered_set\
+    \ = tree<T,null_type,less<T>,rb_tree_tag,tree_order_statistics_node_update>;\n\
+    template<class T>\nusing ordered_multiset = tree<T,null_type,less_equal<T>,rb_tree_tag,tree_order_statistics_node_update>;\n\
+    \nmt19937 rng(chrono::steady_clock::now().time_since_epoch().count());\nmt19937_64\
+    \ rng64(chrono::steady_clock::now().time_since_epoch().count());\n#line 2 \"data-structure/sparse-table.hpp\"\
     \n\n/**\n * Author: Teetat T.\n * Date: 2024-06-12\n * Description: Sparse Table\
     \ class.\n */\n\ntemplate<class Monoid>\nstruct SparseTable{\n    using T = typename\
     \ Monoid::value_type;\n    int n;\n    vector<vector<T>> t;\n    SparseTable(){}\n\
@@ -59,7 +64,7 @@ data:
   isVerificationFile: true
   path: verify/yosupo/data-structure/staticrmq.test.cpp
   requiredBy: []
-  timestamp: '2024-06-15 00:08:38+07:00'
+  timestamp: '2024-10-31 23:18:18+07:00'
   verificationStatus: TEST_ACCEPTED
   verifiedWith: []
 documentation_of: verify/yosupo/data-structure/staticrmq.test.cpp

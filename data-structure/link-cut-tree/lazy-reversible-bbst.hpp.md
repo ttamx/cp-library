@@ -85,8 +85,8 @@ data:
   isVerificationFile: false
   path: data-structure/link-cut-tree/lazy-reversible-bbst.hpp
   requiredBy:
-  - data-structure/link-cut-tree/lazy-reversible-splay-tree.hpp
   - data-structure/link-cut-tree/lazy-link-cut-tree.hpp
+  - data-structure/link-cut-tree/lazy-reversible-splay-tree.hpp
   timestamp: '2024-06-10 16:05:09+07:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:

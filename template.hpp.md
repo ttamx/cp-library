@@ -42,7 +42,7 @@ data:
   - icon: ':heavy_check_mark:'
     path: verify/yosupo/data-structure/dynamic_sequence_range_affine_range_sum.test.cpp
     title: verify/yosupo/data-structure/dynamic_sequence_range_affine_range_sum.test.cpp
-  - icon: ':heavy_check_mark:'
+  - icon: ':x:'
     path: verify/yosupo/data-structure/line_add_get_min.test.cpp
     title: verify/yosupo/data-structure/line_add_get_min.test.cpp
   - icon: ':heavy_check_mark:'
@@ -78,53 +78,59 @@ data:
   - icon: ':heavy_check_mark:'
     path: verify/yosupo/data-structure/unionfind.test.cpp
     title: verify/yosupo/data-structure/unionfind.test.cpp
-  - icon: ':heavy_check_mark:'
+  - icon: ':x:'
     path: verify/yosupo/data-structure/vertex_add_path_sum.test.cpp
     title: verify/yosupo/data-structure/vertex_add_path_sum.test.cpp
-  - icon: ':heavy_check_mark:'
+  - icon: ':x:'
     path: verify/yosupo/data-structure/vertex_add_subtree_sum.test.cpp
     title: verify/yosupo/data-structure/vertex_add_subtree_sum.test.cpp
-  - icon: ':heavy_check_mark:'
+  - icon: ':x:'
     path: verify/yosupo/data-structure/vertex_set_path_composite.test.cpp
     title: verify/yosupo/data-structure/vertex_set_path_composite.test.cpp
-  - icon: ':heavy_check_mark:'
+  - icon: ':x:'
     path: verify/yosupo/graph/scc.test.cpp
     title: verify/yosupo/graph/scc.test.cpp
-  - icon: ':heavy_check_mark:'
+  - icon: ':x:'
     path: verify/yosupo/number-theory/sum_of_floor_of_linear.test.cpp
     title: verify/yosupo/number-theory/sum_of_floor_of_linear.test.cpp
-  - icon: ':heavy_check_mark:'
+  - icon: ':x:'
     path: verify/yosupo/string/enumerate_palindromes.test.cpp
     title: verify/yosupo/string/enumerate_palindromes.test.cpp
-  - icon: ':heavy_check_mark:'
+  - icon: ':x:'
     path: verify/yosupo/string/number_of_substrings.test.cpp
     title: verify/yosupo/string/number_of_substrings.test.cpp
-  - icon: ':heavy_check_mark:'
+  - icon: ':x:'
     path: verify/yosupo/string/number_of_substrings2.test.cpp
     title: verify/yosupo/string/number_of_substrings2.test.cpp
-  - icon: ':heavy_check_mark:'
+  - icon: ':x:'
     path: verify/yosupo/string/suffixarray.test.cpp
     title: verify/yosupo/string/suffixarray.test.cpp
-  - icon: ':heavy_check_mark:'
+  - icon: ':x:'
     path: verify/yosupo/string/zalgorithm.test.cpp
     title: verify/yosupo/string/zalgorithm.test.cpp
-  - icon: ':heavy_check_mark:'
+  - icon: ':x:'
     path: verify/yosupo/tree/jump_on_tree.test.cpp
     title: verify/yosupo/tree/jump_on_tree.test.cpp
-  - icon: ':heavy_check_mark:'
+  - icon: ':x:'
     path: verify/yosupo/tree/lca.test.cpp
     title: verify/yosupo/tree/lca.test.cpp
-  _isVerificationFailed: false
+  _isVerificationFailed: true
   _pathExtension: hpp
-  _verificationStatusIcon: ':heavy_check_mark:'
+  _verificationStatusIcon: ':question:'
   attributes:
     links: []
   bundledCode: '#line 1 "template.hpp"
 
     #include<bits/stdc++.h>
 
+    #include<ext/pb_ds/assoc_container.hpp>
+
+    #include<ext/pb_ds/tree_policy.hpp>
+
 
     using namespace std;
+
+    using namespace __gnu_pbds;
 
 
     using ll = long long;
@@ -157,12 +163,31 @@ data:
 
     const db PI=acos(db(-1));
 
+
+    template<class T>
+
+    using ordered_set = tree<T,null_type,less<T>,rb_tree_tag,tree_order_statistics_node_update>;
+
+    template<class T>
+
+    using ordered_multiset = tree<T,null_type,less_equal<T>,rb_tree_tag,tree_order_statistics_node_update>;
+
+
+    mt19937 rng(chrono::steady_clock::now().time_since_epoch().count());
+
+    mt19937_64 rng64(chrono::steady_clock::now().time_since_epoch().count());
 
     '
   code: '#include<bits/stdc++.h>
 
+    #include<ext/pb_ds/assoc_container.hpp>
+
+    #include<ext/pb_ds/tree_policy.hpp>
+
 
     using namespace std;
+
+    using namespace __gnu_pbds;
 
 
     using ll = long long;
@@ -196,51 +221,62 @@ data:
     const db PI=acos(db(-1));
 
 
-    '
+    template<class T>
+
+    using ordered_set = tree<T,null_type,less<T>,rb_tree_tag,tree_order_statistics_node_update>;
+
+    template<class T>
+
+    using ordered_multiset = tree<T,null_type,less_equal<T>,rb_tree_tag,tree_order_statistics_node_update>;
+
+
+    mt19937 rng(chrono::steady_clock::now().time_since_epoch().count());
+
+    mt19937_64 rng64(chrono::steady_clock::now().time_since_epoch().count());'
   dependsOn: []
   isVerificationFile: false
   path: template.hpp
   requiredBy:
-  - verify/atcoder/abc193_f.cpp
+  - verify/kattis/thekingofthenorth.cpp
+  - verify/spoj/FASTFLOW.cpp
   - verify/atcoder/abc259_g.cpp
   - verify/atcoder/abc347_g.cpp
-  - verify/spoj/FASTFLOW.cpp
-  - verify/kattis/thekingofthenorth.cpp
-  timestamp: '2024-06-15 00:08:38+07:00'
-  verificationStatus: LIBRARY_ALL_AC
+  - verify/atcoder/abc193_f.cpp
+  timestamp: '2024-10-31 23:18:18+07:00'
+  verificationStatus: LIBRARY_SOME_WA
   verifiedWith:
-  - verify/yosupo/data-structure/vertex_set_path_composite.test.cpp
-  - verify/yosupo/data-structure/vertex_add_path_sum.test.cpp
-  - verify/yosupo/data-structure/dynamic_sequence_range_affine_range_sum.test.cpp
   - verify/yosupo/data-structure/line_add_get_min.test.cpp
+  - verify/yosupo/data-structure/set_xor_min.test.cpp
   - verify/yosupo/data-structure/area_of_union_of_rectangles.test.cpp
+  - verify/yosupo/data-structure/segment_add_get_min.test.cpp
+  - verify/yosupo/data-structure/persistent_queue.test.cpp
+  - verify/yosupo/data-structure/point_add_range_sum.test.cpp
+  - verify/yosupo/data-structure/unionfind.test.cpp
+  - verify/yosupo/data-structure/vertex_set_path_composite.test.cpp
+  - verify/yosupo/data-structure/point_set_range_composite.test.cpp
+  - verify/yosupo/data-structure/dynamic_sequence_range_affine_range_sum.test.cpp
+  - verify/yosupo/data-structure/range_reverse_range_sum.test.cpp
+  - verify/yosupo/data-structure/staticrmq.test.cpp
+  - verify/yosupo/data-structure/range_affine_range_sum.test.cpp
+  - verify/yosupo/data-structure/vertex_add_path_sum.test.cpp
   - verify/yosupo/data-structure/segment_add_get_min_online.test.cpp
   - verify/yosupo/data-structure/vertex_add_subtree_sum.test.cpp
-  - verify/yosupo/data-structure/staticrmq.test.cpp
-  - verify/yosupo/data-structure/persistent_queue.test.cpp
   - verify/yosupo/data-structure/range_affine_range_sum_lct.test.cpp
-  - verify/yosupo/data-structure/unionfind.test.cpp
-  - verify/yosupo/data-structure/range_reverse_range_sum.test.cpp
-  - verify/yosupo/data-structure/point_set_range_composite.test.cpp
-  - verify/yosupo/data-structure/range_affine_range_sum.test.cpp
-  - verify/yosupo/data-structure/set_xor_min.test.cpp
-  - verify/yosupo/data-structure/segment_add_get_min.test.cpp
-  - verify/yosupo/data-structure/point_add_range_sum.test.cpp
-  - verify/yosupo/string/number_of_substrings2.test.cpp
-  - verify/yosupo/string/enumerate_palindromes.test.cpp
-  - verify/yosupo/string/number_of_substrings.test.cpp
-  - verify/yosupo/string/zalgorithm.test.cpp
-  - verify/yosupo/string/suffixarray.test.cpp
-  - verify/yosupo/graph/scc.test.cpp
   - verify/yosupo/number-theory/sum_of_floor_of_linear.test.cpp
-  - verify/yosupo/tree/jump_on_tree.test.cpp
-  - verify/yosupo/tree/lca.test.cpp
-  - verify/yosupo/convolution/lcm_convolution.test.cpp
   - verify/yosupo/convolution/bitwise_or_convolution.test.cpp
-  - verify/yosupo/convolution/min_plus_convolution_convex_arbitrary.test.cpp
+  - verify/yosupo/convolution/bitwise_and_convolution.test.cpp
   - verify/yosupo/convolution/bitwise_xor_convolution.test.cpp
   - verify/yosupo/convolution/gcd_convolution.test.cpp
-  - verify/yosupo/convolution/bitwise_and_convolution.test.cpp
+  - verify/yosupo/convolution/lcm_convolution.test.cpp
+  - verify/yosupo/convolution/min_plus_convolution_convex_arbitrary.test.cpp
+  - verify/yosupo/string/number_of_substrings2.test.cpp
+  - verify/yosupo/string/zalgorithm.test.cpp
+  - verify/yosupo/string/number_of_substrings.test.cpp
+  - verify/yosupo/string/suffixarray.test.cpp
+  - verify/yosupo/string/enumerate_palindromes.test.cpp
+  - verify/yosupo/graph/scc.test.cpp
+  - verify/yosupo/tree/jump_on_tree.test.cpp
+  - verify/yosupo/tree/lca.test.cpp
 documentation_of: template.hpp
 layout: document
 redirect_from:

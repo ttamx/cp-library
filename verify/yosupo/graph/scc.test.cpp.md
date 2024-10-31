@@ -1,35 +1,40 @@
 ---
 data:
   _extendedDependsOn:
-  - icon: ':heavy_check_mark:'
+  - icon: ':x:'
     path: graph/graph-base.hpp
     title: graph/graph-base.hpp
-  - icon: ':heavy_check_mark:'
+  - icon: ':x:'
     path: graph/strongly-connected-component.hpp
     title: graph/strongly-connected-component.hpp
-  - icon: ':heavy_check_mark:'
+  - icon: ':question:'
     path: template.hpp
     title: template.hpp
   _extendedRequiredBy: []
   _extendedVerifiedWith: []
-  _isVerificationFailed: false
+  _isVerificationFailed: true
   _pathExtension: cpp
-  _verificationStatusIcon: ':heavy_check_mark:'
+  _verificationStatusIcon: ':x:'
   attributes:
     '*NOT_SPECIAL_COMMENTS*': ''
     PROBLEM: https://judge.yosupo.jp/problem/scc
     links:
     - https://judge.yosupo.jp/problem/scc
   bundledCode: "#line 1 \"verify/yosupo/graph/scc.test.cpp\"\n#define PROBLEM \"https://judge.yosupo.jp/problem/scc\"\
-    \n#line 1 \"template.hpp\"\n#include<bits/stdc++.h>\n\nusing namespace std;\n\n\
-    using ll = long long;\nusing db = long double;\nusing vi = vector<int>;\nusing\
+    \n#line 1 \"template.hpp\"\n#include<bits/stdc++.h>\n#include<ext/pb_ds/assoc_container.hpp>\n\
+    #include<ext/pb_ds/tree_policy.hpp>\n\nusing namespace std;\nusing namespace __gnu_pbds;\n\
+    \nusing ll = long long;\nusing db = long double;\nusing vi = vector<int>;\nusing\
     \ vl = vector<ll>;\nusing vd = vector<db>;\nusing pii = pair<int,int>;\nusing\
     \ pll = pair<ll,ll>;\nusing pdd = pair<db,db>;\nconst int INF=INT_MAX/2;\nconst\
     \ int MOD=998244353;\nconst int MOD2=1000000007;\nconst ll LINF=LLONG_MAX/2;\n\
     const db DINF=numeric_limits<db>::infinity();\nconst db EPS=1e-9;\nconst db PI=acos(db(-1));\n\
-    \n#line 2 \"graph/graph-base.hpp\"\n\n/**\n * Author: Teetat T.\n * Date: 2024-06-15\n\
-    \ * Description: Graph Base\n */\n\ntemplate<class T>\nstruct Edge{\n    int from,to,id;\n\
-    \    T cost;\n    Edge(int _from,int _to,T _cost,int _id):from(_from),to(_to),cost(_cost),id(_id){}\n\
+    \ntemplate<class T>\nusing ordered_set = tree<T,null_type,less<T>,rb_tree_tag,tree_order_statistics_node_update>;\n\
+    template<class T>\nusing ordered_multiset = tree<T,null_type,less_equal<T>,rb_tree_tag,tree_order_statistics_node_update>;\n\
+    \nmt19937 rng(chrono::steady_clock::now().time_since_epoch().count());\nmt19937_64\
+    \ rng64(chrono::steady_clock::now().time_since_epoch().count());\n#line 2 \"graph/graph-base.hpp\"\
+    \n\n/**\n * Author: Teetat T.\n * Date: 2024-06-15\n * Description: Graph Base\n\
+    \ */\n\ntemplate<class T>\nstruct Edge{\n    int from,to,id;\n    T cost;\n  \
+    \  Edge(int _from,int _to,T _cost,int _id):from(_from),to(_to),cost(_cost),id(_id){}\n\
     \    operator int()const{return to;}\n};\n\ntemplate<class T=void,bool directed=false>\n\
     struct Graph{\n    static constexpr bool is_directed=directed;\n    static constexpr\
     \ bool is_weighted=!is_same<T,void>::value;\n    using cost_type = std::conditional_t<is_weighted,T,int>;\n\
@@ -93,8 +98,8 @@ data:
   isVerificationFile: true
   path: verify/yosupo/graph/scc.test.cpp
   requiredBy: []
-  timestamp: '2024-07-29 18:44:45+07:00'
-  verificationStatus: TEST_ACCEPTED
+  timestamp: '2024-10-31 23:18:18+07:00'
+  verificationStatus: TEST_WRONG_ANSWER
   verifiedWith: []
 documentation_of: verify/yosupo/graph/scc.test.cpp
 layout: document

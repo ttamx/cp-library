@@ -7,7 +7,7 @@ data:
   - icon: ':warning:'
     path: flow/dinic.hpp
     title: flow/dinic.hpp
-  - icon: ':heavy_check_mark:'
+  - icon: ':question:'
     path: template.hpp
     title: template.hpp
   _extendedRequiredBy: []
@@ -19,30 +19,34 @@ data:
     links:
     - https://atcoder.jp/contests/abc193/tasks/abc193_f
   bundledCode: "#line 1 \"verify/atcoder/abc193_f.cpp\"\n#define PROBLEM \"https://atcoder.jp/contests/abc193/tasks/abc193_f\"\
-    \n#line 1 \"template.hpp\"\n#include<bits/stdc++.h>\n\nusing namespace std;\n\n\
-    using ll = long long;\nusing db = long double;\nusing vi = vector<int>;\nusing\
+    \n#line 1 \"template.hpp\"\n#include<bits/stdc++.h>\n#include<ext/pb_ds/assoc_container.hpp>\n\
+    #include<ext/pb_ds/tree_policy.hpp>\n\nusing namespace std;\nusing namespace __gnu_pbds;\n\
+    \nusing ll = long long;\nusing db = long double;\nusing vi = vector<int>;\nusing\
     \ vl = vector<ll>;\nusing vd = vector<db>;\nusing pii = pair<int,int>;\nusing\
     \ pll = pair<ll,ll>;\nusing pdd = pair<db,db>;\nconst int INF=INT_MAX/2;\nconst\
     \ int MOD=998244353;\nconst int MOD2=1000000007;\nconst ll LINF=LLONG_MAX/2;\n\
     const db DINF=numeric_limits<db>::infinity();\nconst db EPS=1e-9;\nconst db PI=acos(db(-1));\n\
-    \n#line 2 \"flow/dinic.hpp\"\n\n/**\n * Author: Teetat T.\n * Date: 2024-07-15\n\
-    \ * Description: Dinic's Algorithm for finding the maximum flow.\n * Time: O(V\
-    \ E \\log U) where U is the maximum flow.\n */\n\ntemplate<class T,bool directed=true,bool\
-    \ scaling=true>\nstruct Dinic{\n    static constexpr T INF=numeric_limits<T>::max()/2;\n\
-    \    struct Edge{\n        int to;\n        T flow,cap;\n        Edge(int _to,T\
-    \ _cap):to(_to),flow(0),cap(_cap){}\n        T remain(){return cap-flow;}\n  \
-    \  };\n    int n,s,t;\n    T U;\n    vector<Edge> e;\n    vector<vector<int>>\
-    \ g;\n    vector<int> ptr,lv;\n    bool calculated;\n    T max_flow;\n    Dinic(){}\n\
-    \    Dinic(int n,int s,int t){init(n,s,t);}\n    void init(int _n,int _s,int _t){\n\
-    \        n=_n,s=_s,t=_t;\n        U=0;\n        e.clear();\n        g.assign(n,{});\n\
-    \        calculated=false;\n    }\n    void add_edge(int from,int to,T cap){\n\
-    \        assert(0<=from&&from<n&&0<=to&&to<n);\n        g[from].emplace_back(e.size());\n\
-    \        e.emplace_back(to,cap);\n        g[to].emplace_back(e.size());\n    \
-    \    e.emplace_back(from,directed?0:cap);\n        U=max(U,cap);\n    }\n    bool\
-    \ bfs(T scale){\n        lv.assign(n,-1);\n        vector<int> q{s};\n       \
-    \ lv[s]=0;\n        for(int i=0;i<(int)q.size();i++){\n            int u=q[i];\n\
-    \            for(int j:g[u]){\n                int v=e[j].to;\n              \
-    \  if(lv[v]==-1&&e[j].remain()>=scale){\n                    q.emplace_back(v);\n\
+    \ntemplate<class T>\nusing ordered_set = tree<T,null_type,less<T>,rb_tree_tag,tree_order_statistics_node_update>;\n\
+    template<class T>\nusing ordered_multiset = tree<T,null_type,less_equal<T>,rb_tree_tag,tree_order_statistics_node_update>;\n\
+    \nmt19937 rng(chrono::steady_clock::now().time_since_epoch().count());\nmt19937_64\
+    \ rng64(chrono::steady_clock::now().time_since_epoch().count());\n#line 2 \"flow/dinic.hpp\"\
+    \n\n/**\n * Author: Teetat T.\n * Date: 2024-07-15\n * Description: Dinic's Algorithm\
+    \ for finding the maximum flow.\n * Time: O(V E \\log U) where U is the maximum\
+    \ flow.\n */\n\ntemplate<class T,bool directed=true,bool scaling=true>\nstruct\
+    \ Dinic{\n    static constexpr T INF=numeric_limits<T>::max()/2;\n    struct Edge{\n\
+    \        int to;\n        T flow,cap;\n        Edge(int _to,T _cap):to(_to),flow(0),cap(_cap){}\n\
+    \        T remain(){return cap-flow;}\n    };\n    int n,s,t;\n    T U;\n    vector<Edge>\
+    \ e;\n    vector<vector<int>> g;\n    vector<int> ptr,lv;\n    bool calculated;\n\
+    \    T max_flow;\n    Dinic(){}\n    Dinic(int n,int s,int t){init(n,s,t);}\n\
+    \    void init(int _n,int _s,int _t){\n        n=_n,s=_s,t=_t;\n        U=0;\n\
+    \        e.clear();\n        g.assign(n,{});\n        calculated=false;\n    }\n\
+    \    void add_edge(int from,int to,T cap){\n        assert(0<=from&&from<n&&0<=to&&to<n);\n\
+    \        g[from].emplace_back(e.size());\n        e.emplace_back(to,cap);\n  \
+    \      g[to].emplace_back(e.size());\n        e.emplace_back(from,directed?0:cap);\n\
+    \        U=max(U,cap);\n    }\n    bool bfs(T scale){\n        lv.assign(n,-1);\n\
+    \        vector<int> q{s};\n        lv[s]=0;\n        for(int i=0;i<(int)q.size();i++){\n\
+    \            int u=q[i];\n            for(int j:g[u]){\n                int v=e[j].to;\n\
+    \                if(lv[v]==-1&&e[j].remain()>=scale){\n                    q.emplace_back(v);\n\
     \                    lv[v]=lv[u]+1;\n                }\n            }\n      \
     \  }\n        return lv[t]!=-1;\n    }\n    T dfs(int u,int t,T f){\n        if(u==t||f==0)return\
     \ f;\n        for(int &i=ptr[u];i<(int)g[u].size();i++){\n            int j=g[u][i];\n\
@@ -127,7 +131,7 @@ data:
   isVerificationFile: false
   path: verify/atcoder/abc193_f.cpp
   requiredBy: []
-  timestamp: '2024-07-29 18:44:45+07:00'
+  timestamp: '2024-10-31 23:18:18+07:00'
   verificationStatus: LIBRARY_NO_TESTS
   verifiedWith: []
 documentation_of: verify/atcoder/abc193_f.cpp

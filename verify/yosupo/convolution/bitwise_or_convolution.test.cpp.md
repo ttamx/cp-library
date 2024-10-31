@@ -4,10 +4,10 @@ data:
   - icon: ':heavy_check_mark:'
     path: convolution/or-convolution.hpp
     title: convolution/or-convolution.hpp
-  - icon: ':heavy_check_mark:'
+  - icon: ':question:'
     path: modular-arithmetic/montgomery-modint.hpp
     title: modular-arithmetic/montgomery-modint.hpp
-  - icon: ':heavy_check_mark:'
+  - icon: ':question:'
     path: template.hpp
     title: template.hpp
   _extendedRequiredBy: []
@@ -22,26 +22,30 @@ data:
     - https://judge.yosupo.jp/problem/bitwise_and_convolution
   bundledCode: "#line 1 \"verify/yosupo/convolution/bitwise_or_convolution.test.cpp\"\
     \n#define PROBLEM \"https://judge.yosupo.jp/problem/bitwise_and_convolution\"\n\
-    #line 1 \"template.hpp\"\n#include<bits/stdc++.h>\n\nusing namespace std;\n\n\
-    using ll = long long;\nusing db = long double;\nusing vi = vector<int>;\nusing\
+    #line 1 \"template.hpp\"\n#include<bits/stdc++.h>\n#include<ext/pb_ds/assoc_container.hpp>\n\
+    #include<ext/pb_ds/tree_policy.hpp>\n\nusing namespace std;\nusing namespace __gnu_pbds;\n\
+    \nusing ll = long long;\nusing db = long double;\nusing vi = vector<int>;\nusing\
     \ vl = vector<ll>;\nusing vd = vector<db>;\nusing pii = pair<int,int>;\nusing\
     \ pll = pair<ll,ll>;\nusing pdd = pair<db,db>;\nconst int INF=INT_MAX/2;\nconst\
     \ int MOD=998244353;\nconst int MOD2=1000000007;\nconst ll LINF=LLONG_MAX/2;\n\
     const db DINF=numeric_limits<db>::infinity();\nconst db EPS=1e-9;\nconst db PI=acos(db(-1));\n\
-    \n#line 2 \"modular-arithmetic/montgomery-modint.hpp\"\n\n/**\n * Author: Teetat\
-    \ T.\n * Date: 2024-03-17\n * Description: modular arithmetic operators using\
-    \ Montgomery space\n */\n\ntemplate<uint32_t mod,uint32_t root=0>\nstruct MontgomeryModInt{\n\
-    \    using mint = MontgomeryModInt;\n    using i32 = int32_t;\n    using u32 =\
-    \ uint32_t;\n    using u64 = uint64_t;\n\n    static constexpr u32 get_r(){\n\
-    \        u32 res=1;\n        for(i32 i=0;i<5;i++)res*=2-mod*res;\n        return\
-    \ res;\n    }\n\n    static const u32 r=get_r();\n    static const u32 n2=-u64(mod)%mod;\n\
-    \    static_assert(mod<(1<<30));\n    static_assert((mod&1)==1);\n    static_assert(r*mod==1);\n\
-    \n    u32 x;\n\n    constexpr MontgomeryModInt():x(0){}\n    constexpr MontgomeryModInt(const\
-    \ int64_t &v):x(reduce(u64(v%mod+mod)*n2)){}\n\n    static constexpr u32 get_mod(){return\
-    \ mod;}\n    static constexpr mint get_root(){return mint(root);}\n    explicit\
-    \ constexpr operator int64_t()const{return val();}\n\n    static constexpr u32\
-    \ reduce(const u64 &v){\n        return (v+u64(u32(v)*u32(-r))*mod)>>32;\n   \
-    \ }\n\n    constexpr u32 val()const{\n        u32 res=reduce(x);\n        return\
+    \ntemplate<class T>\nusing ordered_set = tree<T,null_type,less<T>,rb_tree_tag,tree_order_statistics_node_update>;\n\
+    template<class T>\nusing ordered_multiset = tree<T,null_type,less_equal<T>,rb_tree_tag,tree_order_statistics_node_update>;\n\
+    \nmt19937 rng(chrono::steady_clock::now().time_since_epoch().count());\nmt19937_64\
+    \ rng64(chrono::steady_clock::now().time_since_epoch().count());\n#line 2 \"modular-arithmetic/montgomery-modint.hpp\"\
+    \n\n/**\n * Author: Teetat T.\n * Date: 2024-03-17\n * Description: modular arithmetic\
+    \ operators using Montgomery space\n */\n\ntemplate<uint32_t mod,uint32_t root=0>\n\
+    struct MontgomeryModInt{\n    using mint = MontgomeryModInt;\n    using i32 =\
+    \ int32_t;\n    using u32 = uint32_t;\n    using u64 = uint64_t;\n\n    static\
+    \ constexpr u32 get_r(){\n        u32 res=1;\n        for(i32 i=0;i<5;i++)res*=2-mod*res;\n\
+    \        return res;\n    }\n\n    static const u32 r=get_r();\n    static const\
+    \ u32 n2=-u64(mod)%mod;\n    static_assert(mod<(1<<30));\n    static_assert((mod&1)==1);\n\
+    \    static_assert(r*mod==1);\n\n    u32 x;\n\n    constexpr MontgomeryModInt():x(0){}\n\
+    \    constexpr MontgomeryModInt(const int64_t &v):x(reduce(u64(v%mod+mod)*n2)){}\n\
+    \n    static constexpr u32 get_mod(){return mod;}\n    static constexpr mint get_root(){return\
+    \ mint(root);}\n    explicit constexpr operator int64_t()const{return val();}\n\
+    \n    static constexpr u32 reduce(const u64 &v){\n        return (v+u64(u32(v)*u32(-r))*mod)>>32;\n\
+    \    }\n\n    constexpr u32 val()const{\n        u32 res=reduce(x);\n        return\
     \ res>=mod?res-mod:res;\n    }\n\n    constexpr mint inv()const{\n        int\
     \ a=val(),b=mod,u=1,v=0,q=0;\n        while(b>0){\n            q=a/b;\n      \
     \      a-=q*b;\n            u-=q*v;\n            swap(a,b);\n            swap(u,v);\n\
@@ -104,7 +108,7 @@ data:
   isVerificationFile: true
   path: verify/yosupo/convolution/bitwise_or_convolution.test.cpp
   requiredBy: []
-  timestamp: '2024-07-30 03:30:30+07:00'
+  timestamp: '2024-10-31 23:18:18+07:00'
   verificationStatus: TEST_ACCEPTED
   verifiedWith: []
 documentation_of: verify/yosupo/convolution/bitwise_or_convolution.test.cpp

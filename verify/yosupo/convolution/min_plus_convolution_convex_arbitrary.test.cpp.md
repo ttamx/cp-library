@@ -4,7 +4,7 @@ data:
   - icon: ':heavy_check_mark:'
     path: convolution/max-plus-convolution.hpp
     title: convolution/max-plus-convolution.hpp
-  - icon: ':heavy_check_mark:'
+  - icon: ':question:'
     path: template.hpp
     title: template.hpp
   _extendedRequiredBy: []
@@ -19,30 +19,35 @@ data:
     - https://judge.yosupo.jp/problem/min_plus_convolution_convex_arbitrary
   bundledCode: "#line 1 \"verify/yosupo/convolution/min_plus_convolution_convex_arbitrary.test.cpp\"\
     \n#define PROBLEM \"https://judge.yosupo.jp/problem/min_plus_convolution_convex_arbitrary\"\
-    \n#line 1 \"template.hpp\"\n#include<bits/stdc++.h>\n\nusing namespace std;\n\n\
-    using ll = long long;\nusing db = long double;\nusing vi = vector<int>;\nusing\
+    \n#line 1 \"template.hpp\"\n#include<bits/stdc++.h>\n#include<ext/pb_ds/assoc_container.hpp>\n\
+    #include<ext/pb_ds/tree_policy.hpp>\n\nusing namespace std;\nusing namespace __gnu_pbds;\n\
+    \nusing ll = long long;\nusing db = long double;\nusing vi = vector<int>;\nusing\
     \ vl = vector<ll>;\nusing vd = vector<db>;\nusing pii = pair<int,int>;\nusing\
     \ pll = pair<ll,ll>;\nusing pdd = pair<db,db>;\nconst int INF=INT_MAX/2;\nconst\
     \ int MOD=998244353;\nconst int MOD2=1000000007;\nconst ll LINF=LLONG_MAX/2;\n\
     const db DINF=numeric_limits<db>::infinity();\nconst db EPS=1e-9;\nconst db PI=acos(db(-1));\n\
-    \n#line 2 \"convolution/max-plus-convolution.hpp\"\n\n/**\n * Author: Teetat T.\n\
-    \ * Date: 2024-09-01\n * Description: Max Plus Convolution. Find $C[k] = max_{i+j=k}\\\
-    {A[i] + B[j]\\}$.\n * Time: $O(N)$.\n */\n\n// SMAWCK algorithm for finding row-wise\
-    \ maxima.\n// f(i,j,k) checks if M[i][j] <= M[i][k].\n// f(i,j,k) checks if M[i][k]\
-    \ is at least as good as M[i][j].\n// higher is better.\ntemplate<class F>\nvector<int>\
-    \ smawck(const F &f,const vector<int> &rows,const vector<int> &cols){\n    int\
-    \ n=(int)rows.size(),m=(int)cols.size();\n    if(max(n,m)<=2){\n        vector<int>\
-    \ ans(n,-1);\n        for(int i=0;i<n;i++){\n            for(int j:cols){\n  \
-    \              if(ans[i]==-1||f(rows[i],ans[i],j)){\n                    ans[i]=j;\n\
-    \                }\n            }\n        }\n        return ans;\n    }\n   \
-    \ if(n<m){\n        // reduce\n        vector<int> st;\n        for(int j:cols){\n\
-    \            while(true){\n                if(st.empty()){\n                 \
-    \   st.emplace_back(j);\n                    break;\n                }else if(f(rows[(int)st.size()-1],st.back(),j)){\n\
-    \                    st.pop_back();\n                }else if(st.size()<n){\n\
+    \ntemplate<class T>\nusing ordered_set = tree<T,null_type,less<T>,rb_tree_tag,tree_order_statistics_node_update>;\n\
+    template<class T>\nusing ordered_multiset = tree<T,null_type,less_equal<T>,rb_tree_tag,tree_order_statistics_node_update>;\n\
+    \nmt19937 rng(chrono::steady_clock::now().time_since_epoch().count());\nmt19937_64\
+    \ rng64(chrono::steady_clock::now().time_since_epoch().count());\n#line 2 \"convolution/max-plus-convolution.hpp\"\
+    \n\n/**\n * Author: Teetat T.\n * Date: 2024-09-01\n * Description: Max Plus Convolution.\
+    \ Find $C[k] = max_{i+j=k}\\{A[i] + B[j]\\}$.\n * Time: $O(N)$.\n */\n\n// SMAWCK\
+    \ algorithm for finding row-wise maxima.\n// f(i,j,k) checks if M[i][j] <= M[i][k].\n\
+    // f(i,j,k) checks if M[i][k] is at least as good as M[i][j].\n// higher is better.\n\
+    template<class F>\nvector<int> smawck(const F &f,const vector<int> &rows,const\
+    \ vector<int> &cols){\n    int n=(int)rows.size(),m=(int)cols.size();\n    if(max(n,m)<=2){\n\
+    \        vector<int> ans(n,-1);\n        for(int i=0;i<n;i++){\n            for(int\
+    \ j:cols){\n                if(ans[i]==-1||f(rows[i],ans[i],j)){\n           \
+    \         ans[i]=j;\n                }\n            }\n        }\n        return\
+    \ ans;\n    }\n    if(n<m){\n        // reduce\n        vector<int> st;\n    \
+    \    for(int j:cols){\n            while(true){\n                if(st.empty()){\n\
     \                    st.emplace_back(j);\n                    break;\n       \
-    \         }else{\n                    break;\n                }\n            }\n\
-    \        }\n        return smawck(f,rows,st);\n    }   \n    vector<int> ans(n,-1);\n\
-    \    vector<int> new_rows;\n    for(int i=1;i<n;i+=2){\n        new_rows.emplace_back(rows[i]);\n\
+    \         }else if(f(rows[(int)st.size()-1],st.back(),j)){\n                 \
+    \   st.pop_back();\n                }else if(st.size()<n){\n                 \
+    \   st.emplace_back(j);\n                    break;\n                }else{\n\
+    \                    break;\n                }\n            }\n        }\n   \
+    \     return smawck(f,rows,st);\n    }   \n    vector<int> ans(n,-1);\n    vector<int>\
+    \ new_rows;\n    for(int i=1;i<n;i+=2){\n        new_rows.emplace_back(rows[i]);\n\
     \    }\n    auto res=smawck(f,new_rows,cols);\n    for(int i=0;i<new_rows.size();i++){\n\
     \        ans[2*i+1]=res[i];\n    }\n    for(int i=0,l=0,r=0;i<n;i+=2){\n     \
     \   if(i+1==n)r=m;\n        while(r<m&&cols[r]<=ans[i+1])r++;\n        ans[i]=cols[l++];\n\
@@ -77,7 +82,7 @@ data:
   isVerificationFile: true
   path: verify/yosupo/convolution/min_plus_convolution_convex_arbitrary.test.cpp
   requiredBy: []
-  timestamp: '2024-09-02 00:35:52+07:00'
+  timestamp: '2024-10-31 23:18:18+07:00'
   verificationStatus: TEST_ACCEPTED
   verifiedWith: []
 documentation_of: verify/yosupo/convolution/min_plus_convolution_convex_arbitrary.test.cpp

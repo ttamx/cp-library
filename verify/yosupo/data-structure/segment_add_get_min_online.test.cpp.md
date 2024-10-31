@@ -4,7 +4,7 @@ data:
   - icon: ':heavy_check_mark:'
     path: data-structure/convex/dynamic-li-chao-tree.hpp
     title: data-structure/convex/dynamic-li-chao-tree.hpp
-  - icon: ':heavy_check_mark:'
+  - icon: ':question:'
     path: template.hpp
     title: template.hpp
   _extendedRequiredBy: []
@@ -19,18 +19,23 @@ data:
     - https://judge.yosupo.jp/problem/segment_add_get_min
   bundledCode: "#line 1 \"verify/yosupo/data-structure/segment_add_get_min_online.test.cpp\"\
     \n#define PROBLEM \"https://judge.yosupo.jp/problem/segment_add_get_min\"\n#line\
-    \ 1 \"template.hpp\"\n#include<bits/stdc++.h>\n\nusing namespace std;\n\nusing\
-    \ ll = long long;\nusing db = long double;\nusing vi = vector<int>;\nusing vl\
-    \ = vector<ll>;\nusing vd = vector<db>;\nusing pii = pair<int,int>;\nusing pll\
-    \ = pair<ll,ll>;\nusing pdd = pair<db,db>;\nconst int INF=INT_MAX/2;\nconst int\
-    \ MOD=998244353;\nconst int MOD2=1000000007;\nconst ll LINF=LLONG_MAX/2;\nconst\
-    \ db DINF=numeric_limits<db>::infinity();\nconst db EPS=1e-9;\nconst db PI=acos(db(-1));\n\
-    \n#line 2 \"data-structure/convex/dynamic-li-chao-tree.hpp\"\n\n/**\n * Author:\
-    \ Teetat T.\n * Date: 2024-06-12\n * Description: Dynamic Li-Chao Tree (minimize).\n\
-    \ */\n\ntemplate<class T>\nstruct DynamicLiChaoTree{\n    static const T INF=numeric_limits<T>::max()/2;\n\
-    \    struct Line{\n        T m,c;\n        Line(T _m,T _c):m(_m),c(_c){}\n   \
-    \     inline T eval(T x)const{return m*x+c;}\n    };\n    struct Node;\n    using\
-    \ Ptr = Node*;\n    struct Node{\n        Line v;\n        Ptr l,r;\n        Node():v(0,INF),l(nullptr),r(nullptr){}\n\
+    \ 1 \"template.hpp\"\n#include<bits/stdc++.h>\n#include<ext/pb_ds/assoc_container.hpp>\n\
+    #include<ext/pb_ds/tree_policy.hpp>\n\nusing namespace std;\nusing namespace __gnu_pbds;\n\
+    \nusing ll = long long;\nusing db = long double;\nusing vi = vector<int>;\nusing\
+    \ vl = vector<ll>;\nusing vd = vector<db>;\nusing pii = pair<int,int>;\nusing\
+    \ pll = pair<ll,ll>;\nusing pdd = pair<db,db>;\nconst int INF=INT_MAX/2;\nconst\
+    \ int MOD=998244353;\nconst int MOD2=1000000007;\nconst ll LINF=LLONG_MAX/2;\n\
+    const db DINF=numeric_limits<db>::infinity();\nconst db EPS=1e-9;\nconst db PI=acos(db(-1));\n\
+    \ntemplate<class T>\nusing ordered_set = tree<T,null_type,less<T>,rb_tree_tag,tree_order_statistics_node_update>;\n\
+    template<class T>\nusing ordered_multiset = tree<T,null_type,less_equal<T>,rb_tree_tag,tree_order_statistics_node_update>;\n\
+    \nmt19937 rng(chrono::steady_clock::now().time_since_epoch().count());\nmt19937_64\
+    \ rng64(chrono::steady_clock::now().time_since_epoch().count());\n#line 2 \"data-structure/convex/dynamic-li-chao-tree.hpp\"\
+    \n\n/**\n * Author: Teetat T.\n * Date: 2024-06-12\n * Description: Dynamic Li-Chao\
+    \ Tree (minimize).\n */\n\ntemplate<class T>\nstruct DynamicLiChaoTree{\n    static\
+    \ const T INF=numeric_limits<T>::max()/2;\n    struct Line{\n        T m,c;\n\
+    \        Line(T _m,T _c):m(_m),c(_c){}\n        inline T eval(T x)const{return\
+    \ m*x+c;}\n    };\n    struct Node;\n    using Ptr = Node*;\n    struct Node{\n\
+    \        Line v;\n        Ptr l,r;\n        Node():v(0,INF),l(nullptr),r(nullptr){}\n\
     \        Node(Line _v):v(_v),l(nullptr),r(nullptr){}\n    };\n    ll lb,ub;\n\
     \    Ptr root;\n    DynamicLiChaoTree(ll _lb,ll _ub):lb(_lb),ub(_ub),root(nullptr){}\n\
     \    void insert(T l,T r,Ptr &t,Line v){\n        if(!t)return void(t=new Node(v));\n\
@@ -71,7 +76,7 @@ data:
   isVerificationFile: true
   path: verify/yosupo/data-structure/segment_add_get_min_online.test.cpp
   requiredBy: []
-  timestamp: '2024-06-15 00:08:38+07:00'
+  timestamp: '2024-10-31 23:18:18+07:00'
   verificationStatus: TEST_ACCEPTED
   verifiedWith: []
 documentation_of: verify/yosupo/data-structure/segment_add_get_min_online.test.cpp
