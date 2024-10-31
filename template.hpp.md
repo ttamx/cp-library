@@ -42,7 +42,7 @@ data:
   - icon: ':heavy_check_mark:'
     path: verify/yosupo/data-structure/dynamic_sequence_range_affine_range_sum.test.cpp
     title: verify/yosupo/data-structure/dynamic_sequence_range_affine_range_sum.test.cpp
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: verify/yosupo/data-structure/line_add_get_min.test.cpp
     title: verify/yosupo/data-structure/line_add_get_min.test.cpp
   - icon: ':heavy_check_mark:'
@@ -81,42 +81,42 @@ data:
   - icon: ':heavy_check_mark:'
     path: verify/yosupo/data-structure/vertex_add_path_sum.test.cpp
     title: verify/yosupo/data-structure/vertex_add_path_sum.test.cpp
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: verify/yosupo/data-structure/vertex_add_subtree_sum.test.cpp
     title: verify/yosupo/data-structure/vertex_add_subtree_sum.test.cpp
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: verify/yosupo/data-structure/vertex_set_path_composite.test.cpp
     title: verify/yosupo/data-structure/vertex_set_path_composite.test.cpp
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: verify/yosupo/graph/scc.test.cpp
     title: verify/yosupo/graph/scc.test.cpp
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: verify/yosupo/number-theory/sum_of_floor_of_linear.test.cpp
     title: verify/yosupo/number-theory/sum_of_floor_of_linear.test.cpp
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: verify/yosupo/string/enumerate_palindromes.test.cpp
     title: verify/yosupo/string/enumerate_palindromes.test.cpp
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: verify/yosupo/string/number_of_substrings.test.cpp
     title: verify/yosupo/string/number_of_substrings.test.cpp
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: verify/yosupo/string/number_of_substrings2.test.cpp
     title: verify/yosupo/string/number_of_substrings2.test.cpp
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: verify/yosupo/string/suffixarray.test.cpp
     title: verify/yosupo/string/suffixarray.test.cpp
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: verify/yosupo/string/zalgorithm.test.cpp
     title: verify/yosupo/string/zalgorithm.test.cpp
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: verify/yosupo/tree/jump_on_tree.test.cpp
     title: verify/yosupo/tree/jump_on_tree.test.cpp
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: verify/yosupo/tree/lca.test.cpp
     title: verify/yosupo/tree/lca.test.cpp
-  _isVerificationFailed: true
+  _isVerificationFailed: false
   _pathExtension: hpp
-  _verificationStatusIcon: ':question:'
+  _verificationStatusIcon: ':heavy_check_mark:'
   attributes:
     links: []
   bundledCode: '#line 1 "template.hpp"
@@ -243,7 +243,7 @@ data:
   - verify/atcoder/abc347_g.cpp
   - verify/atcoder/abc193_f.cpp
   timestamp: '2024-10-31 23:18:18+07:00'
-  verificationStatus: LIBRARY_SOME_WA
+  verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
   - verify/yosupo/data-structure/line_add_get_min.test.cpp
   - verify/yosupo/data-structure/set_xor_min.test.cpp

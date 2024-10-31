@@ -1,17 +1,17 @@
 ---
 data:
   _extendedDependsOn:
-  - icon: ':question:'
+  - icon: ':heavy_check_mark:'
     path: data-structure/convex/li-chao-tree.hpp
     title: data-structure/convex/li-chao-tree.hpp
-  - icon: ':question:'
+  - icon: ':heavy_check_mark:'
     path: template.hpp
     title: template.hpp
   _extendedRequiredBy: []
   _extendedVerifiedWith: []
-  _isVerificationFailed: true
+  _isVerificationFailed: false
   _pathExtension: cpp
-  _verificationStatusIcon: ':x:'
+  _verificationStatusIcon: ':heavy_check_mark:'
   attributes:
     '*NOT_SPECIAL_COMMENTS*': ''
     PROBLEM: https://judge.yosupo.jp/problem/line_add_get_min
@@ -56,10 +56,11 @@ data:
     \ &[a,b]:lines)cin >> a >> b;\n    vector<tuple<int,ll,ll>> qrs(q);\n    vector<ll>\
     \ xs;\n    for(auto &[op,a,b]:qrs){\n        cin >> op;\n        if(op){\n   \
     \         cin >> a;\n            xs.emplace_back(a);\n        }else{\n       \
-    \     cin >> a >> b;\n        }\n    }\n    LiChaoTree<ll> lct(xs);\n    for(auto\
-    \ [a,b]:lines)lct.insert(a,b);\n    for(auto [op,a,b]:qrs){\n        if(op){\n\
-    \            cout << lct.query(a) << \"\\n\";\n        }else{\n            lct.insert(a,b);\n\
-    \        }\n    }\n}\n"
+    \     cin >> a >> b;\n        }\n    }\n    if(xs.empty()){\n        exit(0);\n\
+    \    }\n    LiChaoTree<ll> lct(xs);\n    for(auto [a,b]:lines)lct.insert(a,b);\n\
+    \    for(auto [op,a,b]:qrs){\n        if(op){\n            cout << lct.query(a)\
+    \ << \"\\n\";\n        }else{\n            lct.insert(a,b);\n        }\n    }\n\
+    }\n"
   code: "#define PROBLEM \"https://judge.yosupo.jp/problem/line_add_get_min\"\n#include\
     \ \"template.hpp\"\n#include \"data-structure/convex/li-chao-tree.hpp\"\n\nint\
     \ main(){\n    cin.tie(nullptr)->sync_with_stdio(false);\n    int n,q;\n    cin\
@@ -67,18 +68,18 @@ data:
     \ >> a >> b;\n    vector<tuple<int,ll,ll>> qrs(q);\n    vector<ll> xs;\n    for(auto\
     \ &[op,a,b]:qrs){\n        cin >> op;\n        if(op){\n            cin >> a;\n\
     \            xs.emplace_back(a);\n        }else{\n            cin >> a >> b;\n\
-    \        }\n    }\n    LiChaoTree<ll> lct(xs);\n    for(auto [a,b]:lines)lct.insert(a,b);\n\
-    \    for(auto [op,a,b]:qrs){\n        if(op){\n            cout << lct.query(a)\
-    \ << \"\\n\";\n        }else{\n            lct.insert(a,b);\n        }\n    }\n\
-    }\n"
+    \        }\n    }\n    if(xs.empty()){\n        exit(0);\n    }\n    LiChaoTree<ll>\
+    \ lct(xs);\n    for(auto [a,b]:lines)lct.insert(a,b);\n    for(auto [op,a,b]:qrs){\n\
+    \        if(op){\n            cout << lct.query(a) << \"\\n\";\n        }else{\n\
+    \            lct.insert(a,b);\n        }\n    }\n}\n"
   dependsOn:
   - template.hpp
   - data-structure/convex/li-chao-tree.hpp
   isVerificationFile: true
   path: verify/yosupo/data-structure/line_add_get_min.test.cpp
   requiredBy: []
-  timestamp: '2024-10-31 23:18:18+07:00'
-  verificationStatus: TEST_WRONG_ANSWER
+  timestamp: '2024-11-01 01:55:38+07:00'
+  verificationStatus: TEST_ACCEPTED
   verifiedWith: []
 documentation_of: verify/yosupo/data-structure/line_add_get_min.test.cpp
 layout: document

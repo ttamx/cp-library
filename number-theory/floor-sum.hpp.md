@@ -3,12 +3,12 @@ data:
   _extendedDependsOn: []
   _extendedRequiredBy: []
   _extendedVerifiedWith:
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: verify/yosupo/number-theory/sum_of_floor_of_linear.test.cpp
     title: verify/yosupo/number-theory/sum_of_floor_of_linear.test.cpp
-  _isVerificationFailed: true
+  _isVerificationFailed: false
   _pathExtension: hpp
-  _verificationStatusIcon: ':x:'
+  _verificationStatusIcon: ':heavy_check_mark:'
   attributes:
     links: []
   bundledCode: "#line 2 \"number-theory/floor-sum.hpp\"\n\n/**\n * Author: Teetat\
@@ -30,7 +30,7 @@ data:
   path: number-theory/floor-sum.hpp
   requiredBy: []
   timestamp: '2024-09-21 23:29:05+07:00'
-  verificationStatus: LIBRARY_ALL_WA
+  verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
   - verify/yosupo/number-theory/sum_of_floor_of_linear.test.cpp
 documentation_of: number-theory/floor-sum.hpp

@@ -4,10 +4,10 @@ data:
   - icon: ':heavy_check_mark:'
     path: convolution/gcd-convolution.hpp
     title: convolution/gcd-convolution.hpp
-  - icon: ':question:'
+  - icon: ':heavy_check_mark:'
     path: modular-arithmetic/montgomery-modint.hpp
     title: modular-arithmetic/montgomery-modint.hpp
-  - icon: ':question:'
+  - icon: ':heavy_check_mark:'
     path: template.hpp
     title: template.hpp
   _extendedRequiredBy: []

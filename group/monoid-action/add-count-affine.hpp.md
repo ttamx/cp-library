@@ -4,7 +4,7 @@ data:
   - icon: ':heavy_check_mark:'
     path: group/monoid/add-count.hpp
     title: group/monoid/add-count.hpp
-  - icon: ':question:'
+  - icon: ':heavy_check_mark:'
     path: group/monoid/affine.hpp
     title: group/monoid/affine.hpp
   _extendedRequiredBy: []

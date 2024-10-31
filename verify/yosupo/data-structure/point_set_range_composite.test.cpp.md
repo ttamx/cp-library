@@ -1,16 +1,16 @@
 ---
 data:
   _extendedDependsOn:
-  - icon: ':question:'
+  - icon: ':heavy_check_mark:'
     path: data-structure/segment-tree/segment-tree.hpp
     title: data-structure/segment-tree/segment-tree.hpp
-  - icon: ':question:'
+  - icon: ':heavy_check_mark:'
     path: group/monoid/affine.hpp
     title: group/monoid/affine.hpp
-  - icon: ':question:'
+  - icon: ':heavy_check_mark:'
     path: modular-arithmetic/montgomery-modint.hpp
     title: modular-arithmetic/montgomery-modint.hpp
-  - icon: ':question:'
+  - icon: ':heavy_check_mark:'
     path: template.hpp
     title: template.hpp
   _extendedRequiredBy: []
