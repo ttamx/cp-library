@@ -19,6 +19,9 @@ int main(){
             cin >> a >> b;
         }
     }
+    if(xs.empty()){
+        exit(0);
+    }
     LiChaoTree<ll> lct(xs);
     for(auto [a,b]:lines)lct.insert(a,b);
     for(auto [op,a,b]:qrs){
