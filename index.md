@@ -99,7 +99,7 @@ data:
       title: flow/k-ary-optimization.hpp
   - name: graph
     pages:
-    - icon: ':x:'
+    - icon: ':question:'
       path: graph/graph-base.hpp
       title: graph/graph-base.hpp
     - icon: ':warning:'
@@ -221,7 +221,7 @@ data:
       title: template.hpp
   - name: tree
     pages:
-    - icon: ':x:'
+    - icon: ':question:'
       path: tree/hld.hpp
       title: tree/hld.hpp
   - name: verify/atcoder
@@ -310,7 +310,7 @@ data:
     - icon: ':heavy_check_mark:'
       path: verify/yosupo/data-structure/unionfind.test.cpp
       title: verify/yosupo/data-structure/unionfind.test.cpp
-    - icon: ':x:'
+    - icon: ':heavy_check_mark:'
       path: verify/yosupo/data-structure/vertex_add_path_sum.test.cpp
       title: verify/yosupo/data-structure/vertex_add_path_sum.test.cpp
     - icon: ':x:'

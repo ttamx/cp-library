@@ -6,7 +6,7 @@ data:
   - icon: ':heavy_check_mark:'
     path: verify/yosupo/data-structure/point_add_range_sum.test.cpp
     title: verify/yosupo/data-structure/point_add_range_sum.test.cpp
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: verify/yosupo/data-structure/vertex_add_path_sum.test.cpp
     title: verify/yosupo/data-structure/vertex_add_path_sum.test.cpp
   - icon: ':x:'
