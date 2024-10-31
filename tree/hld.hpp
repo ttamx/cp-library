@@ -14,6 +14,7 @@ struct HLD{
     HLD(G &_g,int _root=0)
         : g(_g),root(_root),timer(-1),par(g.n,root),sz(g.n,1),
           dep(g.n),hv(g.n,-1),head(g.n),tin(g.n),tout(g.n),ord(g.n){
+        par[0]=-1;
         dfs_sz(root);
         dfs_hld(root);
     }
