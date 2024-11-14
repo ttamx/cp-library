@@ -8,12 +8,13 @@
 
 template<class G>
 struct HLD{
+    int n;
     G &g;
     int root,timer;
     vector<int> par,sz,dep,hv,head,tin,tout,ord;
     HLD(G &_g,int _root=0)
-        : g(_g),root(_root),timer(-1),par(g.n,root),sz(g.n,1),
-          dep(g.n),hv(g.n,-1),head(g.n),tin(g.n),tout(g.n),ord(g.n){
+        : n(_g.n),g(_g),root(_root),timer(-1),par(n,root),sz(n,1),
+          dep(n),hv(n,-1),head(n),tin(n),tout(n),ord(n){
         par[0]=-1;
         dfs_sz(root);
         dfs_hld(root);

@@ -97,6 +97,7 @@
         "sstream": "cpp",
         "stop_token": "cpp",
         "syncstream": "cpp",
-        "typeindex": "cpp"
+        "typeindex": "cpp",
+        "point_set_tree_path_composite_sum_fixed_root": "cpp"
     }
 }
