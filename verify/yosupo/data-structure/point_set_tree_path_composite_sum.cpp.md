@@ -14,8 +14,8 @@ data:
     path: tree/hld.hpp
     title: tree/hld.hpp
   - icon: ':warning:'
-    path: tree/static-top-tree-dp.hpp
-    title: tree/static-top-tree-dp.hpp
+    path: tree/static-top-tree-rerooting-dp.hpp
+    title: tree/static-top-tree-rerooting-dp.hpp
   - icon: ':warning:'
     path: tree/static-top-tree.hpp
     title: tree/static-top-tree.hpp
@@ -106,56 +106,62 @@ data:
     \    enum Type{Compress,Rake,AddEdge,AddVertex,Vertex};\n    int n,root;\n   \
     \ HLD &hld;\n    vector<int> lch,rch,par;\n    vector<Type> type;\n    StaticTopTree(HLD\
     \ &_hld):hld(_hld){build();}\n    void build(){\n        n=hld.n;\n        lch=rch=par=vector<int>(n,-1);\n\
-    \        type.assign(n,Compress);\n        root=compress(hld.root).first;\n  \
-    \  }\n    int add(int i,int l,int r,Type t){\n        if(i==-1){\n           \
-    \ i=n++;\n            lch.emplace_back(l);\n            rch.emplace_back(r);\n\
+    \        type.assign(n,Compress);\n        root=compress(hld.root).second;\n \
+    \   }\n    int add(int i,int l,int r,Type t){\n        if(i==-1){\n          \
+    \  i=n++;\n            lch.emplace_back(l);\n            rch.emplace_back(r);\n\
     \            par.emplace_back(-1);\n            type.emplace_back(t);\n      \
     \  }else{\n            lch[i]=l,rch[i]=r,type[i]=t;\n        }\n        if(l!=-1)par[l]=i;\n\
-    \        if(r!=-1)par[r]=i;\n        return i;\n    }\n    P merge(const vector<P>\
-    \ &a,Type t){\n        if(a.size()==1)return a[0];\n        vector<P> b,c;\n \
-    \       int tot=0;\n        for(auto [i,s]:a)tot+=s;\n        for(auto [i,s]:a){\n\
-    \            (tot>s?b:c).emplace_back(i,s);\n            tot-=2*s;\n        }\n\
-    \        auto [i,si]=merge(b,t);\n        auto [j,sj]=merge(c,t);\n        return\
-    \ {add(-1,i,j,t),si+sj};\n    }\n    P compress(int i){\n        vector<P> a{add_vertex(i)};\n\
-    \        while(hld.hv[i]!=-1)a.emplace_back(add_vertex(i=hld.hv[i]));\n      \
-    \  return merge(a,Compress);\n    }\n    P rake(int i){\n        vector<P> a;\n\
-    \        for(int j:hld.g[i])if(j!=hld.par[i]&&j!=hld.hv[i])a.emplace_back(add_edge(j));\n\
-    \        return a.empty()?P(-1,0):merge(a,Rake);\n    }\n    P add_edge(int i){\n\
-    \        auto [j,sj]=compress(i);\n        return {add(-1,j,-1,AddEdge),sj};\n\
-    \    }\n    P add_vertex(int i){\n        auto [j,sj]=rake(i);\n        return\
-    \ {add(i,j,-1,j==-1?Vertex:AddVertex),sj+1};\n    }\n};\n\n#line 3 \"tree/static-top-tree-dp.hpp\"\
+    \        if(r!=-1)par[r]=i;\n        return i;\n    }\n    P compress(int i){\n\
+    \        vector<P> a{add_vertex(i)};\n        auto work=[&](){\n            auto\
+    \ [sj,j]=a.back();\n            a.pop_back();\n            auto [si,i]=a.back();\n\
+    \            a.back()={max(si,sj)+1,add(-1,i,j,Compress)};\n        };\n     \
+    \   while(hld.hv[i]!=-1){\n            a.emplace_back(add_vertex(i=hld.hv[i]));\n\
+    \            while(true){\n                if(a.size()>=3&&(a.end()[-3].first==a.end()[-2].first||a.end()[-3].first<=a.back().first)){\n\
+    \                    P tmp=a.back();\n                    a.pop_back();\n    \
+    \                work();\n                    a.emplace_back(tmp);\n         \
+    \       }else if(a.size()>=2&&a.end()[-2].first<=a.back().first){\n          \
+    \          work();\n                }else break;\n            }\n        }\n \
+    \       while(a.size()>=2)work();\n        return a[0];\n    }\n    P rake(int\
+    \ i){\n        priority_queue<P,vector<P>,greater<P>> pq;\n        for(int j:hld.g[i])if(j!=hld.par[i]&&j!=hld.hv[i])pq.emplace(add_edge(j));\n\
+    \        while(pq.size()>=2){\n            auto [si,i]=pq.top();pq.pop();\n  \
+    \          auto [sj,j]=pq.top();pq.pop();\n            pq.emplace(max(si,sj)+1,add(-1,i,j,Rake));\n\
+    \        }\n        return pq.empty()?make_pair(0,-1):pq.top();\n    }\n    P\
+    \ add_edge(int i){\n        auto [sj,j]=compress(i);\n        return {sj+1,add(-1,j,-1,AddEdge)};\n\
+    \    }\n    P add_vertex(int i){\n        auto [sj,j]=rake(i);\n        return\
+    \ {sj+1,add(i,j,-1,j==-1?Vertex:AddVertex)};\n    }\n};\n\n#line 3 \"tree/static-top-tree-rerooting-dp.hpp\"\
     \n\n/**\n * Author: Teetat T.\n * Date: 2024-11-14\n * Description: Static Top\
-    \ Tree DP.\n */\n\ntemplate<class HLD,class TreeDP,bool reroot=false>\nstruct\
-    \ StaticTopTreeDP{\n    using Path = typename TreeDP::Path;\n    using Point =\
-    \ typename TreeDP::Point;\n    StaticTopTree<HLD> stt;\n    vector<Path> path,rpath;\n\
-    \    vector<Point> point;\n    StaticTopTreeDP(HLD &hld):stt(hld){\n        int\
-    \ n=stt.n;\n        path.resize(n);\n        point.resize(n);\n        if constexpr(reroot){\n\
-    \            rpath.resize(n);\n        }\n        dfs(stt.root);\n    }\n    void\
-    \ update(int u){\n        if(stt.type[u]==stt.Compress){\n            path[u]=TreeDP::compress(path[stt.lch[u]],path[stt.rch[u]]);\n\
-    \            if constexpr(reroot){\n                rpath[u]=TreeDP::compress(rpath[stt.rch[u]],rpath[stt.lch[u]]);\n\
-    \            }\n        }else if(stt.type[u]==stt.Rake){\n            point[u]=TreeDP::rake(point[stt.lch[u]],point[stt.rch[u]]);\n\
+    \ Tree DP.\n */\n\n/*\nstruct TreeDP{\n    struct Path{\n        static Path unit();\n\
+    \    };\n    struct Point{\n        static Point unit();\n    };\n    static Path\
+    \ compress(Path l,Path r);\n    static Point rake(Point l,Point r);\n    static\
+    \ Point add_edge(Path p);\n    static Path add_vertex(Point p,int u);\n    static\
+    \ Path vertex(int u);\n};\n*/\n\ntemplate<class HLD,class TreeDP>\nstruct StaticTopTreeRerootingDP{\n\
+    \    using Path = typename TreeDP::Path;\n    using Point = typename TreeDP::Point;\n\
+    \    StaticTopTree<HLD> stt;\n    vector<Path> path,rpath;\n    vector<Point>\
+    \ point;\n    StaticTopTreeRerootingDP(HLD &hld):stt(hld){\n        int n=stt.n;\n\
+    \        path.resize(n);\n        point.resize(n);\n        rpath.resize(n);\n\
+    \        dfs(stt.root);\n    }\n    void update(int u){\n        if(stt.type[u]==stt.Vertex){\n\
+    \            path[u]=rpath[u]=TreeDP::vertex(u);\n        }else if(stt.type[u]==stt.Compress){\n\
+    \            path[u]=TreeDP::compress(path[stt.lch[u]],path[stt.rch[u]]);\n  \
+    \          rpath[u]=TreeDP::compress(rpath[stt.rch[u]],rpath[stt.lch[u]]);\n \
+    \       }else if(stt.type[u]==stt.Rake){\n            point[u]=TreeDP::rake(point[stt.lch[u]],point[stt.rch[u]]);\n\
     \        }else if(stt.type[u]==stt.AddEdge){\n            point[u]=TreeDP::add_edge(path[stt.lch[u]]);\n\
-    \        }else if(stt.type[u]==stt.AddVertex){\n            path[u]=TreeDP::add_vertex(point[stt.lch[u]],u);\n\
-    \            if constexpr(reroot){\n                rpath[u]=TreeDP::add_vertex(point[stt.lch[u]],u);\n\
-    \            }\n        }else if(stt.type[u]==stt.Vertex){\n            path[u]=TreeDP::vertex(u);\n\
-    \            if constexpr(reroot){\n                rpath[u]=TreeDP::vertex(u);\n\
-    \            }\n        }else{\n            assert(false);\n        }\n    }\n\
-    \    void dfs(int u){\n        if(u==-1)return;\n        dfs(stt.lch[u]);\n  \
-    \      dfs(stt.rch[u]);\n        update(u);\n    }\n    void recalc(int u){\n\
+    \        }else{\n            path[u]=rpath[u]=TreeDP::add_vertex(point[stt.lch[u]],u);\n\
+    \        }\n    }\n    void dfs(int u){\n        if(u==-1)return;\n        dfs(stt.lch[u]);\n\
+    \        dfs(stt.rch[u]);\n        update(u);\n    }\n    void recalc(int u){\n\
     \        while(u!=-1){\n            update(u);\n            u=stt.par[u];\n  \
     \      }\n    }\n    Path query_all(){\n        return path[stt.root];\n    }\n\
     \    Path query_subtree(int u){\n        Path res=path[u];\n        while(true){\n\
     \            int p=stt.par[u];\n            if(p==-1||stt.type[p]!=stt.Compress)break;\n\
     \            if(stt.lch[p]==u){\n                res=TreeDP::compress(path[stt.rch[p]],res);\n\
     \            }\n        }\n        return res;\n    }\n    Path query_reroot(int\
-    \ u){\n        static_assert(reroot);\n        auto rec=[&](auto &&rec,int u)->Point{\n\
-    \            int p=stt.par[u];\n            Path below=Path::unit(),above=Path::unit();\n\
-    \            while(p!=-1&&stt.type[p]==stt.Compress){\n                int l=stt.lch[p],r=stt.rch[p];\n\
-    \                if(l==u){\n                    below=TreeDP::compress(below,path[r]);\n\
-    \                }else{\n                    above=TreeDP::compress(above,rpath[l]);\n\
-    \                }\n                u=p;\n                p=stt.par[u];\n    \
-    \        }\n            if(p!=-1){\n                u=p;\n                p=stt.par[u];\n\
-    \                Point sum=Point::unit();\n                while(stt.type[p]==stt.Rake){\n\
+    \ u){\n        auto rec=[&](auto &&rec,int u)->Point{\n            int p=stt.par[u];\n\
+    \            Path below=Path::unit(),above=Path::unit();\n            while(p!=-1&&stt.type[p]==stt.Compress){\n\
+    \                int l=stt.lch[p],r=stt.rch[p];\n                if(l==u){\n \
+    \                   below=TreeDP::compress(below,path[r]);\n                }else{\n\
+    \                    above=TreeDP::compress(above,rpath[l]);\n               \
+    \ }\n                u=p;\n                p=stt.par[u];\n            }\n    \
+    \        if(p!=-1){\n                u=p;\n                p=stt.par[u];\n   \
+    \             Point sum=Point::unit();\n                while(stt.type[p]==stt.Rake){\n\
     \                    int l=stt.lch[p],r=stt.rch[p];\n                    sum=TreeDP::rake(sum,u==r?point[l]:point[r]);\n\
     \                    u=p;\n                    p=stt.par[u];\n               \
     \ }\n                sum=TreeDP::rake(sum,rec(rec,p));\n                above=TreeDP::compress(above,TreeDP::add_vertex(sum,p));\n\
@@ -224,7 +230,7 @@ data:
     \    c.resize(2*n-1);\n    for(int i=0;i<n;i++){\n        cin >> a[i];\n    }\n\
     \    Graph<void,false> g(2*n-1);\n    for(int i=0;i<n-1;i++){\n        int u,v;\n\
     \        cin >> u >> v >> b[i+n] >> c[i+n];\n        g.add_edge(u,i+n);\n    \
-    \    g.add_edge(v,i+n);\n    }\n    HLD hld(g);\n    StaticTopTreeDP<decltype(hld),TreeDP,true>\
+    \    g.add_edge(v,i+n);\n    }\n    HLD hld(g);\n    StaticTopTreeRerootingDP<decltype(hld),TreeDP>\
     \ dp(hld);\n    while(q--){\n        int op;\n        cin >> op;\n        if(op==0){\n\
     \            int u;\n            mint x;\n            cin >> u >> x;\n       \
     \     a[u]=x;\n            dp.recalc(u);\n        }else{\n            int e;\n\
@@ -234,7 +240,7 @@ data:
     \    }\n}\n"
   code: "#define PROBLEM \"https://judge.yosupo.jp/problem/point_set_tree_path_composite_sum\"\
     \n#include \"template.hpp\"\n#include \"graph/graph-base.hpp\"\n#include \"tree/hld.hpp\"\
-    \n#include \"tree/static-top-tree-dp.hpp\"\n#include \"modular-arithmetic/montgomery-modint.hpp\"\
+    \n#include \"tree/static-top-tree-rerooting-dp.hpp\"\n#include \"modular-arithmetic/montgomery-modint.hpp\"\
     \n\nusing mint = mint998;\n\nint n;\nvector<int> id;\nvector<mint> a,b,c;\n\n\
     struct TreeDP{\n    struct Path{\n        mint a,b,cnt,ans;\n        static Path\
     \ unit(){\n            return {1,0,0,0};\n        }\n    };\n    struct Point{\n\
@@ -253,7 +259,7 @@ data:
     \    c.resize(2*n-1);\n    for(int i=0;i<n;i++){\n        cin >> a[i];\n    }\n\
     \    Graph<void,false> g(2*n-1);\n    for(int i=0;i<n-1;i++){\n        int u,v;\n\
     \        cin >> u >> v >> b[i+n] >> c[i+n];\n        g.add_edge(u,i+n);\n    \
-    \    g.add_edge(v,i+n);\n    }\n    HLD hld(g);\n    StaticTopTreeDP<decltype(hld),TreeDP,true>\
+    \    g.add_edge(v,i+n);\n    }\n    HLD hld(g);\n    StaticTopTreeRerootingDP<decltype(hld),TreeDP>\
     \ dp(hld);\n    while(q--){\n        int op;\n        cin >> op;\n        if(op==0){\n\
     \            int u;\n            mint x;\n            cin >> u >> x;\n       \
     \     a[u]=x;\n            dp.recalc(u);\n        }else{\n            int e;\n\
@@ -265,13 +271,13 @@ data:
   - template.hpp
   - graph/graph-base.hpp
   - tree/hld.hpp
-  - tree/static-top-tree-dp.hpp
+  - tree/static-top-tree-rerooting-dp.hpp
   - tree/static-top-tree.hpp
   - modular-arithmetic/montgomery-modint.hpp
   isVerificationFile: false
   path: verify/yosupo/data-structure/point_set_tree_path_composite_sum.cpp
   requiredBy: []
-  timestamp: '2024-11-14 23:03:53+07:00'
+  timestamp: '2024-11-15 02:28:18+07:00'
   verificationStatus: LIBRARY_NO_TESTS
   verifiedWith: []
 documentation_of: verify/yosupo/data-structure/point_set_tree_path_composite_sum.cpp

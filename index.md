@@ -228,6 +228,9 @@ data:
       path: tree/static-top-tree-dp.hpp
       title: tree/static-top-tree-dp.hpp
     - icon: ':warning:'
+      path: tree/static-top-tree-rerooting-dp.hpp
+      title: tree/static-top-tree-rerooting-dp.hpp
+    - icon: ':warning:'
       path: tree/static-top-tree.hpp
       title: tree/static-top-tree.hpp
   - name: verify/atcoder
