@@ -213,7 +213,7 @@ data:
     \    c.resize(2*n-1);\n    for(int i=0;i<n;i++){\n        cin >> a[i];\n    }\n\
     \    Graph<void,false> g(2*n-1);\n    for(int i=0;i<n-1;i++){\n        int u,v;\n\
     \        cin >> u >> v >> b[i+n] >> c[i+n];\n        g.add_edge(u,i+n);\n    \
-    \    g.add_edge(v,i+n);\n    }\n    HLD hld(g);\n    StaticTopTreeDP<decltype(hld),TreeDP,true>\
+    \    g.add_edge(v,i+n);\n    }\n    HLD hld(g);\n    StaticTopTreeDP<decltype(hld),TreeDP>\
     \ dp(hld);\n    while(q--){\n        int op;\n        cin >> op;\n        if(op==0){\n\
     \            int u;\n            mint x;\n            cin >> u >> x;\n       \
     \     a[u]=x;\n            dp.recalc(u);\n        }else{\n            int e;\n\
@@ -241,7 +241,7 @@ data:
     \    c.resize(2*n-1);\n    for(int i=0;i<n;i++){\n        cin >> a[i];\n    }\n\
     \    Graph<void,false> g(2*n-1);\n    for(int i=0;i<n-1;i++){\n        int u,v;\n\
     \        cin >> u >> v >> b[i+n] >> c[i+n];\n        g.add_edge(u,i+n);\n    \
-    \    g.add_edge(v,i+n);\n    }\n    HLD hld(g);\n    StaticTopTreeDP<decltype(hld),TreeDP,true>\
+    \    g.add_edge(v,i+n);\n    }\n    HLD hld(g);\n    StaticTopTreeDP<decltype(hld),TreeDP>\
     \ dp(hld);\n    while(q--){\n        int op;\n        cin >> op;\n        if(op==0){\n\
     \            int u;\n            mint x;\n            cin >> u >> x;\n       \
     \     a[u]=x;\n            dp.recalc(u);\n        }else{\n            int e;\n\
@@ -258,7 +258,7 @@ data:
   isVerificationFile: false
   path: verify/yosupo/data-structure/point_set_tree_path_composite_sum_fixed_root.cpp
   requiredBy: []
-  timestamp: '2024-11-15 02:28:18+07:00'
+  timestamp: '2024-11-15 02:29:59+07:00'
   verificationStatus: LIBRARY_NO_TESTS
   verifiedWith: []
 documentation_of: verify/yosupo/data-structure/point_set_tree_path_composite_sum_fixed_root.cpp
