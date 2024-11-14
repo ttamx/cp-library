@@ -2,7 +2,7 @@
 #include "template.hpp"
 #include "graph/graph-base.hpp"
 #include "tree/hld.hpp"
-#include "tree/static-top-tree-dp.hpp"
+#include "tree/static-top-tree-rerooting-dp.hpp"
 #include "modular-arithmetic/montgomery-modint.hpp"
 
 using mint = mint998;
@@ -68,7 +68,7 @@ int main(){
         g.add_edge(v,i+n);
     }
     HLD hld(g);
-    StaticTopTreeDP<decltype(hld),TreeDP,true> dp(hld);
+    StaticTopTreeRerootingDP<decltype(hld),TreeDP> dp(hld);
     while(q--){
         int op;
         cin >> op;

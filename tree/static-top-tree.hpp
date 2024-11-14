@@ -19,7 +19,7 @@ struct StaticTopTree{
         n=hld.n;
         lch=rch=par=vector<int>(n,-1);
         type.assign(n,Compress);
-        root=compress(hld.root).first;
+        root=compress(hld.root).second;
     }
     int add(int i,int l,int r,Type t){
         if(i==-1){
@@ -35,36 +35,47 @@ struct StaticTopTree{
         if(r!=-1)par[r]=i;
         return i;
     }
-    P merge(const vector<P> &a,Type t){
-        if(a.size()==1)return a[0];
-        vector<P> b,c;
-        int tot=0;
-        for(auto [i,s]:a)tot+=s;
-        for(auto [i,s]:a){
-            (tot>s?b:c).emplace_back(i,s);
-            tot-=2*s;
-        }
-        auto [i,si]=merge(b,t);
-        auto [j,sj]=merge(c,t);
-        return {add(-1,i,j,t),si+sj};
-    }
     P compress(int i){
         vector<P> a{add_vertex(i)};
-        while(hld.hv[i]!=-1)a.emplace_back(add_vertex(i=hld.hv[i]));
-        return merge(a,Compress);
+        auto work=[&](){
+            auto [sj,j]=a.back();
+            a.pop_back();
+            auto [si,i]=a.back();
+            a.back()={max(si,sj)+1,add(-1,i,j,Compress)};
+        };
+        while(hld.hv[i]!=-1){
+            a.emplace_back(add_vertex(i=hld.hv[i]));
+            while(true){
+                if(a.size()>=3&&(a.end()[-3].first==a.end()[-2].first||a.end()[-3].first<=a.back().first)){
+                    P tmp=a.back();
+                    a.pop_back();
+                    work();
+                    a.emplace_back(tmp);
+                }else if(a.size()>=2&&a.end()[-2].first<=a.back().first){
+                    work();
+                }else break;
+            }
+        }
+        while(a.size()>=2)work();
+        return a[0];
     }
     P rake(int i){
-        vector<P> a;
-        for(int j:hld.g[i])if(j!=hld.par[i]&&j!=hld.hv[i])a.emplace_back(add_edge(j));
-        return a.empty()?P(-1,0):merge(a,Rake);
+        priority_queue<P,vector<P>,greater<P>> pq;
+        for(int j:hld.g[i])if(j!=hld.par[i]&&j!=hld.hv[i])pq.emplace(add_edge(j));
+        while(pq.size()>=2){
+            auto [si,i]=pq.top();pq.pop();
+            auto [sj,j]=pq.top();pq.pop();
+            pq.emplace(max(si,sj)+1,add(-1,i,j,Rake));
+        }
+        return pq.empty()?make_pair(0,-1):pq.top();
     }
     P add_edge(int i){
-        auto [j,sj]=compress(i);
-        return {add(-1,j,-1,AddEdge),sj};
+        auto [sj,j]=compress(i);
+        return {sj+1,add(-1,j,-1,AddEdge)};
     }
     P add_vertex(int i){
-        auto [j,sj]=rake(i);
-        return {add(i,j,-1,j==-1?Vertex:AddVertex),sj+1};
+        auto [sj,j]=rake(i);
+        return {sj+1,add(i,j,-1,j==-1?Vertex:AddVertex)};
     }
 };
 
