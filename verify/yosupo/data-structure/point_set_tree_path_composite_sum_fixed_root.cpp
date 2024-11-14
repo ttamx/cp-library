@@ -68,7 +68,7 @@ int main(){
         g.add_edge(v,i+n);
     }
     HLD hld(g);
-    StaticTopTreeDP<decltype(hld),TreeDP,true> dp(hld);
+    StaticTopTreeDP<decltype(hld),TreeDP> dp(hld);
     while(q--){
         int op;
         cin >> op;
