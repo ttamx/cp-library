@@ -1,13 +1,7 @@
 ---
 data:
   _extendedDependsOn: []
-  _extendedRequiredBy:
-  - icon: ':warning:'
-    path: verify/yosupo/data-structure/point_set_tree_path_composite_sum.cpp
-    title: verify/yosupo/data-structure/point_set_tree_path_composite_sum.cpp
-  - icon: ':warning:'
-    path: verify/yosupo/data-structure/point_set_tree_path_composite_sum_fixed_root.cpp
-    title: verify/yosupo/data-structure/point_set_tree_path_composite_sum_fixed_root.cpp
+  _extendedRequiredBy: []
   _extendedVerifiedWith:
   - icon: ':heavy_check_mark:'
     path: verify/yosupo/convolution/bitwise_and_convolution.test.cpp
@@ -30,6 +24,12 @@ data:
   - icon: ':heavy_check_mark:'
     path: verify/yosupo/data-structure/point_set_range_composite.test.cpp
     title: verify/yosupo/data-structure/point_set_range_composite.test.cpp
+  - icon: ':heavy_check_mark:'
+    path: verify/yosupo/data-structure/point_set_tree_path_composite_sum.test.cpp
+    title: verify/yosupo/data-structure/point_set_tree_path_composite_sum.test.cpp
+  - icon: ':heavy_check_mark:'
+    path: verify/yosupo/data-structure/point_set_tree_path_composite_sum_fixed_root.test.cpp
+    title: verify/yosupo/data-structure/point_set_tree_path_composite_sum_fixed_root.test.cpp
   - icon: ':heavy_check_mark:'
     path: verify/yosupo/data-structure/range_affine_range_sum.test.cpp
     title: verify/yosupo/data-structure/range_affine_range_sum.test.cpp
@@ -134,9 +134,7 @@ data:
   dependsOn: []
   isVerificationFile: false
   path: modular-arithmetic/montgomery-modint.hpp
-  requiredBy:
-  - verify/yosupo/data-structure/point_set_tree_path_composite_sum_fixed_root.cpp
-  - verify/yosupo/data-structure/point_set_tree_path_composite_sum.cpp
+  requiredBy: []
   timestamp: '2024-07-29 18:44:45+07:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
@@ -144,6 +142,8 @@ data:
   - verify/yosupo/data-structure/point_set_range_composite.test.cpp
   - verify/yosupo/data-structure/dynamic_sequence_range_affine_range_sum.test.cpp
   - verify/yosupo/data-structure/range_affine_range_sum.test.cpp
+  - verify/yosupo/data-structure/point_set_tree_path_composite_sum_fixed_root.test.cpp
+  - verify/yosupo/data-structure/point_set_tree_path_composite_sum.test.cpp
   - verify/yosupo/data-structure/range_affine_range_sum_lct.test.cpp
   - verify/yosupo/convolution/bitwise_or_convolution.test.cpp
   - verify/yosupo/convolution/bitwise_and_convolution.test.cpp

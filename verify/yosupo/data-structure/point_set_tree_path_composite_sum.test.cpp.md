@@ -13,22 +13,24 @@ data:
   - icon: ':heavy_check_mark:'
     path: tree/hld.hpp
     title: tree/hld.hpp
-  - icon: ':warning:'
-    path: tree/static-top-tree-dp.hpp
-    title: tree/static-top-tree-dp.hpp
-  - icon: ':warning:'
+  - icon: ':heavy_check_mark:'
+    path: tree/static-top-tree-rerooting-dp.hpp
+    title: tree/static-top-tree-rerooting-dp.hpp
+  - icon: ':heavy_check_mark:'
     path: tree/static-top-tree.hpp
     title: tree/static-top-tree.hpp
   _extendedRequiredBy: []
   _extendedVerifiedWith: []
   _isVerificationFailed: false
   _pathExtension: cpp
-  _verificationStatusIcon: ':warning:'
+  _verificationStatusIcon: ':heavy_check_mark:'
   attributes:
+    '*NOT_SPECIAL_COMMENTS*': ''
+    PROBLEM: https://judge.yosupo.jp/problem/point_set_tree_path_composite_sum
     links:
-    - https://judge.yosupo.jp/problem/point_set_tree_path_composite_sum_fixed_root
-  bundledCode: "#line 1 \"verify/yosupo/data-structure/point_set_tree_path_composite_sum_fixed_root.cpp\"\
-    \n#define PROBLEM \"https://judge.yosupo.jp/problem/point_set_tree_path_composite_sum_fixed_root\"\
+    - https://judge.yosupo.jp/problem/point_set_tree_path_composite_sum
+  bundledCode: "#line 1 \"verify/yosupo/data-structure/point_set_tree_path_composite_sum.test.cpp\"\
+    \n#define PROBLEM \"https://judge.yosupo.jp/problem/point_set_tree_path_composite_sum\"\
     \n#line 1 \"template.hpp\"\n#include<bits/stdc++.h>\n#include<ext/pb_ds/assoc_container.hpp>\n\
     #include<ext/pb_ds/tree_policy.hpp>\n\nusing namespace std;\nusing namespace __gnu_pbds;\n\
     \nusing ll = long long;\nusing db = long double;\nusing vi = vector<int>;\nusing\
@@ -128,22 +130,24 @@ data:
     \        }\n        return pq.empty()?make_pair(0,-1):pq.top();\n    }\n    P\
     \ add_edge(int i){\n        auto [sj,j]=compress(i);\n        return {sj+1,add(-1,j,-1,AddEdge)};\n\
     \    }\n    P add_vertex(int i){\n        auto [sj,j]=rake(i);\n        return\
-    \ {sj+1,add(i,j,-1,j==-1?Vertex:AddVertex)};\n    }\n};\n\n#line 3 \"tree/static-top-tree-dp.hpp\"\
+    \ {sj+1,add(i,j,-1,j==-1?Vertex:AddVertex)};\n    }\n};\n\n#line 3 \"tree/static-top-tree-rerooting-dp.hpp\"\
     \n\n/**\n * Author: Teetat T.\n * Date: 2024-11-14\n * Description: Static Top\
     \ Tree DP.\n */\n\n/*\nstruct TreeDP{\n    struct Path{\n        static Path unit();\n\
     \    };\n    struct Point{\n        static Point unit();\n    };\n    static Path\
     \ compress(Path l,Path r);\n    static Point rake(Point l,Point r);\n    static\
     \ Point add_edge(Path p);\n    static Path add_vertex(Point p,int u);\n    static\
-    \ Path vertex(int u);\n};\n*/\n\ntemplate<class HLD,class TreeDP>\nstruct StaticTopTreeDP{\n\
+    \ Path vertex(int u);\n};\n*/\n\ntemplate<class HLD,class TreeDP>\nstruct StaticTopTreeRerootingDP{\n\
     \    using Path = typename TreeDP::Path;\n    using Point = typename TreeDP::Point;\n\
-    \    StaticTopTree<HLD> stt;\n    vector<Path> path;\n    vector<Point> point;\n\
-    \    StaticTopTreeDP(HLD &hld):stt(hld){\n        int n=stt.n;\n        path.resize(n);\n\
-    \        point.resize(n);\n        dfs(stt.root);\n    }\n    void update(int\
-    \ u){\n        if(stt.type[u]==stt.Vertex){\n            path[u]=TreeDP::vertex(u);\n\
-    \        }else if(stt.type[u]==stt.Compress){\n            path[u]=TreeDP::compress(path[stt.lch[u]],path[stt.rch[u]]);\n\
-    \        }else if(stt.type[u]==stt.Rake){\n            point[u]=TreeDP::rake(point[stt.lch[u]],point[stt.rch[u]]);\n\
+    \    StaticTopTree<HLD> stt;\n    vector<Path> path,rpath;\n    vector<Point>\
+    \ point;\n    StaticTopTreeRerootingDP(HLD &hld):stt(hld){\n        int n=stt.n;\n\
+    \        path.resize(n);\n        point.resize(n);\n        rpath.resize(n);\n\
+    \        dfs(stt.root);\n    }\n    void update(int u){\n        if(stt.type[u]==stt.Vertex){\n\
+    \            path[u]=rpath[u]=TreeDP::vertex(u);\n        }else if(stt.type[u]==stt.Compress){\n\
+    \            path[u]=TreeDP::compress(path[stt.lch[u]],path[stt.rch[u]]);\n  \
+    \          rpath[u]=TreeDP::compress(rpath[stt.rch[u]],rpath[stt.lch[u]]);\n \
+    \       }else if(stt.type[u]==stt.Rake){\n            point[u]=TreeDP::rake(point[stt.lch[u]],point[stt.rch[u]]);\n\
     \        }else if(stt.type[u]==stt.AddEdge){\n            point[u]=TreeDP::add_edge(path[stt.lch[u]]);\n\
-    \        }else{\n            path[u]=TreeDP::add_vertex(point[stt.lch[u]],u);\n\
+    \        }else{\n            path[u]=rpath[u]=TreeDP::add_vertex(point[stt.lch[u]],u);\n\
     \        }\n    }\n    void dfs(int u){\n        if(u==-1)return;\n        dfs(stt.lch[u]);\n\
     \        dfs(stt.rch[u]);\n        update(u);\n    }\n    void recalc(int u){\n\
     \        while(u!=-1){\n            update(u);\n            u=stt.par[u];\n  \
@@ -151,7 +155,22 @@ data:
     \    Path query_subtree(int u){\n        Path res=path[u];\n        while(true){\n\
     \            int p=stt.par[u];\n            if(p==-1||stt.type[p]!=stt.Compress)break;\n\
     \            if(stt.lch[p]==u){\n                res=TreeDP::compress(path[stt.rch[p]],res);\n\
-    \            }\n        }\n        return res;\n    }\n};\n\n#line 2 \"modular-arithmetic/montgomery-modint.hpp\"\
+    \            }\n        }\n        return res;\n    }\n    Path query_reroot(int\
+    \ u){\n        auto rec=[&](auto &&rec,int u)->Point{\n            int p=stt.par[u];\n\
+    \            Path below=Path::unit(),above=Path::unit();\n            while(p!=-1&&stt.type[p]==stt.Compress){\n\
+    \                int l=stt.lch[p],r=stt.rch[p];\n                if(l==u){\n \
+    \                   below=TreeDP::compress(below,path[r]);\n                }else{\n\
+    \                    above=TreeDP::compress(above,rpath[l]);\n               \
+    \ }\n                u=p;\n                p=stt.par[u];\n            }\n    \
+    \        if(p!=-1){\n                u=p;\n                p=stt.par[u];\n   \
+    \             Point sum=Point::unit();\n                while(stt.type[p]==stt.Rake){\n\
+    \                    int l=stt.lch[p],r=stt.rch[p];\n                    sum=TreeDP::rake(sum,u==r?point[l]:point[r]);\n\
+    \                    u=p;\n                    p=stt.par[u];\n               \
+    \ }\n                sum=TreeDP::rake(sum,rec(rec,p));\n                above=TreeDP::compress(above,TreeDP::add_vertex(sum,p));\n\
+    \            }\n            return TreeDP::rake(TreeDP::add_edge(below),TreeDP::add_edge(above));\n\
+    \        };\n        Point res=rec(rec,u);\n        if(stt.type[u]==stt.AddVertex){\n\
+    \            res=TreeDP::rake(res,point[stt.lch[u]]);\n        }\n        return\
+    \ TreeDP::add_vertex(res,u);\n    }\n};\n\n#line 2 \"modular-arithmetic/montgomery-modint.hpp\"\
     \n\n/**\n * Author: Teetat T.\n * Date: 2024-03-17\n * Description: modular arithmetic\
     \ operators using Montgomery space\n */\n\ntemplate<uint32_t mod,uint32_t root=0>\n\
     struct MontgomeryModInt{\n    using mint = MontgomeryModInt;\n    using i32 =\
@@ -194,7 +213,7 @@ data:
     \ v;\n        is >> v;\n        o=mint(v);\n        return is;\n    }\n    friend\
     \ ostream &operator<<(ostream &os,const mint &o){\n        return os << o.val();\n\
     \    }\n};\nusing mint998 = MontgomeryModInt<998244353,3>;\nusing mint107 = MontgomeryModInt<1000000007>;\n\
-    \n#line 7 \"verify/yosupo/data-structure/point_set_tree_path_composite_sum_fixed_root.cpp\"\
+    \n#line 7 \"verify/yosupo/data-structure/point_set_tree_path_composite_sum.test.cpp\"\
     \n\nusing mint = mint998;\n\nint n;\nvector<int> id;\nvector<mint> a,b,c;\n\n\
     struct TreeDP{\n    struct Path{\n        mint a,b,cnt,ans;\n        static Path\
     \ unit(){\n            return {1,0,0,0};\n        }\n    };\n    struct Point{\n\
@@ -213,16 +232,17 @@ data:
     \    c.resize(2*n-1);\n    for(int i=0;i<n;i++){\n        cin >> a[i];\n    }\n\
     \    Graph<void,false> g(2*n-1);\n    for(int i=0;i<n-1;i++){\n        int u,v;\n\
     \        cin >> u >> v >> b[i+n] >> c[i+n];\n        g.add_edge(u,i+n);\n    \
-    \    g.add_edge(v,i+n);\n    }\n    HLD hld(g);\n    StaticTopTreeDP<decltype(hld),TreeDP>\
+    \    g.add_edge(v,i+n);\n    }\n    HLD hld(g);\n    StaticTopTreeRerootingDP<decltype(hld),TreeDP>\
     \ dp(hld);\n    while(q--){\n        int op;\n        cin >> op;\n        if(op==0){\n\
     \            int u;\n            mint x;\n            cin >> u >> x;\n       \
     \     a[u]=x;\n            dp.recalc(u);\n        }else{\n            int e;\n\
     \            mint x,y;\n            cin >> e >> x >> y;\n            e+=n;\n \
-    \           b[e]=x,c[e]=y;\n            dp.recalc(e);\n        }\n        cout\
-    \ << dp.query_all().ans << \"\\n\";\n    }\n}\n"
-  code: "#define PROBLEM \"https://judge.yosupo.jp/problem/point_set_tree_path_composite_sum_fixed_root\"\
+    \           b[e]=x,c[e]=y;\n            dp.recalc(e);\n        }\n        int\
+    \ r;\n        cin >> r;\n        cout << dp.query_reroot(r).ans << \"\\n\";\n\
+    \    }\n}\n"
+  code: "#define PROBLEM \"https://judge.yosupo.jp/problem/point_set_tree_path_composite_sum\"\
     \n#include \"template.hpp\"\n#include \"graph/graph-base.hpp\"\n#include \"tree/hld.hpp\"\
-    \n#include \"tree/static-top-tree-dp.hpp\"\n#include \"modular-arithmetic/montgomery-modint.hpp\"\
+    \n#include \"tree/static-top-tree-rerooting-dp.hpp\"\n#include \"modular-arithmetic/montgomery-modint.hpp\"\
     \n\nusing mint = mint998;\n\nint n;\nvector<int> id;\nvector<mint> a,b,c;\n\n\
     struct TreeDP{\n    struct Path{\n        mint a,b,cnt,ans;\n        static Path\
     \ unit(){\n            return {1,0,0,0};\n        }\n    };\n    struct Point{\n\
@@ -241,30 +261,31 @@ data:
     \    c.resize(2*n-1);\n    for(int i=0;i<n;i++){\n        cin >> a[i];\n    }\n\
     \    Graph<void,false> g(2*n-1);\n    for(int i=0;i<n-1;i++){\n        int u,v;\n\
     \        cin >> u >> v >> b[i+n] >> c[i+n];\n        g.add_edge(u,i+n);\n    \
-    \    g.add_edge(v,i+n);\n    }\n    HLD hld(g);\n    StaticTopTreeDP<decltype(hld),TreeDP>\
+    \    g.add_edge(v,i+n);\n    }\n    HLD hld(g);\n    StaticTopTreeRerootingDP<decltype(hld),TreeDP>\
     \ dp(hld);\n    while(q--){\n        int op;\n        cin >> op;\n        if(op==0){\n\
     \            int u;\n            mint x;\n            cin >> u >> x;\n       \
     \     a[u]=x;\n            dp.recalc(u);\n        }else{\n            int e;\n\
     \            mint x,y;\n            cin >> e >> x >> y;\n            e+=n;\n \
-    \           b[e]=x,c[e]=y;\n            dp.recalc(e);\n        }\n        cout\
-    \ << dp.query_all().ans << \"\\n\";\n    }\n}"
+    \           b[e]=x,c[e]=y;\n            dp.recalc(e);\n        }\n        int\
+    \ r;\n        cin >> r;\n        cout << dp.query_reroot(r).ans << \"\\n\";\n\
+    \    }\n}"
   dependsOn:
   - template.hpp
   - graph/graph-base.hpp
   - tree/hld.hpp
-  - tree/static-top-tree-dp.hpp
+  - tree/static-top-tree-rerooting-dp.hpp
   - tree/static-top-tree.hpp
   - modular-arithmetic/montgomery-modint.hpp
-  isVerificationFile: false
-  path: verify/yosupo/data-structure/point_set_tree_path_composite_sum_fixed_root.cpp
+  isVerificationFile: true
+  path: verify/yosupo/data-structure/point_set_tree_path_composite_sum.test.cpp
   requiredBy: []
-  timestamp: '2024-11-15 02:29:59+07:00'
-  verificationStatus: LIBRARY_NO_TESTS
+  timestamp: '2024-11-15 02:32:22+07:00'
+  verificationStatus: TEST_ACCEPTED
   verifiedWith: []
-documentation_of: verify/yosupo/data-structure/point_set_tree_path_composite_sum_fixed_root.cpp
+documentation_of: verify/yosupo/data-structure/point_set_tree_path_composite_sum.test.cpp
 layout: document
 redirect_from:
-- /library/verify/yosupo/data-structure/point_set_tree_path_composite_sum_fixed_root.cpp
-- /library/verify/yosupo/data-structure/point_set_tree_path_composite_sum_fixed_root.cpp.html
-title: verify/yosupo/data-structure/point_set_tree_path_composite_sum_fixed_root.cpp
+- /verify/verify/yosupo/data-structure/point_set_tree_path_composite_sum.test.cpp
+- /verify/verify/yosupo/data-structure/point_set_tree_path_composite_sum.test.cpp.html
+title: verify/yosupo/data-structure/point_set_tree_path_composite_sum.test.cpp
 ---

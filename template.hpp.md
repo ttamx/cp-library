@@ -17,12 +17,6 @@ data:
   - icon: ':warning:'
     path: verify/spoj/FASTFLOW.cpp
     title: verify/spoj/FASTFLOW.cpp
-  - icon: ':warning:'
-    path: verify/yosupo/data-structure/point_set_tree_path_composite_sum.cpp
-    title: verify/yosupo/data-structure/point_set_tree_path_composite_sum.cpp
-  - icon: ':warning:'
-    path: verify/yosupo/data-structure/point_set_tree_path_composite_sum_fixed_root.cpp
-    title: verify/yosupo/data-structure/point_set_tree_path_composite_sum_fixed_root.cpp
   _extendedVerifiedWith:
   - icon: ':heavy_check_mark:'
     path: verify/yosupo/convolution/bitwise_and_convolution.test.cpp
@@ -60,6 +54,12 @@ data:
   - icon: ':heavy_check_mark:'
     path: verify/yosupo/data-structure/point_set_range_composite.test.cpp
     title: verify/yosupo/data-structure/point_set_range_composite.test.cpp
+  - icon: ':heavy_check_mark:'
+    path: verify/yosupo/data-structure/point_set_tree_path_composite_sum.test.cpp
+    title: verify/yosupo/data-structure/point_set_tree_path_composite_sum.test.cpp
+  - icon: ':heavy_check_mark:'
+    path: verify/yosupo/data-structure/point_set_tree_path_composite_sum_fixed_root.test.cpp
+    title: verify/yosupo/data-structure/point_set_tree_path_composite_sum_fixed_root.test.cpp
   - icon: ':heavy_check_mark:'
     path: verify/yosupo/data-structure/range_affine_range_sum.test.cpp
     title: verify/yosupo/data-structure/range_affine_range_sum.test.cpp
@@ -245,8 +245,6 @@ data:
   requiredBy:
   - verify/kattis/thekingofthenorth.cpp
   - verify/spoj/FASTFLOW.cpp
-  - verify/yosupo/data-structure/point_set_tree_path_composite_sum_fixed_root.cpp
-  - verify/yosupo/data-structure/point_set_tree_path_composite_sum.cpp
   - verify/atcoder/abc259_g.cpp
   - verify/atcoder/abc347_g.cpp
   - verify/atcoder/abc193_f.cpp
@@ -266,8 +264,10 @@ data:
   - verify/yosupo/data-structure/range_reverse_range_sum.test.cpp
   - verify/yosupo/data-structure/staticrmq.test.cpp
   - verify/yosupo/data-structure/range_affine_range_sum.test.cpp
+  - verify/yosupo/data-structure/point_set_tree_path_composite_sum_fixed_root.test.cpp
   - verify/yosupo/data-structure/vertex_add_path_sum.test.cpp
   - verify/yosupo/data-structure/segment_add_get_min_online.test.cpp
+  - verify/yosupo/data-structure/point_set_tree_path_composite_sum.test.cpp
   - verify/yosupo/data-structure/vertex_add_subtree_sum.test.cpp
   - verify/yosupo/data-structure/range_affine_range_sum_lct.test.cpp
   - verify/yosupo/number-theory/sum_of_floor_of_linear.test.cpp

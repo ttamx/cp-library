@@ -1,17 +1,17 @@
 ---
 data:
   _extendedDependsOn:
-  - icon: ':warning:'
+  - icon: ':heavy_check_mark:'
     path: tree/static-top-tree.hpp
     title: tree/static-top-tree.hpp
-  _extendedRequiredBy:
-  - icon: ':warning:'
-    path: verify/yosupo/data-structure/point_set_tree_path_composite_sum_fixed_root.cpp
-    title: verify/yosupo/data-structure/point_set_tree_path_composite_sum_fixed_root.cpp
-  _extendedVerifiedWith: []
+  _extendedRequiredBy: []
+  _extendedVerifiedWith:
+  - icon: ':heavy_check_mark:'
+    path: verify/yosupo/data-structure/point_set_tree_path_composite_sum_fixed_root.test.cpp
+    title: verify/yosupo/data-structure/point_set_tree_path_composite_sum_fixed_root.test.cpp
   _isVerificationFailed: false
   _pathExtension: hpp
-  _verificationStatusIcon: ':warning:'
+  _verificationStatusIcon: ':heavy_check_mark:'
   attributes:
     links: []
   bundledCode: "#line 2 \"tree/static-top-tree.hpp\"\n\n/**\n * Author: Teetat T.\n\
@@ -93,11 +93,11 @@ data:
   - tree/static-top-tree.hpp
   isVerificationFile: false
   path: tree/static-top-tree-dp.hpp
-  requiredBy:
-  - verify/yosupo/data-structure/point_set_tree_path_composite_sum_fixed_root.cpp
+  requiredBy: []
   timestamp: '2024-11-15 02:28:18+07:00'
-  verificationStatus: LIBRARY_NO_TESTS
-  verifiedWith: []
+  verificationStatus: LIBRARY_ALL_AC
+  verifiedWith:
+  - verify/yosupo/data-structure/point_set_tree_path_composite_sum_fixed_root.test.cpp
 documentation_of: tree/static-top-tree-dp.hpp
 layout: document
 redirect_from:
