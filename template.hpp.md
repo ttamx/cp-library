@@ -17,6 +17,12 @@ data:
   - icon: ':warning:'
     path: verify/spoj/FASTFLOW.cpp
     title: verify/spoj/FASTFLOW.cpp
+  - icon: ':warning:'
+    path: verify/yosupo/data-structure/point_set_tree_path_composite_sum.cpp
+    title: verify/yosupo/data-structure/point_set_tree_path_composite_sum.cpp
+  - icon: ':warning:'
+    path: verify/yosupo/data-structure/point_set_tree_path_composite_sum_fixed_root.cpp
+    title: verify/yosupo/data-structure/point_set_tree_path_composite_sum_fixed_root.cpp
   _extendedVerifiedWith:
   - icon: ':heavy_check_mark:'
     path: verify/yosupo/convolution/bitwise_and_convolution.test.cpp
@@ -239,6 +245,8 @@ data:
   requiredBy:
   - verify/kattis/thekingofthenorth.cpp
   - verify/spoj/FASTFLOW.cpp
+  - verify/yosupo/data-structure/point_set_tree_path_composite_sum_fixed_root.cpp
+  - verify/yosupo/data-structure/point_set_tree_path_composite_sum.cpp
   - verify/atcoder/abc259_g.cpp
   - verify/atcoder/abc347_g.cpp
   - verify/atcoder/abc193_f.cpp

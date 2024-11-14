@@ -14,18 +14,18 @@ data:
   bundledCode: "#line 2 \"group/monoid/max.hpp\"\n\n/**\n * Author: Teetat T.\n *\
     \ Date: 2024-04-14\n * Description: Max Monoid class.\n */\n\ntemplate<class T>\n\
     struct MaxMonoid{\n    using value_type = T;\n    static constexpr T op(const\
-    \ T &x,const T &y){return max(x,y);}\n    static constexpr T unit(){return numeric_limits<T>::min();}\n\
+    \ T &x,const T &y){return max(x,y);}\n    static constexpr T unit(){return numeric_limits<T>::min()/2;}\n\
     };\n\n"
   code: "#pragma once\n\n/**\n * Author: Teetat T.\n * Date: 2024-04-14\n * Description:\
     \ Max Monoid class.\n */\n\ntemplate<class T>\nstruct MaxMonoid{\n    using value_type\
     \ = T;\n    static constexpr T op(const T &x,const T &y){return max(x,y);}\n \
-    \   static constexpr T unit(){return numeric_limits<T>::min();}\n};\n\n"
+    \   static constexpr T unit(){return numeric_limits<T>::min()/2;}\n};\n\n"
   dependsOn: []
   isVerificationFile: false
   path: group/monoid/max.hpp
   requiredBy:
   - group/monoid-action/max-add.hpp
-  timestamp: '2024-06-10 16:05:09+07:00'
+  timestamp: '2024-11-14 23:02:13+07:00'
   verificationStatus: LIBRARY_NO_TESTS
   verifiedWith: []
 documentation_of: group/monoid/max.hpp

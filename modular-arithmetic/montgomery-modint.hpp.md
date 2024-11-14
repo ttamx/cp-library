@@ -1,7 +1,13 @@
 ---
 data:
   _extendedDependsOn: []
-  _extendedRequiredBy: []
+  _extendedRequiredBy:
+  - icon: ':warning:'
+    path: verify/yosupo/data-structure/point_set_tree_path_composite_sum.cpp
+    title: verify/yosupo/data-structure/point_set_tree_path_composite_sum.cpp
+  - icon: ':warning:'
+    path: verify/yosupo/data-structure/point_set_tree_path_composite_sum_fixed_root.cpp
+    title: verify/yosupo/data-structure/point_set_tree_path_composite_sum_fixed_root.cpp
   _extendedVerifiedWith:
   - icon: ':heavy_check_mark:'
     path: verify/yosupo/convolution/bitwise_and_convolution.test.cpp
@@ -128,7 +134,9 @@ data:
   dependsOn: []
   isVerificationFile: false
   path: modular-arithmetic/montgomery-modint.hpp
-  requiredBy: []
+  requiredBy:
+  - verify/yosupo/data-structure/point_set_tree_path_composite_sum_fixed_root.cpp
+  - verify/yosupo/data-structure/point_set_tree_path_composite_sum.cpp
   timestamp: '2024-07-29 18:44:45+07:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:

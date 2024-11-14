@@ -64,22 +64,21 @@ data:
     }\ntemplate<class T=void,bool directed=false>\nGraph<T,directed> read_tree(int\
     \ n,int offset=1){\n    return read_graph<T,directed>(n,n-1,offset);\n}\n\n#line\
     \ 2 \"tree/hld.hpp\"\n\n/**\n * Author: Teetat T.\n * Date: 2024-06-15\n * Description:\
-    \ Heavy-Light Decomposition.\n */\n\ntemplate<class G>\nstruct HLD{\n    G &g;\n\
-    \    int root,timer;\n    vector<int> par,sz,dep,hv,head,tin,tout,ord;\n    HLD(G\
-    \ &_g,int _root=0)\n        : g(_g),root(_root),timer(-1),par(g.n,root),sz(g.n,1),\n\
-    \          dep(g.n),hv(g.n,-1),head(g.n),tin(g.n),tout(g.n),ord(g.n){\n      \
-    \  par[0]=-1;\n        dfs_sz(root);\n        dfs_hld(root);\n    }\n    void\
-    \ dfs_sz(int u){\n        for(int v:g[u])if(v!=par[u]){\n            par[v]=u;\n\
-    \            dep[v]=dep[u]+1;\n            dfs_sz(v);\n            sz[u]+=sz[v];\n\
-    \            if(hv[u]==-1||sz[v]>sz[hv[u]])hv[u]=v;\n        }\n    }\n    void\
-    \ dfs_hld(int u){\n        tin[u]=++timer;\n        ord[timer]=u;\n        if(hv[u]!=-1){\n\
-    \            head[hv[u]]=head[u];\n            dfs_hld(hv[u]);\n        }\n  \
-    \      for(int v:g[u])if(v!=par[u]&&v!=hv[u]){\n            head[v]=v;\n     \
-    \       dfs_hld(v);\n        }\n        tout[u]=timer;\n    }\n    vector<pair<int,int>>\
-    \ get_path(int u,int v,bool vertex,bool commutative=true){\n        vector<pair<int,int>>\
-    \ up,down;\n        while(head[u]!=head[v]){\n            if(dep[head[u]]>dep[head[v]]){\n\
-    \                up.emplace_back(tin[head[u]],tin[u]);\n                u=par[head[u]];\n\
-    \            }else{\n                down.emplace_back(tin[head[v]],tin[v]);\n\
+    \ Heavy-Light Decomposition.\n */\n\ntemplate<class G>\nstruct HLD{\n    int n;\n\
+    \    G &g;\n    int root,timer;\n    vector<int> par,sz,dep,hv,head,tin,tout,ord;\n\
+    \    HLD(G &_g,int _root=0)\n        : n(_g.n),g(_g),root(_root),timer(-1),par(n,root),sz(n,1),\n\
+    \          dep(n),hv(n,-1),head(n),tin(n),tout(n),ord(n){\n        par[0]=-1;\n\
+    \        dfs_sz(root);\n        dfs_hld(root);\n    }\n    void dfs_sz(int u){\n\
+    \        for(int v:g[u])if(v!=par[u]){\n            par[v]=u;\n            dep[v]=dep[u]+1;\n\
+    \            dfs_sz(v);\n            sz[u]+=sz[v];\n            if(hv[u]==-1||sz[v]>sz[hv[u]])hv[u]=v;\n\
+    \        }\n    }\n    void dfs_hld(int u){\n        tin[u]=++timer;\n       \
+    \ ord[timer]=u;\n        if(hv[u]!=-1){\n            head[hv[u]]=head[u];\n  \
+    \          dfs_hld(hv[u]);\n        }\n        for(int v:g[u])if(v!=par[u]&&v!=hv[u]){\n\
+    \            head[v]=v;\n            dfs_hld(v);\n        }\n        tout[u]=timer;\n\
+    \    }\n    vector<pair<int,int>> get_path(int u,int v,bool vertex,bool commutative=true){\n\
+    \        vector<pair<int,int>> up,down;\n        while(head[u]!=head[v]){\n  \
+    \          if(dep[head[u]]>dep[head[v]]){\n                up.emplace_back(tin[head[u]],tin[u]);\n\
+    \                u=par[head[u]];\n            }else{\n                down.emplace_back(tin[head[v]],tin[v]);\n\
     \                v=par[head[v]];\n            }\n        }\n        if(dep[u]>dep[v])up.emplace_back(tin[v]+1,tin[u]),u=v;\n\
     \        else if(u!=v)down.emplace_back(tin[u]+1,tin[v]),v=u;\n        if(vertex)up.emplace_back(tin[u],tin[u]);\n\
     \        reverse(down.begin(),down.end());\n        if(!commutative)for(auto &[x,y]:up)swap(x,y);\n\
@@ -113,7 +112,7 @@ data:
   isVerificationFile: true
   path: verify/yosupo/tree/lca.test.cpp
   requiredBy: []
-  timestamp: '2024-10-31 23:18:18+07:00'
+  timestamp: '2024-11-14 23:02:13+07:00'
   verificationStatus: TEST_ACCEPTED
   verifiedWith: []
 documentation_of: verify/yosupo/tree/lca.test.cpp

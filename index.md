@@ -224,6 +224,12 @@ data:
     - icon: ':heavy_check_mark:'
       path: tree/hld.hpp
       title: tree/hld.hpp
+    - icon: ':warning:'
+      path: tree/static-top-tree-dp.hpp
+      title: tree/static-top-tree-dp.hpp
+    - icon: ':warning:'
+      path: tree/static-top-tree.hpp
+      title: tree/static-top-tree.hpp
   - name: verify/atcoder
     pages:
     - icon: ':warning:'
@@ -245,6 +251,14 @@ data:
     - icon: ':warning:'
       path: verify/spoj/FASTFLOW.cpp
       title: verify/spoj/FASTFLOW.cpp
+  - name: verify/yosupo/data-structure
+    pages:
+    - icon: ':warning:'
+      path: verify/yosupo/data-structure/point_set_tree_path_composite_sum.cpp
+      title: verify/yosupo/data-structure/point_set_tree_path_composite_sum.cpp
+    - icon: ':warning:'
+      path: verify/yosupo/data-structure/point_set_tree_path_composite_sum_fixed_root.cpp
+      title: verify/yosupo/data-structure/point_set_tree_path_composite_sum_fixed_root.cpp
   verificationCategories:
   - name: verify/yosupo/convolution
     pages:
