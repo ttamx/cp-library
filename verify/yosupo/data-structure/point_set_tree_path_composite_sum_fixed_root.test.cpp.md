@@ -140,20 +140,19 @@ data:
     \    using Path = typename TreeDP::Path;\n    using Point = typename TreeDP::Point;\n\
     \    StaticTopTree<HLD> stt;\n    vector<Path> path;\n    vector<Point> point;\n\
     \    StaticTopTreeDP(HLD &hld):stt(hld){\n        int n=stt.n;\n        path.resize(n);\n\
-    \        point.resize(n);\n        dfs(stt.root);\n    }\n    void update(int\
+    \        point.resize(n);\n        dfs(stt.root);\n    }\n    void _update(int\
     \ u){\n        if(stt.type[u]==stt.Vertex){\n            path[u]=TreeDP::vertex(u);\n\
     \        }else if(stt.type[u]==stt.Compress){\n            path[u]=TreeDP::compress(path[stt.lch[u]],path[stt.rch[u]]);\n\
     \        }else if(stt.type[u]==stt.Rake){\n            point[u]=TreeDP::rake(point[stt.lch[u]],point[stt.rch[u]]);\n\
     \        }else if(stt.type[u]==stt.AddEdge){\n            point[u]=TreeDP::add_edge(path[stt.lch[u]]);\n\
     \        }else{\n            path[u]=TreeDP::add_vertex(point[stt.lch[u]],u);\n\
     \        }\n    }\n    void dfs(int u){\n        if(u==-1)return;\n        dfs(stt.lch[u]);\n\
-    \        dfs(stt.rch[u]);\n        update(u);\n    }\n    void recalc(int u){\n\
-    \        while(u!=-1){\n            update(u);\n            u=stt.par[u];\n  \
-    \      }\n    }\n    Path query_all(){\n        return path[stt.root];\n    }\n\
-    \    Path query_subtree(int u){\n        Path res=path[u];\n        while(true){\n\
-    \            int p=stt.par[u];\n            if(p==-1||stt.type[p]!=stt.Compress)break;\n\
-    \            if(stt.lch[p]==u){\n                res=TreeDP::compress(path[stt.rch[p]],res);\n\
-    \            }\n        }\n        return res;\n    }\n};\n\n#line 2 \"modular-arithmetic/montgomery-modint.hpp\"\
+    \        dfs(stt.rch[u]);\n        _update(u);\n    }\n    void update(int u){\n\
+    \        for(;u!=-1;u=stt.par[u])_update(u);\n    }\n    Path query_all(){\n \
+    \       return path[stt.root];\n    }\n    Path query_subtree(int u){\n      \
+    \  Path res=path[u];\n        while(true){\n            int p=stt.par[u];\n  \
+    \          if(p==-1||stt.type[p]!=stt.Compress)break;\n            if(stt.lch[p]==u)res=TreeDP::compress(path[stt.rch[p]],res);\n\
+    \        }\n        return res;\n    }\n};\n\n#line 2 \"modular-arithmetic/montgomery-modint.hpp\"\
     \n\n/**\n * Author: Teetat T.\n * Date: 2024-03-17\n * Description: modular arithmetic\
     \ operators using Montgomery space\n */\n\ntemplate<uint32_t mod,uint32_t root=0>\n\
     struct MontgomeryModInt{\n    using mint = MontgomeryModInt;\n    using i32 =\
@@ -218,9 +217,9 @@ data:
     \    g.add_edge(v,i+n);\n    }\n    HLD hld(g);\n    StaticTopTreeDP<decltype(hld),TreeDP>\
     \ dp(hld);\n    while(q--){\n        int op;\n        cin >> op;\n        if(op==0){\n\
     \            int u;\n            mint x;\n            cin >> u >> x;\n       \
-    \     a[u]=x;\n            dp.recalc(u);\n        }else{\n            int e;\n\
+    \     a[u]=x;\n            dp.update(u);\n        }else{\n            int e;\n\
     \            mint x,y;\n            cin >> e >> x >> y;\n            e+=n;\n \
-    \           b[e]=x,c[e]=y;\n            dp.recalc(e);\n        }\n        cout\
+    \           b[e]=x,c[e]=y;\n            dp.update(e);\n        }\n        cout\
     \ << dp.query_all().ans << \"\\n\";\n    }\n}\n"
   code: "#define PROBLEM \"https://judge.yosupo.jp/problem/point_set_tree_path_composite_sum_fixed_root\"\
     \n#include \"template.hpp\"\n#include \"graph/graph-base.hpp\"\n#include \"tree/hld.hpp\"\
@@ -246,9 +245,9 @@ data:
     \    g.add_edge(v,i+n);\n    }\n    HLD hld(g);\n    StaticTopTreeDP<decltype(hld),TreeDP>\
     \ dp(hld);\n    while(q--){\n        int op;\n        cin >> op;\n        if(op==0){\n\
     \            int u;\n            mint x;\n            cin >> u >> x;\n       \
-    \     a[u]=x;\n            dp.recalc(u);\n        }else{\n            int e;\n\
+    \     a[u]=x;\n            dp.update(u);\n        }else{\n            int e;\n\
     \            mint x,y;\n            cin >> e >> x >> y;\n            e+=n;\n \
-    \           b[e]=x,c[e]=y;\n            dp.recalc(e);\n        }\n        cout\
+    \           b[e]=x,c[e]=y;\n            dp.update(e);\n        }\n        cout\
     \ << dp.query_all().ans << \"\\n\";\n    }\n}"
   dependsOn:
   - template.hpp
@@ -260,7 +259,7 @@ data:
   isVerificationFile: true
   path: verify/yosupo/data-structure/point_set_tree_path_composite_sum_fixed_root.test.cpp
   requiredBy: []
-  timestamp: '2024-11-15 02:32:22+07:00'
+  timestamp: '2024-11-15 15:34:15+07:00'
   verificationStatus: TEST_ACCEPTED
   verifiedWith: []
 documentation_of: verify/yosupo/data-structure/point_set_tree_path_composite_sum_fixed_root.test.cpp

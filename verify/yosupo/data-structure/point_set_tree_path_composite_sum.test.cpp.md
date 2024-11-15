@@ -141,7 +141,7 @@ data:
     \    StaticTopTree<HLD> stt;\n    vector<Path> path,rpath;\n    vector<Point>\
     \ point;\n    StaticTopTreeRerootingDP(HLD &hld):stt(hld){\n        int n=stt.n;\n\
     \        path.resize(n);\n        point.resize(n);\n        rpath.resize(n);\n\
-    \        dfs(stt.root);\n    }\n    void update(int u){\n        if(stt.type[u]==stt.Vertex){\n\
+    \        dfs(stt.root);\n    }\n    void _update(int u){\n        if(stt.type[u]==stt.Vertex){\n\
     \            path[u]=rpath[u]=TreeDP::vertex(u);\n        }else if(stt.type[u]==stt.Compress){\n\
     \            path[u]=TreeDP::compress(path[stt.lch[u]],path[stt.rch[u]]);\n  \
     \          rpath[u]=TreeDP::compress(rpath[stt.rch[u]],rpath[stt.lch[u]]);\n \
@@ -149,24 +149,22 @@ data:
     \        }else if(stt.type[u]==stt.AddEdge){\n            point[u]=TreeDP::add_edge(path[stt.lch[u]]);\n\
     \        }else{\n            path[u]=rpath[u]=TreeDP::add_vertex(point[stt.lch[u]],u);\n\
     \        }\n    }\n    void dfs(int u){\n        if(u==-1)return;\n        dfs(stt.lch[u]);\n\
-    \        dfs(stt.rch[u]);\n        update(u);\n    }\n    void recalc(int u){\n\
-    \        while(u!=-1){\n            update(u);\n            u=stt.par[u];\n  \
-    \      }\n    }\n    Path query_all(){\n        return path[stt.root];\n    }\n\
-    \    Path query_subtree(int u){\n        Path res=path[u];\n        while(true){\n\
-    \            int p=stt.par[u];\n            if(p==-1||stt.type[p]!=stt.Compress)break;\n\
-    \            if(stt.lch[p]==u){\n                res=TreeDP::compress(path[stt.rch[p]],res);\n\
-    \            }\n        }\n        return res;\n    }\n    Path query_reroot(int\
-    \ u){\n        auto rec=[&](auto &&rec,int u)->Point{\n            int p=stt.par[u];\n\
-    \            Path below=Path::unit(),above=Path::unit();\n            while(p!=-1&&stt.type[p]==stt.Compress){\n\
-    \                int l=stt.lch[p],r=stt.rch[p];\n                if(l==u){\n \
-    \                   below=TreeDP::compress(below,path[r]);\n                }else{\n\
-    \                    above=TreeDP::compress(above,rpath[l]);\n               \
-    \ }\n                u=p;\n                p=stt.par[u];\n            }\n    \
-    \        if(p!=-1){\n                u=p;\n                p=stt.par[u];\n   \
-    \             Point sum=Point::unit();\n                while(stt.type[p]==stt.Rake){\n\
-    \                    int l=stt.lch[p],r=stt.rch[p];\n                    sum=TreeDP::rake(sum,u==r?point[l]:point[r]);\n\
-    \                    u=p;\n                    p=stt.par[u];\n               \
-    \ }\n                sum=TreeDP::rake(sum,rec(rec,p));\n                above=TreeDP::compress(above,TreeDP::add_vertex(sum,p));\n\
+    \        dfs(stt.rch[u]);\n        _update(u);\n    }\n    void update(int u){\n\
+    \        for(;u!=-1;u=stt.par[u])_update(u);\n    }\n    Path query_all(){\n \
+    \       return path[stt.root];\n    }\n    Path query_subtree(int u){\n      \
+    \  Path res=path[u];\n        while(true){\n            int p=stt.par[u];\n  \
+    \          if(p==-1||stt.type[p]!=stt.Compress)break;\n            if(stt.lch[p]==u)res=TreeDP::compress(path[stt.rch[p]],res);\n\
+    \        }\n        return res;\n    }\n    Path query_reroot(int u){\n      \
+    \  auto rec=[&](auto &&rec,int u)->Point{\n            int p=stt.par[u];\n   \
+    \         Path below=Path::unit(),above=Path::unit();\n            while(p!=-1&&stt.type[p]==stt.Compress){\n\
+    \                int l=stt.lch[p],r=stt.rch[p];\n                if(l==u)below=TreeDP::compress(below,path[r]);\n\
+    \                else above=TreeDP::compress(above,rpath[l]);\n              \
+    \  u=p;\n                p=stt.par[u];\n            }\n            if(p!=-1){\n\
+    \                u=p;\n                p=stt.par[u];\n                Point sum=Point::unit();\n\
+    \                while(stt.type[p]==stt.Rake){\n                    int l=stt.lch[p],r=stt.rch[p];\n\
+    \                    sum=TreeDP::rake(sum,u==r?point[l]:point[r]);\n         \
+    \           u=p;\n                    p=stt.par[u];\n                }\n     \
+    \           sum=TreeDP::rake(sum,rec(rec,p));\n                above=TreeDP::compress(above,TreeDP::add_vertex(sum,p));\n\
     \            }\n            return TreeDP::rake(TreeDP::add_edge(below),TreeDP::add_edge(above));\n\
     \        };\n        Point res=rec(rec,u);\n        if(stt.type[u]==stt.AddVertex){\n\
     \            res=TreeDP::rake(res,point[stt.lch[u]]);\n        }\n        return\
@@ -235,9 +233,9 @@ data:
     \    g.add_edge(v,i+n);\n    }\n    HLD hld(g);\n    StaticTopTreeRerootingDP<decltype(hld),TreeDP>\
     \ dp(hld);\n    while(q--){\n        int op;\n        cin >> op;\n        if(op==0){\n\
     \            int u;\n            mint x;\n            cin >> u >> x;\n       \
-    \     a[u]=x;\n            dp.recalc(u);\n        }else{\n            int e;\n\
+    \     a[u]=x;\n            dp.update(u);\n        }else{\n            int e;\n\
     \            mint x,y;\n            cin >> e >> x >> y;\n            e+=n;\n \
-    \           b[e]=x,c[e]=y;\n            dp.recalc(e);\n        }\n        int\
+    \           b[e]=x,c[e]=y;\n            dp.update(e);\n        }\n        int\
     \ r;\n        cin >> r;\n        cout << dp.query_reroot(r).ans << \"\\n\";\n\
     \    }\n}\n"
   code: "#define PROBLEM \"https://judge.yosupo.jp/problem/point_set_tree_path_composite_sum\"\
@@ -264,9 +262,9 @@ data:
     \    g.add_edge(v,i+n);\n    }\n    HLD hld(g);\n    StaticTopTreeRerootingDP<decltype(hld),TreeDP>\
     \ dp(hld);\n    while(q--){\n        int op;\n        cin >> op;\n        if(op==0){\n\
     \            int u;\n            mint x;\n            cin >> u >> x;\n       \
-    \     a[u]=x;\n            dp.recalc(u);\n        }else{\n            int e;\n\
+    \     a[u]=x;\n            dp.update(u);\n        }else{\n            int e;\n\
     \            mint x,y;\n            cin >> e >> x >> y;\n            e+=n;\n \
-    \           b[e]=x,c[e]=y;\n            dp.recalc(e);\n        }\n        int\
+    \           b[e]=x,c[e]=y;\n            dp.update(e);\n        }\n        int\
     \ r;\n        cin >> r;\n        cout << dp.query_reroot(r).ans << \"\\n\";\n\
     \    }\n}"
   dependsOn:
@@ -279,7 +277,7 @@ data:
   isVerificationFile: true
   path: verify/yosupo/data-structure/point_set_tree_path_composite_sum.test.cpp
   requiredBy: []
-  timestamp: '2024-11-15 02:32:22+07:00'
+  timestamp: '2024-11-15 15:34:15+07:00'
   verificationStatus: TEST_ACCEPTED
   verifiedWith: []
 documentation_of: verify/yosupo/data-structure/point_set_tree_path_composite_sum.test.cpp
