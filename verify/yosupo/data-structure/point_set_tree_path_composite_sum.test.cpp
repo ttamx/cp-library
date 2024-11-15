@@ -77,14 +77,14 @@ int main(){
             mint x;
             cin >> u >> x;
             a[u]=x;
-            dp.recalc(u);
+            dp.update(u);
         }else{
             int e;
             mint x,y;
             cin >> e >> x >> y;
             e+=n;
             b[e]=x,c[e]=y;
-            dp.recalc(e);
+            dp.update(e);
         }
         int r;
         cin >> r;

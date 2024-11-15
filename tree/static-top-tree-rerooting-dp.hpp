@@ -37,7 +37,7 @@ struct StaticTopTreeRerootingDP{
         rpath.resize(n);
         dfs(stt.root);
     }
-    void update(int u){
+    void _update(int u){
         if(stt.type[u]==stt.Vertex){
             path[u]=rpath[u]=TreeDP::vertex(u);
         }else if(stt.type[u]==stt.Compress){
@@ -55,13 +55,10 @@ struct StaticTopTreeRerootingDP{
         if(u==-1)return;
         dfs(stt.lch[u]);
         dfs(stt.rch[u]);
-        update(u);
+        _update(u);
     }
-    void recalc(int u){
-        while(u!=-1){
-            update(u);
-            u=stt.par[u];
-        }
+    void update(int u){
+        for(;u!=-1;u=stt.par[u])_update(u);
     }
     Path query_all(){
         return path[stt.root];
@@ -71,9 +68,7 @@ struct StaticTopTreeRerootingDP{
         while(true){
             int p=stt.par[u];
             if(p==-1||stt.type[p]!=stt.Compress)break;
-            if(stt.lch[p]==u){
-                res=TreeDP::compress(path[stt.rch[p]],res);
-            }
+            if(stt.lch[p]==u)res=TreeDP::compress(path[stt.rch[p]],res);
         }
         return res;
     }
@@ -83,11 +78,8 @@ struct StaticTopTreeRerootingDP{
             Path below=Path::unit(),above=Path::unit();
             while(p!=-1&&stt.type[p]==stt.Compress){
                 int l=stt.lch[p],r=stt.rch[p];
-                if(l==u){
-                    below=TreeDP::compress(below,path[r]);
-                }else{
-                    above=TreeDP::compress(above,rpath[l]);
-                }
+                if(l==u)below=TreeDP::compress(below,path[r]);
+                else above=TreeDP::compress(above,rpath[l]);
                 u=p;
                 p=stt.par[u];
             }

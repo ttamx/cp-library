@@ -36,7 +36,7 @@ struct StaticTopTreeDP{
         point.resize(n);
         dfs(stt.root);
     }
-    void update(int u){
+    void _update(int u){
         if(stt.type[u]==stt.Vertex){
             path[u]=TreeDP::vertex(u);
         }else if(stt.type[u]==stt.Compress){
@@ -53,13 +53,10 @@ struct StaticTopTreeDP{
         if(u==-1)return;
         dfs(stt.lch[u]);
         dfs(stt.rch[u]);
-        update(u);
+        _update(u);
     }
-    void recalc(int u){
-        while(u!=-1){
-            update(u);
-            u=stt.par[u];
-        }
+    void update(int u){
+        for(;u!=-1;u=stt.par[u])_update(u);
     }
     Path query_all(){
         return path[stt.root];
@@ -69,9 +66,7 @@ struct StaticTopTreeDP{
         while(true){
             int p=stt.par[u];
             if(p==-1||stt.type[p]!=stt.Compress)break;
-            if(stt.lch[p]==u){
-                res=TreeDP::compress(path[stt.rch[p]],res);
-            }
+            if(stt.lch[p]==u)res=TreeDP::compress(path[stt.rch[p]],res);
         }
         return res;
     }
