@@ -66,7 +66,7 @@ struct StaticTopTreeDP{
         while(true){
             int p=stt.par[u];
             if(p==-1||stt.type[p]!=stt.Compress)break;
-            if(stt.lch[p]==u)res=TreeDP::compress(path[stt.rch[p]],res);
+            if(stt.lch[p]==u)res=TreeDP::compress(res,path[stt.rch[p]]);
         }
         return res;
     }
