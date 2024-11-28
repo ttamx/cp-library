@@ -64,7 +64,7 @@ data:
     \        for(;u!=-1;u=stt.par[u])_update(u);\n    }\n    Path query_all(){\n \
     \       return path[stt.root];\n    }\n    Path query_subtree(int u){\n      \
     \  Path res=path[u];\n        while(true){\n            int p=stt.par[u];\n  \
-    \          if(p==-1||stt.type[p]!=stt.Compress)break;\n            if(stt.lch[p]==u)res=TreeDP::compress(path[stt.rch[p]],res);\n\
+    \          if(p==-1||stt.type[p]!=stt.Compress)break;\n            if(stt.lch[p]==u)res=TreeDP::compress(res,path[stt.rch[p]]);\n\
     \        }\n        return res;\n    }\n    Path query_reroot(int u){\n      \
     \  auto rec=[&](auto &&rec,int u)->Point{\n            int p=stt.par[u];\n   \
     \         Path below=Path::unit(),above=Path::unit();\n            while(p!=-1&&stt.type[p]==stt.Compress){\n\
@@ -103,7 +103,7 @@ data:
     \        for(;u!=-1;u=stt.par[u])_update(u);\n    }\n    Path query_all(){\n \
     \       return path[stt.root];\n    }\n    Path query_subtree(int u){\n      \
     \  Path res=path[u];\n        while(true){\n            int p=stt.par[u];\n  \
-    \          if(p==-1||stt.type[p]!=stt.Compress)break;\n            if(stt.lch[p]==u)res=TreeDP::compress(path[stt.rch[p]],res);\n\
+    \          if(p==-1||stt.type[p]!=stt.Compress)break;\n            if(stt.lch[p]==u)res=TreeDP::compress(res,path[stt.rch[p]]);\n\
     \        }\n        return res;\n    }\n    Path query_reroot(int u){\n      \
     \  auto rec=[&](auto &&rec,int u)->Point{\n            int p=stt.par[u];\n   \
     \         Path below=Path::unit(),above=Path::unit();\n            while(p!=-1&&stt.type[p]==stt.Compress){\n\
@@ -124,7 +124,7 @@ data:
   isVerificationFile: false
   path: tree/static-top-tree-rerooting-dp.hpp
   requiredBy: []
-  timestamp: '2024-11-15 15:34:15+07:00'
+  timestamp: '2024-11-28 20:30:35+07:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
   - verify/yosupo/data-structure/point_set_tree_path_composite_sum.test.cpp

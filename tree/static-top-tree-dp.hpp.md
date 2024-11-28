@@ -62,7 +62,7 @@ data:
     \        for(;u!=-1;u=stt.par[u])_update(u);\n    }\n    Path query_all(){\n \
     \       return path[stt.root];\n    }\n    Path query_subtree(int u){\n      \
     \  Path res=path[u];\n        while(true){\n            int p=stt.par[u];\n  \
-    \          if(p==-1||stt.type[p]!=stt.Compress)break;\n            if(stt.lch[p]==u)res=TreeDP::compress(path[stt.rch[p]],res);\n\
+    \          if(p==-1||stt.type[p]!=stt.Compress)break;\n            if(stt.lch[p]==u)res=TreeDP::compress(res,path[stt.rch[p]]);\n\
     \        }\n        return res;\n    }\n};\n\n"
   code: "#pragma once\n#include \"tree/static-top-tree.hpp\"\n\n/**\n * Author: Teetat\
     \ T.\n * Date: 2024-11-14\n * Description: Static Top Tree DP.\n */\n\n/*\nstruct\
@@ -85,14 +85,14 @@ data:
     \        for(;u!=-1;u=stt.par[u])_update(u);\n    }\n    Path query_all(){\n \
     \       return path[stt.root];\n    }\n    Path query_subtree(int u){\n      \
     \  Path res=path[u];\n        while(true){\n            int p=stt.par[u];\n  \
-    \          if(p==-1||stt.type[p]!=stt.Compress)break;\n            if(stt.lch[p]==u)res=TreeDP::compress(path[stt.rch[p]],res);\n\
+    \          if(p==-1||stt.type[p]!=stt.Compress)break;\n            if(stt.lch[p]==u)res=TreeDP::compress(res,path[stt.rch[p]]);\n\
     \        }\n        return res;\n    }\n};\n\n"
   dependsOn:
   - tree/static-top-tree.hpp
   isVerificationFile: false
   path: tree/static-top-tree-dp.hpp
   requiredBy: []
-  timestamp: '2024-11-15 15:34:15+07:00'
+  timestamp: '2024-11-28 20:30:35+07:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
   - verify/yosupo/data-structure/point_set_tree_path_composite_sum_fixed_root.test.cpp
