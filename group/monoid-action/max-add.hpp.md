@@ -22,8 +22,8 @@ data:
     \n\n/**\n * Author: Teetat T.\n * Date: 2024-04-14\n * Description: Max Monoid\
     \ class.\n */\n\ntemplate<class T>\nstruct MaxMonoid{\n    using value_type =\
     \ T;\n    static constexpr T op(const T &x,const T &y){return max(x,y);}\n   \
-    \ static constexpr T unit(){return numeric_limits<T>::min()/2;}\n};\n\n#line 4\
-    \ \"group/monoid-action/max-add.hpp\"\n\n/**\n * Author: Teetat T.\n * Date: 2024-04-14\n\
+    \ static constexpr T unit(){return numeric_limits<T>::min();}\n};\n\n#line 4 \"\
+    group/monoid-action/max-add.hpp\"\n\n/**\n * Author: Teetat T.\n * Date: 2024-04-14\n\
     \ * Description: Add to Max Action class.\n */\n\ntemplate<class T>\nstruct MaxAddAction{\n\
     \    using InfoMonoid = MaxMonoid<T>;\n    using TagMonoid = AddMonoid<T>;\n \
     \   using Info = typename InfoMonoid::value_type;\n    using Tag = typename TagMonoid::value_type;\n\
@@ -42,7 +42,7 @@ data:
   isVerificationFile: false
   path: group/monoid-action/max-add.hpp
   requiredBy: []
-  timestamp: '2024-11-14 23:02:13+07:00'
+  timestamp: '2024-12-12 23:59:39+07:00'
   verificationStatus: LIBRARY_NO_TESTS
   verifiedWith: []
 documentation_of: group/monoid-action/max-add.hpp

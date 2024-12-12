@@ -138,6 +138,9 @@ data:
       path: group/monoid/min.hpp
       title: group/monoid/min.hpp
     - icon: ':warning:'
+      path: group/monoid/minmax.hpp
+      title: group/monoid/minmax.hpp
+    - icon: ':warning:'
       path: group/monoid/monoid-base.hpp
       title: group/monoid/monoid-base.hpp
     - icon: ':heavy_check_mark:'
