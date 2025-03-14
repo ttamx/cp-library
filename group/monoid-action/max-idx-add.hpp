@@ -8,9 +8,9 @@
  * Description: Add to Max Action class.
  */
 
-template<class T>
+template<class T,class IDX=int,bool tie_is_left=true>
 struct MaxAddIdxAction{
-    using InfoMonoid = MaxIdxMonoid<T>;
+    using InfoMonoid = MaxIdxMonoid<T,IDX,tie_is_left>;
     using TagMonoid = AddMonoid<T>;
     using Info = typename InfoMonoid::value_type;
     using Tag = typename TagMonoid::value_type;

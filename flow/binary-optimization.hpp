@@ -3,7 +3,7 @@
 
 /**
  * Author: Teetat T.
- * Date: 2024-07-1ุ6
+ * Date: 2024-07-16
  * Description: Binary Optimization.
  *  minimize $\kappa + \sum_i \theta_i(x_i) + \sum_{i<j} \phi_{ij}(x_i,x_j) + \sum_{i<j<k} \psi_{ijk}(x_i,x_j,x_k)$
  *  where $x_i \in \{0,1\}$ and $\phi_{ij},\psi_{ijk}$ are submodular functions.
