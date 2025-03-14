@@ -27,17 +27,18 @@ data:
     \    }\n    static constexpr P unit(){return P(numeric_limits<T>::max(),IDX(-1));}\n\
     };\n\n#line 4 \"group/monoid-action/min-idx-add.hpp\"\n\n/**\n * Author: Teetat\
     \ T.\n * Date: 2024-04-14\n * Description: Add to Min Action class.\n */\n\ntemplate<class\
-    \ T>\nstruct MinAddIdxAction{\n    using InfoMonoid = MinIdxMonoid<T>;\n    using\
-    \ TagMonoid = AddMonoid<T>;\n    using Info = typename InfoMonoid::value_type;\n\
-    \    using Tag = typename TagMonoid::value_type;\n    static constexpr Info op(const\
-    \ Info &a,const Tag &b){\n        return (a==InfoMonoid::unit()?a:Info(a.first+b,a.second));\n\
+    \ T,class IDX=int,bool tie_is_left=true>\nstruct MinAddIdxAction{\n    using InfoMonoid\
+    \ = MinIdxMonoid<T,IDX,tie_is_left>;\n    using TagMonoid = AddMonoid<T>;\n  \
+    \  using Info = typename InfoMonoid::value_type;\n    using Tag = typename TagMonoid::value_type;\n\
+    \    static constexpr Info op(const Info &a,const Tag &b){\n        return (a==InfoMonoid::unit()?a:Info(a.first+b,a.second));\n\
     \    }\n};\n\n"
   code: "#pragma once\n#include \"group/monoid/add.hpp\"\n#include \"group/monoid/min-idx.hpp\"\
     \n\n/**\n * Author: Teetat T.\n * Date: 2024-04-14\n * Description: Add to Min\
-    \ Action class.\n */\n\ntemplate<class T>\nstruct MinAddIdxAction{\n    using\
-    \ InfoMonoid = MinIdxMonoid<T>;\n    using TagMonoid = AddMonoid<T>;\n    using\
-    \ Info = typename InfoMonoid::value_type;\n    using Tag = typename TagMonoid::value_type;\n\
-    \    static constexpr Info op(const Info &a,const Tag &b){\n        return (a==InfoMonoid::unit()?a:Info(a.first+b,a.second));\n\
+    \ Action class.\n */\n\ntemplate<class T,class IDX=int,bool tie_is_left=true>\n\
+    struct MinAddIdxAction{\n    using InfoMonoid = MinIdxMonoid<T,IDX,tie_is_left>;\n\
+    \    using TagMonoid = AddMonoid<T>;\n    using Info = typename InfoMonoid::value_type;\n\
+    \    using Tag = typename TagMonoid::value_type;\n    static constexpr Info op(const\
+    \ Info &a,const Tag &b){\n        return (a==InfoMonoid::unit()?a:Info(a.first+b,a.second));\n\
     \    }\n};\n\n"
   dependsOn:
   - group/monoid/add.hpp
@@ -45,7 +46,7 @@ data:
   isVerificationFile: false
   path: group/monoid-action/min-idx-add.hpp
   requiredBy: []
-  timestamp: '2024-09-21 22:47:38+07:00'
+  timestamp: '2025-03-14 23:36:46+07:00'
   verificationStatus: LIBRARY_NO_TESTS
   verifiedWith: []
 documentation_of: group/monoid-action/min-idx-add.hpp

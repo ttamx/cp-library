@@ -7,7 +7,7 @@ data:
   - icon: ':warning:'
     path: flow/k-ary-optimization.hpp
     title: flow/k-ary-optimization.hpp
-  - icon: ':heavy_check_mark:'
+  - icon: ':question:'
     path: template.hpp
     title: template.hpp
   _extendedRequiredBy: []
@@ -19,7 +19,7 @@ data:
     links:
     - https://atcoder.jp/contests/abc347/tasks/abc347_g
   bundledCode: "#line 1 \"verify/atcoder/abc347_g.cpp\"\n#define PROBLEM \"https://atcoder.jp/contests/abc347/tasks/abc347_g\"\
-    \n#line 1 \"template.hpp\"\n#include<bits/stdc++.h>\n#include<ext/pb_ds/assoc_container.hpp>\n\
+    \n#line 2 \"template.hpp\"\n#include<bits/stdc++.h>\n#include<ext/pb_ds/assoc_container.hpp>\n\
     #include<ext/pb_ds/tree_policy.hpp>\n\nusing namespace std;\nusing namespace __gnu_pbds;\n\
     \nusing ll = long long;\nusing db = long double;\nusing vi = vector<int>;\nusing\
     \ vl = vector<ll>;\nusing vd = vector<db>;\nusing pii = pair<int,int>;\nusing\
@@ -142,7 +142,7 @@ data:
   isVerificationFile: false
   path: verify/atcoder/abc347_g.cpp
   requiredBy: []
-  timestamp: '2024-10-31 23:18:18+07:00'
+  timestamp: '2025-03-14 23:36:46+07:00'
   verificationStatus: LIBRARY_NO_TESTS
   verifiedWith: []
 documentation_of: verify/atcoder/abc347_g.cpp

@@ -1,27 +1,27 @@
 ---
 data:
   _extendedDependsOn:
-  - icon: ':heavy_check_mark:'
+  - icon: ':question:'
     path: graph/graph-base.hpp
     title: graph/graph-base.hpp
-  - icon: ':heavy_check_mark:'
+  - icon: ':question:'
     path: template.hpp
     title: template.hpp
-  - icon: ':heavy_check_mark:'
+  - icon: ':question:'
     path: tree/hld.hpp
     title: tree/hld.hpp
   _extendedRequiredBy: []
   _extendedVerifiedWith: []
-  _isVerificationFailed: false
+  _isVerificationFailed: true
   _pathExtension: cpp
-  _verificationStatusIcon: ':heavy_check_mark:'
+  _verificationStatusIcon: ':x:'
   attributes:
     '*NOT_SPECIAL_COMMENTS*': ''
     PROBLEM: https://judge.yosupo.jp/problem/jump_on_tree
     links:
     - https://judge.yosupo.jp/problem/jump_on_tree
   bundledCode: "#line 1 \"verify/yosupo/tree/jump_on_tree.test.cpp\"\n#define PROBLEM\
-    \ \"https://judge.yosupo.jp/problem/jump_on_tree\"\n#line 1 \"template.hpp\"\n\
+    \ \"https://judge.yosupo.jp/problem/jump_on_tree\"\n#line 2 \"template.hpp\"\n\
     #include<bits/stdc++.h>\n#include<ext/pb_ds/assoc_container.hpp>\n#include<ext/pb_ds/tree_policy.hpp>\n\
     \nusing namespace std;\nusing namespace __gnu_pbds;\n\nusing ll = long long;\n\
     using db = long double;\nusing vi = vector<int>;\nusing vl = vector<ll>;\nusing\
@@ -111,8 +111,8 @@ data:
   isVerificationFile: true
   path: verify/yosupo/tree/jump_on_tree.test.cpp
   requiredBy: []
-  timestamp: '2024-11-14 23:02:13+07:00'
-  verificationStatus: TEST_ACCEPTED
+  timestamp: '2025-03-14 23:36:46+07:00'
+  verificationStatus: TEST_WRONG_ANSWER
   verifiedWith: []
 documentation_of: verify/yosupo/tree/jump_on_tree.test.cpp
 layout: document

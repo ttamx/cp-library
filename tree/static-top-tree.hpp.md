@@ -80,13 +80,13 @@ data:
   isVerificationFile: false
   path: tree/static-top-tree.hpp
   requiredBy:
-  - tree/static-top-tree-rerooting-dp.hpp
   - tree/static-top-tree-dp.hpp
+  - tree/static-top-tree-rerooting-dp.hpp
   timestamp: '2024-11-15 02:28:18+07:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
-  - verify/yosupo/data-structure/point_set_tree_path_composite_sum_fixed_root.test.cpp
   - verify/yosupo/data-structure/point_set_tree_path_composite_sum.test.cpp
+  - verify/yosupo/data-structure/point_set_tree_path_composite_sum_fixed_root.test.cpp
 documentation_of: tree/static-top-tree.hpp
 layout: document
 redirect_from:

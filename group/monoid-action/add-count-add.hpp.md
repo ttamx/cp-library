@@ -21,11 +21,11 @@ data:
     \ -x;}\n    static constexpr T unit(){return T(0);}\n};\n\n#line 2 \"group/monoid/add-count.hpp\"\
     \n\n/**\n * Author: Teetat T.\n * Date: 2024-04-14\n * Description: Add & Count\
     \ Monoid class.\n */\n\ntemplate<class T>\nstruct AddCountMonoid{\n    using P\
-    \ = pair<T,int>;\n    using value_type = P;\n    static constexpr P op(const P\
+    \ = pair<T,ll>;\n    using value_type = P;\n    static constexpr P op(const P\
     \ &x,const P &y){\n        return P(x.first+y.first,x.second+y.second);\n    }\n\
     \    static constexpr P inverse(const P &x){return P(-x.first,-x.second);}\n \
-    \   static constexpr P unit(){return P(T(0),0);}\n    static constexpr P make(const\
-    \ T &x){return P(x,1);}\n};\n\n#line 4 \"group/monoid-action/add-count-add.hpp\"\
+    \   static constexpr P unit(){return P(T(0),0LL);}\n    static constexpr P make(const\
+    \ T &x){return P(x,1LL);}\n};\n\n#line 4 \"group/monoid-action/add-count-add.hpp\"\
     \n\n/**\n * Author: Teetat T.\n * Date: 2024-04-14\n * Description: Add to Add\
     \ & Count Monoid class.\n */\n\ntemplate<class T>\nstruct AddCountAddAction{\n\
     \    using InfoMonoid = AddCountMonoid<T>;\n    using TagMonoid = AddMonoid<T>;\n\
@@ -45,7 +45,7 @@ data:
   isVerificationFile: false
   path: group/monoid-action/add-count-add.hpp
   requiredBy: []
-  timestamp: '2024-06-10 16:05:09+07:00'
+  timestamp: '2025-03-14 23:36:46+07:00'
   verificationStatus: LIBRARY_NO_TESTS
   verifiedWith: []
 documentation_of: group/monoid-action/add-count-add.hpp

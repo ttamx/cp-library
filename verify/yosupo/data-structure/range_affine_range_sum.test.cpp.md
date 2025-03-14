@@ -10,13 +10,13 @@ data:
   - icon: ':heavy_check_mark:'
     path: group/monoid/add-count.hpp
     title: group/monoid/add-count.hpp
-  - icon: ':heavy_check_mark:'
+  - icon: ':question:'
     path: group/monoid/affine.hpp
     title: group/monoid/affine.hpp
-  - icon: ':heavy_check_mark:'
+  - icon: ':question:'
     path: modular-arithmetic/montgomery-modint.hpp
     title: modular-arithmetic/montgomery-modint.hpp
-  - icon: ':heavy_check_mark:'
+  - icon: ':question:'
     path: template.hpp
     title: template.hpp
   _extendedRequiredBy: []
@@ -31,7 +31,7 @@ data:
     - https://judge.yosupo.jp/problem/range_affine_range_sum
   bundledCode: "#line 1 \"verify/yosupo/data-structure/range_affine_range_sum.test.cpp\"\
     \n#define PROBLEM \"https://judge.yosupo.jp/problem/range_affine_range_sum\"\n\
-    #line 1 \"template.hpp\"\n#include<bits/stdc++.h>\n#include<ext/pb_ds/assoc_container.hpp>\n\
+    #line 2 \"template.hpp\"\n#include<bits/stdc++.h>\n#include<ext/pb_ds/assoc_container.hpp>\n\
     #include<ext/pb_ds/tree_policy.hpp>\n\nusing namespace std;\nusing namespace __gnu_pbds;\n\
     \nusing ll = long long;\nusing db = long double;\nusing vi = vector<int>;\nusing\
     \ vl = vector<ll>;\nusing vd = vector<db>;\nusing pii = pair<int,int>;\nusing\
@@ -134,11 +134,11 @@ data:
     \ T eval(const P &f,const T &x){\n        return f.first*x+f.second;\n    }\n\
     };\n\n#line 2 \"group/monoid/add-count.hpp\"\n\n/**\n * Author: Teetat T.\n *\
     \ Date: 2024-04-14\n * Description: Add & Count Monoid class.\n */\n\ntemplate<class\
-    \ T>\nstruct AddCountMonoid{\n    using P = pair<T,int>;\n    using value_type\
+    \ T>\nstruct AddCountMonoid{\n    using P = pair<T,ll>;\n    using value_type\
     \ = P;\n    static constexpr P op(const P &x,const P &y){\n        return P(x.first+y.first,x.second+y.second);\n\
     \    }\n    static constexpr P inverse(const P &x){return P(-x.first,-x.second);}\n\
-    \    static constexpr P unit(){return P(T(0),0);}\n    static constexpr P make(const\
-    \ T &x){return P(x,1);}\n};\n\n#line 4 \"group/monoid-action/add-count-affine.hpp\"\
+    \    static constexpr P unit(){return P(T(0),0LL);}\n    static constexpr P make(const\
+    \ T &x){return P(x,1LL);}\n};\n\n#line 4 \"group/monoid-action/add-count-affine.hpp\"\
     \n\n/**\n * Author: Teetat T.\n * Date: 2024-04-14\n * Description: Affine to\
     \ Add & Count Action class.\n */\n\ntemplate<class T>\nstruct AddCountAffineAction{\n\
     \    using InfoMonoid = AddCountMonoid<T>;\n    using TagMonoid = AffineMonoid<T>;\n\
@@ -176,7 +176,7 @@ data:
   isVerificationFile: true
   path: verify/yosupo/data-structure/range_affine_range_sum.test.cpp
   requiredBy: []
-  timestamp: '2024-10-31 23:18:18+07:00'
+  timestamp: '2025-03-14 23:36:46+07:00'
   verificationStatus: TEST_ACCEPTED
   verifiedWith: []
 documentation_of: verify/yosupo/data-structure/range_affine_range_sum.test.cpp

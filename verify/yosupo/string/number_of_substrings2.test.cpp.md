@@ -1,23 +1,23 @@
 ---
 data:
   _extendedDependsOn:
-  - icon: ':heavy_check_mark:'
+  - icon: ':x:'
     path: data-structure/sparse-table.hpp
     title: data-structure/sparse-table.hpp
-  - icon: ':heavy_check_mark:'
+  - icon: ':x:'
     path: group/monoid/min.hpp
     title: group/monoid/min.hpp
-  - icon: ':heavy_check_mark:'
+  - icon: ':x:'
     path: string/suffix-array.hpp
     title: string/suffix-array.hpp
-  - icon: ':heavy_check_mark:'
+  - icon: ':question:'
     path: template.hpp
     title: template.hpp
   _extendedRequiredBy: []
   _extendedVerifiedWith: []
-  _isVerificationFailed: false
+  _isVerificationFailed: true
   _pathExtension: cpp
-  _verificationStatusIcon: ':heavy_check_mark:'
+  _verificationStatusIcon: ':x:'
   attributes:
     '*NOT_SPECIAL_COMMENTS*': ''
     PROBLEM: https://judge.yosupo.jp/problem/number_of_substrings
@@ -25,7 +25,7 @@ data:
     - https://judge.yosupo.jp/problem/number_of_substrings
   bundledCode: "#line 1 \"verify/yosupo/string/number_of_substrings2.test.cpp\"\n\
     #define PROBLEM \"https://judge.yosupo.jp/problem/number_of_substrings\"\n#line\
-    \ 1 \"template.hpp\"\n#include<bits/stdc++.h>\n#include<ext/pb_ds/assoc_container.hpp>\n\
+    \ 2 \"template.hpp\"\n#include<bits/stdc++.h>\n#include<ext/pb_ds/assoc_container.hpp>\n\
     #include<ext/pb_ds/tree_policy.hpp>\n\nusing namespace std;\nusing namespace __gnu_pbds;\n\
     \nusing ll = long long;\nusing db = long double;\nusing vi = vector<int>;\nusing\
     \ vl = vector<ll>;\nusing vd = vector<db>;\nusing pii = pair<int,int>;\nusing\
@@ -80,8 +80,8 @@ data:
   isVerificationFile: true
   path: verify/yosupo/string/number_of_substrings2.test.cpp
   requiredBy: []
-  timestamp: '2024-10-31 23:18:18+07:00'
-  verificationStatus: TEST_ACCEPTED
+  timestamp: '2025-03-14 23:36:46+07:00'
+  verificationStatus: TEST_WRONG_ANSWER
   verifiedWith: []
 documentation_of: verify/yosupo/string/number_of_substrings2.test.cpp
 layout: document

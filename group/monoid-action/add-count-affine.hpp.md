@@ -4,7 +4,7 @@ data:
   - icon: ':heavy_check_mark:'
     path: group/monoid/add-count.hpp
     title: group/monoid/add-count.hpp
-  - icon: ':heavy_check_mark:'
+  - icon: ':question:'
     path: group/monoid/affine.hpp
     title: group/monoid/affine.hpp
   _extendedRequiredBy: []
@@ -32,11 +32,11 @@ data:
     \ T &x){\n        return f.first*x+f.second;\n    }\n};\n\n#line 2 \"group/monoid/add-count.hpp\"\
     \n\n/**\n * Author: Teetat T.\n * Date: 2024-04-14\n * Description: Add & Count\
     \ Monoid class.\n */\n\ntemplate<class T>\nstruct AddCountMonoid{\n    using P\
-    \ = pair<T,int>;\n    using value_type = P;\n    static constexpr P op(const P\
+    \ = pair<T,ll>;\n    using value_type = P;\n    static constexpr P op(const P\
     \ &x,const P &y){\n        return P(x.first+y.first,x.second+y.second);\n    }\n\
     \    static constexpr P inverse(const P &x){return P(-x.first,-x.second);}\n \
-    \   static constexpr P unit(){return P(T(0),0);}\n    static constexpr P make(const\
-    \ T &x){return P(x,1);}\n};\n\n#line 4 \"group/monoid-action/add-count-affine.hpp\"\
+    \   static constexpr P unit(){return P(T(0),0LL);}\n    static constexpr P make(const\
+    \ T &x){return P(x,1LL);}\n};\n\n#line 4 \"group/monoid-action/add-count-affine.hpp\"\
     \n\n/**\n * Author: Teetat T.\n * Date: 2024-04-14\n * Description: Affine to\
     \ Add & Count Action class.\n */\n\ntemplate<class T>\nstruct AddCountAffineAction{\n\
     \    using InfoMonoid = AddCountMonoid<T>;\n    using TagMonoid = AffineMonoid<T>;\n\
@@ -56,12 +56,12 @@ data:
   isVerificationFile: false
   path: group/monoid-action/add-count-affine.hpp
   requiredBy: []
-  timestamp: '2024-06-10 17:34:10+07:00'
+  timestamp: '2025-03-14 23:36:46+07:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
-  - verify/yosupo/data-structure/dynamic_sequence_range_affine_range_sum.test.cpp
-  - verify/yosupo/data-structure/range_affine_range_sum.test.cpp
   - verify/yosupo/data-structure/range_affine_range_sum_lct.test.cpp
+  - verify/yosupo/data-structure/range_affine_range_sum.test.cpp
+  - verify/yosupo/data-structure/dynamic_sequence_range_affine_range_sum.test.cpp
 documentation_of: group/monoid-action/add-count-affine.hpp
 layout: document
 redirect_from:

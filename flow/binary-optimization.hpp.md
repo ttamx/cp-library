@@ -50,14 +50,14 @@ data:
     \        }\n        }\n        return max_flow;\n    }\n    pair<T,vector<int>>\
     \ cut(){\n        flow();\n        vector<int> res(n);\n        for(int i=0;i<n;i++)res[i]=(lv[i]==-1);\n\
     \        return {max_flow,res};\n    }\n};\n\n#line 3 \"flow/binary-optimization.hpp\"\
-    \n\n/**\n * Author: Teetat T.\n * Date: 2024-07-1\u0E386\n * Description: Binary\
-    \ Optimization.\n *  minimize $\\kappa + \\sum_i \\theta_i(x_i) + \\sum_{i<j}\
-    \ \\phi_{ij}(x_i,x_j) + \\sum_{i<j<k} \\psi_{ijk}(x_i,x_j,x_k)$\n *  where $x_i\
-    \ \\in \\{0,1\\}$ and $\\phi_{ij},\\psi_{ijk}$ are submodular functions.\n * \
-    \ a set function $f$ is submodular if $f(S) + f(T) \\geq f(S \\cap T) + f(S \\\
-    cup T)$ for all $S,T$.\n *  $\\phi_{ij}(0,1) + \\phi_{ij}(1,0) \\geq \\phi_{ij}(1,1)\
-    \ + \\phi_{ij}(0,0)$.\n */\n\ntemplate<class T,bool minimize=true>\nstruct BinaryOptimization{\n\
-    \    static constexpr T INF=numeric_limits<T>::max()/2;\n    int n,s,t,node_id;\n\
+    \n\n/**\n * Author: Teetat T.\n * Date: 2024-07-16\n * Description: Binary Optimization.\n\
+    \ *  minimize $\\kappa + \\sum_i \\theta_i(x_i) + \\sum_{i<j} \\phi_{ij}(x_i,x_j)\
+    \ + \\sum_{i<j<k} \\psi_{ijk}(x_i,x_j,x_k)$\n *  where $x_i \\in \\{0,1\\}$ and\
+    \ $\\phi_{ij},\\psi_{ijk}$ are submodular functions.\n *  a set function $f$ is\
+    \ submodular if $f(S) + f(T) \\geq f(S \\cap T) + f(S \\cup T)$ for all $S,T$.\n\
+    \ *  $\\phi_{ij}(0,1) + \\phi_{ij}(1,0) \\geq \\phi_{ij}(1,1) + \\phi_{ij}(0,0)$.\n\
+    \ */\n\ntemplate<class T,bool minimize=true>\nstruct BinaryOptimization{\n   \
+    \ static constexpr T INF=numeric_limits<T>::max()/2;\n    int n,s,t,node_id;\n\
     \    T base;\n    map<pair<int,int>,T> edges;\n    BinaryOptimization(int _n):n(_n),s(n),t(n+1),node_id(n+2),base(0){}\n\
     \    void add_edge(int u,int v,T w){\n        assert(w>=0);\n        if(u==v||w==0)return;\n\
     \        auto &e=edges[{u,v}];\n        e=min(e+w,INF);\n    }\n    void add0(T\
@@ -91,12 +91,12 @@ data:
     \       auto [u,v]=p;\n            dinic.add_edge(u,v,w);\n        }\n       \
     \ T ans=dinic.flow()+base;\n        return minimize?ans:-ans;\n    }\n};\n\n"
   code: "#pragma once\n#include \"flow/dinic.hpp\"\n\n/**\n * Author: Teetat T.\n\
-    \ * Date: 2024-07-1\u0E386\n * Description: Binary Optimization.\n *  minimize\
-    \ $\\kappa + \\sum_i \\theta_i(x_i) + \\sum_{i<j} \\phi_{ij}(x_i,x_j) + \\sum_{i<j<k}\
-    \ \\psi_{ijk}(x_i,x_j,x_k)$\n *  where $x_i \\in \\{0,1\\}$ and $\\phi_{ij},\\\
-    psi_{ijk}$ are submodular functions.\n *  a set function $f$ is submodular if\
-    \ $f(S) + f(T) \\geq f(S \\cap T) + f(S \\cup T)$ for all $S,T$.\n *  $\\phi_{ij}(0,1)\
-    \ + \\phi_{ij}(1,0) \\geq \\phi_{ij}(1,1) + \\phi_{ij}(0,0)$.\n */\n\ntemplate<class\
+    \ * Date: 2024-07-16\n * Description: Binary Optimization.\n *  minimize $\\kappa\
+    \ + \\sum_i \\theta_i(x_i) + \\sum_{i<j} \\phi_{ij}(x_i,x_j) + \\sum_{i<j<k} \\\
+    psi_{ijk}(x_i,x_j,x_k)$\n *  where $x_i \\in \\{0,1\\}$ and $\\phi_{ij},\\psi_{ijk}$\
+    \ are submodular functions.\n *  a set function $f$ is submodular if $f(S) + f(T)\
+    \ \\geq f(S \\cap T) + f(S \\cup T)$ for all $S,T$.\n *  $\\phi_{ij}(0,1) + \\\
+    phi_{ij}(1,0) \\geq \\phi_{ij}(1,1) + \\phi_{ij}(0,0)$.\n */\n\ntemplate<class\
     \ T,bool minimize=true>\nstruct BinaryOptimization{\n    static constexpr T INF=numeric_limits<T>::max()/2;\n\
     \    int n,s,t,node_id;\n    T base;\n    map<pair<int,int>,T> edges;\n    BinaryOptimization(int\
     \ _n):n(_n),s(n),t(n+1),node_id(n+2),base(0){}\n    void add_edge(int u,int v,T\
@@ -137,7 +137,7 @@ data:
   requiredBy:
   - verify/atcoder/abc259_g.cpp
   - verify/atcoder/abc193_f.cpp
-  timestamp: '2024-07-29 18:44:45+07:00'
+  timestamp: '2025-03-14 23:36:46+07:00'
   verificationStatus: LIBRARY_NO_TESTS
   verifiedWith: []
 documentation_of: flow/binary-optimization.hpp
