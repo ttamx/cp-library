@@ -2,6 +2,12 @@
 data:
   _extendedDependsOn: []
   _extendedRequiredBy:
+  - icon: ':x:'
+    path: data-structure/cartesian-tree.hpp
+    title: data-structure/cartesian-tree.hpp
+  - icon: ':heavy_check_mark:'
+    path: graph/twosat.hpp
+    title: graph/twosat.hpp
   - icon: ':warning:'
     path: verify/atcoder/abc193_f.cpp
     title: verify/atcoder/abc193_f.cpp
@@ -69,55 +75,61 @@ data:
   - icon: ':heavy_check_mark:'
     path: verify/yosupo/data-structure/range_reverse_range_sum.test.cpp
     title: verify/yosupo/data-structure/range_reverse_range_sum.test.cpp
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: verify/yosupo/data-structure/segment_add_get_min.test.cpp
     title: verify/yosupo/data-structure/segment_add_get_min.test.cpp
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: verify/yosupo/data-structure/segment_add_get_min_online.test.cpp
     title: verify/yosupo/data-structure/segment_add_get_min_online.test.cpp
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: verify/yosupo/data-structure/set_xor_min.test.cpp
     title: verify/yosupo/data-structure/set_xor_min.test.cpp
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: verify/yosupo/data-structure/staticrmq.test.cpp
     title: verify/yosupo/data-structure/staticrmq.test.cpp
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: verify/yosupo/data-structure/unionfind.test.cpp
     title: verify/yosupo/data-structure/unionfind.test.cpp
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: verify/yosupo/data-structure/vertex_add_path_sum.test.cpp
     title: verify/yosupo/data-structure/vertex_add_path_sum.test.cpp
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: verify/yosupo/data-structure/vertex_add_subtree_sum.test.cpp
     title: verify/yosupo/data-structure/vertex_add_subtree_sum.test.cpp
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: verify/yosupo/data-structure/vertex_set_path_composite.test.cpp
     title: verify/yosupo/data-structure/vertex_set_path_composite.test.cpp
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: verify/yosupo/graph/scc.test.cpp
     title: verify/yosupo/graph/scc.test.cpp
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: verify/yosupo/number-theory/sum_of_floor_of_linear.test.cpp
     title: verify/yosupo/number-theory/sum_of_floor_of_linear.test.cpp
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
+    path: verify/yosupo/other/two_sat.test.cpp
+    title: verify/yosupo/other/two_sat.test.cpp
+  - icon: ':heavy_check_mark:'
     path: verify/yosupo/string/enumerate_palindromes.test.cpp
     title: verify/yosupo/string/enumerate_palindromes.test.cpp
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: verify/yosupo/string/number_of_substrings.test.cpp
     title: verify/yosupo/string/number_of_substrings.test.cpp
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: verify/yosupo/string/number_of_substrings2.test.cpp
     title: verify/yosupo/string/number_of_substrings2.test.cpp
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: verify/yosupo/string/suffixarray.test.cpp
     title: verify/yosupo/string/suffixarray.test.cpp
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: verify/yosupo/string/zalgorithm.test.cpp
     title: verify/yosupo/string/zalgorithm.test.cpp
   - icon: ':x:'
+    path: verify/yosupo/tree/cartesian_tree.test.cpp
+    title: verify/yosupo/tree/cartesian_tree.test.cpp
+  - icon: ':heavy_check_mark:'
     path: verify/yosupo/tree/jump_on_tree.test.cpp
     title: verify/yosupo/tree/jump_on_tree.test.cpp
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: verify/yosupo/tree/lca.test.cpp
     title: verify/yosupo/tree/lca.test.cpp
   _isVerificationFailed: true
@@ -245,15 +257,18 @@ data:
   isVerificationFile: false
   path: template.hpp
   requiredBy:
+  - data-structure/cartesian-tree.hpp
   - verify/spoj/FASTFLOW.cpp
   - verify/kattis/thekingofthenorth.cpp
   - verify/atcoder/abc259_g.cpp
   - verify/atcoder/abc193_f.cpp
   - verify/atcoder/abc347_g.cpp
+  - graph/twosat.hpp
   timestamp: '2025-03-14 23:36:46+07:00'
   verificationStatus: LIBRARY_SOME_WA
   verifiedWith:
   - verify/yosupo/tree/jump_on_tree.test.cpp
+  - verify/yosupo/tree/cartesian_tree.test.cpp
   - verify/yosupo/tree/lca.test.cpp
   - verify/yosupo/data-structure/segment_add_get_min_online.test.cpp
   - verify/yosupo/data-structure/vertex_add_subtree_sum.test.cpp
@@ -287,6 +302,7 @@ data:
   - verify/yosupo/string/suffixarray.test.cpp
   - verify/yosupo/number-theory/sum_of_floor_of_linear.test.cpp
   - verify/yosupo/graph/scc.test.cpp
+  - verify/yosupo/other/two_sat.test.cpp
 documentation_of: template.hpp
 layout: document
 redirect_from:
