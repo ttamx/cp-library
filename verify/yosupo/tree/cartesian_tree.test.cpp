@@ -1,4 +1,4 @@
-#define PROBLEM https://judge.yosupo.jp/problem/cartesian_tree
+#define PROBLEM "https://judge.yosupo.jp/problem/cartesian_tree"
 #include "template.hpp"
 #include "data-structure/cartesian-tree.hpp"
 
