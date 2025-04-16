@@ -1,25 +1,25 @@
 ---
 data:
   _extendedDependsOn:
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: data-structure/cartesian-tree.hpp
     title: data-structure/cartesian-tree.hpp
-  - icon: ':question:'
+  - icon: ':heavy_check_mark:'
     path: template.hpp
     title: template.hpp
   _extendedRequiredBy: []
   _extendedVerifiedWith: []
-  _isVerificationFailed: true
+  _isVerificationFailed: false
   _pathExtension: cpp
-  _verificationStatusIcon: ':x:'
+  _verificationStatusIcon: ':heavy_check_mark:'
   attributes:
     '*NOT_SPECIAL_COMMENTS*': ''
-    PROBLEM: 'https:'
+    PROBLEM: https://judge.yosupo.jp/problem/cartesian_tree
     links:
     - https://judge.yosupo.jp/problem/cartesian_tree
   bundledCode: "#line 1 \"verify/yosupo/tree/cartesian_tree.test.cpp\"\n#define PROBLEM\
-    \ https://judge.yosupo.jp/problem/cartesian_tree\n#line 2 \"template.hpp\"\n#include<bits/stdc++.h>\n\
-    #include<ext/pb_ds/assoc_container.hpp>\n#include<ext/pb_ds/tree_policy.hpp>\n\
+    \ \"https://judge.yosupo.jp/problem/cartesian_tree\"\n#line 2 \"template.hpp\"\
+    \n#include<bits/stdc++.h>\n#include<ext/pb_ds/assoc_container.hpp>\n#include<ext/pb_ds/tree_policy.hpp>\n\
     \nusing namespace std;\nusing namespace __gnu_pbds;\n\nusing ll = long long;\n\
     using db = long double;\nusing vi = vector<int>;\nusing vl = vector<ll>;\nusing\
     \ vd = vector<db>;\nusing pii = pair<int,int>;\nusing pll = pair<ll,ll>;\nusing\
@@ -51,7 +51,7 @@ data:
     \  vector<int> a(n);\n    for(auto &x:a)cin >> x;\n    CartesianTree<int,true>\
     \ ct(a);\n    auto ans=ct.par;\n    ans[ct.root]=ct.root;\n    for(auto x:ans)cout\
     \ << x << \" \";\n}\n"
-  code: "#define PROBLEM https://judge.yosupo.jp/problem/cartesian_tree\n#include\
+  code: "#define PROBLEM \"https://judge.yosupo.jp/problem/cartesian_tree\"\n#include\
     \ \"template.hpp\"\n#include \"data-structure/cartesian-tree.hpp\"\n\nint main(){\n\
     \    cin.tie(nullptr)->sync_with_stdio(false);\n    int n;\n    cin >> n;\n  \
     \  vector<int> a(n);\n    for(auto &x:a)cin >> x;\n    CartesianTree<int,true>\
@@ -63,8 +63,8 @@ data:
   isVerificationFile: true
   path: verify/yosupo/tree/cartesian_tree.test.cpp
   requiredBy: []
-  timestamp: '2025-04-16 16:10:29+07:00'
-  verificationStatus: TEST_WRONG_ANSWER
+  timestamp: '2025-04-16 16:21:03+07:00'
+  verificationStatus: TEST_ACCEPTED
   verifiedWith: []
 documentation_of: verify/yosupo/tree/cartesian_tree.test.cpp
 layout: document

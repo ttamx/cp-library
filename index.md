@@ -26,7 +26,7 @@ data:
     - icon: ':heavy_check_mark:'
       path: data-structure/binary-trie.hpp
       title: data-structure/binary-trie.hpp
-    - icon: ':x:'
+    - icon: ':heavy_check_mark:'
       path: data-structure/cartesian-tree.hpp
       title: data-structure/cartesian-tree.hpp
     - icon: ':heavy_check_mark:'
@@ -230,7 +230,7 @@ data:
       title: string/z-algorithm.hpp
   - name: .
     pages:
-    - icon: ':question:'
+    - icon: ':heavy_check_mark:'
       path: template.hpp
       title: template.hpp
   - name: tree
@@ -382,7 +382,7 @@ data:
       title: verify/yosupo/string/zalgorithm.test.cpp
   - name: verify/yosupo/tree
     pages:
-    - icon: ':x:'
+    - icon: ':heavy_check_mark:'
       path: verify/yosupo/tree/cartesian_tree.test.cpp
       title: verify/yosupo/tree/cartesian_tree.test.cpp
     - icon: ':heavy_check_mark:'
