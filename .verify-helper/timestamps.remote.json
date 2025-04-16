@@ -32,6 +32,7 @@
 "verify/yosupo/string/number_of_substrings2.test.cpp": "2025-03-14 23:36:46 +0700",
 "verify/yosupo/string/suffixarray.test.cpp": "2025-03-14 23:36:46 +0700",
 "verify/yosupo/string/zalgorithm.test.cpp": "2025-03-14 23:36:46 +0700",
+"verify/yosupo/tree/cartesian_tree.test.cpp": "2025-04-16 16:21:03 +0700",
 "verify/yosupo/tree/jump_on_tree.test.cpp": "2025-03-14 23:36:46 +0700",
 "verify/yosupo/tree/lca.test.cpp": "2025-03-14 23:36:46 +0700"
 }
