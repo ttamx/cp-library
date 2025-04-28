@@ -6,3 +6,4 @@
 *.o
 *.expanded.*
 .DS_Store
+.vscode/
