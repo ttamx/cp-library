@@ -1,13 +1,9 @@
 name: verify
 
-on:
-  push:
-    branches: [ main ]
-  pull_request:
-    branches: [ main ]
+on: push
 
 jobs:
-  build:
+  verify:
 
     runs-on: ubuntu-latest
 
