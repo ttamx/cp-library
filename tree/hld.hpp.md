@@ -18,15 +18,15 @@ data:
   - icon: ':heavy_check_mark:'
     path: verify/yosupo/data-structure/vertex_set_path_composite.test.cpp
     title: verify/yosupo/data-structure/vertex_set_path_composite.test.cpp
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: verify/yosupo/tree/jump_on_tree.test.cpp
     title: verify/yosupo/tree/jump_on_tree.test.cpp
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: verify/yosupo/tree/lca.test.cpp
     title: verify/yosupo/tree/lca.test.cpp
-  _isVerificationFailed: true
+  _isVerificationFailed: false
   _pathExtension: hpp
-  _verificationStatusIcon: ':question:'
+  _verificationStatusIcon: ':heavy_check_mark:'
   attributes:
     links: []
   bundledCode: "#line 2 \"tree/hld.hpp\"\n\n/**\n * Author: Teetat T.\n * Date: 2024-06-15\n\
@@ -94,15 +94,15 @@ data:
   path: tree/hld.hpp
   requiredBy: []
   timestamp: '2024-11-14 23:02:13+07:00'
-  verificationStatus: LIBRARY_SOME_WA
+  verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
-  - verify/yosupo/tree/lca.test.cpp
-  - verify/yosupo/tree/jump_on_tree.test.cpp
-  - verify/yosupo/data-structure/vertex_set_path_composite.test.cpp
   - verify/yosupo/data-structure/point_set_tree_path_composite_sum_fixed_root.test.cpp
   - verify/yosupo/data-structure/point_set_tree_path_composite_sum.test.cpp
-  - verify/yosupo/data-structure/vertex_add_subtree_sum.test.cpp
   - verify/yosupo/data-structure/vertex_add_path_sum.test.cpp
+  - verify/yosupo/data-structure/vertex_add_subtree_sum.test.cpp
+  - verify/yosupo/data-structure/vertex_set_path_composite.test.cpp
+  - verify/yosupo/tree/lca.test.cpp
+  - verify/yosupo/tree/jump_on_tree.test.cpp
 documentation_of: tree/hld.hpp
 layout: document
 redirect_from:

@@ -102,7 +102,7 @@ data:
       title: flow/k-ary-optimization.hpp
   - name: graph
     pages:
-    - icon: ':question:'
+    - icon: ':heavy_check_mark:'
       path: graph/graph-base.hpp
       title: graph/graph-base.hpp
     - icon: ':warning:'
@@ -235,7 +235,7 @@ data:
       title: template.hpp
   - name: tree
     pages:
-    - icon: ':question:'
+    - icon: ':heavy_check_mark:'
       path: tree/hld.hpp
       title: tree/hld.hpp
     - icon: ':heavy_check_mark:'
@@ -385,10 +385,10 @@ data:
     - icon: ':heavy_check_mark:'
       path: verify/yosupo/tree/cartesian_tree.test.cpp
       title: verify/yosupo/tree/cartesian_tree.test.cpp
-    - icon: ':x:'
+    - icon: ':heavy_check_mark:'
       path: verify/yosupo/tree/jump_on_tree.test.cpp
       title: verify/yosupo/tree/jump_on_tree.test.cpp
-    - icon: ':x:'
+    - icon: ':heavy_check_mark:'
       path: verify/yosupo/tree/lca.test.cpp
       title: verify/yosupo/tree/lca.test.cpp
 layout: toppage

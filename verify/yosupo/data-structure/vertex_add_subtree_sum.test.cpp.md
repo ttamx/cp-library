@@ -4,13 +4,13 @@ data:
   - icon: ':heavy_check_mark:'
     path: data-structure/fenwick-tree.hpp
     title: data-structure/fenwick-tree.hpp
-  - icon: ':question:'
+  - icon: ':heavy_check_mark:'
     path: graph/graph-base.hpp
     title: graph/graph-base.hpp
   - icon: ':question:'
     path: template.hpp
     title: template.hpp
-  - icon: ':question:'
+  - icon: ':heavy_check_mark:'
     path: tree/hld.hpp
     title: tree/hld.hpp
   _extendedRequiredBy: []

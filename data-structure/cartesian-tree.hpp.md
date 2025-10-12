@@ -25,7 +25,7 @@ data:
     template<class T>\nusing ordered_multiset = tree<T,null_type,less_equal<T>,rb_tree_tag,tree_order_statistics_node_update>;\n\
     \nmt19937 rng(chrono::steady_clock::now().time_since_epoch().count());\nmt19937_64\
     \ rng64(chrono::steady_clock::now().time_since_epoch().count());\n#line 3 \"data-structure/cartesian-tree.hpp\"\
-    \n\n/**\n * Author: Teetat T.\n * Date: 2025-02-20\n * Description: Cartesian\
+    \n\n/**\n * Author: Teetat T.\n * Date: 2025-10-12\n * Description: Cartesian\
     \ Tree.\n */\n\ntemplate<class T,bool IS_MIN>\nstruct CartesianTree{\n    int\
     \ n;\n    vector<T> &a;\n    vector<pair<int,int>> range;\n    vector<int> lch,rch,par;\n\
     \    int root;\n\n    CartesianTree(vector<T> &_a):n((int)_a.size()),a(_a){\n\
@@ -36,14 +36,15 @@ data:
     \        };\n        vector<int> st;\n        for(int i=0;i<n;i++){\n        \
     \    while(!st.empty()&&cmp(i,st.back())){\n                lch[i]=st.back();\n\
     \                st.pop_back();\n            }\n            range[i].first=(st.empty()?-1:st.back())+1;\n\
-    \            st.emplace_back(i);\n        }\n        for(int i=n-1;i>=0;i--){\n\
-    \            while(!st.empty()&&cmp(i,st.back())){\n                rch[i]=st.back();\n\
-    \                st.pop_back();\n            }\n            range[i].second=(st.empty()?n:st.back())-1;\n\
-    \            st.emplace_back(i);\n        }\n        for(int i=0;i<n;i++)if(lch[i]!=-1)par[lch[i]]=i;\n\
-    \        for(int i=0;i<n;i++)if(rch[i]!=-1)par[rch[i]]=i;\n        for(int i=0;i<n;i++)if(par[i]==-1)root=i;\n\
+    \            st.emplace_back(i);\n        }\n        st.clear();\n        for(int\
+    \ i=n-1;i>=0;i--){\n            while(!st.empty()&&cmp(i,st.back())){\n      \
+    \          rch[i]=st.back();\n                st.pop_back();\n            }\n\
+    \            range[i].second=(st.empty()?n:st.back())-1;\n            st.emplace_back(i);\n\
+    \        }\n        for(int i=0;i<n;i++)if(lch[i]!=-1)par[lch[i]]=i;\n       \
+    \ for(int i=0;i<n;i++)if(rch[i]!=-1)par[rch[i]]=i;\n        for(int i=0;i<n;i++)if(par[i]==-1)root=i;\n\
     \    }\n};\n"
   code: "#pragma once\n#include \"template.hpp\"\n\n/**\n * Author: Teetat T.\n *\
-    \ Date: 2025-02-20\n * Description: Cartesian Tree.\n */\n\ntemplate<class T,bool\
+    \ Date: 2025-10-12\n * Description: Cartesian Tree.\n */\n\ntemplate<class T,bool\
     \ IS_MIN>\nstruct CartesianTree{\n    int n;\n    vector<T> &a;\n    vector<pair<int,int>>\
     \ range;\n    vector<int> lch,rch,par;\n    int root;\n\n    CartesianTree(vector<T>\
     \ &_a):n((int)_a.size()),a(_a){\n        range.assign(n,{-1,-1});\n        lch=rch=par=vector<int>(n,-1);\n\
@@ -53,18 +54,19 @@ data:
     \        };\n        vector<int> st;\n        for(int i=0;i<n;i++){\n        \
     \    while(!st.empty()&&cmp(i,st.back())){\n                lch[i]=st.back();\n\
     \                st.pop_back();\n            }\n            range[i].first=(st.empty()?-1:st.back())+1;\n\
-    \            st.emplace_back(i);\n        }\n        for(int i=n-1;i>=0;i--){\n\
-    \            while(!st.empty()&&cmp(i,st.back())){\n                rch[i]=st.back();\n\
-    \                st.pop_back();\n            }\n            range[i].second=(st.empty()?n:st.back())-1;\n\
-    \            st.emplace_back(i);\n        }\n        for(int i=0;i<n;i++)if(lch[i]!=-1)par[lch[i]]=i;\n\
-    \        for(int i=0;i<n;i++)if(rch[i]!=-1)par[rch[i]]=i;\n        for(int i=0;i<n;i++)if(par[i]==-1)root=i;\n\
+    \            st.emplace_back(i);\n        }\n        st.clear();\n        for(int\
+    \ i=n-1;i>=0;i--){\n            while(!st.empty()&&cmp(i,st.back())){\n      \
+    \          rch[i]=st.back();\n                st.pop_back();\n            }\n\
+    \            range[i].second=(st.empty()?n:st.back())-1;\n            st.emplace_back(i);\n\
+    \        }\n        for(int i=0;i<n;i++)if(lch[i]!=-1)par[lch[i]]=i;\n       \
+    \ for(int i=0;i<n;i++)if(rch[i]!=-1)par[rch[i]]=i;\n        for(int i=0;i<n;i++)if(par[i]==-1)root=i;\n\
     \    }\n};"
   dependsOn:
   - template.hpp
   isVerificationFile: false
   path: data-structure/cartesian-tree.hpp
   requiredBy: []
-  timestamp: '2025-04-16 16:10:29+07:00'
+  timestamp: '2025-10-12 15:20:53+07:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
   - verify/yosupo/tree/cartesian_tree.test.cpp

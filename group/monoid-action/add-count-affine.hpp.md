@@ -59,9 +59,9 @@ data:
   timestamp: '2025-03-14 23:36:46+07:00'
   verificationStatus: LIBRARY_SOME_WA
   verifiedWith:
+  - verify/yosupo/data-structure/range_affine_range_sum.test.cpp
   - verify/yosupo/data-structure/range_affine_range_sum_lct.test.cpp
   - verify/yosupo/data-structure/dynamic_sequence_range_affine_range_sum.test.cpp
-  - verify/yosupo/data-structure/range_affine_range_sum.test.cpp
 documentation_of: group/monoid-action/add-count-affine.hpp
 layout: document
 redirect_from:
