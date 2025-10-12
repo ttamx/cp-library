@@ -36,6 +36,7 @@ struct CartesianTree{
             range[i].first=(st.empty()?-1:st.back())+1;
             st.emplace_back(i);
         }
+        st.clear();
         for(int i=n-1;i>=0;i--){
             while(!st.empty()&&cmp(i,st.back())){
                 rch[i]=st.back();
