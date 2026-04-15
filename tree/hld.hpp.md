@@ -9,13 +9,13 @@ data:
   - icon: ':heavy_check_mark:'
     path: verify/yosupo/data-structure/point_set_tree_path_composite_sum_fixed_root.test.cpp
     title: verify/yosupo/data-structure/point_set_tree_path_composite_sum_fixed_root.test.cpp
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: verify/yosupo/data-structure/vertex_add_path_sum.test.cpp
     title: verify/yosupo/data-structure/vertex_add_path_sum.test.cpp
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: verify/yosupo/data-structure/vertex_add_subtree_sum.test.cpp
     title: verify/yosupo/data-structure/vertex_add_subtree_sum.test.cpp
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: verify/yosupo/data-structure/vertex_set_path_composite.test.cpp
     title: verify/yosupo/data-structure/vertex_set_path_composite.test.cpp
   - icon: ':x:'

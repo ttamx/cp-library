@@ -54,40 +54,43 @@ data:
     \ * Description: modular arithmetic operations\n */\n\ntemplate<int mod,int root=0>\n\
     struct ModInt{\n    using mint = ModInt;\n    \n\tstatic_assert(mod>0,\"mod must\
     \ be positive\");\n\n    int x;\n\n    constexpr ModInt():x(0){}\n    constexpr\
-    \ ModInt(ll x):x((x%=mod)<0?x+mod:x){}\n    explicit operator int()const{return\
+    \ ModInt(ll x):x((x%=mod)<0?x+mod:x){}\n    constexpr explicit operator int()const{return\
     \ x;}\n    constexpr static int get_mod(){return mod;}\n    constexpr static mint\
-    \ get_root(){return mint(root);}\n    \n    mint operator-()const{\n        mint\
-    \ res;\n        res.x=x?mod-x:0;\n        return res;\n    }\n    mint operator+()const{return\
-    \ *this;}\n\n    mint inv()const{\n        int a=x,b=mod,u=1,v=0,q=0;\n      \
-    \  while(b>0){\n            q=a/b;\n            swap(a-=q*b,b);\n            swap(u-=q*v,v);\n\
-    \        }\n        return mint(u);\n    }\n    mint pow(ll n)const{\n       \
-    \ mint res=1,a=*this;\n        for(;n>0;a*=a,n>>=1)if(n&1)res*=a;\n        return\
-    \ res;\n    }\n    mint &operator+=(const mint &o){\n        if((x+=o.x)>=mod)x-=mod;\n\
-    \        return *this;\n    }\n    mint &operator-=(const mint &o){\n        if((x-=o.x)<0)x+=mod;\n\
-    \        return *this;\n    }\n    mint &operator*=(const mint &o){\n        x=(ll(x)*o.x)%mod;\n\
-    \        return *this;\n    }\n    mint &operator/=(const mint &o){\n        return\
-    \ *this*=o.inv();\n    }\n\n    mint operator+(const mint &o)const{return mint(*this)+=o;}\n\
-    \    mint operator-(const mint &o)const{return mint(*this)-=o;}\n    mint operator*(const\
-    \ mint &o)const{return mint(*this)*=o;}\n    mint operator/(const mint &o)const{return\
-    \ mint(*this)/=o;}\n\n    mint &operator++(){return *this+=mint(1);}\n    mint\
-    \ &operator--(){return *this-=mint(1);}\n    mint operator++(int){mint res=*this;*this+=mint(1);return\
-    \ res;}\n    mint operator--(int){mint res=*this;*this-=mint(1);return res;}\n\
-    \    \n    bool operator==(const mint &o)const{return x==o.x;}\n    bool operator!=(const\
-    \ mint &o)const{return x!=o.x;}\n    bool operator<(const mint &o)const{return\
-    \ x<o.x;}\n    \n    friend istream &operator>>(istream &is,mint &o){ll x{};is>>x;o=mint(x);return\
-    \ is;}\n    friend ostream &operator<<(ostream &os,const mint &o){return os<<o.x;}\n\
-    };\nusing mint998 = ModInt<998244353,3>;\nusing mint107 = ModInt<1000000007>;\n\
-    #line 2 \"data-structure/segment-tree/lazy-segment-tree.hpp\"\n\n/**\n * Author:\
-    \ Teetat T.\n * Date: 2024-01-15\n * Description: Segment Tree with Lazy Propagation\n\
-    \ */\n\ntemplate<class MonoidAction>\nstruct LazySegmentTree{\n    using InfoMonoid\
-    \ = typename MonoidAction::InfoMonoid;\n    using TagMonoid = typename MonoidAction::TagMonoid;\n\
-    \    using Info = typename MonoidAction::Info;\n    using Tag = typename MonoidAction::Tag;\n\
-    \    int n;\n    vector<Info> t;\n    vector<Tag> lz;\n    LazySegmentTree(){}\n\
-    \    LazySegmentTree(int n,function<Info(int)> create){init(n,create);}\n    LazySegmentTree(int\
-    \ n,Info v=InfoMonoid::unit()){init(n,[&](int){return v;});}\n    template<class\
-    \ T>\n    LazySegmentTree(const vector<T> &a){init((int)a.size(),[&](int i){return\
-    \ Info(a[i]);});}\n    void init(int _n,function<Info(int)> create){\n       \
-    \ n=_n;\n        int m=4<<(31-__builtin_clz(n));\n        t.assign(m,InfoMonoid::unit());\n\
+    \ get_root(){return mint(root);}\n    \n    constexpr mint operator-()const{\n\
+    \        mint res;\n        res.x=x?mod-x:0;\n        return res;\n    }\n   \
+    \ constexpr mint operator+()const{return *this;}\n\n    constexpr mint inv()const{\n\
+    \        int a=x,b=mod,u=1,v=0,q=0;\n        while(b>0){\n            q=a/b;\n\
+    \            swap(a-=q*b,b);\n            swap(u-=q*v,v);\n        }\n       \
+    \ return mint(u);\n    }\n    constexpr mint pow(ll n)const{\n        mint res=1,a=*this;\n\
+    \        for(;n>0;a*=a,n>>=1)if(n&1)res*=a;\n        return res;\n    }\n    constexpr\
+    \ mint &operator+=(const mint &o){\n        if((x+=o.x)>=mod)x-=mod;\n       \
+    \ return *this;\n    }\n    constexpr mint &operator-=(const mint &o){\n     \
+    \   if((x-=o.x)<0)x+=mod;\n        return *this;\n    }\n    constexpr mint &operator*=(const\
+    \ mint &o){\n        x=(ll(x)*o.x)%mod;\n        return *this;\n    }\n    constexpr\
+    \ mint &operator/=(const mint &o){\n        return *this*=o.inv();\n    }\n\n\
+    \    constexpr mint operator+(const mint &o)const{return mint(*this)+=o;}\n  \
+    \  constexpr mint operator-(const mint &o)const{return mint(*this)-=o;}\n    constexpr\
+    \ mint operator*(const mint &o)const{return mint(*this)*=o;}\n    constexpr mint\
+    \ operator/(const mint &o)const{return mint(*this)/=o;}\n\n    constexpr mint\
+    \ &operator++(){return *this+=mint(1);}\n    constexpr mint &operator--(){return\
+    \ *this-=mint(1);}\n    constexpr mint operator++(int){mint res=*this;*this+=mint(1);return\
+    \ res;}\n    constexpr mint operator--(int){mint res=*this;*this-=mint(1);return\
+    \ res;}\n    \n    constexpr bool operator==(const mint &o)const{return x==o.x;}\n\
+    \    constexpr bool operator!=(const mint &o)const{return x!=o.x;}\n    constexpr\
+    \ bool operator<(const mint &o)const{return x<o.x;}\n    \n    friend istream\
+    \ &operator>>(istream &is,mint &o){ll x{};is>>x;o=mint(x);return is;}\n    friend\
+    \ ostream &operator<<(ostream &os,const mint &o){return os<<o.x;}\n};\nusing mint998\
+    \ = ModInt<998244353,3>;\nusing mint107 = ModInt<1000000007>;\n#line 2 \"data-structure/segment-tree/lazy-segment-tree.hpp\"\
+    \n\n/**\n * Author: Teetat T.\n * Date: 2024-01-15\n * Description: Segment Tree\
+    \ with Lazy Propagation\n */\n\ntemplate<class MonoidAction>\nstruct LazySegmentTree{\n\
+    \    using InfoMonoid = typename MonoidAction::InfoMonoid;\n    using TagMonoid\
+    \ = typename MonoidAction::TagMonoid;\n    using Info = typename MonoidAction::Info;\n\
+    \    using Tag = typename MonoidAction::Tag;\n    int n;\n    vector<Info> t;\n\
+    \    vector<Tag> lz;\n    LazySegmentTree(){}\n    LazySegmentTree(int n,function<Info(int)>\
+    \ create){init(n,create);}\n    LazySegmentTree(int n,Info v=InfoMonoid::unit()){init(n,[&](int){return\
+    \ v;});}\n    template<class T>\n    LazySegmentTree(const vector<T> &a){init((int)a.size(),[&](int\
+    \ i){return Info(a[i]);});}\n    void init(int _n,function<Info(int)> create){\n\
+    \        n=_n;\n        int m=4<<(31-__builtin_clz(n));\n        t.assign(m,InfoMonoid::unit());\n\
     \        lz.assign(m,TagMonoid::unit());\n        function<void(int,int,int)>\
     \ build=[&](int l,int r,int i){\n            if(l==r)return void(t[i]=create(l));\n\
     \            int m=(l+r)/2;\n            build(l,m,i*2);\n            build(m+1,r,i*2+1);\n\
@@ -169,7 +172,7 @@ data:
   isVerificationFile: true
   path: verify/yosupo/data-structure/range_affine_range_sum.test.cpp
   requiredBy: []
-  timestamp: '2026-04-15 18:40:12+07:00'
+  timestamp: '2026-04-15 21:45:25+07:00'
   verificationStatus: TEST_WRONG_ANSWER
   verifiedWith: []
 documentation_of: verify/yosupo/data-structure/range_affine_range_sum.test.cpp

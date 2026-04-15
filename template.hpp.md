@@ -33,7 +33,7 @@ data:
   - icon: ':heavy_check_mark:'
     path: verify/yosupo/convolution/bitwise_xor_convolution.test.cpp
     title: verify/yosupo/convolution/bitwise_xor_convolution.test.cpp
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: verify/yosupo/convolution/convolution_mod.test.cpp
     title: verify/yosupo/convolution/convolution_mod.test.cpp
   - icon: ':heavy_check_mark:'
@@ -78,34 +78,34 @@ data:
   - icon: ':x:'
     path: verify/yosupo/data-structure/range_affine_range_sum_lct.test.cpp
     title: verify/yosupo/data-structure/range_affine_range_sum_lct.test.cpp
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: verify/yosupo/data-structure/range_reverse_range_sum.test.cpp
     title: verify/yosupo/data-structure/range_reverse_range_sum.test.cpp
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: verify/yosupo/data-structure/segment_add_get_min.test.cpp
     title: verify/yosupo/data-structure/segment_add_get_min.test.cpp
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: verify/yosupo/data-structure/segment_add_get_min_online.test.cpp
     title: verify/yosupo/data-structure/segment_add_get_min_online.test.cpp
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: verify/yosupo/data-structure/set_xor_min.test.cpp
     title: verify/yosupo/data-structure/set_xor_min.test.cpp
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: verify/yosupo/data-structure/staticrmq.test.cpp
     title: verify/yosupo/data-structure/staticrmq.test.cpp
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: verify/yosupo/data-structure/unionfind.test.cpp
     title: verify/yosupo/data-structure/unionfind.test.cpp
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: verify/yosupo/data-structure/vertex_add_path_sum.test.cpp
     title: verify/yosupo/data-structure/vertex_add_path_sum.test.cpp
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: verify/yosupo/data-structure/vertex_add_subtree_sum.test.cpp
     title: verify/yosupo/data-structure/vertex_add_subtree_sum.test.cpp
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: verify/yosupo/data-structure/vertex_set_path_composite.test.cpp
     title: verify/yosupo/data-structure/vertex_set_path_composite.test.cpp
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: verify/yosupo/graph/scc.test.cpp
     title: verify/yosupo/graph/scc.test.cpp
   - icon: ':x:'

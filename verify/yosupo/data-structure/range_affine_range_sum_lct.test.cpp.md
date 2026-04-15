@@ -13,7 +13,7 @@ data:
   - icon: ':x:'
     path: data-structure/link-cut-tree/link-cut-tree-base.hpp
     title: data-structure/link-cut-tree/link-cut-tree-base.hpp
-  - icon: ':x:'
+  - icon: ':question:'
     path: data-structure/link-cut-tree/splay-tree-base.hpp
     title: data-structure/link-cut-tree/splay-tree-base.hpp
   - icon: ':x:'
@@ -66,42 +66,45 @@ data:
     \ * Description: modular arithmetic operations\n */\n\ntemplate<int mod,int root=0>\n\
     struct ModInt{\n    using mint = ModInt;\n    \n\tstatic_assert(mod>0,\"mod must\
     \ be positive\");\n\n    int x;\n\n    constexpr ModInt():x(0){}\n    constexpr\
-    \ ModInt(ll x):x((x%=mod)<0?x+mod:x){}\n    explicit operator int()const{return\
+    \ ModInt(ll x):x((x%=mod)<0?x+mod:x){}\n    constexpr explicit operator int()const{return\
     \ x;}\n    constexpr static int get_mod(){return mod;}\n    constexpr static mint\
-    \ get_root(){return mint(root);}\n    \n    mint operator-()const{\n        mint\
-    \ res;\n        res.x=x?mod-x:0;\n        return res;\n    }\n    mint operator+()const{return\
-    \ *this;}\n\n    mint inv()const{\n        int a=x,b=mod,u=1,v=0,q=0;\n      \
-    \  while(b>0){\n            q=a/b;\n            swap(a-=q*b,b);\n            swap(u-=q*v,v);\n\
-    \        }\n        return mint(u);\n    }\n    mint pow(ll n)const{\n       \
-    \ mint res=1,a=*this;\n        for(;n>0;a*=a,n>>=1)if(n&1)res*=a;\n        return\
-    \ res;\n    }\n    mint &operator+=(const mint &o){\n        if((x+=o.x)>=mod)x-=mod;\n\
-    \        return *this;\n    }\n    mint &operator-=(const mint &o){\n        if((x-=o.x)<0)x+=mod;\n\
-    \        return *this;\n    }\n    mint &operator*=(const mint &o){\n        x=(ll(x)*o.x)%mod;\n\
-    \        return *this;\n    }\n    mint &operator/=(const mint &o){\n        return\
-    \ *this*=o.inv();\n    }\n\n    mint operator+(const mint &o)const{return mint(*this)+=o;}\n\
-    \    mint operator-(const mint &o)const{return mint(*this)-=o;}\n    mint operator*(const\
-    \ mint &o)const{return mint(*this)*=o;}\n    mint operator/(const mint &o)const{return\
-    \ mint(*this)/=o;}\n\n    mint &operator++(){return *this+=mint(1);}\n    mint\
-    \ &operator--(){return *this-=mint(1);}\n    mint operator++(int){mint res=*this;*this+=mint(1);return\
-    \ res;}\n    mint operator--(int){mint res=*this;*this-=mint(1);return res;}\n\
-    \    \n    bool operator==(const mint &o)const{return x==o.x;}\n    bool operator!=(const\
-    \ mint &o)const{return x!=o.x;}\n    bool operator<(const mint &o)const{return\
-    \ x<o.x;}\n    \n    friend istream &operator>>(istream &is,mint &o){ll x{};is>>x;o=mint(x);return\
-    \ is;}\n    friend ostream &operator<<(ostream &os,const mint &o){return os<<o.x;}\n\
-    };\nusing mint998 = ModInt<998244353,3>;\nusing mint107 = ModInt<1000000007>;\n\
-    #line 2 \"data-structure/link-cut-tree/splay-tree-base.hpp\"\n\n/**\n * Author:\
-    \ Teetat T.\n * Date: 2024-04-13\n * Description: Splay Tree. splay(u) will make\
-    \ node u be the root of the tree in amortized O(log n) time.\n */\n\ntemplate<class\
-    \ Node>\nstruct SplayTreeBase{\n    using Ptr = Node*;\n    bool is_root(Ptr t){\n\
-    \        return !(t->p)||(t->p->l!=t&&t->p->r!=t);\n    } // The parent of the\
-    \ root stores the path parant in link cut tree.\n    int size(Ptr t){\n      \
-    \  return t?t->size:0;\n    }\n    virtual void push(Ptr t){};\n    virtual void\
-    \ pull(Ptr t){};\n    int pos(Ptr t){\n        if(t->p){\n            if(t->p->l==t)return\
-    \ -1;\n            if(t->p->r==t)return 1;\n        }\n        return 0;\n   \
-    \ }\n    void rotate(Ptr t){\n        Ptr x=t->p,y=x->p;\n        if(pos(t)==-1){\n\
-    \            if((x->l=t->r))t->r->p=x;\n            t->r=x,x->p=t;\n        }else{\n\
-    \            if((x->r=t->l))t->l->p=x;\n            t->l=x,x->p=t;\n        }\n\
-    \        pull(x),pull(t);\n        if((t->p=y)){\n            if(y->l==x)y->l=t;\n\
+    \ get_root(){return mint(root);}\n    \n    constexpr mint operator-()const{\n\
+    \        mint res;\n        res.x=x?mod-x:0;\n        return res;\n    }\n   \
+    \ constexpr mint operator+()const{return *this;}\n\n    constexpr mint inv()const{\n\
+    \        int a=x,b=mod,u=1,v=0,q=0;\n        while(b>0){\n            q=a/b;\n\
+    \            swap(a-=q*b,b);\n            swap(u-=q*v,v);\n        }\n       \
+    \ return mint(u);\n    }\n    constexpr mint pow(ll n)const{\n        mint res=1,a=*this;\n\
+    \        for(;n>0;a*=a,n>>=1)if(n&1)res*=a;\n        return res;\n    }\n    constexpr\
+    \ mint &operator+=(const mint &o){\n        if((x+=o.x)>=mod)x-=mod;\n       \
+    \ return *this;\n    }\n    constexpr mint &operator-=(const mint &o){\n     \
+    \   if((x-=o.x)<0)x+=mod;\n        return *this;\n    }\n    constexpr mint &operator*=(const\
+    \ mint &o){\n        x=(ll(x)*o.x)%mod;\n        return *this;\n    }\n    constexpr\
+    \ mint &operator/=(const mint &o){\n        return *this*=o.inv();\n    }\n\n\
+    \    constexpr mint operator+(const mint &o)const{return mint(*this)+=o;}\n  \
+    \  constexpr mint operator-(const mint &o)const{return mint(*this)-=o;}\n    constexpr\
+    \ mint operator*(const mint &o)const{return mint(*this)*=o;}\n    constexpr mint\
+    \ operator/(const mint &o)const{return mint(*this)/=o;}\n\n    constexpr mint\
+    \ &operator++(){return *this+=mint(1);}\n    constexpr mint &operator--(){return\
+    \ *this-=mint(1);}\n    constexpr mint operator++(int){mint res=*this;*this+=mint(1);return\
+    \ res;}\n    constexpr mint operator--(int){mint res=*this;*this-=mint(1);return\
+    \ res;}\n    \n    constexpr bool operator==(const mint &o)const{return x==o.x;}\n\
+    \    constexpr bool operator!=(const mint &o)const{return x!=o.x;}\n    constexpr\
+    \ bool operator<(const mint &o)const{return x<o.x;}\n    \n    friend istream\
+    \ &operator>>(istream &is,mint &o){ll x{};is>>x;o=mint(x);return is;}\n    friend\
+    \ ostream &operator<<(ostream &os,const mint &o){return os<<o.x;}\n};\nusing mint998\
+    \ = ModInt<998244353,3>;\nusing mint107 = ModInt<1000000007>;\n#line 2 \"data-structure/link-cut-tree/splay-tree-base.hpp\"\
+    \n\n/**\n * Author: Teetat T.\n * Date: 2024-04-13\n * Description: Splay Tree.\
+    \ splay(u) will make node u be the root of the tree in amortized O(log n) time.\n\
+    \ */\n\ntemplate<class Node>\nstruct SplayTreeBase{\n    using Ptr = Node*;\n\
+    \    bool is_root(Ptr t){\n        return !(t->p)||(t->p->l!=t&&t->p->r!=t);\n\
+    \    } // The parent of the root stores the path parant in link cut tree.\n  \
+    \  int size(Ptr t){\n        return t?t->size:0;\n    }\n    virtual void push(Ptr\
+    \ t){};\n    virtual void pull(Ptr t){};\n    int pos(Ptr t){\n        if(t->p){\n\
+    \            if(t->p->l==t)return -1;\n            if(t->p->r==t)return 1;\n \
+    \       }\n        return 0;\n    }\n    void rotate(Ptr t){\n        Ptr x=t->p,y=x->p;\n\
+    \        if(pos(t)==-1){\n            if((x->l=t->r))t->r->p=x;\n            t->r=x,x->p=t;\n\
+    \        }else{\n            if((x->r=t->l))t->l->p=x;\n            t->l=x,x->p=t;\n\
+    \        }\n        pull(x),pull(t);\n        if((t->p=y)){\n            if(y->l==x)y->l=t;\n\
     \            if(y->r==x)y->r=t;\n        }\n    }\n    void splay(Ptr t){\n  \
     \      if(!t)return;\n        push(t);\n        while(!is_root(t)){\n        \
     \    Ptr x=t->p;\n            if(is_root(x)){\n                push(x),push(t);\n\
@@ -265,7 +268,7 @@ data:
   isVerificationFile: true
   path: verify/yosupo/data-structure/range_affine_range_sum_lct.test.cpp
   requiredBy: []
-  timestamp: '2026-04-15 18:40:12+07:00'
+  timestamp: '2026-04-15 21:45:25+07:00'
   verificationStatus: TEST_WRONG_ANSWER
   verifiedWith: []
 documentation_of: verify/yosupo/data-structure/range_affine_range_sum_lct.test.cpp

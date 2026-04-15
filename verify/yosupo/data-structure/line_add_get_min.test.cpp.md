@@ -1,7 +1,7 @@
 ---
 data:
   _extendedDependsOn:
-  - icon: ':question:'
+  - icon: ':heavy_check_mark:'
     path: data-structure/convex/li-chao-tree.hpp
     title: data-structure/convex/li-chao-tree.hpp
   - icon: ':question:'

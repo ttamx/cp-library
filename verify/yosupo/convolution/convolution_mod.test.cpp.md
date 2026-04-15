@@ -1,13 +1,13 @@
 ---
 data:
   _extendedDependsOn:
-  - icon: ':x:'
+  - icon: ':question:'
     path: modular-arithmetic/binpow.hpp
     title: modular-arithmetic/binpow.hpp
   - icon: ':question:'
     path: modular-arithmetic/modint.hpp
     title: modular-arithmetic/modint.hpp
-  - icon: ':x:'
+  - icon: ':question:'
     path: polynomial/ntt.hpp
     title: polynomial/ntt.hpp
   - icon: ':question:'
@@ -15,9 +15,9 @@ data:
     title: template.hpp
   _extendedRequiredBy: []
   _extendedVerifiedWith: []
-  _isVerificationFailed: true
+  _isVerificationFailed: false
   _pathExtension: cpp
-  _verificationStatusIcon: ':x:'
+  _verificationStatusIcon: ':heavy_check_mark:'
   attributes:
     '*NOT_SPECIAL_COMMENTS*': ''
     PROBLEM: https://judge.yosupo.jp/problem/convolution_mod
@@ -48,38 +48,42 @@ data:
     \ * Description: modular arithmetic operations\n */\n\ntemplate<int mod,int root=0>\n\
     struct ModInt{\n    using mint = ModInt;\n    \n\tstatic_assert(mod>0,\"mod must\
     \ be positive\");\n\n    int x;\n\n    constexpr ModInt():x(0){}\n    constexpr\
-    \ ModInt(ll x):x((x%=mod)<0?x+mod:x){}\n    explicit operator int()const{return\
+    \ ModInt(ll x):x((x%=mod)<0?x+mod:x){}\n    constexpr explicit operator int()const{return\
     \ x;}\n    constexpr static int get_mod(){return mod;}\n    constexpr static mint\
-    \ get_root(){return mint(root);}\n    \n    mint operator-()const{\n        mint\
-    \ res;\n        res.x=x?mod-x:0;\n        return res;\n    }\n    mint operator+()const{return\
-    \ *this;}\n\n    mint inv()const{\n        int a=x,b=mod,u=1,v=0,q=0;\n      \
-    \  while(b>0){\n            q=a/b;\n            swap(a-=q*b,b);\n            swap(u-=q*v,v);\n\
-    \        }\n        return mint(u);\n    }\n    mint pow(ll n)const{\n       \
-    \ mint res=1,a=*this;\n        for(;n>0;a*=a,n>>=1)if(n&1)res*=a;\n        return\
-    \ res;\n    }\n    mint &operator+=(const mint &o){\n        if((x+=o.x)>=mod)x-=mod;\n\
-    \        return *this;\n    }\n    mint &operator-=(const mint &o){\n        if((x-=o.x)<0)x+=mod;\n\
-    \        return *this;\n    }\n    mint &operator*=(const mint &o){\n        x=(ll(x)*o.x)%mod;\n\
-    \        return *this;\n    }\n    mint &operator/=(const mint &o){\n        return\
-    \ *this*=o.inv();\n    }\n\n    mint operator+(const mint &o)const{return mint(*this)+=o;}\n\
-    \    mint operator-(const mint &o)const{return mint(*this)-=o;}\n    mint operator*(const\
-    \ mint &o)const{return mint(*this)*=o;}\n    mint operator/(const mint &o)const{return\
-    \ mint(*this)/=o;}\n\n    mint &operator++(){return *this+=mint(1);}\n    mint\
-    \ &operator--(){return *this-=mint(1);}\n    mint operator++(int){mint res=*this;*this+=mint(1);return\
-    \ res;}\n    mint operator--(int){mint res=*this;*this-=mint(1);return res;}\n\
-    \    \n    bool operator==(const mint &o)const{return x==o.x;}\n    bool operator!=(const\
-    \ mint &o)const{return x!=o.x;}\n    bool operator<(const mint &o)const{return\
-    \ x<o.x;}\n    \n    friend istream &operator>>(istream &is,mint &o){ll x{};is>>x;o=mint(x);return\
-    \ is;}\n    friend ostream &operator<<(ostream &os,const mint &o){return os<<o.x;}\n\
-    };\nusing mint998 = ModInt<998244353,3>;\nusing mint107 = ModInt<1000000007>;\n\
-    #line 2 \"modular-arithmetic/binpow.hpp\"\n\n/**\n * Author: Teetat T.\n * Date:\
-    \ 2024-01-15\n * Description: n-th power using divide and conquer\n * Time: $O(\\\
-    log b)$\n */\n\ntemplate<class T>\nconstexpr T binpow(T a,ll b){\n    T res=1;\n\
-    \    for(;b>0;b>>=1,a*=a)if(b&1)res*=a;\n    return res;\n}\n\n#line 3 \"polynomial/ntt.hpp\"\
-    \n\n/**\n * Author: Teetat T.\n * Description: Number Theoretic Transform\n *\
-    \ Time: $O(N \\log N)$\n */\n\ntemplate<class mint>\nstruct NTT{\n\tusing vm =\
-    \ vector<mint>;\n\t\n\tstatic constexpr mint root=mint::get_root();\n    static_assert(root!=0);\n\
-    \n\tstatic void ntt(vm &a){\n\t\tint n=a.size(),L=31-__builtin_clz(n);\n\t\tvm\
-    \ rt(n);\n\t\trt[1]=1;\n\t\tfor(int k=2,s=2;k<n;k*=2,s++){\n\t\t\tmint z[]={1,binpow(root,MOD>>s)};\n\
+    \ get_root(){return mint(root);}\n    \n    constexpr mint operator-()const{\n\
+    \        mint res;\n        res.x=x?mod-x:0;\n        return res;\n    }\n   \
+    \ constexpr mint operator+()const{return *this;}\n\n    constexpr mint inv()const{\n\
+    \        int a=x,b=mod,u=1,v=0,q=0;\n        while(b>0){\n            q=a/b;\n\
+    \            swap(a-=q*b,b);\n            swap(u-=q*v,v);\n        }\n       \
+    \ return mint(u);\n    }\n    constexpr mint pow(ll n)const{\n        mint res=1,a=*this;\n\
+    \        for(;n>0;a*=a,n>>=1)if(n&1)res*=a;\n        return res;\n    }\n    constexpr\
+    \ mint &operator+=(const mint &o){\n        if((x+=o.x)>=mod)x-=mod;\n       \
+    \ return *this;\n    }\n    constexpr mint &operator-=(const mint &o){\n     \
+    \   if((x-=o.x)<0)x+=mod;\n        return *this;\n    }\n    constexpr mint &operator*=(const\
+    \ mint &o){\n        x=(ll(x)*o.x)%mod;\n        return *this;\n    }\n    constexpr\
+    \ mint &operator/=(const mint &o){\n        return *this*=o.inv();\n    }\n\n\
+    \    constexpr mint operator+(const mint &o)const{return mint(*this)+=o;}\n  \
+    \  constexpr mint operator-(const mint &o)const{return mint(*this)-=o;}\n    constexpr\
+    \ mint operator*(const mint &o)const{return mint(*this)*=o;}\n    constexpr mint\
+    \ operator/(const mint &o)const{return mint(*this)/=o;}\n\n    constexpr mint\
+    \ &operator++(){return *this+=mint(1);}\n    constexpr mint &operator--(){return\
+    \ *this-=mint(1);}\n    constexpr mint operator++(int){mint res=*this;*this+=mint(1);return\
+    \ res;}\n    constexpr mint operator--(int){mint res=*this;*this-=mint(1);return\
+    \ res;}\n    \n    constexpr bool operator==(const mint &o)const{return x==o.x;}\n\
+    \    constexpr bool operator!=(const mint &o)const{return x!=o.x;}\n    constexpr\
+    \ bool operator<(const mint &o)const{return x<o.x;}\n    \n    friend istream\
+    \ &operator>>(istream &is,mint &o){ll x{};is>>x;o=mint(x);return is;}\n    friend\
+    \ ostream &operator<<(ostream &os,const mint &o){return os<<o.x;}\n};\nusing mint998\
+    \ = ModInt<998244353,3>;\nusing mint107 = ModInt<1000000007>;\n#line 2 \"modular-arithmetic/binpow.hpp\"\
+    \n\n/**\n * Author: Teetat T.\n * Date: 2024-01-15\n * Description: n-th power\
+    \ using divide and conquer\n * Time: $O(\\log b)$\n */\n\ntemplate<class T>\n\
+    constexpr T binpow(T a,ll b){\n    T res=1;\n    for(;b>0;b>>=1,a*=a)if(b&1)res*=a;\n\
+    \    return res;\n}\n\n#line 3 \"polynomial/ntt.hpp\"\n\n/**\n * Author: Teetat\
+    \ T.\n * Description: Number Theoretic Transform\n * Time: $O(N \\log N)$\n */\n\
+    \ntemplate<class mint>\nstruct NTT{\n\tusing vm = vector<mint>;\n\t\n\tstatic\
+    \ constexpr mint root=mint::get_root();\n    static_assert(root!=0, \"root must\
+    \ be nonzero\");\n\n\tstatic void ntt(vm &a){\n\t\tint n=a.size(),L=31-__builtin_clz(n);\n\
+    \t\tvm rt(n);\n\t\trt[1]=1;\n\t\tfor(int k=2,s=2;k<n;k*=2,s++){\n\t\t\tmint z[]={1,binpow(root,MOD>>s)};\n\
     \t\t\tfor(int i=k;i<2*k;i++)rt[i]=rt[i/2]*z[i&1];\n\t\t}\n\t\tvector<int> rev(n);\n\
     \t\tfor(int i=1;i<n;i++)rev[i]=(rev[i/2]|(i&1)<<L)/2;\n\t\tfor(int i=1;i<n;i++)if(i<rev[i])swap(a[i],a[rev[i]]);\n\
     \t\tfor(int k=1;k<n;k*=2)for(int i=0;i<n;i+=2*k)for(int j=0;j<k;j++){\n\t\t\t\
@@ -108,8 +112,8 @@ data:
   isVerificationFile: true
   path: verify/yosupo/convolution/convolution_mod.test.cpp
   requiredBy: []
-  timestamp: '2026-04-15 18:40:12+07:00'
-  verificationStatus: TEST_WRONG_ANSWER
+  timestamp: '2026-04-15 21:45:25+07:00'
+  verificationStatus: TEST_ACCEPTED
   verifiedWith: []
 documentation_of: verify/yosupo/convolution/convolution_mod.test.cpp
 layout: document

@@ -45,42 +45,46 @@ data:
     \ * Description: modular arithmetic operations\n */\n\ntemplate<int mod,int root=0>\n\
     struct ModInt{\n    using mint = ModInt;\n    \n\tstatic_assert(mod>0,\"mod must\
     \ be positive\");\n\n    int x;\n\n    constexpr ModInt():x(0){}\n    constexpr\
-    \ ModInt(ll x):x((x%=mod)<0?x+mod:x){}\n    explicit operator int()const{return\
+    \ ModInt(ll x):x((x%=mod)<0?x+mod:x){}\n    constexpr explicit operator int()const{return\
     \ x;}\n    constexpr static int get_mod(){return mod;}\n    constexpr static mint\
-    \ get_root(){return mint(root);}\n    \n    mint operator-()const{\n        mint\
-    \ res;\n        res.x=x?mod-x:0;\n        return res;\n    }\n    mint operator+()const{return\
-    \ *this;}\n\n    mint inv()const{\n        int a=x,b=mod,u=1,v=0,q=0;\n      \
-    \  while(b>0){\n            q=a/b;\n            swap(a-=q*b,b);\n            swap(u-=q*v,v);\n\
-    \        }\n        return mint(u);\n    }\n    mint pow(ll n)const{\n       \
-    \ mint res=1,a=*this;\n        for(;n>0;a*=a,n>>=1)if(n&1)res*=a;\n        return\
-    \ res;\n    }\n    mint &operator+=(const mint &o){\n        if((x+=o.x)>=mod)x-=mod;\n\
-    \        return *this;\n    }\n    mint &operator-=(const mint &o){\n        if((x-=o.x)<0)x+=mod;\n\
-    \        return *this;\n    }\n    mint &operator*=(const mint &o){\n        x=(ll(x)*o.x)%mod;\n\
-    \        return *this;\n    }\n    mint &operator/=(const mint &o){\n        return\
-    \ *this*=o.inv();\n    }\n\n    mint operator+(const mint &o)const{return mint(*this)+=o;}\n\
-    \    mint operator-(const mint &o)const{return mint(*this)-=o;}\n    mint operator*(const\
-    \ mint &o)const{return mint(*this)*=o;}\n    mint operator/(const mint &o)const{return\
-    \ mint(*this)/=o;}\n\n    mint &operator++(){return *this+=mint(1);}\n    mint\
-    \ &operator--(){return *this-=mint(1);}\n    mint operator++(int){mint res=*this;*this+=mint(1);return\
-    \ res;}\n    mint operator--(int){mint res=*this;*this-=mint(1);return res;}\n\
-    \    \n    bool operator==(const mint &o)const{return x==o.x;}\n    bool operator!=(const\
-    \ mint &o)const{return x!=o.x;}\n    bool operator<(const mint &o)const{return\
-    \ x<o.x;}\n    \n    friend istream &operator>>(istream &is,mint &o){ll x{};is>>x;o=mint(x);return\
-    \ is;}\n    friend ostream &operator<<(ostream &os,const mint &o){return os<<o.x;}\n\
-    };\nusing mint998 = ModInt<998244353,3>;\nusing mint107 = ModInt<1000000007>;\n\
-    #line 2 \"convolution/xor-convolution.hpp\"\n\n/**\n * Author: Teetat T.\n * Date:\
-    \ 2024-07-29\n * Description: Bitwise XOR Convolution.\n * Fast Walsh-Hadamard\
-    \ Transform: $A^\\prime[S]=\\sum_T(-1)^{|S\\&T|}A[T]$.\n * Time: $O(N\\log N)$.\n\
-    \ */\n\ntemplate<class T>\nvoid fwht(vector<T> &a){\n    int n=(int)a.size();\n\
-    \    assert(n==(n&-n));\n    for(int i=1;i<n;i<<=1){\n        for(int j=0;j<n;j++){\n\
-    \            if(j&i){\n                T &u=a[j^i],&v=a[j];\n                tie(u,v)=make_pair(u+v,u-v);\n\
-    \            }\n        }\n    }\n}\n\ntemplate<class T>\nvector<T> xor_convolution(vector<T>\
-    \ a,vector<T> b){\n    int n=(int)a.size();\n    fwht(a);\n    fwht(b);\n    for(int\
-    \ i=0;i<n;i++)a[i]*=b[i];\n    fwht(a);\n    T div=T(1)/T(n);\n    if(div==T(0)){\n\
-    \        for(auto &x:a)x/=n;\n    }else{\n        for(auto &x:a)x*=div;\n    }\n\
-    \    return a;\n}\n\n#line 5 \"verify/yosupo/convolution/bitwise_xor_convolution.test.cpp\"\
-    \n\nusing mint = mint998;\n\nint main(){\n    cin.tie(nullptr)->sync_with_stdio(false);\n\
-    \    int n;\n    cin >> n;\n    n=1<<n;\n    vector<mint> a(n),b(n);\n    for(auto\
+    \ get_root(){return mint(root);}\n    \n    constexpr mint operator-()const{\n\
+    \        mint res;\n        res.x=x?mod-x:0;\n        return res;\n    }\n   \
+    \ constexpr mint operator+()const{return *this;}\n\n    constexpr mint inv()const{\n\
+    \        int a=x,b=mod,u=1,v=0,q=0;\n        while(b>0){\n            q=a/b;\n\
+    \            swap(a-=q*b,b);\n            swap(u-=q*v,v);\n        }\n       \
+    \ return mint(u);\n    }\n    constexpr mint pow(ll n)const{\n        mint res=1,a=*this;\n\
+    \        for(;n>0;a*=a,n>>=1)if(n&1)res*=a;\n        return res;\n    }\n    constexpr\
+    \ mint &operator+=(const mint &o){\n        if((x+=o.x)>=mod)x-=mod;\n       \
+    \ return *this;\n    }\n    constexpr mint &operator-=(const mint &o){\n     \
+    \   if((x-=o.x)<0)x+=mod;\n        return *this;\n    }\n    constexpr mint &operator*=(const\
+    \ mint &o){\n        x=(ll(x)*o.x)%mod;\n        return *this;\n    }\n    constexpr\
+    \ mint &operator/=(const mint &o){\n        return *this*=o.inv();\n    }\n\n\
+    \    constexpr mint operator+(const mint &o)const{return mint(*this)+=o;}\n  \
+    \  constexpr mint operator-(const mint &o)const{return mint(*this)-=o;}\n    constexpr\
+    \ mint operator*(const mint &o)const{return mint(*this)*=o;}\n    constexpr mint\
+    \ operator/(const mint &o)const{return mint(*this)/=o;}\n\n    constexpr mint\
+    \ &operator++(){return *this+=mint(1);}\n    constexpr mint &operator--(){return\
+    \ *this-=mint(1);}\n    constexpr mint operator++(int){mint res=*this;*this+=mint(1);return\
+    \ res;}\n    constexpr mint operator--(int){mint res=*this;*this-=mint(1);return\
+    \ res;}\n    \n    constexpr bool operator==(const mint &o)const{return x==o.x;}\n\
+    \    constexpr bool operator!=(const mint &o)const{return x!=o.x;}\n    constexpr\
+    \ bool operator<(const mint &o)const{return x<o.x;}\n    \n    friend istream\
+    \ &operator>>(istream &is,mint &o){ll x{};is>>x;o=mint(x);return is;}\n    friend\
+    \ ostream &operator<<(ostream &os,const mint &o){return os<<o.x;}\n};\nusing mint998\
+    \ = ModInt<998244353,3>;\nusing mint107 = ModInt<1000000007>;\n#line 2 \"convolution/xor-convolution.hpp\"\
+    \n\n/**\n * Author: Teetat T.\n * Date: 2024-07-29\n * Description: Bitwise XOR\
+    \ Convolution.\n * Fast Walsh-Hadamard Transform: $A^\\prime[S]=\\sum_T(-1)^{|S\\\
+    &T|}A[T]$.\n * Time: $O(N\\log N)$.\n */\n\ntemplate<class T>\nvoid fwht(vector<T>\
+    \ &a){\n    int n=(int)a.size();\n    assert(n==(n&-n));\n    for(int i=1;i<n;i<<=1){\n\
+    \        for(int j=0;j<n;j++){\n            if(j&i){\n                T &u=a[j^i],&v=a[j];\n\
+    \                tie(u,v)=make_pair(u+v,u-v);\n            }\n        }\n    }\n\
+    }\n\ntemplate<class T>\nvector<T> xor_convolution(vector<T> a,vector<T> b){\n\
+    \    int n=(int)a.size();\n    fwht(a);\n    fwht(b);\n    for(int i=0;i<n;i++)a[i]*=b[i];\n\
+    \    fwht(a);\n    T div=T(1)/T(n);\n    if(div==T(0)){\n        for(auto &x:a)x/=n;\n\
+    \    }else{\n        for(auto &x:a)x*=div;\n    }\n    return a;\n}\n\n#line 5\
+    \ \"verify/yosupo/convolution/bitwise_xor_convolution.test.cpp\"\n\nusing mint\
+    \ = mint998;\n\nint main(){\n    cin.tie(nullptr)->sync_with_stdio(false);\n \
+    \   int n;\n    cin >> n;\n    n=1<<n;\n    vector<mint> a(n),b(n);\n    for(auto\
     \ &x:a)cin >> x;\n    for(auto &x:b)cin >> x;\n    auto c=xor_convolution(a,b);\n\
     \    for(auto x:c)cout << x << \" \";\n}\n"
   code: "#define PROBLEM \"https://judge.yosupo.jp/problem/bitwise_xor_convolution\"\
@@ -97,7 +101,7 @@ data:
   isVerificationFile: true
   path: verify/yosupo/convolution/bitwise_xor_convolution.test.cpp
   requiredBy: []
-  timestamp: '2026-04-15 18:40:12+07:00'
+  timestamp: '2026-04-15 21:45:25+07:00'
   verificationStatus: TEST_ACCEPTED
   verifiedWith: []
 documentation_of: verify/yosupo/convolution/bitwise_xor_convolution.test.cpp

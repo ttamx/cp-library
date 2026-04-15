@@ -5,11 +5,11 @@ data:
   - icon: ':x:'
     path: polynomial/formal-power-series.hpp
     title: polynomial/formal-power-series.hpp
-  - icon: ':x:'
+  - icon: ':question:'
     path: polynomial/ntt.hpp
     title: polynomial/ntt.hpp
   _extendedVerifiedWith:
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: verify/yosupo/convolution/convolution_mod.test.cpp
     title: verify/yosupo/convolution/convolution_mod.test.cpp
   - icon: ':x:'
@@ -26,7 +26,7 @@ data:
     title: verify/yosupo/polynomial/pow_of_formal_power_series.test.cpp
   _isVerificationFailed: true
   _pathExtension: hpp
-  _verificationStatusIcon: ':x:'
+  _verificationStatusIcon: ':question:'
   attributes:
     links: []
   bundledCode: "#line 2 \"modular-arithmetic/binpow.hpp\"\n\n/**\n * Author: Teetat\
@@ -44,7 +44,7 @@ data:
   - polynomial/formal-power-series.hpp
   - polynomial/ntt.hpp
   timestamp: '2026-04-04 10:38:14+05:30'
-  verificationStatus: LIBRARY_ALL_WA
+  verificationStatus: LIBRARY_SOME_WA
   verifiedWith:
   - verify/yosupo/polynomial/exp_of_formal_power_series.test.cpp
   - verify/yosupo/polynomial/log_of_formal_power_series.test.cpp

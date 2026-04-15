@@ -11,7 +11,7 @@ data:
   - icon: ':warning:'
     path: data-structure/link-cut-tree/link-cut-tree.hpp
     title: data-structure/link-cut-tree/link-cut-tree.hpp
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: data-structure/link-cut-tree/reversible-splay-tree.hpp
     title: data-structure/link-cut-tree/reversible-splay-tree.hpp
   _extendedVerifiedWith:
@@ -21,12 +21,12 @@ data:
   - icon: ':x:'
     path: verify/yosupo/data-structure/range_affine_range_sum_lct.test.cpp
     title: verify/yosupo/data-structure/range_affine_range_sum_lct.test.cpp
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: verify/yosupo/data-structure/range_reverse_range_sum.test.cpp
     title: verify/yosupo/data-structure/range_reverse_range_sum.test.cpp
   _isVerificationFailed: true
   _pathExtension: hpp
-  _verificationStatusIcon: ':x:'
+  _verificationStatusIcon: ':question:'
   attributes:
     links: []
   bundledCode: "#line 2 \"data-structure/link-cut-tree/splay-tree-base.hpp\"\n\n/**\n\
@@ -117,7 +117,7 @@ data:
   - data-structure/link-cut-tree/lazy-reversible-splay-tree.hpp
   - data-structure/link-cut-tree/link-cut-tree.hpp
   timestamp: '2024-06-10 16:05:09+07:00'
-  verificationStatus: LIBRARY_ALL_WA
+  verificationStatus: LIBRARY_SOME_WA
   verifiedWith:
   - verify/yosupo/data-structure/range_affine_range_sum_lct.test.cpp
   - verify/yosupo/data-structure/range_reverse_range_sum.test.cpp

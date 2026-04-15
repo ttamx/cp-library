@@ -4,13 +4,13 @@ data:
   - icon: ':x:'
     path: data-structure/link-cut-tree/link-cut-tree-base.hpp
     title: data-structure/link-cut-tree/link-cut-tree-base.hpp
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: data-structure/link-cut-tree/reversible-bbst.hpp
     title: data-structure/link-cut-tree/reversible-bbst.hpp
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: data-structure/link-cut-tree/reversible-splay-tree.hpp
     title: data-structure/link-cut-tree/reversible-splay-tree.hpp
-  - icon: ':x:'
+  - icon: ':question:'
     path: data-structure/link-cut-tree/splay-tree-base.hpp
     title: data-structure/link-cut-tree/splay-tree-base.hpp
   _extendedRequiredBy: []

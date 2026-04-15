@@ -3,12 +3,12 @@ data:
   _extendedDependsOn: []
   _extendedRequiredBy: []
   _extendedVerifiedWith:
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: verify/yosupo/graph/scc.test.cpp
     title: verify/yosupo/graph/scc.test.cpp
-  _isVerificationFailed: true
+  _isVerificationFailed: false
   _pathExtension: hpp
-  _verificationStatusIcon: ':x:'
+  _verificationStatusIcon: ':heavy_check_mark:'
   attributes:
     links: []
   bundledCode: "#line 2 \"graph/strongly-connected-component.hpp\"\n\n/**\n * Author:\
@@ -44,7 +44,7 @@ data:
   path: graph/strongly-connected-component.hpp
   requiredBy: []
   timestamp: '2024-07-29 18:44:45+07:00'
-  verificationStatus: LIBRARY_ALL_WA
+  verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
   - verify/yosupo/graph/scc.test.cpp
 documentation_of: graph/strongly-connected-component.hpp

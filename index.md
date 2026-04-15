@@ -23,30 +23,30 @@ data:
       title: convolution/xor-convolution.hpp
   - name: data-structure
     pages:
-    - icon: ':x:'
+    - icon: ':heavy_check_mark:'
       path: data-structure/binary-trie.hpp
       title: data-structure/binary-trie.hpp
     - icon: ':x:'
       path: data-structure/cartesian-tree.hpp
       title: data-structure/cartesian-tree.hpp
-    - icon: ':x:'
+    - icon: ':heavy_check_mark:'
       path: data-structure/dsu.hpp
       title: data-structure/dsu.hpp
-    - icon: ':question:'
+    - icon: ':heavy_check_mark:'
       path: data-structure/fenwick-tree.hpp
       title: data-structure/fenwick-tree.hpp
     - icon: ':heavy_check_mark:'
       path: data-structure/persistent-queue.hpp
       title: data-structure/persistent-queue.hpp
-    - icon: ':x:'
+    - icon: ':question:'
       path: data-structure/sparse-table.hpp
       title: data-structure/sparse-table.hpp
   - name: data-structure/convex
     pages:
-    - icon: ':x:'
+    - icon: ':heavy_check_mark:'
       path: data-structure/convex/dynamic-li-chao-tree.hpp
       title: data-structure/convex/dynamic-li-chao-tree.hpp
-    - icon: ':question:'
+    - icon: ':heavy_check_mark:'
       path: data-structure/convex/li-chao-tree.hpp
       title: data-structure/convex/li-chao-tree.hpp
     - icon: ':warning:'
@@ -69,13 +69,13 @@ data:
     - icon: ':warning:'
       path: data-structure/link-cut-tree/link-cut-tree.hpp
       title: data-structure/link-cut-tree/link-cut-tree.hpp
-    - icon: ':x:'
+    - icon: ':heavy_check_mark:'
       path: data-structure/link-cut-tree/reversible-bbst.hpp
       title: data-structure/link-cut-tree/reversible-bbst.hpp
-    - icon: ':x:'
+    - icon: ':heavy_check_mark:'
       path: data-structure/link-cut-tree/reversible-splay-tree.hpp
       title: data-structure/link-cut-tree/reversible-splay-tree.hpp
-    - icon: ':x:'
+    - icon: ':question:'
       path: data-structure/link-cut-tree/splay-tree-base.hpp
       title: data-structure/link-cut-tree/splay-tree-base.hpp
   - name: data-structure/segment-tree
@@ -86,7 +86,7 @@ data:
     - icon: ':x:'
       path: data-structure/segment-tree/lazy-segment-tree.hpp
       title: data-structure/segment-tree/lazy-segment-tree.hpp
-    - icon: ':question:'
+    - icon: ':heavy_check_mark:'
       path: data-structure/segment-tree/segment-tree.hpp
       title: data-structure/segment-tree/segment-tree.hpp
   - name: flow
@@ -117,7 +117,7 @@ data:
     - icon: ':warning:'
       path: graph/low-link.hpp
       title: graph/low-link.hpp
-    - icon: ':x:'
+    - icon: ':heavy_check_mark:'
       path: graph/strongly-connected-component.hpp
       title: graph/strongly-connected-component.hpp
     - icon: ':x:'
@@ -128,7 +128,7 @@ data:
     - icon: ':x:'
       path: group/monoid/add-count.hpp
       title: group/monoid/add-count.hpp
-    - icon: ':question:'
+    - icon: ':heavy_check_mark:'
       path: group/monoid/add.hpp
       title: group/monoid/add.hpp
     - icon: ':question:'
@@ -149,7 +149,7 @@ data:
     - icon: ':warning:'
       path: group/monoid/min-idx.hpp
       title: group/monoid/min-idx.hpp
-    - icon: ':x:'
+    - icon: ':question:'
       path: group/monoid/min.hpp
       title: group/monoid/min.hpp
     - icon: ':warning:'
@@ -158,7 +158,7 @@ data:
     - icon: ':warning:'
       path: group/monoid/monoid-base.hpp
       title: group/monoid/monoid-base.hpp
-    - icon: ':x:'
+    - icon: ':heavy_check_mark:'
       path: group/monoid/monoid-reverse.hpp
       title: group/monoid/monoid-reverse.hpp
     - icon: ':warning:'
@@ -203,7 +203,7 @@ data:
       title: linear-algebra/matrix.hpp
   - name: modular-arithmetic
     pages:
-    - icon: ':x:'
+    - icon: ':question:'
       path: modular-arithmetic/binpow.hpp
       title: modular-arithmetic/binpow.hpp
     - icon: ':warning:'
@@ -234,7 +234,7 @@ data:
     - icon: ':warning:'
       path: polynomial/lagrange-interpolate.hpp
       title: polynomial/lagrange-interpolate.hpp
-    - icon: ':x:'
+    - icon: ':question:'
       path: polynomial/ntt.hpp
       title: polynomial/ntt.hpp
   - name: string
@@ -306,7 +306,7 @@ data:
     - icon: ':heavy_check_mark:'
       path: verify/yosupo/convolution/bitwise_xor_convolution.test.cpp
       title: verify/yosupo/convolution/bitwise_xor_convolution.test.cpp
-    - icon: ':x:'
+    - icon: ':heavy_check_mark:'
       path: verify/yosupo/convolution/convolution_mod.test.cpp
       title: verify/yosupo/convolution/convolution_mod.test.cpp
     - icon: ':heavy_check_mark:'
@@ -353,36 +353,36 @@ data:
     - icon: ':x:'
       path: verify/yosupo/data-structure/range_affine_range_sum_lct.test.cpp
       title: verify/yosupo/data-structure/range_affine_range_sum_lct.test.cpp
-    - icon: ':x:'
+    - icon: ':heavy_check_mark:'
       path: verify/yosupo/data-structure/range_reverse_range_sum.test.cpp
       title: verify/yosupo/data-structure/range_reverse_range_sum.test.cpp
-    - icon: ':x:'
+    - icon: ':heavy_check_mark:'
       path: verify/yosupo/data-structure/segment_add_get_min.test.cpp
       title: verify/yosupo/data-structure/segment_add_get_min.test.cpp
-    - icon: ':x:'
+    - icon: ':heavy_check_mark:'
       path: verify/yosupo/data-structure/segment_add_get_min_online.test.cpp
       title: verify/yosupo/data-structure/segment_add_get_min_online.test.cpp
-    - icon: ':x:'
+    - icon: ':heavy_check_mark:'
       path: verify/yosupo/data-structure/set_xor_min.test.cpp
       title: verify/yosupo/data-structure/set_xor_min.test.cpp
-    - icon: ':x:'
+    - icon: ':heavy_check_mark:'
       path: verify/yosupo/data-structure/staticrmq.test.cpp
       title: verify/yosupo/data-structure/staticrmq.test.cpp
-    - icon: ':x:'
+    - icon: ':heavy_check_mark:'
       path: verify/yosupo/data-structure/unionfind.test.cpp
       title: verify/yosupo/data-structure/unionfind.test.cpp
-    - icon: ':x:'
+    - icon: ':heavy_check_mark:'
       path: verify/yosupo/data-structure/vertex_add_path_sum.test.cpp
       title: verify/yosupo/data-structure/vertex_add_path_sum.test.cpp
-    - icon: ':x:'
+    - icon: ':heavy_check_mark:'
       path: verify/yosupo/data-structure/vertex_add_subtree_sum.test.cpp
       title: verify/yosupo/data-structure/vertex_add_subtree_sum.test.cpp
-    - icon: ':x:'
+    - icon: ':heavy_check_mark:'
       path: verify/yosupo/data-structure/vertex_set_path_composite.test.cpp
       title: verify/yosupo/data-structure/vertex_set_path_composite.test.cpp
   - name: verify/yosupo/graph
     pages:
-    - icon: ':x:'
+    - icon: ':heavy_check_mark:'
       path: verify/yosupo/graph/scc.test.cpp
       title: verify/yosupo/graph/scc.test.cpp
   - name: verify/yosupo/number-theory
