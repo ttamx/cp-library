@@ -31,7 +31,7 @@ struct DynamicModInt{
 
     constexpr DynamicModInt():x(0){}
     constexpr DynamicModInt(ll x):x((x%=get_mod())<0?x+get_mod():x){}
-    explicit operator int()const{return (int)x;}
+    constexpr explicit operator int()const{return (int)x;}
     constexpr static u32 umod(){return bt.umod();}
     constexpr static int get_mod(){return (int)bt.umod();}
     static void set_mod(u32 m){
@@ -39,14 +39,14 @@ struct DynamicModInt{
         bt=Barrett(m);
     }
     
-    mint operator-()const{
+    constexpr mint operator-()const{
         mint res;
         res.val=x?umod()-x:0;
         return res;
     }
-    mint operator+()const{return *this;}
+    constexpr mint operator+()const{return *this;}
 
-    mint inv()const{
+    constexpr mint inv()const{
         int a=x,b=get_mod(),u=1,v=0,q=0;
         while(b>0){
             q=a/b;
@@ -55,40 +55,40 @@ struct DynamicModInt{
         }
         return mint(u);
     }
-    mint pow(ll n)const{
+    constexpr mint pow(ll n)const{
         mint res=1,a=*this;
         for(;n>0;a*=a,n>>=1)if(n&1)res*=a;
         return res;
     }
-    mint &operator+=(const mint &o){
+    constexpr mint &operator+=(const mint &o){
         if((x+=o.x)>=umod())x-=umod();
         return *this;
     }
-    mint &operator-=(const mint &o){
+    constexpr mint &operator-=(const mint &o){
         if((x-=o.x)>=umod())x+=umod();
         return *this;
     }
-    mint &operator*=(const mint &o){
+    constexpr mint &operator*=(const mint &o){
         x=bt.mul(x,o.x);
         return *this;
     }
-    mint &operator/=(const mint &o){
+    constexpr mint &operator/=(const mint &o){
         return *this*=o.inv();
     }
 
-    mint operator+(const mint &o)const{return mint(*this)+=o;}
-    mint operator-(const mint &o)const{return mint(*this)-=o;}
-    mint operator*(const mint &o)const{return mint(*this)*=o;}
-    mint operator/(const mint &o)const{return mint(*this)/=o;}
+    constexpr mint operator+(const mint &o)const{return mint(*this)+=o;}
+    constexpr mint operator-(const mint &o)const{return mint(*this)-=o;}
+    constexpr mint operator*(const mint &o)const{return mint(*this)*=o;}
+    constexpr mint operator/(const mint &o)const{return mint(*this)/=o;}
 
-    mint &operator++(){return *this+=mint(1);}
-    mint &operator--(){return *this-=mint(1);}
-    mint operator++(int){mint res=*this;*this+=mint(1);return res;}
-    mint operator--(int){mint res=*this;*this-=mint(1);return res;}
+    constexpr mint &operator++(){return *this+=mint(1);}
+    constexpr mint &operator--(){return *this-=mint(1);}
+    constexpr mint operator++(int){mint res=*this;*this+=mint(1);return res;}
+    constexpr mint operator--(int){mint res=*this;*this-=mint(1);return res;}
     
-    bool operator==(const mint &o)const{return x==o.x;}
-    bool operator!=(const mint &o)const{return x!=o.x;}
-    bool operator<(const mint &o)const{return x<o.x;}
+    constexpr bool operator==(const mint &o)const{return x==o.x;}
+    constexpr bool operator!=(const mint &o)const{return x!=o.x;}
+    constexpr bool operator<(const mint &o)const{return x<o.x;}
     
     friend istream &operator>>(istream &is,mint &o){ll x{};is>>x;o=mint(x);return is;}
     friend ostream &operator<<(ostream &os,const mint &o){return os<<o.x;}
