@@ -5,14 +5,14 @@ data:
     path: modular-arithmetic/binpow.hpp
     title: modular-arithmetic/binpow.hpp
   _extendedRequiredBy:
-  - icon: ':x:'
+  - icon: ':question:'
     path: polynomial/formal-power-series.hpp
     title: polynomial/formal-power-series.hpp
   _extendedVerifiedWith:
   - icon: ':heavy_check_mark:'
     path: verify/yosupo/convolution/convolution_mod.test.cpp
     title: verify/yosupo/convolution/convolution_mod.test.cpp
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: verify/yosupo/polynomial/exp_of_formal_power_series.test.cpp
     title: verify/yosupo/polynomial/exp_of_formal_power_series.test.cpp
   - icon: ':x:'

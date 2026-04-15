@@ -1,7 +1,7 @@
 ---
 data:
   _extendedDependsOn:
-  - icon: ':x:'
+  - icon: ':question:'
     path: graph/graph-base.hpp
     title: graph/graph-base.hpp
   - icon: ':question:'
@@ -10,20 +10,20 @@ data:
   - icon: ':question:'
     path: template.hpp
     title: template.hpp
-  - icon: ':x:'
+  - icon: ':question:'
     path: tree/hld.hpp
     title: tree/hld.hpp
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: tree/static-top-tree-rerooting-dp.hpp
     title: tree/static-top-tree-rerooting-dp.hpp
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: tree/static-top-tree.hpp
     title: tree/static-top-tree.hpp
   _extendedRequiredBy: []
   _extendedVerifiedWith: []
-  _isVerificationFailed: true
+  _isVerificationFailed: false
   _pathExtension: cpp
-  _verificationStatusIcon: ':x:'
+  _verificationStatusIcon: ':heavy_check_mark:'
   attributes:
     '*NOT_SPECIAL_COMMENTS*': ''
     PROBLEM: https://judge.yosupo.jp/problem/point_set_tree_path_composite_sum
@@ -274,7 +274,7 @@ data:
   path: verify/yosupo/data-structure/point_set_tree_path_composite_sum.test.cpp
   requiredBy: []
   timestamp: '2026-04-15 22:12:04+07:00'
-  verificationStatus: TEST_WRONG_ANSWER
+  verificationStatus: TEST_ACCEPTED
   verifiedWith: []
 documentation_of: verify/yosupo/data-structure/point_set_tree_path_composite_sum.test.cpp
 layout: document

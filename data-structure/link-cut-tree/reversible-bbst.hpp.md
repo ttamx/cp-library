@@ -5,16 +5,16 @@ data:
   - icon: ':warning:'
     path: data-structure/link-cut-tree/link-cut-tree.hpp
     title: data-structure/link-cut-tree/link-cut-tree.hpp
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: data-structure/link-cut-tree/reversible-splay-tree.hpp
     title: data-structure/link-cut-tree/reversible-splay-tree.hpp
   _extendedVerifiedWith:
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: verify/yosupo/data-structure/range_reverse_range_sum.test.cpp
     title: verify/yosupo/data-structure/range_reverse_range_sum.test.cpp
-  _isVerificationFailed: true
+  _isVerificationFailed: false
   _pathExtension: hpp
-  _verificationStatusIcon: ':x:'
+  _verificationStatusIcon: ':heavy_check_mark:'
   attributes:
     links: []
   bundledCode: "#line 2 \"data-structure/link-cut-tree/reversible-bbst.hpp\"\n\n/**\n\
@@ -64,7 +64,7 @@ data:
   - data-structure/link-cut-tree/reversible-splay-tree.hpp
   - data-structure/link-cut-tree/link-cut-tree.hpp
   timestamp: '2024-06-10 16:05:09+07:00'
-  verificationStatus: LIBRARY_ALL_WA
+  verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
   - verify/yosupo/data-structure/range_reverse_range_sum.test.cpp
 documentation_of: data-structure/link-cut-tree/reversible-bbst.hpp

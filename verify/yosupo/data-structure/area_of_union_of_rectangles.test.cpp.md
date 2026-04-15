@@ -7,7 +7,7 @@ data:
   - icon: ':heavy_check_mark:'
     path: group/monoid-action/min-count-add.hpp
     title: group/monoid-action/min-count-add.hpp
-  - icon: ':question:'
+  - icon: ':heavy_check_mark:'
     path: group/monoid/add.hpp
     title: group/monoid/add.hpp
   - icon: ':heavy_check_mark:'

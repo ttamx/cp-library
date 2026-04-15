@@ -1,16 +1,16 @@
 ---
 data:
   _extendedDependsOn:
-  - icon: ':question:'
+  - icon: ':heavy_check_mark:'
     path: data-structure/segment-tree/segment-tree.hpp
     title: data-structure/segment-tree/segment-tree.hpp
-  - icon: ':x:'
+  - icon: ':question:'
     path: graph/graph-base.hpp
     title: graph/graph-base.hpp
-  - icon: ':question:'
+  - icon: ':heavy_check_mark:'
     path: group/monoid/affine.hpp
     title: group/monoid/affine.hpp
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: group/monoid/monoid-reverse.hpp
     title: group/monoid/monoid-reverse.hpp
   - icon: ':question:'
@@ -19,14 +19,14 @@ data:
   - icon: ':question:'
     path: template.hpp
     title: template.hpp
-  - icon: ':x:'
+  - icon: ':question:'
     path: tree/hld.hpp
     title: tree/hld.hpp
   _extendedRequiredBy: []
   _extendedVerifiedWith: []
-  _isVerificationFailed: true
+  _isVerificationFailed: false
   _pathExtension: cpp
-  _verificationStatusIcon: ':x:'
+  _verificationStatusIcon: ':heavy_check_mark:'
   attributes:
     '*NOT_SPECIAL_COMMENTS*': ''
     PROBLEM: https://judge.yosupo.jp/problem/vertex_set_path_composite
@@ -233,7 +233,7 @@ data:
   path: verify/yosupo/data-structure/vertex_set_path_composite.test.cpp
   requiredBy: []
   timestamp: '2026-04-15 22:12:04+07:00'
-  verificationStatus: TEST_WRONG_ANSWER
+  verificationStatus: TEST_ACCEPTED
   verifiedWith: []
 documentation_of: verify/yosupo/data-structure/vertex_set_path_composite.test.cpp
 layout: document

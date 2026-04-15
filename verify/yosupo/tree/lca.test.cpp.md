@@ -1,13 +1,13 @@
 ---
 data:
   _extendedDependsOn:
-  - icon: ':x:'
+  - icon: ':question:'
     path: graph/graph-base.hpp
     title: graph/graph-base.hpp
   - icon: ':question:'
     path: template.hpp
     title: template.hpp
-  - icon: ':x:'
+  - icon: ':question:'
     path: tree/hld.hpp
     title: tree/hld.hpp
   _extendedRequiredBy: []

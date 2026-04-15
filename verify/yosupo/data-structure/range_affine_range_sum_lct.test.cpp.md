@@ -1,28 +1,28 @@
 ---
 data:
   _extendedDependsOn:
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: data-structure/link-cut-tree/lazy-link-cut-tree.hpp
     title: data-structure/link-cut-tree/lazy-link-cut-tree.hpp
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: data-structure/link-cut-tree/lazy-reversible-bbst.hpp
     title: data-structure/link-cut-tree/lazy-reversible-bbst.hpp
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: data-structure/link-cut-tree/lazy-reversible-splay-tree.hpp
     title: data-structure/link-cut-tree/lazy-reversible-splay-tree.hpp
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: data-structure/link-cut-tree/link-cut-tree-base.hpp
     title: data-structure/link-cut-tree/link-cut-tree-base.hpp
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: data-structure/link-cut-tree/splay-tree-base.hpp
     title: data-structure/link-cut-tree/splay-tree-base.hpp
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: group/monoid-action/add-count-affine.hpp
     title: group/monoid-action/add-count-affine.hpp
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: group/monoid/add-count.hpp
     title: group/monoid/add-count.hpp
-  - icon: ':question:'
+  - icon: ':heavy_check_mark:'
     path: group/monoid/affine.hpp
     title: group/monoid/affine.hpp
   - icon: ':question:'
@@ -33,9 +33,9 @@ data:
     title: template.hpp
   _extendedRequiredBy: []
   _extendedVerifiedWith: []
-  _isVerificationFailed: true
+  _isVerificationFailed: false
   _pathExtension: cpp
-  _verificationStatusIcon: ':x:'
+  _verificationStatusIcon: ':heavy_check_mark:'
   attributes:
     '*NOT_SPECIAL_COMMENTS*': ''
     PROBLEM: https://judge.yosupo.jp/problem/range_affine_range_sum
@@ -111,6 +111,10 @@ data:
     \                rotate(t);\n            }else{\n                Ptr y=x->p;\n\
     \                push(y),push(x),push(t);\n                if(pos(x)==pos(t))rotate(x),rotate(t);\n\
     \                else rotate(t),rotate(t);\n            }\n        }\n    }\n\
+    \    void splay_kth(Ptr &t,int k){\n        assert(0<=k&&k<size(t));\n       \
+    \ while(true){\n            push(t);\n            if(k<size(t->l))t=t->l;\n  \
+    \          else if(size(t->l)==k)break;\n            else{\n                k-=size(t->l)+1;\n\
+    \                t=t->r;\n            }\n        }\n        splay(t);\n    }\n\
     \    Ptr get_first(Ptr t){\n        while(t->l)push(t),t=t->l;\n        splay(t);\n\
     \        return t;\n    }\n    Ptr get_last(Ptr t){\n        while(t->r)push(t),t=t->r;\n\
     \        splay(t);\n        return t;\n    }\n    Ptr merge(Ptr l,Ptr r){\n  \
@@ -118,20 +122,16 @@ data:
     \        l=get_last(l);\n        l->r=r;\n        r->p=l;\n        pull(l);\n\
     \        return l;\n    }\n    pair<Ptr,Ptr> split(Ptr t,int k){\n        if(!t)return\
     \ {nullptr,nullptr};\n        if(k==0)return {nullptr,t};\n        if(k==size(t))return\
-    \ {t,nullptr};\n        push(t);\n        if(k<=size(t->l)){\n            auto\
-    \ x=split(t->l,k);\n            t->l=x.second;\n            t->p=nullptr;\n  \
-    \          if(x.second)x.second->p=t;\n            pull(t);\n            return\
-    \ {x.first,t};\n        }else{\n            auto x=split(t->r,k-size(t->l)-1);\n\
-    \            t->r=x.first;\n            t->p=nullptr;\n            if(x.first)x.first->p=t;\n\
-    \            pull(t);\n            return {t,x.second};\n        }\n    }\n  \
-    \  void insert(Ptr &t,int k,Ptr v){\n        splay(t);\n        auto x=split(t,k);\n\
-    \        t=merge(merge(x.first,v),x.second);\n    }\n    void erase(Ptr &t,int\
-    \ k){\n        splay(t);\n        auto x=split(t,k);\n        auto y=split(x.second,1);\n\
-    \        // delete y.first;\n        t=merge(x.first,y.second);\n    }\n    template<class\
-    \ T>\n    Ptr build(const vector<T> &v){\n        if(v.empty())return nullptr;\n\
-    \        function<Ptr(int,int)> build=[&](int l,int r){\n            if(l==r)return\
-    \ new Node(v[l]);\n            int m=(l+r)/2;\n            return merge(build(l,m),build(m+1,r));\n\
-    \        };\n        return build(0,v.size()-1);\n    }\n};\n\n#line 2 \"data-structure/link-cut-tree/lazy-reversible-bbst.hpp\"\
+    \ {t,nullptr};\n        splay_kth(t,k-1);\n        Ptr x=t->r;\n        t->r=x->p=nullptr;\n\
+    \        pull(t);\n        return {t,x};\n    }\n    void insert(Ptr &t,int k,Ptr\
+    \ v){\n        splay(t);\n        auto x=split(t,k);\n        t=merge(merge(x.first,v),x.second);\n\
+    \    }\n    void erase(Ptr &t,int k){\n        splay(t);\n        auto x=split(t,k);\n\
+    \        auto y=split(x.second,1);\n        // delete y.first;\n        t=merge(x.first,y.second);\n\
+    \    }\n    template<class T>\n    Ptr build(const vector<T> &v){\n        if(v.empty())return\
+    \ nullptr;\n        function<Ptr(int,int)> build=[&](int l,int r){\n         \
+    \   if(l==r)return new Node(v[l]);\n            int m=(l+r)/2;\n            return\
+    \ merge(build(l,m),build(m+1,r));\n        };\n        return build(0,v.size()-1);\n\
+    \    }\n};\n\n#line 2 \"data-structure/link-cut-tree/lazy-reversible-bbst.hpp\"\
     \n\n/**\n * Author: Teetat Info.\n * Date: 2024-04-13\n * Description: Lazy Reversible\
     \ BBST Base.\n */\n\ntemplate<class Tree,class Node,class MonoidAction>\nstruct\
     \ LazyReversibleBBST:Tree{\n    using Tree::merge;\n    using Tree::split;\n \
@@ -268,8 +268,8 @@ data:
   isVerificationFile: true
   path: verify/yosupo/data-structure/range_affine_range_sum_lct.test.cpp
   requiredBy: []
-  timestamp: '2026-04-15 22:12:04+07:00'
-  verificationStatus: TEST_WRONG_ANSWER
+  timestamp: '2026-04-15 22:47:01+07:00'
+  verificationStatus: TEST_ACCEPTED
   verifiedWith: []
 documentation_of: verify/yosupo/data-structure/range_affine_range_sum_lct.test.cpp
 layout: document

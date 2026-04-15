@@ -6,12 +6,12 @@ data:
   - icon: ':heavy_check_mark:'
     path: verify/yosupo/data-structure/line_add_get_min.test.cpp
     title: verify/yosupo/data-structure/line_add_get_min.test.cpp
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: verify/yosupo/data-structure/segment_add_get_min.test.cpp
     title: verify/yosupo/data-structure/segment_add_get_min.test.cpp
-  _isVerificationFailed: true
+  _isVerificationFailed: false
   _pathExtension: hpp
-  _verificationStatusIcon: ':question:'
+  _verificationStatusIcon: ':heavy_check_mark:'
   attributes:
     links: []
   bundledCode: "#line 2 \"data-structure/convex/li-chao-tree.hpp\"\n\n/**\n * Author:\
@@ -61,7 +61,7 @@ data:
   path: data-structure/convex/li-chao-tree.hpp
   requiredBy: []
   timestamp: '2024-06-12 17:31:48+07:00'
-  verificationStatus: LIBRARY_SOME_WA
+  verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
   - verify/yosupo/data-structure/segment_add_get_min.test.cpp
   - verify/yosupo/data-structure/line_add_get_min.test.cpp

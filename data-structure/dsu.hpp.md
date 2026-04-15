@@ -3,12 +3,12 @@ data:
   _extendedDependsOn: []
   _extendedRequiredBy: []
   _extendedVerifiedWith:
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: verify/yosupo/data-structure/unionfind.test.cpp
     title: verify/yosupo/data-structure/unionfind.test.cpp
-  _isVerificationFailed: true
+  _isVerificationFailed: false
   _pathExtension: hpp
-  _verificationStatusIcon: ':x:'
+  _verificationStatusIcon: ':heavy_check_mark:'
   attributes:
     links: []
   bundledCode: "#line 2 \"data-structure/dsu.hpp\"\n\n/**\n * Author: Teetat T.\n\
@@ -34,7 +34,7 @@ data:
   path: data-structure/dsu.hpp
   requiredBy: []
   timestamp: '2024-07-29 18:44:45+07:00'
-  verificationStatus: LIBRARY_ALL_WA
+  verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
   - verify/yosupo/data-structure/unionfind.test.cpp
 documentation_of: data-structure/dsu.hpp

@@ -6,7 +6,7 @@ data:
     path: string/suffix-array.hpp
     title: string/suffix-array.hpp
   _extendedVerifiedWith:
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: verify/yosupo/data-structure/staticrmq.test.cpp
     title: verify/yosupo/data-structure/staticrmq.test.cpp
   - icon: ':x:'
@@ -17,7 +17,7 @@ data:
     title: verify/yosupo/string/suffixarray.test.cpp
   _isVerificationFailed: true
   _pathExtension: hpp
-  _verificationStatusIcon: ':x:'
+  _verificationStatusIcon: ':question:'
   attributes:
     links: []
   bundledCode: "#line 2 \"data-structure/sparse-table.hpp\"\n\n/**\n * Author: Teetat\
@@ -46,7 +46,7 @@ data:
   requiredBy:
   - string/suffix-array.hpp
   timestamp: '2024-06-12 17:31:48+07:00'
-  verificationStatus: LIBRARY_ALL_WA
+  verificationStatus: LIBRARY_SOME_WA
   verifiedWith:
   - verify/yosupo/string/number_of_substrings2.test.cpp
   - verify/yosupo/string/suffixarray.test.cpp

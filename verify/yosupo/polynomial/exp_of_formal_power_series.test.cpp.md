@@ -7,7 +7,7 @@ data:
   - icon: ':question:'
     path: modular-arithmetic/modint.hpp
     title: modular-arithmetic/modint.hpp
-  - icon: ':x:'
+  - icon: ':question:'
     path: polynomial/formal-power-series.hpp
     title: polynomial/formal-power-series.hpp
   - icon: ':question:'
@@ -18,9 +18,9 @@ data:
     title: template.hpp
   _extendedRequiredBy: []
   _extendedVerifiedWith: []
-  _isVerificationFailed: true
+  _isVerificationFailed: false
   _pathExtension: cpp
-  _verificationStatusIcon: ':x:'
+  _verificationStatusIcon: ':heavy_check_mark:'
   attributes:
     '*NOT_SPECIAL_COMMENTS*': ''
     PROBLEM: https://judge.yosupo.jp/problem/exp_of_formal_power_series
@@ -171,7 +171,7 @@ data:
   path: verify/yosupo/polynomial/exp_of_formal_power_series.test.cpp
   requiredBy: []
   timestamp: '2026-04-15 22:12:04+07:00'
-  verificationStatus: TEST_WRONG_ANSWER
+  verificationStatus: TEST_ACCEPTED
   verifiedWith: []
 documentation_of: verify/yosupo/polynomial/exp_of_formal_power_series.test.cpp
 layout: document
