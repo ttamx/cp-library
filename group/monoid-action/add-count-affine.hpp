@@ -15,7 +15,7 @@ struct AddCountAffineAction{
     using Info = typename InfoMonoid::value_type;
     using Tag = typename TagMonoid::value_type;
     static constexpr Info op(const Info &a,const Tag &b){
-        return Info(a.first*b.first+a.second*b.second,a.second);
+        return Info(a.first*b.first+T(a.second)*b.second,a.second);
     }
 };
 
