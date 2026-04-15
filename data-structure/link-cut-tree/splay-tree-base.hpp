@@ -55,6 +55,19 @@ struct SplayTreeBase{
             }
         }
     }
+    void splay_kth(Ptr &t,int k){
+        assert(0<=k&&k<size(t));
+        while(true){
+            push(t);
+            if(k<size(t->l))t=t->l;
+            else if(size(t->l)==k)break;
+            else{
+                k-=size(t->l)+1;
+                t=t->r;
+            }
+        }
+        splay(t);
+    }
     Ptr get_first(Ptr t){
         while(t->l)push(t),t=t->l;
         splay(t);
@@ -79,22 +92,11 @@ struct SplayTreeBase{
         if(!t)return {nullptr,nullptr};
         if(k==0)return {nullptr,t};
         if(k==size(t))return {t,nullptr};
-        push(t);
-        if(k<=size(t->l)){
-            auto x=split(t->l,k);
-            t->l=x.second;
-            t->p=nullptr;
-            if(x.second)x.second->p=t;
-            pull(t);
-            return {x.first,t};
-        }else{
-            auto x=split(t->r,k-size(t->l)-1);
-            t->r=x.first;
-            t->p=nullptr;
-            if(x.first)x.first->p=t;
-            pull(t);
-            return {t,x.second};
-        }
+        splay_kth(t,k-1);
+        Ptr x=t->r;
+        t->r=x->p=nullptr;
+        pull(t);
+        return {t,x};
     }
     void insert(Ptr &t,int k,Ptr v){
         splay(t);
