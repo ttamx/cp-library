@@ -1,10 +1,10 @@
 ---
 data:
   _extendedDependsOn:
-  - icon: ':question:'
+  - icon: ':x:'
     path: data-structure/sparse-table.hpp
     title: data-structure/sparse-table.hpp
-  - icon: ':question:'
+  - icon: ':x:'
     path: group/monoid/min.hpp
     title: group/monoid/min.hpp
   - icon: ':x:'
@@ -25,7 +25,7 @@ data:
     - https://judge.yosupo.jp/problem/number_of_substrings
   bundledCode: "#line 1 \"verify/yosupo/string/number_of_substrings2.test.cpp\"\n\
     #define PROBLEM \"https://judge.yosupo.jp/problem/number_of_substrings\"\n#line\
-    \ 1 \"template.hpp\"\n#include<bits/stdc++.h>\n\nusing namespace std;\n\n#define\
+    \ 2 \"template.hpp\"\n#include<bits/stdc++.h>\n\nusing namespace std;\n\n#define\
     \ pb push_back\n#define eb emplace_back\n#define mp make_pair\n#define mt make_tuple\n\
     #define fi first\n#define se second\n\n#define ALL(a) a.begin(),a.end()\n#define\
     \ RALL(a) a.rbegin(),a.rend()\n#define SORT(a) sort(ALL(a))\n#define RSORT(a)\
@@ -89,7 +89,7 @@ data:
   isVerificationFile: true
   path: verify/yosupo/string/number_of_substrings2.test.cpp
   requiredBy: []
-  timestamp: '2026-04-15 17:32:38+07:00'
+  timestamp: '2026-04-15 22:12:04+07:00'
   verificationStatus: TEST_WRONG_ANSWER
   verifiedWith: []
 documentation_of: verify/yosupo/string/number_of_substrings2.test.cpp

@@ -1,7 +1,7 @@
 ---
 data:
   _extendedDependsOn:
-  - icon: ':heavy_check_mark:'
+  - icon: ':question:'
     path: data-structure/fenwick-tree.hpp
     title: data-structure/fenwick-tree.hpp
   - icon: ':question:'
@@ -19,7 +19,7 @@ data:
     - https://judge.yosupo.jp/problem/point_add_range_sum
   bundledCode: "#line 1 \"verify/yosupo/data-structure/point_add_range_sum.test.cpp\"\
     \n#define PROBLEM \"https://judge.yosupo.jp/problem/point_add_range_sum\"\n#line\
-    \ 1 \"template.hpp\"\n#include<bits/stdc++.h>\n\nusing namespace std;\n\n#define\
+    \ 2 \"template.hpp\"\n#include<bits/stdc++.h>\n\nusing namespace std;\n\n#define\
     \ pb push_back\n#define eb emplace_back\n#define mp make_pair\n#define mt make_tuple\n\
     #define fi first\n#define se second\n\n#define ALL(a) a.begin(),a.end()\n#define\
     \ RALL(a) a.rbegin(),a.rend()\n#define SORT(a) sort(ALL(a))\n#define RSORT(a)\
@@ -73,7 +73,7 @@ data:
   isVerificationFile: true
   path: verify/yosupo/data-structure/point_add_range_sum.test.cpp
   requiredBy: []
-  timestamp: '2026-04-15 17:32:38+07:00'
+  timestamp: '2026-04-15 22:12:04+07:00'
   verificationStatus: TEST_ACCEPTED
   verifiedWith: []
 documentation_of: verify/yosupo/data-structure/point_add_range_sum.test.cpp

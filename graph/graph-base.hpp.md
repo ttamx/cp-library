@@ -3,22 +3,22 @@ data:
   _extendedDependsOn: []
   _extendedRequiredBy: []
   _extendedVerifiedWith:
-  - icon: ':heavy_check_mark:'
+  - icon: ':x:'
     path: verify/yosupo/data-structure/point_set_tree_path_composite_sum.test.cpp
     title: verify/yosupo/data-structure/point_set_tree_path_composite_sum.test.cpp
-  - icon: ':heavy_check_mark:'
+  - icon: ':x:'
     path: verify/yosupo/data-structure/point_set_tree_path_composite_sum_fixed_root.test.cpp
     title: verify/yosupo/data-structure/point_set_tree_path_composite_sum_fixed_root.test.cpp
-  - icon: ':heavy_check_mark:'
+  - icon: ':x:'
     path: verify/yosupo/data-structure/vertex_add_path_sum.test.cpp
     title: verify/yosupo/data-structure/vertex_add_path_sum.test.cpp
-  - icon: ':heavy_check_mark:'
+  - icon: ':x:'
     path: verify/yosupo/data-structure/vertex_add_subtree_sum.test.cpp
     title: verify/yosupo/data-structure/vertex_add_subtree_sum.test.cpp
-  - icon: ':heavy_check_mark:'
+  - icon: ':x:'
     path: verify/yosupo/data-structure/vertex_set_path_composite.test.cpp
     title: verify/yosupo/data-structure/vertex_set_path_composite.test.cpp
-  - icon: ':heavy_check_mark:'
+  - icon: ':x:'
     path: verify/yosupo/graph/scc.test.cpp
     title: verify/yosupo/graph/scc.test.cpp
   - icon: ':x:'
@@ -29,7 +29,7 @@ data:
     title: verify/yosupo/tree/lca.test.cpp
   _isVerificationFailed: true
   _pathExtension: hpp
-  _verificationStatusIcon: ':question:'
+  _verificationStatusIcon: ':x:'
   attributes:
     links: []
   bundledCode: "#line 2 \"graph/graph-base.hpp\"\n\n/**\n * Author: Teetat T.\n *\
@@ -99,7 +99,7 @@ data:
   path: graph/graph-base.hpp
   requiredBy: []
   timestamp: '2024-06-22 18:46:46+07:00'
-  verificationStatus: LIBRARY_SOME_WA
+  verificationStatus: LIBRARY_ALL_WA
   verifiedWith:
   - verify/yosupo/graph/scc.test.cpp
   - verify/yosupo/data-structure/point_set_tree_path_composite_sum_fixed_root.test.cpp

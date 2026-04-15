@@ -4,7 +4,7 @@ data:
   - icon: ':x:'
     path: data-structure/link-cut-tree/lazy-reversible-bbst.hpp
     title: data-structure/link-cut-tree/lazy-reversible-bbst.hpp
-  - icon: ':question:'
+  - icon: ':x:'
     path: data-structure/link-cut-tree/splay-tree-base.hpp
     title: data-structure/link-cut-tree/splay-tree-base.hpp
   _extendedRequiredBy:

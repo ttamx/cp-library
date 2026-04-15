@@ -1,16 +1,16 @@
 ---
 data:
   _extendedDependsOn:
-  - icon: ':heavy_check_mark:'
+  - icon: ':x:'
     path: data-structure/link-cut-tree/reversible-bbst.hpp
     title: data-structure/link-cut-tree/reversible-bbst.hpp
-  - icon: ':heavy_check_mark:'
+  - icon: ':x:'
     path: data-structure/link-cut-tree/reversible-splay-tree.hpp
     title: data-structure/link-cut-tree/reversible-splay-tree.hpp
-  - icon: ':question:'
+  - icon: ':x:'
     path: data-structure/link-cut-tree/splay-tree-base.hpp
     title: data-structure/link-cut-tree/splay-tree-base.hpp
-  - icon: ':heavy_check_mark:'
+  - icon: ':question:'
     path: group/monoid/add.hpp
     title: group/monoid/add.hpp
   - icon: ':question:'
@@ -18,9 +18,9 @@ data:
     title: template.hpp
   _extendedRequiredBy: []
   _extendedVerifiedWith: []
-  _isVerificationFailed: false
+  _isVerificationFailed: true
   _pathExtension: cpp
-  _verificationStatusIcon: ':heavy_check_mark:'
+  _verificationStatusIcon: ':x:'
   attributes:
     '*NOT_SPECIAL_COMMENTS*': ''
     PROBLEM: https://judge.yosupo.jp/problem/range_reverse_range_sum
@@ -28,7 +28,7 @@ data:
     - https://judge.yosupo.jp/problem/range_reverse_range_sum
   bundledCode: "#line 1 \"verify/yosupo/data-structure/range_reverse_range_sum.test.cpp\"\
     \n#define PROBLEM \"https://judge.yosupo.jp/problem/range_reverse_range_sum\"\n\
-    #line 1 \"template.hpp\"\n#include<bits/stdc++.h>\n\nusing namespace std;\n\n\
+    #line 2 \"template.hpp\"\n#include<bits/stdc++.h>\n\nusing namespace std;\n\n\
     #define pb push_back\n#define eb emplace_back\n#define mp make_pair\n#define mt\
     \ make_tuple\n#define fi first\n#define se second\n\n#define ALL(a) a.begin(),a.end()\n\
     #define RALL(a) a.rbegin(),a.rend()\n#define SORT(a) sort(ALL(a))\n#define RSORT(a)\
@@ -146,8 +146,8 @@ data:
   isVerificationFile: true
   path: verify/yosupo/data-structure/range_reverse_range_sum.test.cpp
   requiredBy: []
-  timestamp: '2026-04-15 17:32:38+07:00'
-  verificationStatus: TEST_ACCEPTED
+  timestamp: '2026-04-15 22:12:04+07:00'
+  verificationStatus: TEST_WRONG_ANSWER
   verifiedWith: []
 documentation_of: verify/yosupo/data-structure/range_reverse_range_sum.test.cpp
 layout: document

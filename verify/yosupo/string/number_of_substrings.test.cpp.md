@@ -18,7 +18,7 @@ data:
     links:
     - https://judge.yosupo.jp/problem/number_of_substrings
   bundledCode: "#line 1 \"verify/yosupo/string/number_of_substrings.test.cpp\"\n#define\
-    \ PROBLEM \"https://judge.yosupo.jp/problem/number_of_substrings\"\n#line 1 \"\
+    \ PROBLEM \"https://judge.yosupo.jp/problem/number_of_substrings\"\n#line 2 \"\
     template.hpp\"\n#include<bits/stdc++.h>\n\nusing namespace std;\n\n#define pb\
     \ push_back\n#define eb emplace_back\n#define mp make_pair\n#define mt make_tuple\n\
     #define fi first\n#define se second\n\n#define ALL(a) a.begin(),a.end()\n#define\
@@ -68,7 +68,7 @@ data:
   isVerificationFile: true
   path: verify/yosupo/string/number_of_substrings.test.cpp
   requiredBy: []
-  timestamp: '2026-04-15 17:32:38+07:00'
+  timestamp: '2026-04-15 22:12:04+07:00'
   verificationStatus: TEST_WRONG_ANSWER
   verifiedWith: []
 documentation_of: verify/yosupo/string/number_of_substrings.test.cpp

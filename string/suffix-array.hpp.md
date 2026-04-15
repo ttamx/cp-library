@@ -1,10 +1,10 @@
 ---
 data:
   _extendedDependsOn:
-  - icon: ':question:'
+  - icon: ':x:'
     path: data-structure/sparse-table.hpp
     title: data-structure/sparse-table.hpp
-  - icon: ':question:'
+  - icon: ':x:'
     path: group/monoid/min.hpp
     title: group/monoid/min.hpp
   _extendedRequiredBy: []

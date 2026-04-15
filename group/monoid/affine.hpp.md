@@ -18,7 +18,7 @@ data:
   - icon: ':x:'
     path: verify/yosupo/data-structure/range_affine_range_sum_lct.test.cpp
     title: verify/yosupo/data-structure/range_affine_range_sum_lct.test.cpp
-  - icon: ':heavy_check_mark:'
+  - icon: ':x:'
     path: verify/yosupo/data-structure/vertex_set_path_composite.test.cpp
     title: verify/yosupo/data-structure/vertex_set_path_composite.test.cpp
   _isVerificationFailed: true

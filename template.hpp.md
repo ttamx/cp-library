@@ -66,10 +66,10 @@ data:
   - icon: ':heavy_check_mark:'
     path: verify/yosupo/data-structure/point_set_range_composite.test.cpp
     title: verify/yosupo/data-structure/point_set_range_composite.test.cpp
-  - icon: ':heavy_check_mark:'
+  - icon: ':x:'
     path: verify/yosupo/data-structure/point_set_tree_path_composite_sum.test.cpp
     title: verify/yosupo/data-structure/point_set_tree_path_composite_sum.test.cpp
-  - icon: ':heavy_check_mark:'
+  - icon: ':x:'
     path: verify/yosupo/data-structure/point_set_tree_path_composite_sum_fixed_root.test.cpp
     title: verify/yosupo/data-structure/point_set_tree_path_composite_sum_fixed_root.test.cpp
   - icon: ':x:'
@@ -78,34 +78,34 @@ data:
   - icon: ':x:'
     path: verify/yosupo/data-structure/range_affine_range_sum_lct.test.cpp
     title: verify/yosupo/data-structure/range_affine_range_sum_lct.test.cpp
-  - icon: ':heavy_check_mark:'
+  - icon: ':x:'
     path: verify/yosupo/data-structure/range_reverse_range_sum.test.cpp
     title: verify/yosupo/data-structure/range_reverse_range_sum.test.cpp
-  - icon: ':heavy_check_mark:'
+  - icon: ':x:'
     path: verify/yosupo/data-structure/segment_add_get_min.test.cpp
     title: verify/yosupo/data-structure/segment_add_get_min.test.cpp
-  - icon: ':heavy_check_mark:'
+  - icon: ':x:'
     path: verify/yosupo/data-structure/segment_add_get_min_online.test.cpp
     title: verify/yosupo/data-structure/segment_add_get_min_online.test.cpp
-  - icon: ':heavy_check_mark:'
+  - icon: ':x:'
     path: verify/yosupo/data-structure/set_xor_min.test.cpp
     title: verify/yosupo/data-structure/set_xor_min.test.cpp
-  - icon: ':heavy_check_mark:'
+  - icon: ':x:'
     path: verify/yosupo/data-structure/staticrmq.test.cpp
     title: verify/yosupo/data-structure/staticrmq.test.cpp
-  - icon: ':heavy_check_mark:'
+  - icon: ':x:'
     path: verify/yosupo/data-structure/unionfind.test.cpp
     title: verify/yosupo/data-structure/unionfind.test.cpp
-  - icon: ':heavy_check_mark:'
+  - icon: ':x:'
     path: verify/yosupo/data-structure/vertex_add_path_sum.test.cpp
     title: verify/yosupo/data-structure/vertex_add_path_sum.test.cpp
-  - icon: ':heavy_check_mark:'
+  - icon: ':x:'
     path: verify/yosupo/data-structure/vertex_add_subtree_sum.test.cpp
     title: verify/yosupo/data-structure/vertex_add_subtree_sum.test.cpp
-  - icon: ':heavy_check_mark:'
+  - icon: ':x:'
     path: verify/yosupo/data-structure/vertex_set_path_composite.test.cpp
     title: verify/yosupo/data-structure/vertex_set_path_composite.test.cpp
-  - icon: ':heavy_check_mark:'
+  - icon: ':x:'
     path: verify/yosupo/graph/scc.test.cpp
     title: verify/yosupo/graph/scc.test.cpp
   - icon: ':x:'
@@ -155,7 +155,7 @@ data:
   _verificationStatusIcon: ':question:'
   attributes:
     links: []
-  bundledCode: '#line 1 "template.hpp"
+  bundledCode: '#line 2 "template.hpp"
 
     #include<bits/stdc++.h>
 
@@ -255,7 +255,9 @@ data:
     mt19937_64 rng64(chrono::steady_clock::now().time_since_epoch().count());
 
     '
-  code: '#include<bits/stdc++.h>
+  code: '#pragma once
+
+    #include<bits/stdc++.h>
 
 
     using namespace std;
@@ -362,7 +364,7 @@ data:
   - verify/atcoder/abc259_g.cpp
   - graph/twosat.hpp
   - data-structure/cartesian-tree.hpp
-  timestamp: '2026-04-15 17:32:38+07:00'
+  timestamp: '2026-04-15 22:12:04+07:00'
   verificationStatus: LIBRARY_SOME_WA
   verifiedWith:
   - verify/yosupo/polynomial/exp_of_formal_power_series.test.cpp

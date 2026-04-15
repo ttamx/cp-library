@@ -1,10 +1,10 @@
 ---
 data:
   _extendedDependsOn:
-  - icon: ':question:'
+  - icon: ':x:'
     path: graph/graph-base.hpp
     title: graph/graph-base.hpp
-  - icon: ':heavy_check_mark:'
+  - icon: ':x:'
     path: graph/strongly-connected-component.hpp
     title: graph/strongly-connected-component.hpp
   - icon: ':question:'
@@ -12,16 +12,16 @@ data:
     title: template.hpp
   _extendedRequiredBy: []
   _extendedVerifiedWith: []
-  _isVerificationFailed: false
+  _isVerificationFailed: true
   _pathExtension: cpp
-  _verificationStatusIcon: ':heavy_check_mark:'
+  _verificationStatusIcon: ':x:'
   attributes:
     '*NOT_SPECIAL_COMMENTS*': ''
     PROBLEM: https://judge.yosupo.jp/problem/scc
     links:
     - https://judge.yosupo.jp/problem/scc
   bundledCode: "#line 1 \"verify/yosupo/graph/scc.test.cpp\"\n#define PROBLEM \"https://judge.yosupo.jp/problem/scc\"\
-    \n#line 1 \"template.hpp\"\n#include<bits/stdc++.h>\n\nusing namespace std;\n\n\
+    \n#line 2 \"template.hpp\"\n#include<bits/stdc++.h>\n\nusing namespace std;\n\n\
     #define pb push_back\n#define eb emplace_back\n#define mp make_pair\n#define mt\
     \ make_tuple\n#define fi first\n#define se second\n\n#define ALL(a) a.begin(),a.end()\n\
     #define RALL(a) a.rbegin(),a.rend()\n#define SORT(a) sort(ALL(a))\n#define RSORT(a)\
@@ -106,8 +106,8 @@ data:
   isVerificationFile: true
   path: verify/yosupo/graph/scc.test.cpp
   requiredBy: []
-  timestamp: '2026-04-15 17:32:38+07:00'
-  verificationStatus: TEST_ACCEPTED
+  timestamp: '2026-04-15 22:12:04+07:00'
+  verificationStatus: TEST_WRONG_ANSWER
   verifiedWith: []
 documentation_of: verify/yosupo/graph/scc.test.cpp
 layout: document

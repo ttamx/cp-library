@@ -3,12 +3,12 @@ data:
   _extendedDependsOn: []
   _extendedRequiredBy: []
   _extendedVerifiedWith:
-  - icon: ':heavy_check_mark:'
+  - icon: ':x:'
     path: verify/yosupo/data-structure/set_xor_min.test.cpp
     title: verify/yosupo/data-structure/set_xor_min.test.cpp
-  _isVerificationFailed: false
+  _isVerificationFailed: true
   _pathExtension: hpp
-  _verificationStatusIcon: ':heavy_check_mark:'
+  _verificationStatusIcon: ':x:'
   attributes:
     links: []
   bundledCode: "#line 2 \"data-structure/binary-trie.hpp\"\n\n/**\n * Author: Teetat\
@@ -57,7 +57,7 @@ data:
   path: data-structure/binary-trie.hpp
   requiredBy: []
   timestamp: '2024-08-02 02:29:01+07:00'
-  verificationStatus: LIBRARY_ALL_AC
+  verificationStatus: LIBRARY_ALL_WA
   verifiedWith:
   - verify/yosupo/data-structure/set_xor_min.test.cpp
 documentation_of: data-structure/binary-trie.hpp

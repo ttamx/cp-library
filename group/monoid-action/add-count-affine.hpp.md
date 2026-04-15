@@ -41,14 +41,14 @@ data:
     \ Add & Count Action class.\n */\n\ntemplate<class T>\nstruct AddCountAffineAction{\n\
     \    using InfoMonoid = AddCountMonoid<T>;\n    using TagMonoid = AffineMonoid<T>;\n\
     \    using Info = typename InfoMonoid::value_type;\n    using Tag = typename TagMonoid::value_type;\n\
-    \    static constexpr Info op(const Info &a,const Tag &b){\n        return Info(a.first*b.first+a.second*b.second,a.second);\n\
+    \    static constexpr Info op(const Info &a,const Tag &b){\n        return Info(a.first*b.first+T(a.second)*b.second,a.second);\n\
     \    }\n};\n\n"
   code: "#pragma once\n#include \"group/monoid/affine.hpp\"\n#include \"group/monoid/add-count.hpp\"\
     \n\n/**\n * Author: Teetat T.\n * Date: 2024-04-14\n * Description: Affine to\
     \ Add & Count Action class.\n */\n\ntemplate<class T>\nstruct AddCountAffineAction{\n\
     \    using InfoMonoid = AddCountMonoid<T>;\n    using TagMonoid = AffineMonoid<T>;\n\
     \    using Info = typename InfoMonoid::value_type;\n    using Tag = typename TagMonoid::value_type;\n\
-    \    static constexpr Info op(const Info &a,const Tag &b){\n        return Info(a.first*b.first+a.second*b.second,a.second);\n\
+    \    static constexpr Info op(const Info &a,const Tag &b){\n        return Info(a.first*b.first+T(a.second)*b.second,a.second);\n\
     \    }\n};\n\n"
   dependsOn:
   - group/monoid/affine.hpp
@@ -56,7 +56,7 @@ data:
   isVerificationFile: false
   path: group/monoid-action/add-count-affine.hpp
   requiredBy: []
-  timestamp: '2025-03-14 23:36:46+07:00'
+  timestamp: '2026-04-15 22:03:54+07:00'
   verificationStatus: LIBRARY_ALL_WA
   verifiedWith:
   - verify/yosupo/data-structure/range_affine_range_sum.test.cpp

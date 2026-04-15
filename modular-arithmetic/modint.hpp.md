@@ -27,10 +27,10 @@ data:
   - icon: ':heavy_check_mark:'
     path: verify/yosupo/data-structure/point_set_range_composite.test.cpp
     title: verify/yosupo/data-structure/point_set_range_composite.test.cpp
-  - icon: ':heavy_check_mark:'
+  - icon: ':x:'
     path: verify/yosupo/data-structure/point_set_tree_path_composite_sum.test.cpp
     title: verify/yosupo/data-structure/point_set_tree_path_composite_sum.test.cpp
-  - icon: ':heavy_check_mark:'
+  - icon: ':x:'
     path: verify/yosupo/data-structure/point_set_tree_path_composite_sum_fixed_root.test.cpp
     title: verify/yosupo/data-structure/point_set_tree_path_composite_sum_fixed_root.test.cpp
   - icon: ':x:'
@@ -39,7 +39,7 @@ data:
   - icon: ':x:'
     path: verify/yosupo/data-structure/range_affine_range_sum_lct.test.cpp
     title: verify/yosupo/data-structure/range_affine_range_sum_lct.test.cpp
-  - icon: ':heavy_check_mark:'
+  - icon: ':x:'
     path: verify/yosupo/data-structure/vertex_set_path_composite.test.cpp
     title: verify/yosupo/data-structure/vertex_set_path_composite.test.cpp
   - icon: ':x:'

@@ -1,13 +1,13 @@
 ---
 data:
   _extendedDependsOn:
-  - icon: ':question:'
+  - icon: ':x:'
     path: graph/graph-base.hpp
     title: graph/graph-base.hpp
   - icon: ':question:'
     path: template.hpp
     title: template.hpp
-  - icon: ':question:'
+  - icon: ':x:'
     path: tree/hld.hpp
     title: tree/hld.hpp
   _extendedRequiredBy: []
@@ -21,7 +21,7 @@ data:
     links:
     - https://judge.yosupo.jp/problem/jump_on_tree
   bundledCode: "#line 1 \"verify/yosupo/tree/jump_on_tree.test.cpp\"\n#define PROBLEM\
-    \ \"https://judge.yosupo.jp/problem/jump_on_tree\"\n#line 1 \"template.hpp\"\n\
+    \ \"https://judge.yosupo.jp/problem/jump_on_tree\"\n#line 2 \"template.hpp\"\n\
     #include<bits/stdc++.h>\n\nusing namespace std;\n\n#define pb push_back\n#define\
     \ eb emplace_back\n#define mp make_pair\n#define mt make_tuple\n#define fi first\n\
     #define se second\n\n#define ALL(a) a.begin(),a.end()\n#define RALL(a) a.rbegin(),a.rend()\n\
@@ -119,7 +119,7 @@ data:
   isVerificationFile: true
   path: verify/yosupo/tree/jump_on_tree.test.cpp
   requiredBy: []
-  timestamp: '2026-04-15 17:32:38+07:00'
+  timestamp: '2026-04-15 22:12:04+07:00'
   verificationStatus: TEST_WRONG_ANSWER
   verifiedWith: []
 documentation_of: verify/yosupo/tree/jump_on_tree.test.cpp

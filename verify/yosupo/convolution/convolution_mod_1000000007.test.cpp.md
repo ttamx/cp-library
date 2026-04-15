@@ -19,7 +19,7 @@ data:
     - https://judge.yosupo.jp/problem/convolution_mod_1000000007
   bundledCode: "#line 1 \"verify/yosupo/convolution/convolution_mod_1000000007.test.cpp\"\
     \n#define PROBLEM \"https://judge.yosupo.jp/problem/convolution_mod_1000000007\"\
-    \n#line 1 \"template.hpp\"\n#include<bits/stdc++.h>\n\nusing namespace std;\n\n\
+    \n#line 2 \"template.hpp\"\n#include<bits/stdc++.h>\n\nusing namespace std;\n\n\
     #define pb push_back\n#define eb emplace_back\n#define mp make_pair\n#define mt\
     \ make_tuple\n#define fi first\n#define se second\n\n#define ALL(a) a.begin(),a.end()\n\
     #define RALL(a) a.rbegin(),a.rend()\n#define SORT(a) sort(ALL(a))\n#define RSORT(a)\
@@ -84,7 +84,7 @@ data:
   isVerificationFile: true
   path: verify/yosupo/convolution/convolution_mod_1000000007.test.cpp
   requiredBy: []
-  timestamp: '2026-04-15 17:32:38+07:00'
+  timestamp: '2026-04-15 22:12:04+07:00'
   verificationStatus: TEST_ACCEPTED
   verifiedWith: []
 documentation_of: verify/yosupo/convolution/convolution_mod_1000000007.test.cpp

@@ -7,7 +7,7 @@ data:
   - icon: ':heavy_check_mark:'
     path: group/monoid-action/min-count-add.hpp
     title: group/monoid-action/min-count-add.hpp
-  - icon: ':heavy_check_mark:'
+  - icon: ':question:'
     path: group/monoid/add.hpp
     title: group/monoid/add.hpp
   - icon: ':heavy_check_mark:'
@@ -28,7 +28,7 @@ data:
     - https://judge.yosupo.jp/problem/area_of_union_of_rectangles
   bundledCode: "#line 1 \"verify/yosupo/data-structure/area_of_union_of_rectangles.test.cpp\"\
     \n#define PROBLEM \"https://judge.yosupo.jp/problem/area_of_union_of_rectangles\"\
-    \n#line 1 \"template.hpp\"\n#include<bits/stdc++.h>\n\nusing namespace std;\n\n\
+    \n#line 2 \"template.hpp\"\n#include<bits/stdc++.h>\n\nusing namespace std;\n\n\
     #define pb push_back\n#define eb emplace_back\n#define mp make_pair\n#define mt\
     \ make_tuple\n#define fi first\n#define se second\n\n#define ALL(a) a.begin(),a.end()\n\
     #define RALL(a) a.rbegin(),a.rend()\n#define SORT(a) sort(ALL(a))\n#define RSORT(a)\
@@ -136,7 +136,7 @@ data:
   isVerificationFile: true
   path: verify/yosupo/data-structure/area_of_union_of_rectangles.test.cpp
   requiredBy: []
-  timestamp: '2026-04-15 17:32:38+07:00'
+  timestamp: '2026-04-15 22:12:04+07:00'
   verificationStatus: TEST_ACCEPTED
   verifiedWith: []
 documentation_of: verify/yosupo/data-structure/area_of_union_of_rectangles.test.cpp

@@ -1,17 +1,17 @@
 ---
 data:
   _extendedDependsOn:
-  - icon: ':heavy_check_mark:'
+  - icon: ':x:'
     path: tree/static-top-tree.hpp
     title: tree/static-top-tree.hpp
   _extendedRequiredBy: []
   _extendedVerifiedWith:
-  - icon: ':heavy_check_mark:'
+  - icon: ':x:'
     path: verify/yosupo/data-structure/point_set_tree_path_composite_sum_fixed_root.test.cpp
     title: verify/yosupo/data-structure/point_set_tree_path_composite_sum_fixed_root.test.cpp
-  _isVerificationFailed: false
+  _isVerificationFailed: true
   _pathExtension: hpp
-  _verificationStatusIcon: ':heavy_check_mark:'
+  _verificationStatusIcon: ':x:'
   attributes:
     links: []
   bundledCode: "#line 2 \"tree/static-top-tree.hpp\"\n\n/**\n * Author: Teetat T.\n\
@@ -93,7 +93,7 @@ data:
   path: tree/static-top-tree-dp.hpp
   requiredBy: []
   timestamp: '2024-11-28 20:30:35+07:00'
-  verificationStatus: LIBRARY_ALL_AC
+  verificationStatus: LIBRARY_ALL_WA
   verifiedWith:
   - verify/yosupo/data-structure/point_set_tree_path_composite_sum_fixed_root.test.cpp
 documentation_of: tree/static-top-tree-dp.hpp

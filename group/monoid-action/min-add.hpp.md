@@ -1,10 +1,10 @@
 ---
 data:
   _extendedDependsOn:
-  - icon: ':heavy_check_mark:'
+  - icon: ':question:'
     path: group/monoid/add.hpp
     title: group/monoid/add.hpp
-  - icon: ':question:'
+  - icon: ':x:'
     path: group/monoid/min.hpp
     title: group/monoid/min.hpp
   _extendedRequiredBy: []

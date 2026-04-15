@@ -22,7 +22,7 @@ data:
     - https://judge.yosupo.jp/problem/bitwise_and_convolution
   bundledCode: "#line 1 \"verify/yosupo/convolution/bitwise_and_convolution.test.cpp\"\
     \n#define PROBLEM \"https://judge.yosupo.jp/problem/bitwise_and_convolution\"\n\
-    #line 1 \"template.hpp\"\n#include<bits/stdc++.h>\n\nusing namespace std;\n\n\
+    #line 2 \"template.hpp\"\n#include<bits/stdc++.h>\n\nusing namespace std;\n\n\
     #define pb push_back\n#define eb emplace_back\n#define mp make_pair\n#define mt\
     \ make_tuple\n#define fi first\n#define se second\n\n#define ALL(a) a.begin(),a.end()\n\
     #define RALL(a) a.rbegin(),a.rend()\n#define SORT(a) sort(ALL(a))\n#define RSORT(a)\
@@ -102,7 +102,7 @@ data:
   isVerificationFile: true
   path: verify/yosupo/convolution/bitwise_and_convolution.test.cpp
   requiredBy: []
-  timestamp: '2026-04-15 21:45:25+07:00'
+  timestamp: '2026-04-15 22:12:04+07:00'
   verificationStatus: TEST_ACCEPTED
   verifiedWith: []
 documentation_of: verify/yosupo/convolution/bitwise_and_convolution.test.cpp
