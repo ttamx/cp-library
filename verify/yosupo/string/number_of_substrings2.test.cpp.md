@@ -1,23 +1,23 @@
 ---
 data:
   _extendedDependsOn:
-  - icon: ':question:'
+  - icon: ':heavy_check_mark:'
     path: data-structure/sparse-table.hpp
     title: data-structure/sparse-table.hpp
-  - icon: ':question:'
+  - icon: ':heavy_check_mark:'
     path: group/monoid/min.hpp
     title: group/monoid/min.hpp
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: string/suffix-array.hpp
     title: string/suffix-array.hpp
-  - icon: ':question:'
+  - icon: ':heavy_check_mark:'
     path: template.hpp
     title: template.hpp
   _extendedRequiredBy: []
   _extendedVerifiedWith: []
-  _isVerificationFailed: true
+  _isVerificationFailed: false
   _pathExtension: cpp
-  _verificationStatusIcon: ':x:'
+  _verificationStatusIcon: ':heavy_check_mark:'
   attributes:
     '*NOT_SPECIAL_COMMENTS*': ''
     PROBLEM: https://judge.yosupo.jp/problem/number_of_substrings
@@ -90,7 +90,7 @@ data:
   path: verify/yosupo/string/number_of_substrings2.test.cpp
   requiredBy: []
   timestamp: '2026-04-15 22:12:04+07:00'
-  verificationStatus: TEST_WRONG_ANSWER
+  verificationStatus: TEST_ACCEPTED
   verifiedWith: []
 documentation_of: verify/yosupo/string/number_of_substrings2.test.cpp
 layout: document

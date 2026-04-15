@@ -4,7 +4,7 @@ data:
   - icon: ':heavy_check_mark:'
     path: data-structure/segment-tree/segment-tree.hpp
     title: data-structure/segment-tree/segment-tree.hpp
-  - icon: ':question:'
+  - icon: ':heavy_check_mark:'
     path: graph/graph-base.hpp
     title: graph/graph-base.hpp
   - icon: ':heavy_check_mark:'
@@ -13,13 +13,13 @@ data:
   - icon: ':heavy_check_mark:'
     path: group/monoid/monoid-reverse.hpp
     title: group/monoid/monoid-reverse.hpp
-  - icon: ':question:'
+  - icon: ':heavy_check_mark:'
     path: modular-arithmetic/modint.hpp
     title: modular-arithmetic/modint.hpp
-  - icon: ':question:'
+  - icon: ':heavy_check_mark:'
     path: template.hpp
     title: template.hpp
-  - icon: ':question:'
+  - icon: ':heavy_check_mark:'
     path: tree/hld.hpp
     title: tree/hld.hpp
   _extendedRequiredBy: []

@@ -2,9 +2,12 @@
 data:
   _extendedDependsOn: []
   _extendedRequiredBy:
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: data-structure/cartesian-tree.hpp
     title: data-structure/cartesian-tree.hpp
+  - icon: ':heavy_check_mark:'
+    path: data-structure/fast-set.hpp
+    title: data-structure/fast-set.hpp
   - icon: ':heavy_check_mark:'
     path: graph/twosat.hpp
     title: graph/twosat.hpp
@@ -73,6 +76,9 @@ data:
     path: verify/yosupo/data-structure/point_set_tree_path_composite_sum_fixed_root.test.cpp
     title: verify/yosupo/data-structure/point_set_tree_path_composite_sum_fixed_root.test.cpp
   - icon: ':heavy_check_mark:'
+    path: verify/yosupo/data-structure/predecessor_problem.test.cpp
+    title: verify/yosupo/data-structure/predecessor_problem.test.cpp
+  - icon: ':heavy_check_mark:'
     path: verify/yosupo/data-structure/range_affine_range_sum.test.cpp
     title: verify/yosupo/data-structure/range_affine_range_sum.test.cpp
   - icon: ':heavy_check_mark:'
@@ -117,42 +123,42 @@ data:
   - icon: ':heavy_check_mark:'
     path: verify/yosupo/polynomial/exp_of_formal_power_series.test.cpp
     title: verify/yosupo/polynomial/exp_of_formal_power_series.test.cpp
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: verify/yosupo/polynomial/inv_of_formal_power_series.test.cpp
     title: verify/yosupo/polynomial/inv_of_formal_power_series.test.cpp
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: verify/yosupo/polynomial/log_of_formal_power_series.test.cpp
     title: verify/yosupo/polynomial/log_of_formal_power_series.test.cpp
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: verify/yosupo/polynomial/pow_of_formal_power_series.test.cpp
     title: verify/yosupo/polynomial/pow_of_formal_power_series.test.cpp
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: verify/yosupo/string/enumerate_palindromes.test.cpp
     title: verify/yosupo/string/enumerate_palindromes.test.cpp
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: verify/yosupo/string/number_of_substrings.test.cpp
     title: verify/yosupo/string/number_of_substrings.test.cpp
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: verify/yosupo/string/number_of_substrings2.test.cpp
     title: verify/yosupo/string/number_of_substrings2.test.cpp
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: verify/yosupo/string/suffixarray.test.cpp
     title: verify/yosupo/string/suffixarray.test.cpp
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: verify/yosupo/string/zalgorithm.test.cpp
     title: verify/yosupo/string/zalgorithm.test.cpp
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: verify/yosupo/tree/cartesian_tree.test.cpp
     title: verify/yosupo/tree/cartesian_tree.test.cpp
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: verify/yosupo/tree/jump_on_tree.test.cpp
     title: verify/yosupo/tree/jump_on_tree.test.cpp
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: verify/yosupo/tree/lca.test.cpp
     title: verify/yosupo/tree/lca.test.cpp
-  _isVerificationFailed: true
+  _isVerificationFailed: false
   _pathExtension: hpp
-  _verificationStatusIcon: ':question:'
+  _verificationStatusIcon: ':heavy_check_mark:'
   attributes:
     links: []
   bundledCode: '#line 2 "template.hpp"
@@ -364,8 +370,9 @@ data:
   - verify/atcoder/abc259_g.cpp
   - graph/twosat.hpp
   - data-structure/cartesian-tree.hpp
+  - data-structure/fast-set.hpp
   timestamp: '2026-04-15 22:12:04+07:00'
-  verificationStatus: LIBRARY_SOME_WA
+  verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
   - verify/yosupo/polynomial/exp_of_formal_power_series.test.cpp
   - verify/yosupo/polynomial/log_of_formal_power_series.test.cpp
@@ -397,6 +404,7 @@ data:
   - verify/yosupo/data-structure/range_affine_range_sum.test.cpp
   - verify/yosupo/data-structure/point_add_range_sum.test.cpp
   - verify/yosupo/data-structure/vertex_set_path_composite.test.cpp
+  - verify/yosupo/data-structure/predecessor_problem.test.cpp
   - verify/yosupo/data-structure/point_set_tree_path_composite_sum.test.cpp
   - verify/yosupo/data-structure/unionfind.test.cpp
   - verify/yosupo/data-structure/area_of_union_of_rectangles.test.cpp

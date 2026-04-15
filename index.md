@@ -26,19 +26,22 @@ data:
     - icon: ':heavy_check_mark:'
       path: data-structure/binary-trie.hpp
       title: data-structure/binary-trie.hpp
-    - icon: ':x:'
+    - icon: ':heavy_check_mark:'
       path: data-structure/cartesian-tree.hpp
       title: data-structure/cartesian-tree.hpp
     - icon: ':heavy_check_mark:'
       path: data-structure/dsu.hpp
       title: data-structure/dsu.hpp
     - icon: ':heavy_check_mark:'
+      path: data-structure/fast-set.hpp
+      title: data-structure/fast-set.hpp
+    - icon: ':heavy_check_mark:'
       path: data-structure/fenwick-tree.hpp
       title: data-structure/fenwick-tree.hpp
     - icon: ':heavy_check_mark:'
       path: data-structure/persistent-queue.hpp
       title: data-structure/persistent-queue.hpp
-    - icon: ':question:'
+    - icon: ':heavy_check_mark:'
       path: data-structure/sparse-table.hpp
       title: data-structure/sparse-table.hpp
   - name: data-structure/convex
@@ -111,7 +114,7 @@ data:
       title: flow/min-cost-flow.hpp
   - name: graph
     pages:
-    - icon: ':question:'
+    - icon: ':heavy_check_mark:'
       path: graph/graph-base.hpp
       title: graph/graph-base.hpp
     - icon: ':warning:'
@@ -149,7 +152,7 @@ data:
     - icon: ':warning:'
       path: group/monoid/min-idx.hpp
       title: group/monoid/min-idx.hpp
-    - icon: ':question:'
+    - icon: ':heavy_check_mark:'
       path: group/monoid/min.hpp
       title: group/monoid/min.hpp
     - icon: ':warning:'
@@ -203,7 +206,7 @@ data:
       title: linear-algebra/matrix.hpp
   - name: modular-arithmetic
     pages:
-    - icon: ':question:'
+    - icon: ':heavy_check_mark:'
       path: modular-arithmetic/binpow.hpp
       title: modular-arithmetic/binpow.hpp
     - icon: ':warning:'
@@ -212,7 +215,7 @@ data:
     - icon: ':warning:'
       path: modular-arithmetic/dynamic-modint.hpp
       title: modular-arithmetic/dynamic-modint.hpp
-    - icon: ':question:'
+    - icon: ':heavy_check_mark:'
       path: modular-arithmetic/modint.hpp
       title: modular-arithmetic/modint.hpp
     - icon: ':warning:'
@@ -228,40 +231,40 @@ data:
     - icon: ':heavy_check_mark:'
       path: polynomial/fft.hpp
       title: polynomial/fft.hpp
-    - icon: ':question:'
+    - icon: ':heavy_check_mark:'
       path: polynomial/formal-power-series.hpp
       title: polynomial/formal-power-series.hpp
     - icon: ':warning:'
       path: polynomial/lagrange-interpolate.hpp
       title: polynomial/lagrange-interpolate.hpp
-    - icon: ':question:'
+    - icon: ':heavy_check_mark:'
       path: polynomial/ntt.hpp
       title: polynomial/ntt.hpp
   - name: string
     pages:
-    - icon: ':x:'
+    - icon: ':heavy_check_mark:'
       path: string/manacher.hpp
       title: string/manacher.hpp
     - icon: ':warning:'
       path: string/prefix-function.hpp
       title: string/prefix-function.hpp
-    - icon: ':x:'
+    - icon: ':heavy_check_mark:'
       path: string/suffix-array.hpp
       title: string/suffix-array.hpp
-    - icon: ':x:'
+    - icon: ':heavy_check_mark:'
       path: string/suffix-automaton.hpp
       title: string/suffix-automaton.hpp
-    - icon: ':x:'
+    - icon: ':heavy_check_mark:'
       path: string/z-algorithm.hpp
       title: string/z-algorithm.hpp
   - name: .
     pages:
-    - icon: ':question:'
+    - icon: ':heavy_check_mark:'
       path: template.hpp
       title: template.hpp
   - name: tree
     pages:
-    - icon: ':question:'
+    - icon: ':heavy_check_mark:'
       path: tree/hld.hpp
       title: tree/hld.hpp
     - icon: ':heavy_check_mark:'
@@ -348,6 +351,9 @@ data:
       path: verify/yosupo/data-structure/point_set_tree_path_composite_sum_fixed_root.test.cpp
       title: verify/yosupo/data-structure/point_set_tree_path_composite_sum_fixed_root.test.cpp
     - icon: ':heavy_check_mark:'
+      path: verify/yosupo/data-structure/predecessor_problem.test.cpp
+      title: verify/yosupo/data-structure/predecessor_problem.test.cpp
+    - icon: ':heavy_check_mark:'
       path: verify/yosupo/data-structure/range_affine_range_sum.test.cpp
       title: verify/yosupo/data-structure/range_affine_range_sum.test.cpp
     - icon: ':heavy_check_mark:'
@@ -400,41 +406,41 @@ data:
     - icon: ':heavy_check_mark:'
       path: verify/yosupo/polynomial/exp_of_formal_power_series.test.cpp
       title: verify/yosupo/polynomial/exp_of_formal_power_series.test.cpp
-    - icon: ':x:'
+    - icon: ':heavy_check_mark:'
       path: verify/yosupo/polynomial/inv_of_formal_power_series.test.cpp
       title: verify/yosupo/polynomial/inv_of_formal_power_series.test.cpp
-    - icon: ':x:'
+    - icon: ':heavy_check_mark:'
       path: verify/yosupo/polynomial/log_of_formal_power_series.test.cpp
       title: verify/yosupo/polynomial/log_of_formal_power_series.test.cpp
-    - icon: ':x:'
+    - icon: ':heavy_check_mark:'
       path: verify/yosupo/polynomial/pow_of_formal_power_series.test.cpp
       title: verify/yosupo/polynomial/pow_of_formal_power_series.test.cpp
   - name: verify/yosupo/string
     pages:
-    - icon: ':x:'
+    - icon: ':heavy_check_mark:'
       path: verify/yosupo/string/enumerate_palindromes.test.cpp
       title: verify/yosupo/string/enumerate_palindromes.test.cpp
-    - icon: ':x:'
+    - icon: ':heavy_check_mark:'
       path: verify/yosupo/string/number_of_substrings.test.cpp
       title: verify/yosupo/string/number_of_substrings.test.cpp
-    - icon: ':x:'
+    - icon: ':heavy_check_mark:'
       path: verify/yosupo/string/number_of_substrings2.test.cpp
       title: verify/yosupo/string/number_of_substrings2.test.cpp
-    - icon: ':x:'
+    - icon: ':heavy_check_mark:'
       path: verify/yosupo/string/suffixarray.test.cpp
       title: verify/yosupo/string/suffixarray.test.cpp
-    - icon: ':x:'
+    - icon: ':heavy_check_mark:'
       path: verify/yosupo/string/zalgorithm.test.cpp
       title: verify/yosupo/string/zalgorithm.test.cpp
   - name: verify/yosupo/tree
     pages:
-    - icon: ':x:'
+    - icon: ':heavy_check_mark:'
       path: verify/yosupo/tree/cartesian_tree.test.cpp
       title: verify/yosupo/tree/cartesian_tree.test.cpp
-    - icon: ':x:'
+    - icon: ':heavy_check_mark:'
       path: verify/yosupo/tree/jump_on_tree.test.cpp
       title: verify/yosupo/tree/jump_on_tree.test.cpp
-    - icon: ':x:'
+    - icon: ':heavy_check_mark:'
       path: verify/yosupo/tree/lca.test.cpp
       title: verify/yosupo/tree/lca.test.cpp
 layout: toppage

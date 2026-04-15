@@ -7,7 +7,7 @@ data:
   - icon: ':warning:'
     path: flow/k-ary-optimization.hpp
     title: flow/k-ary-optimization.hpp
-  - icon: ':question:'
+  - icon: ':heavy_check_mark:'
     path: template.hpp
     title: template.hpp
   _extendedRequiredBy: []
