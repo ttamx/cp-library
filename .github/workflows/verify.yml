@@ -22,6 +22,7 @@ jobs:
       run: |
         pip install -U pip
         pip install -r requirements.txt
+        pip install "setuptools<81"
 
     - run: oj-verify all
       env:
