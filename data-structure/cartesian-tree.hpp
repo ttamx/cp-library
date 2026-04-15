@@ -18,14 +18,9 @@ struct CartesianTree{
     CartesianTree(vector<T> &_a):n((int)_a.size()),a(_a){
         range.assign(n,{-1,-1});
         lch=rch=par=vector<int>(n,-1);
-        if(n==1){
-            range[0]={0,1};
-            root=0;
-            return;
-        }
         auto cmp=[&](int i,int j)->bool {
-            if(IS_MIN)a[i]>a[j]||(a[i]==a[j]&&i<j);
-            return a[i]<a[j]||(a[i]==a[j]&&i<j);
+            if(IS_MIN)return a[i]<a[j]||(a[i]==a[j]&&i<j);
+            return a[i]>a[j]||(a[i]==a[j]&&i<j);
         };
         vector<int> st;
         for(int i=0;i<n;i++){
