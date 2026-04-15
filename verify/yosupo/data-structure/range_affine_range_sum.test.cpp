@@ -1,6 +1,6 @@
 #define PROBLEM "https://judge.yosupo.jp/problem/range_affine_range_sum"
 #include "template.hpp"
-#include "modular-arithmetic/montgomery-modint.hpp"
+#include "modular-arithmetic/modint.hpp"
 #include "data-structure/segment-tree/lazy-segment-tree.hpp"
 #include "group/monoid-action/add-count-affine.hpp"
 

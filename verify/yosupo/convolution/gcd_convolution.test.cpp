@@ -1,6 +1,6 @@
 #define PROBLEM "https://judge.yosupo.jp/problem/gcd_convolution"
 #include "template.hpp"
-#include "modular-arithmetic/montgomery-modint.hpp"
+#include "modular-arithmetic/modint.hpp"
 #include "convolution/gcd-convolution.hpp"
 
 using mint = mint998;

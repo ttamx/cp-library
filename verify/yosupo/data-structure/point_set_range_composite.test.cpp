@@ -1,6 +1,6 @@
 #define PROBLEM "https://judge.yosupo.jp/problem/point_set_range_composite"
 #include "template.hpp"
-#include "modular-arithmetic/montgomery-modint.hpp"
+#include "modular-arithmetic/modint.hpp"
 #include "data-structure/segment-tree/segment-tree.hpp"
 #include "group/monoid/affine.hpp"
 

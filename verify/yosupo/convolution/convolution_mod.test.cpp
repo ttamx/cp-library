@@ -1,6 +1,6 @@
 #define PROBLEM "https://judge.yosupo.jp/problem/convolution_mod"
 #include "template.hpp"
-#include "modular-arithmetic/montgomery-modint.hpp"
+#include "modular-arithmetic/modint.hpp"
 #include "polynomial/ntt.hpp"
 
 using mint = mint998;

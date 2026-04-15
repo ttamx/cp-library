@@ -1,6 +1,6 @@
 #define PROBLEM "https://judge.yosupo.jp/problem/bitwise_xor_convolution"
 #include "template.hpp"
-#include "modular-arithmetic/montgomery-modint.hpp"
+#include "modular-arithmetic/modint.hpp"
 #include "convolution/xor-convolution.hpp"
 
 using mint = mint998;

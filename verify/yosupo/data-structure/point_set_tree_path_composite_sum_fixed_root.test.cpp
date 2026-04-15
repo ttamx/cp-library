@@ -3,7 +3,7 @@
 #include "graph/graph-base.hpp"
 #include "tree/hld.hpp"
 #include "tree/static-top-tree-dp.hpp"
-#include "modular-arithmetic/montgomery-modint.hpp"
+#include "modular-arithmetic/modint.hpp"
 
 using mint = mint998;
 

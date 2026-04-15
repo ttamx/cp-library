@@ -6,29 +6,48 @@
  * Description: modular arithmetic operations
  */
 
-template<int mod,int root=0>
-struct ModInt{
-    using mint = ModInt;
-    
-	static_assert(mod>0,"mod must be positive");
+struct Barrett{
+    u32 _m;
+    u64 im;
 
-    int x;
+    explicit Barrett(u32 m):_m(m),im((u64)(-1)/m+1){}
 
-    constexpr ModInt():x(0){}
-    constexpr ModInt(ll x):x((x%=mod)<0?x+mod:x){}
-    explicit operator int()const{return x;}
-    constexpr static int get_mod(){return mod;}
-    constexpr static mint get_root(){return mint(root);}
+    u32 umod()const{return _m;}
+    u32 mul(u32 a,u32 b)const{
+        u64 z=a;
+        z*=b;
+        u64 x=(u64)(((unsigned __int128)(z)*im)>>64);
+        u64 y=x*_m;
+        return (u32)(z-y+(z<y?_m:0));
+    }
+};
+
+template<int id>
+struct DynamicModInt{
+    using mint = DynamicModInt;
+
+    u32 x;
+    static Barrett bt;
+
+    constexpr DynamicModInt():x(0){}
+    constexpr DynamicModInt(ll x):x((x%=get_mod())<0?x+get_mod():x){}
+    explicit operator int()const{return (int)x;}
+    constexpr static u32 umod(){return bt.umod();}
+    constexpr static int get_mod(){return (int)bt.umod();}
+    static void set_mod(u32 m){
+        assert(m>=1);
+        bt=Barrett(m);
+    }
     
     mint operator-()const{
         mint res;
-        res.x=x?mod-x:0;
+        res.val=x?umod()-x:0;
         return res;
     }
     mint operator+()const{return *this;}
 
     mint inv()const{
-        int a=x,b=mod,u=1,v=0,q=0;
+        int a=x,b=get_mod(),u=1,v=0,q=0;
         while(b>0){
             q=a/b;
             swap(a-=q*b,b);
@@ -42,15 +61,15 @@ struct ModInt{
         return res;
     }
     mint &operator+=(const mint &o){
-        if((x+=o.x)>=mod)x-=mod;
+        if((x+=o.x)>=umod())x-=umod();
         return *this;
     }
     mint &operator-=(const mint &o){
-        if((x-=o.x)<0)x+=mod;
+        if((x-=o.x)>=umod())x+=umod();
         return *this;
     }
     mint &operator*=(const mint &o){
-        x=(ll(x)*o.x)%mod;
+        x=bt.mul(x,o.x);
         return *this;
     }
     mint &operator/=(const mint &o){
@@ -74,5 +93,6 @@ struct ModInt{
     friend istream &operator>>(istream &is,mint &o){ll x{};is>>x;o=mint(x);return is;}
     friend ostream &operator<<(ostream &os,const mint &o){return os<<o.x;}
 };
-using mint998 = ModInt<998244353,3>;
-using mint107 = ModInt<1000000007>;
+template<int id>
+Barrett DynamicModInt<id>::bt=Barrett(998244353);
+using dmint = DynamicModInt<0>;

@@ -1,6 +1,6 @@
 #define PROBLEM "https://judge.yosupo.jp/problem/pow_of_formal_power_series"
 #include "template.hpp"
-#include "modular-arithmetic/montgomery-modint.hpp"
+#include "modular-arithmetic/modint.hpp"
 #include "polynomial/formal-power-series.hpp"
 
 

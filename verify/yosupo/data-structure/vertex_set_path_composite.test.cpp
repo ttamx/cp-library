@@ -4,7 +4,7 @@
 #include "tree/hld.hpp"
 #include "group/monoid/affine.hpp"
 #include "group/monoid/monoid-reverse.hpp"
-#include "modular-arithmetic/montgomery-modint.hpp"
+#include "modular-arithmetic/modint.hpp"
 #include "data-structure/segment-tree/segment-tree.hpp"
 
 using mint = mint998;
