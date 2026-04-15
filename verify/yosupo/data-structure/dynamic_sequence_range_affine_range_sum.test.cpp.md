@@ -1,27 +1,27 @@
 ---
 data:
   _extendedDependsOn:
-  - icon: ':question:'
+  - icon: ':x:'
     path: data-structure/link-cut-tree/lazy-reversible-bbst.hpp
     title: data-structure/link-cut-tree/lazy-reversible-bbst.hpp
-  - icon: ':question:'
+  - icon: ':x:'
     path: data-structure/link-cut-tree/lazy-reversible-splay-tree.hpp
     title: data-structure/link-cut-tree/lazy-reversible-splay-tree.hpp
-  - icon: ':question:'
+  - icon: ':x:'
     path: data-structure/link-cut-tree/splay-tree-base.hpp
     title: data-structure/link-cut-tree/splay-tree-base.hpp
-  - icon: ':question:'
+  - icon: ':x:'
     path: group/monoid-action/add-count-affine.hpp
     title: group/monoid-action/add-count-affine.hpp
-  - icon: ':question:'
+  - icon: ':x:'
     path: group/monoid/add-count.hpp
     title: group/monoid/add-count.hpp
   - icon: ':question:'
     path: group/monoid/affine.hpp
     title: group/monoid/affine.hpp
   - icon: ':question:'
-    path: modular-arithmetic/montgomery-modint.hpp
-    title: modular-arithmetic/montgomery-modint.hpp
+    path: modular-arithmetic/modint.hpp
+    title: modular-arithmetic/modint.hpp
   - icon: ':question:'
     path: template.hpp
     title: template.hpp
@@ -37,60 +37,53 @@ data:
     - https://judge.yosupo.jp/problem/dynamic_sequence_range_affine_range_sum
   bundledCode: "#line 1 \"verify/yosupo/data-structure/dynamic_sequence_range_affine_range_sum.test.cpp\"\
     \n#define PROBLEM \"https://judge.yosupo.jp/problem/dynamic_sequence_range_affine_range_sum\"\
-    \n#line 2 \"template.hpp\"\n#include<bits/stdc++.h>\n#include<ext/pb_ds/assoc_container.hpp>\n\
-    #include<ext/pb_ds/tree_policy.hpp>\n\nusing namespace std;\nusing namespace __gnu_pbds;\n\
-    \nusing ll = long long;\nusing db = long double;\nusing vi = vector<int>;\nusing\
-    \ vl = vector<ll>;\nusing vd = vector<db>;\nusing pii = pair<int,int>;\nusing\
-    \ pll = pair<ll,ll>;\nusing pdd = pair<db,db>;\nconst int INF=INT_MAX/2;\nconst\
-    \ int MOD=998244353;\nconst int MOD2=1000000007;\nconst ll LINF=LLONG_MAX/2;\n\
-    const db DINF=numeric_limits<db>::infinity();\nconst db EPS=1e-9;\nconst db PI=acos(db(-1));\n\
-    \ntemplate<class T>\nusing ordered_set = tree<T,null_type,less<T>,rb_tree_tag,tree_order_statistics_node_update>;\n\
-    template<class T>\nusing ordered_multiset = tree<T,null_type,less_equal<T>,rb_tree_tag,tree_order_statistics_node_update>;\n\
-    \nmt19937 rng(chrono::steady_clock::now().time_since_epoch().count());\nmt19937_64\
-    \ rng64(chrono::steady_clock::now().time_since_epoch().count());\n#line 2 \"modular-arithmetic/montgomery-modint.hpp\"\
-    \n\n/**\n * Author: Teetat T.\n * Date: 2024-03-17\n * Description: modular arithmetic\
-    \ operators using Montgomery space\n */\n\ntemplate<uint32_t mod,uint32_t root=0>\n\
-    struct MontgomeryModInt{\n    using mint = MontgomeryModInt;\n    using i32 =\
-    \ int32_t;\n    using u32 = uint32_t;\n    using u64 = uint64_t;\n\n    static\
-    \ constexpr u32 get_r(){\n        u32 res=1;\n        for(i32 i=0;i<5;i++)res*=2-mod*res;\n\
-    \        return res;\n    }\n\n    static const u32 r=get_r();\n    static const\
-    \ u32 n2=-u64(mod)%mod;\n    static_assert(mod<(1<<30));\n    static_assert((mod&1)==1);\n\
-    \    static_assert(r*mod==1);\n\n    u32 x;\n\n    constexpr MontgomeryModInt():x(0){}\n\
-    \    constexpr MontgomeryModInt(const int64_t &v):x(reduce(u64(v%mod+mod)*n2)){}\n\
-    \n    static constexpr u32 get_mod(){return mod;}\n    static constexpr mint get_root(){return\
-    \ mint(root);}\n    explicit constexpr operator int64_t()const{return val();}\n\
-    \n    static constexpr u32 reduce(const u64 &v){\n        return (v+u64(u32(v)*u32(-r))*mod)>>32;\n\
-    \    }\n\n    constexpr u32 val()const{\n        u32 res=reduce(x);\n        return\
-    \ res>=mod?res-mod:res;\n    }\n\n    constexpr mint inv()const{\n        int\
-    \ a=val(),b=mod,u=1,v=0,q=0;\n        while(b>0){\n            q=a/b;\n      \
-    \      a-=q*b;\n            u-=q*v;\n            swap(a,b);\n            swap(u,v);\n\
-    \        }\n        return mint(u);\n    }\n\n    constexpr mint &operator+=(const\
-    \ mint &rhs){\n        if(i32(x+=rhs.x-2*mod)<0)x+=2*mod;\n        return *this;\n\
-    \    }\n    constexpr mint &operator-=(const mint &rhs){\n        if(i32(x-=rhs.x)<0)x+=2*mod;\n\
-    \        return *this;\n    }\n    constexpr mint &operator*=(const mint &rhs){\n\
-    \        x=reduce(u64(x)*rhs.x);\n        return *this;\n    }\n    constexpr\
-    \ mint &operator/=(const mint &rhs){\n        return *this*=rhs.inv();\n    }\n\
-    \n    constexpr mint &operator++(){return *this+=mint(1);}\n    constexpr mint\
-    \ &operator--(){return *this-=mint(1);}\n    constexpr mint operator++(int){\n\
-    \        mint res=*this;\n        return *this+=mint(1),res;\n    }\n    constexpr\
-    \ mint operator--(int){\n        mint res=*this;\n        return *this-=mint(1),res;\n\
-    \    }\n\n    constexpr mint operator-()const{return mint()-mint(*this);};\n \
-    \   constexpr mint operator+()const{return mint(*this);};\n\n    friend constexpr\
-    \ mint operator+(const mint &lhs,const mint &rhs){return mint(lhs)+=rhs;}\n  \
-    \  friend constexpr mint operator-(const mint &lhs,const mint &rhs){return mint(lhs)-=rhs;}\n\
-    \    friend constexpr mint operator*(const mint &lhs,const mint &rhs){return mint(lhs)*=rhs;}\n\
-    \    friend constexpr mint operator/(const mint &lhs,const mint &rhs){return mint(lhs)/=rhs;}\n\
-    \    friend constexpr bool operator==(const mint &lhs,const mint &rhs){\n    \
-    \    return (lhs.x>=mod?lhs.x-mod:lhs.x)==(rhs.x>=mod?rhs.x-mod:rhs.x);\n    }\n\
-    \    friend constexpr bool operator!=(const mint &lhs,const mint &rhs){\n    \
-    \    return (lhs.x>=mod?lhs.x-mod:lhs.x)!=(rhs.x>=mod?rhs.x-mod:rhs.x);\n    }\n\
-    \    friend constexpr bool operator<(const mint &lhs,const mint &rhs){\n     \
-    \   return (lhs.x>=mod?lhs.x-mod:lhs.x)<(rhs.x>=mod?rhs.x-mod:rhs.x); // for std::map\n\
-    \    }\n\n    friend istream &operator>>(istream &is,mint &o){\n        int64_t\
-    \ v;\n        is >> v;\n        o=mint(v);\n        return is;\n    }\n    friend\
-    \ ostream &operator<<(ostream &os,const mint &o){\n        return os << o.val();\n\
-    \    }\n};\nusing mint998 = MontgomeryModInt<998244353,3>;\nusing mint107 = MontgomeryModInt<1000000007>;\n\
-    \n#line 2 \"data-structure/link-cut-tree/splay-tree-base.hpp\"\n\n/**\n * Author:\
+    \n#line 1 \"template.hpp\"\n#include<bits/stdc++.h>\n\nusing namespace std;\n\n\
+    #define pb push_back\n#define eb emplace_back\n#define mp make_pair\n#define mt\
+    \ make_tuple\n#define fi first\n#define se second\n\n#define ALL(a) a.begin(),a.end()\n\
+    #define RALL(a) a.rbegin(),a.rend()\n#define SORT(a) sort(ALL(a))\n#define RSORT(a)\
+    \ sort(RALL(a))\n#define REV(a) reverse(ALL(a))\n#define UNI(a) a.erase(unique(ALL(a)),a.end())\n\
+    #define SZ(a) (int)(a.size())\n#define LB(a,x) (int)(lower_bound(ALL(a),x)-a.begin())\n\
+    #define UB(a,x) (int)(upper_bound(ALL(a),x)-a.begin())\n#define MIN(a) *min_element(ALL(a))\n\
+    #define MAX(a) *max_element(ALL(a))\n\nusing ll = long long;\nusing db = long\
+    \ double;\nusing i128 = __int128_t;\nusing u32 = uint32_t;\nusing u64 = uint64_t;\n\
+    \nconst int INF=INT_MAX/2;\nconst ll LINF=LLONG_MAX/4;\nconst db DINF=numeric_limits<db>::infinity();\n\
+    const int MOD=998244353;\nconst int MOD2=1000000007;\nconst db EPS=1e-9;\nconst\
+    \ db PI=acos(db(-1));\n\ntemplate<class T>\nusing PQ = priority_queue<T,vector<T>,greater<T>>;\n\
+    \n#define vv(T,a,n,...) vector<vector<T>> a(n,vector<T>(__VA_ARGS__))\n#define\
+    \ vvv(T,a,n,m,...) vector<vector<vector<T>>> a(n,vector<vector<T>>(m,vector<T>(__VA_ARGS__)))\n\
+    #define vvvv(T,a,n,m,k,...) vector<vector<vector<vector<T>>>> a(n,vector<vector<vector<T>>>(m,vector<vector<T>>(k,vector<T>(__VA_ARGS__))))\n\
+    \ntemplate<class T,class U>\nbool chmin(T &a,U b){return b<a?a=b,1:0;}\ntemplate<class\
+    \ T,class U>\nbool chmax(T &a,U b){return a<b?a=b,1:0;}\ntemplate<class T,class\
+    \ U>\nT SUM(const U &a){return accumulate(ALL(a),T{});}\n\nmt19937 rng(chrono::steady_clock::now().time_since_epoch().count());\n\
+    mt19937_64 rng64(chrono::steady_clock::now().time_since_epoch().count());\n#line\
+    \ 2 \"modular-arithmetic/modint.hpp\"\n\n/**\n * Author: Teetat T.\n * Date: 2026-04-15\n\
+    \ * Description: modular arithmetic operations\n */\n\ntemplate<int mod,int root=0>\n\
+    struct ModInt{\n    using mint = ModInt;\n    \n\tstatic_assert(mod>0,\"mod must\
+    \ be positive\");\n\n    int x;\n\n    constexpr ModInt():x(0){}\n    constexpr\
+    \ ModInt(ll x):x((x%=mod)<0?x+mod:x){}\n    explicit operator int()const{return\
+    \ x;}\n    constexpr static int get_mod(){return mod;}\n    constexpr static mint\
+    \ get_root(){return mint(root);}\n    \n    mint operator-()const{\n        mint\
+    \ res;\n        res.x=x?mod-x:0;\n        return res;\n    }\n    mint operator+()const{return\
+    \ *this;}\n\n    mint inv()const{\n        int a=x,b=mod,u=1,v=0,q=0;\n      \
+    \  while(b>0){\n            q=a/b;\n            swap(a-=q*b,b);\n            swap(u-=q*v,v);\n\
+    \        }\n        return mint(u);\n    }\n    mint pow(ll n)const{\n       \
+    \ mint res=1,a=*this;\n        for(;n>0;a*=a,n>>=1)if(n&1)res*=a;\n        return\
+    \ res;\n    }\n    mint &operator+=(const mint &o){\n        if((x+=o.x)>=mod)x-=mod;\n\
+    \        return *this;\n    }\n    mint &operator-=(const mint &o){\n        if((x-=o.x)<0)x+=mod;\n\
+    \        return *this;\n    }\n    mint &operator*=(const mint &o){\n        x=(ll(x)*o.x)%mod;\n\
+    \        return *this;\n    }\n    mint &operator/=(const mint &o){\n        return\
+    \ *this*=o.inv();\n    }\n\n    mint operator+(const mint &o)const{return mint(*this)+=o;}\n\
+    \    mint operator-(const mint &o)const{return mint(*this)-=o;}\n    mint operator*(const\
+    \ mint &o)const{return mint(*this)*=o;}\n    mint operator/(const mint &o)const{return\
+    \ mint(*this)/=o;}\n\n    mint &operator++(){return *this+=mint(1);}\n    mint\
+    \ &operator--(){return *this-=mint(1);}\n    mint operator++(int){mint res=*this;*this+=mint(1);return\
+    \ res;}\n    mint operator--(int){mint res=*this;*this-=mint(1);return res;}\n\
+    \    \n    bool operator==(const mint &o)const{return x==o.x;}\n    bool operator!=(const\
+    \ mint &o)const{return x!=o.x;}\n    bool operator<(const mint &o)const{return\
+    \ x<o.x;}\n    \n    friend istream &operator>>(istream &is,mint &o){ll x{};is>>x;o=mint(x);return\
+    \ is;}\n    friend ostream &operator<<(ostream &os,const mint &o){return os<<o.x;}\n\
+    };\nusing mint998 = ModInt<998244353,3>;\nusing mint107 = ModInt<1000000007>;\n\
+    #line 2 \"data-structure/link-cut-tree/splay-tree-base.hpp\"\n\n/**\n * Author:\
     \ Teetat T.\n * Date: 2024-04-13\n * Description: Splay Tree. splay(u) will make\
     \ node u be the root of the tree in amortized O(log n) time.\n */\n\ntemplate<class\
     \ Node>\nstruct SplayTreeBase{\n    using Ptr = Node*;\n    bool is_root(Ptr t){\n\
@@ -205,26 +198,26 @@ data:
     \        }else{\n            int l,r;\n            cin >> l >> r;\n          \
     \  cout << s.query(root,l,r-1).first << \"\\n\";\n        }\n    }\n}\n"
   code: "#define PROBLEM \"https://judge.yosupo.jp/problem/dynamic_sequence_range_affine_range_sum\"\
-    \n#include \"template.hpp\"\n#include \"modular-arithmetic/montgomery-modint.hpp\"\
-    \n#include \"data-structure/link-cut-tree/lazy-reversible-splay-tree.hpp\"\n#include\
-    \ \"group/monoid-action/add-count-affine.hpp\"\n\nusing mint = mint998;\nusing\
-    \ Action = AddCountAffineAction<mint>;\nusing Info = Action::Info;\nusing Tag\
-    \ = Action::Tag;\n\nint main(){\n    cin.tie(nullptr)->sync_with_stdio(false);\n\
-    \    int n,q;\n    cin >> n >> q;\n    vector<Info> a(n);\n    for(auto &[x,y]:a)cin\
-    \ >> x,y=1;\n    using Tree = LazyReversibleSplayTree<Action>;\n    using Node\
-    \ = Tree::Node;\n    using Ptr = Node*;\n    Tree s;\n    Ptr root=s.build(a);\n\
-    \    while(q--){\n        int op;\n        cin >> op;\n        if(op==0){\n  \
-    \          int i;\n            mint x;\n            cin >> i >> x;\n         \
-    \   s.insert(root,i,new Node(Info(x,1)));\n        }else if(op==1){\n        \
-    \    int i;\n            cin >> i;\n            s.erase(root,i);\n        }else\
-    \ if(op==2){\n            int l,r;\n            cin >> l >> r;\n            s.reverse(root,l,r-1);\n\
+    \n#include \"template.hpp\"\n#include \"modular-arithmetic/modint.hpp\"\n#include\
+    \ \"data-structure/link-cut-tree/lazy-reversible-splay-tree.hpp\"\n#include \"\
+    group/monoid-action/add-count-affine.hpp\"\n\nusing mint = mint998;\nusing Action\
+    \ = AddCountAffineAction<mint>;\nusing Info = Action::Info;\nusing Tag = Action::Tag;\n\
+    \nint main(){\n    cin.tie(nullptr)->sync_with_stdio(false);\n    int n,q;\n \
+    \   cin >> n >> q;\n    vector<Info> a(n);\n    for(auto &[x,y]:a)cin >> x,y=1;\n\
+    \    using Tree = LazyReversibleSplayTree<Action>;\n    using Node = Tree::Node;\n\
+    \    using Ptr = Node*;\n    Tree s;\n    Ptr root=s.build(a);\n    while(q--){\n\
+    \        int op;\n        cin >> op;\n        if(op==0){\n            int i;\n\
+    \            mint x;\n            cin >> i >> x;\n            s.insert(root,i,new\
+    \ Node(Info(x,1)));\n        }else if(op==1){\n            int i;\n          \
+    \  cin >> i;\n            s.erase(root,i);\n        }else if(op==2){\n       \
+    \     int l,r;\n            cin >> l >> r;\n            s.reverse(root,l,r-1);\n\
     \        }else if(op==3){\n            int l,r;\n            mint b,c;\n     \
     \       cin >> l >> r >> b >> c;\n            s.apply(root,l,r-1,Tag(b,c));\n\
     \        }else{\n            int l,r;\n            cin >> l >> r;\n          \
     \  cout << s.query(root,l,r-1).first << \"\\n\";\n        }\n    }\n}"
   dependsOn:
   - template.hpp
-  - modular-arithmetic/montgomery-modint.hpp
+  - modular-arithmetic/modint.hpp
   - data-structure/link-cut-tree/lazy-reversible-splay-tree.hpp
   - data-structure/link-cut-tree/splay-tree-base.hpp
   - data-structure/link-cut-tree/lazy-reversible-bbst.hpp
@@ -234,7 +227,7 @@ data:
   isVerificationFile: true
   path: verify/yosupo/data-structure/dynamic_sequence_range_affine_range_sum.test.cpp
   requiredBy: []
-  timestamp: '2025-03-14 23:36:46+07:00'
+  timestamp: '2026-04-15 18:40:12+07:00'
   verificationStatus: TEST_WRONG_ANSWER
   verifiedWith: []
 documentation_of: verify/yosupo/data-structure/dynamic_sequence_range_affine_range_sum.test.cpp

@@ -1,23 +1,23 @@
 ---
 data:
   _extendedDependsOn:
-  - icon: ':heavy_check_mark:'
+  - icon: ':x:'
     path: data-structure/sparse-table.hpp
     title: data-structure/sparse-table.hpp
-  - icon: ':heavy_check_mark:'
+  - icon: ':x:'
     path: group/monoid/min.hpp
     title: group/monoid/min.hpp
   _extendedRequiredBy: []
   _extendedVerifiedWith:
-  - icon: ':heavy_check_mark:'
+  - icon: ':x:'
     path: verify/yosupo/string/number_of_substrings2.test.cpp
     title: verify/yosupo/string/number_of_substrings2.test.cpp
-  - icon: ':heavy_check_mark:'
+  - icon: ':x:'
     path: verify/yosupo/string/suffixarray.test.cpp
     title: verify/yosupo/string/suffixarray.test.cpp
-  _isVerificationFailed: false
+  _isVerificationFailed: true
   _pathExtension: hpp
-  _verificationStatusIcon: ':heavy_check_mark:'
+  _verificationStatusIcon: ':x:'
   attributes:
     links: []
   bundledCode: "#line 2 \"data-structure/sparse-table.hpp\"\n\n/**\n * Author: Teetat\
@@ -74,7 +74,7 @@ data:
   path: string/suffix-array.hpp
   requiredBy: []
   timestamp: '2024-09-21 22:51:04+07:00'
-  verificationStatus: LIBRARY_ALL_AC
+  verificationStatus: LIBRARY_ALL_WA
   verifiedWith:
   - verify/yosupo/string/number_of_substrings2.test.cpp
   - verify/yosupo/string/suffixarray.test.cpp

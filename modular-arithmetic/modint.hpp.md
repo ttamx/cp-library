@@ -2,81 +2,141 @@
 data:
   _extendedDependsOn: []
   _extendedRequiredBy: []
-  _extendedVerifiedWith: []
-  _isVerificationFailed: false
+  _extendedVerifiedWith:
+  - icon: ':heavy_check_mark:'
+    path: verify/yosupo/convolution/bitwise_and_convolution.test.cpp
+    title: verify/yosupo/convolution/bitwise_and_convolution.test.cpp
+  - icon: ':heavy_check_mark:'
+    path: verify/yosupo/convolution/bitwise_or_convolution.test.cpp
+    title: verify/yosupo/convolution/bitwise_or_convolution.test.cpp
+  - icon: ':heavy_check_mark:'
+    path: verify/yosupo/convolution/bitwise_xor_convolution.test.cpp
+    title: verify/yosupo/convolution/bitwise_xor_convolution.test.cpp
+  - icon: ':x:'
+    path: verify/yosupo/convolution/convolution_mod.test.cpp
+    title: verify/yosupo/convolution/convolution_mod.test.cpp
+  - icon: ':heavy_check_mark:'
+    path: verify/yosupo/convolution/gcd_convolution.test.cpp
+    title: verify/yosupo/convolution/gcd_convolution.test.cpp
+  - icon: ':heavy_check_mark:'
+    path: verify/yosupo/convolution/lcm_convolution.test.cpp
+    title: verify/yosupo/convolution/lcm_convolution.test.cpp
+  - icon: ':x:'
+    path: verify/yosupo/data-structure/dynamic_sequence_range_affine_range_sum.test.cpp
+    title: verify/yosupo/data-structure/dynamic_sequence_range_affine_range_sum.test.cpp
+  - icon: ':heavy_check_mark:'
+    path: verify/yosupo/data-structure/point_set_range_composite.test.cpp
+    title: verify/yosupo/data-structure/point_set_range_composite.test.cpp
+  - icon: ':heavy_check_mark:'
+    path: verify/yosupo/data-structure/point_set_tree_path_composite_sum.test.cpp
+    title: verify/yosupo/data-structure/point_set_tree_path_composite_sum.test.cpp
+  - icon: ':heavy_check_mark:'
+    path: verify/yosupo/data-structure/point_set_tree_path_composite_sum_fixed_root.test.cpp
+    title: verify/yosupo/data-structure/point_set_tree_path_composite_sum_fixed_root.test.cpp
+  - icon: ':x:'
+    path: verify/yosupo/data-structure/range_affine_range_sum.test.cpp
+    title: verify/yosupo/data-structure/range_affine_range_sum.test.cpp
+  - icon: ':x:'
+    path: verify/yosupo/data-structure/range_affine_range_sum_lct.test.cpp
+    title: verify/yosupo/data-structure/range_affine_range_sum_lct.test.cpp
+  - icon: ':x:'
+    path: verify/yosupo/data-structure/vertex_set_path_composite.test.cpp
+    title: verify/yosupo/data-structure/vertex_set_path_composite.test.cpp
+  - icon: ':x:'
+    path: verify/yosupo/polynomial/exp_of_formal_power_series.test.cpp
+    title: verify/yosupo/polynomial/exp_of_formal_power_series.test.cpp
+  - icon: ':x:'
+    path: verify/yosupo/polynomial/inv_of_formal_power_series.test.cpp
+    title: verify/yosupo/polynomial/inv_of_formal_power_series.test.cpp
+  - icon: ':x:'
+    path: verify/yosupo/polynomial/log_of_formal_power_series.test.cpp
+    title: verify/yosupo/polynomial/log_of_formal_power_series.test.cpp
+  - icon: ':x:'
+    path: verify/yosupo/polynomial/pow_of_formal_power_series.test.cpp
+    title: verify/yosupo/polynomial/pow_of_formal_power_series.test.cpp
+  _isVerificationFailed: true
   _pathExtension: hpp
-  _verificationStatusIcon: ':warning:'
+  _verificationStatusIcon: ':question:'
   attributes:
     links: []
   bundledCode: "#line 2 \"modular-arithmetic/modint.hpp\"\n\n/**\n * Author: Teetat\
-    \ T.\n * Date: 2024-03-17\n * Description: modular arithmetic operations\n */\n\
-    \ntemplate<int M,int root=0>\nstruct ModInt{\n    using mint = ModInt;\n    int\
-    \ x;\n    constexpr ModInt():x(0){}\n    constexpr ModInt(ll x):x(norm(x%get_mod())){}\n\
-    \    static int Mod;\n    static constexpr int get_mod(){return M>0?M:Mod;}\n\
-    \    static constexpr void set_mod(int Mod_){Mod=Mod_;}\n    static constexpr\
-    \ mint get_root(){return mint(root);}\n    constexpr int norm(int x)const{if(x<0)x+=get_mod();if(x>=get_mod())x-=get_mod();return\
-    \ x;}\n    explicit constexpr operator int()const{return x;}\n    constexpr mint\
-    \ operator-()const{return mint()-mint(*this);};\n    constexpr mint operator+()const{return\
-    \ mint(*this);};\n    constexpr mint inv()const{\n        int a=x,b=get_mod(),u=1,v=0,q=0;\n\
-    \        while(b>0){\n            q=a/b;\n            a-=q*b;\n            u-=q*v;\n\
-    \            swap(a,b);\n            swap(u,v);\n        }\n        return mint(u);\n\
-    \    }\n    constexpr int mul(int a,int b)const{return 1LL*a*b%get_mod();}\n \
-    \   constexpr mint &operator+=(const mint &rhs){x=norm(x+rhs.x);return *this;}\n\
-    \    constexpr mint &operator-=(const mint &rhs){x=norm(x-rhs.x);return *this;}\n\
-    \    constexpr mint &operator*=(const mint &rhs){x=mul(x,rhs.x);return *this;}\n\
-    \    constexpr mint &operator/=(const mint &rhs){x=mul(x,rhs.inv().x);return *this;}\n\
-    \    constexpr mint &operator++(){return *this+=1;}\n    constexpr mint &operator--(){return\
-    \ *this-=1;}\n    constexpr mint operator++(int){mint res=*this;*this+=1;return\
-    \ res;}\n    constexpr mint operator--(int){mint res=*this;*this-=1;return res;}\n\
-    \    friend constexpr mint operator+(mint lhs,const mint &rhs){return lhs+=rhs;}\n\
-    \    friend constexpr mint operator-(mint lhs,const mint &rhs){return lhs-=rhs;}\n\
-    \    friend constexpr mint operator*(mint lhs,const mint &rhs){return lhs*=rhs;}\n\
-    \    friend constexpr mint operator/(mint lhs,const mint &rhs){return lhs/=rhs;}\n\
-    \    friend istream &operator>>(istream &is,mint &o){ll x{};is>>x;o=mint(x);return\
+    \ T.\n * Date: 2026-04-15\n * Description: modular arithmetic operations\n */\n\
+    \ntemplate<int mod,int root=0>\nstruct ModInt{\n    using mint = ModInt;\n   \
+    \ \n\tstatic_assert(mod>0,\"mod must be positive\");\n\n    int x;\n\n    constexpr\
+    \ ModInt():x(0){}\n    constexpr ModInt(ll x):x((x%=mod)<0?x+mod:x){}\n    explicit\
+    \ operator int()const{return x;}\n    constexpr static int get_mod(){return mod;}\n\
+    \    constexpr static mint get_root(){return mint(root);}\n    \n    mint operator-()const{\n\
+    \        mint res;\n        res.x=x?mod-x:0;\n        return res;\n    }\n   \
+    \ mint operator+()const{return *this;}\n\n    mint inv()const{\n        int a=x,b=mod,u=1,v=0,q=0;\n\
+    \        while(b>0){\n            q=a/b;\n            swap(a-=q*b,b);\n      \
+    \      swap(u-=q*v,v);\n        }\n        return mint(u);\n    }\n    mint pow(ll\
+    \ n)const{\n        mint res=1,a=*this;\n        for(;n>0;a*=a,n>>=1)if(n&1)res*=a;\n\
+    \        return res;\n    }\n    mint &operator+=(const mint &o){\n        if((x+=o.x)>=mod)x-=mod;\n\
+    \        return *this;\n    }\n    mint &operator-=(const mint &o){\n        if((x-=o.x)<0)x+=mod;\n\
+    \        return *this;\n    }\n    mint &operator*=(const mint &o){\n        x=(ll(x)*o.x)%mod;\n\
+    \        return *this;\n    }\n    mint &operator/=(const mint &o){\n        return\
+    \ *this*=o.inv();\n    }\n\n    mint operator+(const mint &o)const{return mint(*this)+=o;}\n\
+    \    mint operator-(const mint &o)const{return mint(*this)-=o;}\n    mint operator*(const\
+    \ mint &o)const{return mint(*this)*=o;}\n    mint operator/(const mint &o)const{return\
+    \ mint(*this)/=o;}\n\n    mint &operator++(){return *this+=mint(1);}\n    mint\
+    \ &operator--(){return *this-=mint(1);}\n    mint operator++(int){mint res=*this;*this+=mint(1);return\
+    \ res;}\n    mint operator--(int){mint res=*this;*this-=mint(1);return res;}\n\
+    \    \n    bool operator==(const mint &o)const{return x==o.x;}\n    bool operator!=(const\
+    \ mint &o)const{return x!=o.x;}\n    bool operator<(const mint &o)const{return\
+    \ x<o.x;}\n    \n    friend istream &operator>>(istream &is,mint &o){ll x{};is>>x;o=mint(x);return\
     \ is;}\n    friend ostream &operator<<(ostream &os,const mint &o){return os<<o.x;}\n\
-    \    friend constexpr bool operator==(const mint &lhs,const mint &rhs){return\
-    \ lhs.x==rhs.x;}\n    friend constexpr bool operator!=(const mint &lhs,const mint\
-    \ &rhs){return lhs.x!=rhs.x;}\n    friend constexpr bool operator<(const mint\
-    \ &lhs,const mint &rhs){return lhs.x<rhs.x;} // for std::map\n};\nusing mint32\
-    \ = ModInt<0>;\ntemplate<>\nint mint32::Mod=int(1e9)+7;\n\n"
-  code: "#pragma once\n\n/**\n * Author: Teetat T.\n * Date: 2024-03-17\n * Description:\
-    \ modular arithmetic operations\n */\n\ntemplate<int M,int root=0>\nstruct ModInt{\n\
-    \    using mint = ModInt;\n    int x;\n    constexpr ModInt():x(0){}\n    constexpr\
-    \ ModInt(ll x):x(norm(x%get_mod())){}\n    static int Mod;\n    static constexpr\
-    \ int get_mod(){return M>0?M:Mod;}\n    static constexpr void set_mod(int Mod_){Mod=Mod_;}\n\
-    \    static constexpr mint get_root(){return mint(root);}\n    constexpr int norm(int\
-    \ x)const{if(x<0)x+=get_mod();if(x>=get_mod())x-=get_mod();return x;}\n    explicit\
-    \ constexpr operator int()const{return x;}\n    constexpr mint operator-()const{return\
-    \ mint()-mint(*this);};\n    constexpr mint operator+()const{return mint(*this);};\n\
-    \    constexpr mint inv()const{\n        int a=x,b=get_mod(),u=1,v=0,q=0;\n  \
-    \      while(b>0){\n            q=a/b;\n            a-=q*b;\n            u-=q*v;\n\
-    \            swap(a,b);\n            swap(u,v);\n        }\n        return mint(u);\n\
-    \    }\n    constexpr int mul(int a,int b)const{return 1LL*a*b%get_mod();}\n \
-    \   constexpr mint &operator+=(const mint &rhs){x=norm(x+rhs.x);return *this;}\n\
-    \    constexpr mint &operator-=(const mint &rhs){x=norm(x-rhs.x);return *this;}\n\
-    \    constexpr mint &operator*=(const mint &rhs){x=mul(x,rhs.x);return *this;}\n\
-    \    constexpr mint &operator/=(const mint &rhs){x=mul(x,rhs.inv().x);return *this;}\n\
-    \    constexpr mint &operator++(){return *this+=1;}\n    constexpr mint &operator--(){return\
-    \ *this-=1;}\n    constexpr mint operator++(int){mint res=*this;*this+=1;return\
-    \ res;}\n    constexpr mint operator--(int){mint res=*this;*this-=1;return res;}\n\
-    \    friend constexpr mint operator+(mint lhs,const mint &rhs){return lhs+=rhs;}\n\
-    \    friend constexpr mint operator-(mint lhs,const mint &rhs){return lhs-=rhs;}\n\
-    \    friend constexpr mint operator*(mint lhs,const mint &rhs){return lhs*=rhs;}\n\
-    \    friend constexpr mint operator/(mint lhs,const mint &rhs){return lhs/=rhs;}\n\
-    \    friend istream &operator>>(istream &is,mint &o){ll x{};is>>x;o=mint(x);return\
+    };\nusing mint998 = ModInt<998244353,3>;\nusing mint107 = ModInt<1000000007>;\n"
+  code: "#pragma once\n\n/**\n * Author: Teetat T.\n * Date: 2026-04-15\n * Description:\
+    \ modular arithmetic operations\n */\n\ntemplate<int mod,int root=0>\nstruct ModInt{\n\
+    \    using mint = ModInt;\n    \n\tstatic_assert(mod>0,\"mod must be positive\"\
+    );\n\n    int x;\n\n    constexpr ModInt():x(0){}\n    constexpr ModInt(ll x):x((x%=mod)<0?x+mod:x){}\n\
+    \    explicit operator int()const{return x;}\n    constexpr static int get_mod(){return\
+    \ mod;}\n    constexpr static mint get_root(){return mint(root);}\n    \n    mint\
+    \ operator-()const{\n        mint res;\n        res.x=x?mod-x:0;\n        return\
+    \ res;\n    }\n    mint operator+()const{return *this;}\n\n    mint inv()const{\n\
+    \        int a=x,b=mod,u=1,v=0,q=0;\n        while(b>0){\n            q=a/b;\n\
+    \            swap(a-=q*b,b);\n            swap(u-=q*v,v);\n        }\n       \
+    \ return mint(u);\n    }\n    mint pow(ll n)const{\n        mint res=1,a=*this;\n\
+    \        for(;n>0;a*=a,n>>=1)if(n&1)res*=a;\n        return res;\n    }\n    mint\
+    \ &operator+=(const mint &o){\n        if((x+=o.x)>=mod)x-=mod;\n        return\
+    \ *this;\n    }\n    mint &operator-=(const mint &o){\n        if((x-=o.x)<0)x+=mod;\n\
+    \        return *this;\n    }\n    mint &operator*=(const mint &o){\n        x=(ll(x)*o.x)%mod;\n\
+    \        return *this;\n    }\n    mint &operator/=(const mint &o){\n        return\
+    \ *this*=o.inv();\n    }\n\n    mint operator+(const mint &o)const{return mint(*this)+=o;}\n\
+    \    mint operator-(const mint &o)const{return mint(*this)-=o;}\n    mint operator*(const\
+    \ mint &o)const{return mint(*this)*=o;}\n    mint operator/(const mint &o)const{return\
+    \ mint(*this)/=o;}\n\n    mint &operator++(){return *this+=mint(1);}\n    mint\
+    \ &operator--(){return *this-=mint(1);}\n    mint operator++(int){mint res=*this;*this+=mint(1);return\
+    \ res;}\n    mint operator--(int){mint res=*this;*this-=mint(1);return res;}\n\
+    \    \n    bool operator==(const mint &o)const{return x==o.x;}\n    bool operator!=(const\
+    \ mint &o)const{return x!=o.x;}\n    bool operator<(const mint &o)const{return\
+    \ x<o.x;}\n    \n    friend istream &operator>>(istream &is,mint &o){ll x{};is>>x;o=mint(x);return\
     \ is;}\n    friend ostream &operator<<(ostream &os,const mint &o){return os<<o.x;}\n\
-    \    friend constexpr bool operator==(const mint &lhs,const mint &rhs){return\
-    \ lhs.x==rhs.x;}\n    friend constexpr bool operator!=(const mint &lhs,const mint\
-    \ &rhs){return lhs.x!=rhs.x;}\n    friend constexpr bool operator<(const mint\
-    \ &lhs,const mint &rhs){return lhs.x<rhs.x;} // for std::map\n};\nusing mint32\
-    \ = ModInt<0>;\ntemplate<>\nint mint32::Mod=int(1e9)+7;\n\n"
+    };\nusing mint998 = ModInt<998244353,3>;\nusing mint107 = ModInt<1000000007>;"
   dependsOn: []
   isVerificationFile: false
   path: modular-arithmetic/modint.hpp
   requiredBy: []
-  timestamp: '2024-06-13 00:00:26+07:00'
-  verificationStatus: LIBRARY_NO_TESTS
-  verifiedWith: []
+  timestamp: '2026-04-15 18:40:12+07:00'
+  verificationStatus: LIBRARY_SOME_WA
+  verifiedWith:
+  - verify/yosupo/polynomial/exp_of_formal_power_series.test.cpp
+  - verify/yosupo/polynomial/log_of_formal_power_series.test.cpp
+  - verify/yosupo/polynomial/pow_of_formal_power_series.test.cpp
+  - verify/yosupo/polynomial/inv_of_formal_power_series.test.cpp
+  - verify/yosupo/convolution/bitwise_and_convolution.test.cpp
+  - verify/yosupo/convolution/bitwise_or_convolution.test.cpp
+  - verify/yosupo/convolution/lcm_convolution.test.cpp
+  - verify/yosupo/convolution/gcd_convolution.test.cpp
+  - verify/yosupo/convolution/bitwise_xor_convolution.test.cpp
+  - verify/yosupo/convolution/convolution_mod.test.cpp
+  - verify/yosupo/data-structure/point_set_range_composite.test.cpp
+  - verify/yosupo/data-structure/point_set_tree_path_composite_sum_fixed_root.test.cpp
+  - verify/yosupo/data-structure/range_affine_range_sum.test.cpp
+  - verify/yosupo/data-structure/vertex_set_path_composite.test.cpp
+  - verify/yosupo/data-structure/point_set_tree_path_composite_sum.test.cpp
+  - verify/yosupo/data-structure/range_affine_range_sum_lct.test.cpp
+  - verify/yosupo/data-structure/dynamic_sequence_range_affine_range_sum.test.cpp
 documentation_of: modular-arithmetic/modint.hpp
 layout: document
 redirect_from:

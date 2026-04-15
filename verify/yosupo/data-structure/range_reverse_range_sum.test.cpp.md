@@ -1,16 +1,16 @@
 ---
 data:
   _extendedDependsOn:
-  - icon: ':heavy_check_mark:'
+  - icon: ':x:'
     path: data-structure/link-cut-tree/reversible-bbst.hpp
     title: data-structure/link-cut-tree/reversible-bbst.hpp
-  - icon: ':heavy_check_mark:'
+  - icon: ':x:'
     path: data-structure/link-cut-tree/reversible-splay-tree.hpp
     title: data-structure/link-cut-tree/reversible-splay-tree.hpp
-  - icon: ':question:'
+  - icon: ':x:'
     path: data-structure/link-cut-tree/splay-tree-base.hpp
     title: data-structure/link-cut-tree/splay-tree-base.hpp
-  - icon: ':heavy_check_mark:'
+  - icon: ':question:'
     path: group/monoid/add.hpp
     title: group/monoid/add.hpp
   - icon: ':question:'
@@ -18,9 +18,9 @@ data:
     title: template.hpp
   _extendedRequiredBy: []
   _extendedVerifiedWith: []
-  _isVerificationFailed: false
+  _isVerificationFailed: true
   _pathExtension: cpp
-  _verificationStatusIcon: ':heavy_check_mark:'
+  _verificationStatusIcon: ':x:'
   attributes:
     '*NOT_SPECIAL_COMMENTS*': ''
     PROBLEM: https://judge.yosupo.jp/problem/range_reverse_range_sum
@@ -28,29 +28,38 @@ data:
     - https://judge.yosupo.jp/problem/range_reverse_range_sum
   bundledCode: "#line 1 \"verify/yosupo/data-structure/range_reverse_range_sum.test.cpp\"\
     \n#define PROBLEM \"https://judge.yosupo.jp/problem/range_reverse_range_sum\"\n\
-    #line 2 \"template.hpp\"\n#include<bits/stdc++.h>\n#include<ext/pb_ds/assoc_container.hpp>\n\
-    #include<ext/pb_ds/tree_policy.hpp>\n\nusing namespace std;\nusing namespace __gnu_pbds;\n\
-    \nusing ll = long long;\nusing db = long double;\nusing vi = vector<int>;\nusing\
-    \ vl = vector<ll>;\nusing vd = vector<db>;\nusing pii = pair<int,int>;\nusing\
-    \ pll = pair<ll,ll>;\nusing pdd = pair<db,db>;\nconst int INF=INT_MAX/2;\nconst\
-    \ int MOD=998244353;\nconst int MOD2=1000000007;\nconst ll LINF=LLONG_MAX/2;\n\
-    const db DINF=numeric_limits<db>::infinity();\nconst db EPS=1e-9;\nconst db PI=acos(db(-1));\n\
-    \ntemplate<class T>\nusing ordered_set = tree<T,null_type,less<T>,rb_tree_tag,tree_order_statistics_node_update>;\n\
-    template<class T>\nusing ordered_multiset = tree<T,null_type,less_equal<T>,rb_tree_tag,tree_order_statistics_node_update>;\n\
-    \nmt19937 rng(chrono::steady_clock::now().time_since_epoch().count());\nmt19937_64\
-    \ rng64(chrono::steady_clock::now().time_since_epoch().count());\n#line 2 \"data-structure/link-cut-tree/splay-tree-base.hpp\"\
-    \n\n/**\n * Author: Teetat T.\n * Date: 2024-04-13\n * Description: Splay Tree.\
-    \ splay(u) will make node u be the root of the tree in amortized O(log n) time.\n\
-    \ */\n\ntemplate<class Node>\nstruct SplayTreeBase{\n    using Ptr = Node*;\n\
-    \    bool is_root(Ptr t){\n        return !(t->p)||(t->p->l!=t&&t->p->r!=t);\n\
-    \    } // The parent of the root stores the path parant in link cut tree.\n  \
-    \  int size(Ptr t){\n        return t?t->size:0;\n    }\n    virtual void push(Ptr\
-    \ t){};\n    virtual void pull(Ptr t){};\n    int pos(Ptr t){\n        if(t->p){\n\
-    \            if(t->p->l==t)return -1;\n            if(t->p->r==t)return 1;\n \
-    \       }\n        return 0;\n    }\n    void rotate(Ptr t){\n        Ptr x=t->p,y=x->p;\n\
-    \        if(pos(t)==-1){\n            if((x->l=t->r))t->r->p=x;\n            t->r=x,x->p=t;\n\
-    \        }else{\n            if((x->r=t->l))t->l->p=x;\n            t->l=x,x->p=t;\n\
-    \        }\n        pull(x),pull(t);\n        if((t->p=y)){\n            if(y->l==x)y->l=t;\n\
+    #line 1 \"template.hpp\"\n#include<bits/stdc++.h>\n\nusing namespace std;\n\n\
+    #define pb push_back\n#define eb emplace_back\n#define mp make_pair\n#define mt\
+    \ make_tuple\n#define fi first\n#define se second\n\n#define ALL(a) a.begin(),a.end()\n\
+    #define RALL(a) a.rbegin(),a.rend()\n#define SORT(a) sort(ALL(a))\n#define RSORT(a)\
+    \ sort(RALL(a))\n#define REV(a) reverse(ALL(a))\n#define UNI(a) a.erase(unique(ALL(a)),a.end())\n\
+    #define SZ(a) (int)(a.size())\n#define LB(a,x) (int)(lower_bound(ALL(a),x)-a.begin())\n\
+    #define UB(a,x) (int)(upper_bound(ALL(a),x)-a.begin())\n#define MIN(a) *min_element(ALL(a))\n\
+    #define MAX(a) *max_element(ALL(a))\n\nusing ll = long long;\nusing db = long\
+    \ double;\nusing i128 = __int128_t;\nusing u32 = uint32_t;\nusing u64 = uint64_t;\n\
+    \nconst int INF=INT_MAX/2;\nconst ll LINF=LLONG_MAX/4;\nconst db DINF=numeric_limits<db>::infinity();\n\
+    const int MOD=998244353;\nconst int MOD2=1000000007;\nconst db EPS=1e-9;\nconst\
+    \ db PI=acos(db(-1));\n\ntemplate<class T>\nusing PQ = priority_queue<T,vector<T>,greater<T>>;\n\
+    \n#define vv(T,a,n,...) vector<vector<T>> a(n,vector<T>(__VA_ARGS__))\n#define\
+    \ vvv(T,a,n,m,...) vector<vector<vector<T>>> a(n,vector<vector<T>>(m,vector<T>(__VA_ARGS__)))\n\
+    #define vvvv(T,a,n,m,k,...) vector<vector<vector<vector<T>>>> a(n,vector<vector<vector<T>>>(m,vector<vector<T>>(k,vector<T>(__VA_ARGS__))))\n\
+    \ntemplate<class T,class U>\nbool chmin(T &a,U b){return b<a?a=b,1:0;}\ntemplate<class\
+    \ T,class U>\nbool chmax(T &a,U b){return a<b?a=b,1:0;}\ntemplate<class T,class\
+    \ U>\nT SUM(const U &a){return accumulate(ALL(a),T{});}\n\nmt19937 rng(chrono::steady_clock::now().time_since_epoch().count());\n\
+    mt19937_64 rng64(chrono::steady_clock::now().time_since_epoch().count());\n#line\
+    \ 2 \"data-structure/link-cut-tree/splay-tree-base.hpp\"\n\n/**\n * Author: Teetat\
+    \ T.\n * Date: 2024-04-13\n * Description: Splay Tree. splay(u) will make node\
+    \ u be the root of the tree in amortized O(log n) time.\n */\n\ntemplate<class\
+    \ Node>\nstruct SplayTreeBase{\n    using Ptr = Node*;\n    bool is_root(Ptr t){\n\
+    \        return !(t->p)||(t->p->l!=t&&t->p->r!=t);\n    } // The parent of the\
+    \ root stores the path parant in link cut tree.\n    int size(Ptr t){\n      \
+    \  return t?t->size:0;\n    }\n    virtual void push(Ptr t){};\n    virtual void\
+    \ pull(Ptr t){};\n    int pos(Ptr t){\n        if(t->p){\n            if(t->p->l==t)return\
+    \ -1;\n            if(t->p->r==t)return 1;\n        }\n        return 0;\n   \
+    \ }\n    void rotate(Ptr t){\n        Ptr x=t->p,y=x->p;\n        if(pos(t)==-1){\n\
+    \            if((x->l=t->r))t->r->p=x;\n            t->r=x,x->p=t;\n        }else{\n\
+    \            if((x->r=t->l))t->l->p=x;\n            t->l=x,x->p=t;\n        }\n\
+    \        pull(x),pull(t);\n        if((t->p=y)){\n            if(y->l==x)y->l=t;\n\
     \            if(y->r==x)y->r=t;\n        }\n    }\n    void splay(Ptr t){\n  \
     \      if(!t)return;\n        push(t);\n        while(!is_root(t)){\n        \
     \    Ptr x=t->p;\n            if(is_root(x)){\n                push(x),push(t);\n\
@@ -137,8 +146,8 @@ data:
   isVerificationFile: true
   path: verify/yosupo/data-structure/range_reverse_range_sum.test.cpp
   requiredBy: []
-  timestamp: '2025-03-14 23:36:46+07:00'
-  verificationStatus: TEST_ACCEPTED
+  timestamp: '2026-04-15 17:32:38+07:00'
+  verificationStatus: TEST_WRONG_ANSWER
   verifiedWith: []
 documentation_of: verify/yosupo/data-structure/range_reverse_range_sum.test.cpp
 layout: document

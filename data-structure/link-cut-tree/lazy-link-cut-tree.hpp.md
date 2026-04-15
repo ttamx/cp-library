@@ -1,26 +1,26 @@
 ---
 data:
   _extendedDependsOn:
-  - icon: ':question:'
+  - icon: ':x:'
     path: data-structure/link-cut-tree/lazy-reversible-bbst.hpp
     title: data-structure/link-cut-tree/lazy-reversible-bbst.hpp
-  - icon: ':question:'
+  - icon: ':x:'
     path: data-structure/link-cut-tree/lazy-reversible-splay-tree.hpp
     title: data-structure/link-cut-tree/lazy-reversible-splay-tree.hpp
-  - icon: ':heavy_check_mark:'
+  - icon: ':x:'
     path: data-structure/link-cut-tree/link-cut-tree-base.hpp
     title: data-structure/link-cut-tree/link-cut-tree-base.hpp
-  - icon: ':question:'
+  - icon: ':x:'
     path: data-structure/link-cut-tree/splay-tree-base.hpp
     title: data-structure/link-cut-tree/splay-tree-base.hpp
   _extendedRequiredBy: []
   _extendedVerifiedWith:
-  - icon: ':heavy_check_mark:'
+  - icon: ':x:'
     path: verify/yosupo/data-structure/range_affine_range_sum_lct.test.cpp
     title: verify/yosupo/data-structure/range_affine_range_sum_lct.test.cpp
-  _isVerificationFailed: false
+  _isVerificationFailed: true
   _pathExtension: hpp
-  _verificationStatusIcon: ':heavy_check_mark:'
+  _verificationStatusIcon: ':x:'
   attributes:
     links: []
   bundledCode: "#line 2 \"data-structure/link-cut-tree/splay-tree-base.hpp\"\n\n/**\n\
@@ -162,7 +162,7 @@ data:
   path: data-structure/link-cut-tree/lazy-link-cut-tree.hpp
   requiredBy: []
   timestamp: '2024-08-04 01:01:28+07:00'
-  verificationStatus: LIBRARY_ALL_AC
+  verificationStatus: LIBRARY_ALL_WA
   verifiedWith:
   - verify/yosupo/data-structure/range_affine_range_sum_lct.test.cpp
 documentation_of: data-structure/link-cut-tree/lazy-link-cut-tree.hpp
