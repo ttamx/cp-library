@@ -32,6 +32,7 @@ struct DynamicModInt{
     constexpr DynamicModInt():x(0){}
     constexpr DynamicModInt(ll x):x((x%=get_mod())<0?x+get_mod():x){}
     constexpr explicit operator int()const{return (int)x;}
+    constexpr int val()const{return x;}
     constexpr static u32 umod(){return bt.umod();}
     constexpr static int get_mod(){return (int)bt.umod();}
     static void set_mod(u32 m){

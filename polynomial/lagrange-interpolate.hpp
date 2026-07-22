@@ -1,4 +1,5 @@
 #pragma once
+#include "modular-arithmetic/combinatorics.hpp"
 
 /**
  * Author: Teetat T.
@@ -8,6 +9,7 @@
 
 template<class mint>
 mint lagrange_interpolate(vector<mint> &f,mint c){
+    static Combinatorics<mint> comb;
     int n=f.size();
     if(c.val()<n)return f[c.val()];
     vector<mint> l(n+1),r(n+1);
