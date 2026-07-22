@@ -1,16 +1,16 @@
 ---
 data:
   _extendedDependsOn:
-  - icon: ':question:'
+  - icon: ':heavy_check_mark:'
     path: modular-arithmetic/binpow.hpp
     title: modular-arithmetic/binpow.hpp
-  - icon: ':question:'
+  - icon: ':heavy_check_mark:'
     path: modular-arithmetic/modint.hpp
     title: modular-arithmetic/modint.hpp
-  - icon: ':question:'
+  - icon: ':heavy_check_mark:'
     path: polynomial/ntt.hpp
     title: polynomial/ntt.hpp
-  - icon: ':question:'
+  - icon: ':heavy_check_mark:'
     path: template.hpp
     title: template.hpp
   _extendedRequiredBy: []

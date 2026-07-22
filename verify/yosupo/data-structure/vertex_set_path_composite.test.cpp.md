@@ -13,10 +13,10 @@ data:
   - icon: ':heavy_check_mark:'
     path: group/monoid/monoid-reverse.hpp
     title: group/monoid/monoid-reverse.hpp
-  - icon: ':question:'
+  - icon: ':heavy_check_mark:'
     path: modular-arithmetic/modint.hpp
     title: modular-arithmetic/modint.hpp
-  - icon: ':question:'
+  - icon: ':heavy_check_mark:'
     path: template.hpp
     title: template.hpp
   - icon: ':heavy_check_mark:'

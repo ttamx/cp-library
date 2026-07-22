@@ -135,13 +135,13 @@ data:
   - icon: ':heavy_check_mark:'
     path: verify/yosupo/polynomial/exp_of_formal_power_series.test.cpp
     title: verify/yosupo/polynomial/exp_of_formal_power_series.test.cpp
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: verify/yosupo/polynomial/inv_of_formal_power_series.test.cpp
     title: verify/yosupo/polynomial/inv_of_formal_power_series.test.cpp
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: verify/yosupo/polynomial/log_of_formal_power_series.test.cpp
     title: verify/yosupo/polynomial/log_of_formal_power_series.test.cpp
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: verify/yosupo/polynomial/pow_of_formal_power_series.test.cpp
     title: verify/yosupo/polynomial/pow_of_formal_power_series.test.cpp
   - icon: ':heavy_check_mark:'
@@ -168,9 +168,9 @@ data:
   - icon: ':heavy_check_mark:'
     path: verify/yosupo/tree/lca.test.cpp
     title: verify/yosupo/tree/lca.test.cpp
-  _isVerificationFailed: true
+  _isVerificationFailed: false
   _pathExtension: hpp
-  _verificationStatusIcon: ':question:'
+  _verificationStatusIcon: ':heavy_check_mark:'
   attributes:
     links: []
   bundledCode: '#line 2 "template.hpp"
@@ -386,7 +386,7 @@ data:
   - data-structure/cartesian-tree.hpp
   - data-structure/fast-set.hpp
   timestamp: '2026-04-15 22:12:04+07:00'
-  verificationStatus: LIBRARY_SOME_WA
+  verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
   - verify/yosupo/number-theory/sum_of_floor_of_linear.test.cpp
   - verify/yosupo/polynomial/exp_of_formal_power_series.test.cpp

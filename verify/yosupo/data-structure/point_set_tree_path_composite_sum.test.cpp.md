@@ -4,10 +4,10 @@ data:
   - icon: ':heavy_check_mark:'
     path: graph/graph-base.hpp
     title: graph/graph-base.hpp
-  - icon: ':question:'
+  - icon: ':heavy_check_mark:'
     path: modular-arithmetic/modint.hpp
     title: modular-arithmetic/modint.hpp
-  - icon: ':question:'
+  - icon: ':heavy_check_mark:'
     path: template.hpp
     title: template.hpp
   - icon: ':heavy_check_mark:'
