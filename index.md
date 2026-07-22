@@ -100,9 +100,12 @@ data:
     - icon: ':warning:'
       path: flow/dinic.hpp
       title: flow/dinic.hpp
-    - icon: ':warning:'
+    - icon: ':heavy_check_mark:'
       path: flow/general-matching.hpp
       title: flow/general-matching.hpp
+    - icon: ':heavy_check_mark:'
+      path: flow/general-weighted-matching.hpp
+      title: flow/general-weighted-matching.hpp
     - icon: ':warning:'
       path: flow/hopcroft-karp.hpp
       title: flow/hopcroft-karp.hpp
@@ -206,7 +209,7 @@ data:
       title: linear-algebra/matrix.hpp
   - name: modular-arithmetic
     pages:
-    - icon: ':heavy_check_mark:'
+    - icon: ':question:'
       path: modular-arithmetic/binpow.hpp
       title: modular-arithmetic/binpow.hpp
     - icon: ':warning:'
@@ -215,7 +218,7 @@ data:
     - icon: ':warning:'
       path: modular-arithmetic/dynamic-modint.hpp
       title: modular-arithmetic/dynamic-modint.hpp
-    - icon: ':heavy_check_mark:'
+    - icon: ':question:'
       path: modular-arithmetic/modint.hpp
       title: modular-arithmetic/modint.hpp
     - icon: ':warning:'
@@ -231,13 +234,13 @@ data:
     - icon: ':heavy_check_mark:'
       path: polynomial/fft.hpp
       title: polynomial/fft.hpp
-    - icon: ':heavy_check_mark:'
+    - icon: ':question:'
       path: polynomial/formal-power-series.hpp
       title: polynomial/formal-power-series.hpp
     - icon: ':warning:'
       path: polynomial/lagrange-interpolate.hpp
       title: polynomial/lagrange-interpolate.hpp
-    - icon: ':heavy_check_mark:'
+    - icon: ':question:'
       path: polynomial/ntt.hpp
       title: polynomial/ntt.hpp
   - name: string
@@ -259,7 +262,7 @@ data:
       title: string/z-algorithm.hpp
   - name: .
     pages:
-    - icon: ':heavy_check_mark:'
+    - icon: ':question:'
       path: template.hpp
       title: template.hpp
   - name: tree
@@ -297,6 +300,11 @@ data:
     - icon: ':warning:'
       path: verify/spoj/FASTFLOW.cpp
       title: verify/spoj/FASTFLOW.cpp
+  - name: verify/yosupo/graph
+    pages:
+    - icon: ':warning:'
+      path: verify/yosupo/graph/assignment.cpp
+      title: verify/yosupo/graph/assignment.cpp
   verificationCategories:
   - name: verify/yosupo/convolution
     pages:
@@ -389,6 +397,12 @@ data:
   - name: verify/yosupo/graph
     pages:
     - icon: ':heavy_check_mark:'
+      path: verify/yosupo/graph/general_matching.test.cpp
+      title: verify/yosupo/graph/general_matching.test.cpp
+    - icon: ':heavy_check_mark:'
+      path: verify/yosupo/graph/general_weighted_matching.test.cpp
+      title: verify/yosupo/graph/general_weighted_matching.test.cpp
+    - icon: ':heavy_check_mark:'
       path: verify/yosupo/graph/scc.test.cpp
       title: verify/yosupo/graph/scc.test.cpp
   - name: verify/yosupo/number-theory
@@ -406,13 +420,13 @@ data:
     - icon: ':heavy_check_mark:'
       path: verify/yosupo/polynomial/exp_of_formal_power_series.test.cpp
       title: verify/yosupo/polynomial/exp_of_formal_power_series.test.cpp
-    - icon: ':heavy_check_mark:'
+    - icon: ':x:'
       path: verify/yosupo/polynomial/inv_of_formal_power_series.test.cpp
       title: verify/yosupo/polynomial/inv_of_formal_power_series.test.cpp
-    - icon: ':heavy_check_mark:'
+    - icon: ':x:'
       path: verify/yosupo/polynomial/log_of_formal_power_series.test.cpp
       title: verify/yosupo/polynomial/log_of_formal_power_series.test.cpp
-    - icon: ':heavy_check_mark:'
+    - icon: ':x:'
       path: verify/yosupo/polynomial/pow_of_formal_power_series.test.cpp
       title: verify/yosupo/polynomial/pow_of_formal_power_series.test.cpp
   - name: verify/yosupo/string

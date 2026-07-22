@@ -1,7 +1,10 @@
 ---
 data:
   _extendedDependsOn: []
-  _extendedRequiredBy: []
+  _extendedRequiredBy:
+  - icon: ':warning:'
+    path: polynomial/lagrange-interpolate.hpp
+    title: polynomial/lagrange-interpolate.hpp
   _extendedVerifiedWith: []
   _isVerificationFailed: false
   _pathExtension: hpp
@@ -42,7 +45,8 @@ data:
   dependsOn: []
   isVerificationFile: false
   path: modular-arithmetic/combinatorics.hpp
-  requiredBy: []
+  requiredBy:
+  - polynomial/lagrange-interpolate.hpp
   timestamp: '2024-10-31 23:18:18+07:00'
   verificationStatus: LIBRARY_NO_TESTS
   verifiedWith: []

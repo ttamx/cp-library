@@ -4,7 +4,7 @@ data:
   - icon: ':heavy_check_mark:'
     path: data-structure/dsu.hpp
     title: data-structure/dsu.hpp
-  - icon: ':heavy_check_mark:'
+  - icon: ':question:'
     path: template.hpp
     title: template.hpp
   _extendedRequiredBy: []
@@ -44,9 +44,9 @@ data:
     \        iota(p.begin(),p.end(),0);\n        sz.assign(n,1);\n    }\n    int find(int\
     \ u){\n        return p[u]==u?u:p[u]=find(p[u]);\n    }\n    bool same(int u,int\
     \ v){\n        return find(u)==find(v);\n    }\n    bool merge(int u,int v){\n\
-    \        u=find(u),v=find(v);\n        if(u==v)return false;\n        sz[u]+=sz[v];\n\
-    \        p[v]=u;\n        return true;\n    }\n    int size(int u){\n        return\
-    \ sz[find(u)];\n    }\n};\n\n#line 4 \"verify/yosupo/data-structure/unionfind.test.cpp\"\
+    \        u=find(u),v=find(v);\n        if(u==v)return false;\n        if(sz[u]<sz[v])swap(u,v);\n\
+    \        sz[u]+=sz[v];\n        p[v]=u;\n        return true;\n    }\n    int\
+    \ size(int u){\n        return sz[find(u)];\n    }\n};\n\n#line 4 \"verify/yosupo/data-structure/unionfind.test.cpp\"\
     \n\nint main(){\n    cin.tie(nullptr)->sync_with_stdio(false);\n    int n,q;\n\
     \    cin >> n >> q;\n    DSU dsu(n);\n    while(q--){\n        int t,u,v;\n  \
     \      cin >> t >> u >> v;\n        if(t==0)dsu.merge(u,v);\n        else cout\
@@ -62,7 +62,7 @@ data:
   isVerificationFile: true
   path: verify/yosupo/data-structure/unionfind.test.cpp
   requiredBy: []
-  timestamp: '2026-04-15 22:12:04+07:00'
+  timestamp: '2026-07-22 11:58:01+07:00'
   verificationStatus: TEST_ACCEPTED
   verifiedWith: []
 documentation_of: verify/yosupo/data-structure/unionfind.test.cpp

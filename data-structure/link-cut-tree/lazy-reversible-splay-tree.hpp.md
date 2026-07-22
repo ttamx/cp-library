@@ -127,8 +127,8 @@ data:
   timestamp: '2026-04-15 22:47:01+07:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
-  - verify/yosupo/data-structure/range_affine_range_sum_lct.test.cpp
   - verify/yosupo/data-structure/dynamic_sequence_range_affine_range_sum.test.cpp
+  - verify/yosupo/data-structure/range_affine_range_sum_lct.test.cpp
 documentation_of: data-structure/link-cut-tree/lazy-reversible-splay-tree.hpp
 layout: document
 redirect_from:

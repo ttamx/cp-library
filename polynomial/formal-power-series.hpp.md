@@ -1,10 +1,10 @@
 ---
 data:
   _extendedDependsOn:
-  - icon: ':heavy_check_mark:'
+  - icon: ':question:'
     path: modular-arithmetic/binpow.hpp
     title: modular-arithmetic/binpow.hpp
-  - icon: ':heavy_check_mark:'
+  - icon: ':question:'
     path: polynomial/ntt.hpp
     title: polynomial/ntt.hpp
   _extendedRequiredBy: []
@@ -12,18 +12,18 @@ data:
   - icon: ':heavy_check_mark:'
     path: verify/yosupo/polynomial/exp_of_formal_power_series.test.cpp
     title: verify/yosupo/polynomial/exp_of_formal_power_series.test.cpp
-  - icon: ':heavy_check_mark:'
+  - icon: ':x:'
     path: verify/yosupo/polynomial/inv_of_formal_power_series.test.cpp
     title: verify/yosupo/polynomial/inv_of_formal_power_series.test.cpp
-  - icon: ':heavy_check_mark:'
+  - icon: ':x:'
     path: verify/yosupo/polynomial/log_of_formal_power_series.test.cpp
     title: verify/yosupo/polynomial/log_of_formal_power_series.test.cpp
-  - icon: ':heavy_check_mark:'
+  - icon: ':x:'
     path: verify/yosupo/polynomial/pow_of_formal_power_series.test.cpp
     title: verify/yosupo/polynomial/pow_of_formal_power_series.test.cpp
-  _isVerificationFailed: false
+  _isVerificationFailed: true
   _pathExtension: hpp
-  _verificationStatusIcon: ':heavy_check_mark:'
+  _verificationStatusIcon: ':question:'
   attributes:
     links: []
   bundledCode: "#line 2 \"modular-arithmetic/binpow.hpp\"\n\n/**\n * Author: Teetat\
@@ -162,12 +162,12 @@ data:
   path: polynomial/formal-power-series.hpp
   requiredBy: []
   timestamp: '2026-04-15 21:45:25+07:00'
-  verificationStatus: LIBRARY_ALL_AC
+  verificationStatus: LIBRARY_SOME_WA
   verifiedWith:
   - verify/yosupo/polynomial/exp_of_formal_power_series.test.cpp
   - verify/yosupo/polynomial/log_of_formal_power_series.test.cpp
-  - verify/yosupo/polynomial/pow_of_formal_power_series.test.cpp
   - verify/yosupo/polynomial/inv_of_formal_power_series.test.cpp
+  - verify/yosupo/polynomial/pow_of_formal_power_series.test.cpp
 documentation_of: polynomial/formal-power-series.hpp
 layout: document
 redirect_from:

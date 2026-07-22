@@ -4,7 +4,7 @@ data:
   - icon: ':heavy_check_mark:'
     path: polynomial/fft.hpp
     title: polynomial/fft.hpp
-  - icon: ':heavy_check_mark:'
+  - icon: ':question:'
     path: template.hpp
     title: template.hpp
   _extendedRequiredBy: []
