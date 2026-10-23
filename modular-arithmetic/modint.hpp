@@ -17,6 +17,7 @@ struct ModInt{
     constexpr ModInt():x(0){}
     constexpr ModInt(ll x):x((x%=mod)<0?x+mod:x){}
     constexpr explicit operator int()const{return x;}
+    constexpr int val()const{return x;}
     constexpr static int get_mod(){return mod;}
     constexpr static mint get_root(){return mint(root);}
     

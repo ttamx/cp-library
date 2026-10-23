@@ -11,6 +11,7 @@ template<class mint>
 struct NTT{
 	using vm = vector<mint>;
 	
+	static constexpr ll mod=mint::get_mod();
 	static constexpr mint root=mint::get_root();
     static_assert(root!=0, "root must be nonzero");
 
@@ -19,7 +20,7 @@ struct NTT{
 		vm rt(n);
 		rt[1]=1;
 		for(int k=2,s=2;k<n;k*=2,s++){
-			mint z[]={1,binpow(root,MOD>>s)};
+			mint z[]={1,binpow(root,mod>>s)};
 			for(int i=k;i<2*k;i++)rt[i]=rt[i/2]*z[i&1];
 		}
 		vector<int> rev(n);

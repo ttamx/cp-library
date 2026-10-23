@@ -62,8 +62,8 @@ struct FFT{
 		fft(in1),fft(in2);
 		for(int i=0;i<n;i++){
 			int j=-i&(n-1);
-			out1[j]=(in1[i]+conj(in1[j]))*in2[i]/(2.l*n); // f1 * (g1 + i * g2) = f1 * g1 + i f1 * g2
-			out2[j]=(in1[i]-conj(in1[j]))*in2[i]/cd(0.l,2.l*n); // f2 * (g1 + i * g2) = f2 * g1 + i f2 * g2
+			out1[j]=(in1[i]+conj(in1[j]))*in2[i]/(db(2)*n); // f1 * (g1 + i * g2) = f1 * g1 + i f1 * g2
+			out2[j]=(in1[i]-conj(in1[j]))*in2[i]/cd(db(0),db(2)*n); // f2 * (g1 + i * g2) = f2 * g1 + i f2 * g2
 		}
 		fft(out1),fft(out2);
 		for(int i=0;i<res.size();i++){
