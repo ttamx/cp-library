@@ -1,6 +1,11 @@
 name: verify
 
-on: push
+on:
+  push:
+  workflow_dispatch:
+
+concurrency:
+  group: verify-${{ github.ref }}
 
 jobs:
   verify:
@@ -10,6 +15,7 @@ jobs:
     steps:
     - uses: actions/checkout@v4
       with:
+        ref: ${{ github.ref }}
         fetch-depth: 0
 
     - name: Set up Python
