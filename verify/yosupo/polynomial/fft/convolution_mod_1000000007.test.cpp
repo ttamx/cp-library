@@ -9,7 +9,7 @@ int main(){
     vector<ll> a(n),b(m);
     for(auto &x:a)cin >> x;
     for(auto &x:b)cin >> x;
-    auto c=FFT<ll,MOD2>()(a,b);
+    auto c=FFT<ll,1'000'000'007>()(a,b);
     for(auto x:c)cout << x << " ";
     cout << "\n";
 }
