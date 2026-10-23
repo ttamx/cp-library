@@ -1,13 +1,13 @@
 ---
 data:
   _extendedDependsOn:
-  - icon: ':question:'
+  - icon: ':heavy_check_mark:'
     path: graph/graph-base.hpp
     title: graph/graph-base.hpp
   - icon: ':heavy_check_mark:'
     path: graph/strongly-connected-component.hpp
     title: graph/strongly-connected-component.hpp
-  - icon: ':question:'
+  - icon: ':heavy_check_mark:'
     path: template.hpp
     title: template.hpp
   _extendedRequiredBy: []

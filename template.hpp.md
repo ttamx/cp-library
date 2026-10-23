@@ -51,7 +51,7 @@ data:
   - icon: ':heavy_check_mark:'
     path: verify/yosupo/data-structure/bbst/splay-tree/range_reverse_range_sum.test.cpp
     title: verify/yosupo/data-structure/bbst/splay-tree/range_reverse_range_sum.test.cpp
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: verify/yosupo/data-structure/bbst/treap/range_reverse_range_sum.test.cpp
     title: verify/yosupo/data-structure/bbst/treap/range_reverse_range_sum.test.cpp
   - icon: ':heavy_check_mark:'
@@ -132,60 +132,60 @@ data:
   - icon: ':heavy_check_mark:'
     path: verify/yosupo/polynomial/formal-power-series/exp_of_formal_power_series.test.cpp
     title: verify/yosupo/polynomial/formal-power-series/exp_of_formal_power_series.test.cpp
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: verify/yosupo/polynomial/formal-power-series/inv_of_formal_power_series.test.cpp
     title: verify/yosupo/polynomial/formal-power-series/inv_of_formal_power_series.test.cpp
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: verify/yosupo/polynomial/formal-power-series/log_of_formal_power_series.test.cpp
     title: verify/yosupo/polynomial/formal-power-series/log_of_formal_power_series.test.cpp
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: verify/yosupo/polynomial/formal-power-series/pow_of_formal_power_series.test.cpp
     title: verify/yosupo/polynomial/formal-power-series/pow_of_formal_power_series.test.cpp
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: verify/yosupo/polynomial/ntt/convolution_mod.test.cpp
     title: verify/yosupo/polynomial/ntt/convolution_mod.test.cpp
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: verify/yosupo/string/manacher/enumerate_palindromes.test.cpp
     title: verify/yosupo/string/manacher/enumerate_palindromes.test.cpp
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: verify/yosupo/string/suffix-array/number_of_substrings.test.cpp
     title: verify/yosupo/string/suffix-array/number_of_substrings.test.cpp
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: verify/yosupo/string/suffix-array/suffixarray.test.cpp
     title: verify/yosupo/string/suffix-array/suffixarray.test.cpp
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: verify/yosupo/string/suffix-automaton/number_of_substrings.test.cpp
     title: verify/yosupo/string/suffix-automaton/number_of_substrings.test.cpp
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: verify/yosupo/string/z-algorithm/zalgorithm.test.cpp
     title: verify/yosupo/string/z-algorithm/zalgorithm.test.cpp
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: verify/yosupo/template/aplusb.test.cpp
     title: verify/yosupo/template/aplusb.test.cpp
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: verify/yosupo/tree/hld/jump_on_tree.test.cpp
     title: verify/yosupo/tree/hld/jump_on_tree.test.cpp
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: verify/yosupo/tree/hld/lca.test.cpp
     title: verify/yosupo/tree/hld/lca.test.cpp
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: verify/yosupo/tree/hld/vertex_add_path_sum.test.cpp
     title: verify/yosupo/tree/hld/vertex_add_path_sum.test.cpp
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: verify/yosupo/tree/hld/vertex_add_subtree_sum.test.cpp
     title: verify/yosupo/tree/hld/vertex_add_subtree_sum.test.cpp
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: verify/yosupo/tree/hld/vertex_set_path_composite.test.cpp
     title: verify/yosupo/tree/hld/vertex_set_path_composite.test.cpp
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: verify/yosupo/tree/static-top-tree-dp/point_set_tree_path_composite_sum_fixed_root.test.cpp
     title: verify/yosupo/tree/static-top-tree-dp/point_set_tree_path_composite_sum_fixed_root.test.cpp
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: verify/yosupo/tree/static-top-tree-rerooting-dp/point_set_tree_path_composite_sum.test.cpp
     title: verify/yosupo/tree/static-top-tree-rerooting-dp/point_set_tree_path_composite_sum.test.cpp
-  _isVerificationFailed: true
+  _isVerificationFailed: false
   _pathExtension: hpp
-  _verificationStatusIcon: ':question:'
+  _verificationStatusIcon: ':heavy_check_mark:'
   attributes:
     links: []
   bundledCode: "#line 2 \"template.hpp\"\n#include<bits/stdc++.h>\n\nusing namespace\
@@ -258,7 +258,7 @@ data:
   - data-structure/fast-set.hpp
   - data-structure/cartesian-tree.hpp
   timestamp: '2026-10-24 00:09:28+07:00'
-  verificationStatus: LIBRARY_SOME_WA
+  verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
   - verify/yosupo/convolution/xor-convolution/bitwise_xor_convolution.test.cpp
   - verify/yosupo/convolution/or-convolution/bitwise_and_convolution.test.cpp
