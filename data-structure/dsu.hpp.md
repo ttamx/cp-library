@@ -4,8 +4,8 @@ data:
   _extendedRequiredBy: []
   _extendedVerifiedWith:
   - icon: ':heavy_check_mark:'
-    path: verify/yosupo/data-structure/unionfind.test.cpp
-    title: verify/yosupo/data-structure/unionfind.test.cpp
+    path: verify/yosupo/data-structure/dsu/unionfind.test.cpp
+    title: verify/yosupo/data-structure/dsu/unionfind.test.cpp
   _isVerificationFailed: false
   _pathExtension: hpp
   _verificationStatusIcon: ':heavy_check_mark:'
@@ -37,7 +37,7 @@ data:
   timestamp: '2026-07-22 11:58:01+07:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
-  - verify/yosupo/data-structure/unionfind.test.cpp
+  - verify/yosupo/data-structure/dsu/unionfind.test.cpp
 documentation_of: data-structure/dsu.hpp
 layout: document
 redirect_from:

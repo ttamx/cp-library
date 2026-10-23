@@ -1,7 +1,7 @@
 ---
 data:
   _extendedDependsOn:
-  - icon: ':heavy_check_mark:'
+  - icon: ':question:'
     path: group/monoid/add.hpp
     title: group/monoid/add.hpp
   - icon: ':warning:'
@@ -24,10 +24,10 @@ data:
     struct MaxIdxMonoid{\n    using P = pair<T,IDX>;\n    using value_type = P;\n\
     \    static constexpr P op(const P &x,const P &y){\n        if(x.first>y.first)return\
     \ x;\n        if(x.first<y.first)return y;\n        return tie_is_left?x:y;\n\
-    \    }\n    static constexpr P unit(){return P(numeric_limits<T>::min(),IDX(-1));}\n\
+    \    }\n    static constexpr P unit(){return P(numeric_limits<T>::lowest(),IDX(-1));}\n\
     };\n\n#line 4 \"group/monoid-action/max-idx-add.hpp\"\n\n/**\n * Author: Teetat\
     \ T.\n * Date: 2024-04-14\n * Description: Add to Max Action class.\n */\n\ntemplate<class\
-    \ T,class IDX=int,bool tie_is_left=true>\nstruct MaxAddIdxAction{\n    using InfoMonoid\
+    \ T,class IDX=int,bool tie_is_left=true>\nstruct MaxIdxAddAction{\n    using InfoMonoid\
     \ = MaxIdxMonoid<T,IDX,tie_is_left>;\n    using TagMonoid = AddMonoid<T>;\n  \
     \  using Info = typename InfoMonoid::value_type;\n    using Tag = typename TagMonoid::value_type;\n\
     \    static constexpr Info op(const Info &a,const Tag &b){\n        return (a==InfoMonoid::unit()?a:Info(a.first+b,a.second));\n\
@@ -35,7 +35,7 @@ data:
   code: "#pragma once\n#include \"group/monoid/add.hpp\"\n#include \"group/monoid/max-idx.hpp\"\
     \n\n/**\n * Author: Teetat T.\n * Date: 2024-04-14\n * Description: Add to Max\
     \ Action class.\n */\n\ntemplate<class T,class IDX=int,bool tie_is_left=true>\n\
-    struct MaxAddIdxAction{\n    using InfoMonoid = MaxIdxMonoid<T,IDX,tie_is_left>;\n\
+    struct MaxIdxAddAction{\n    using InfoMonoid = MaxIdxMonoid<T,IDX,tie_is_left>;\n\
     \    using TagMonoid = AddMonoid<T>;\n    using Info = typename InfoMonoid::value_type;\n\
     \    using Tag = typename TagMonoid::value_type;\n    static constexpr Info op(const\
     \ Info &a,const Tag &b){\n        return (a==InfoMonoid::unit()?a:Info(a.first+b,a.second));\n\
@@ -46,7 +46,7 @@ data:
   isVerificationFile: false
   path: group/monoid-action/max-idx-add.hpp
   requiredBy: []
-  timestamp: '2025-03-14 23:36:46+07:00'
+  timestamp: '2026-10-23 21:54:40+07:00'
   verificationStatus: LIBRARY_NO_TESTS
   verifiedWith: []
 documentation_of: group/monoid-action/max-idx-add.hpp

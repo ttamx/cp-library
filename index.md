@@ -21,6 +21,14 @@ data:
     - icon: ':heavy_check_mark:'
       path: convolution/xor-convolution.hpp
       title: convolution/xor-convolution.hpp
+  - name: data-structure/bbst
+    pages:
+    - icon: ':heavy_check_mark:'
+      path: data-structure/bbst/splay-tree.hpp
+      title: data-structure/bbst/splay-tree.hpp
+    - icon: ':x:'
+      path: data-structure/bbst/treap.hpp
+      title: data-structure/bbst/treap.hpp
   - name: data-structure
     pages:
     - icon: ':heavy_check_mark:'
@@ -38,13 +46,13 @@ data:
     - icon: ':heavy_check_mark:'
       path: data-structure/fast-set.hpp
       title: data-structure/fast-set.hpp
-    - icon: ':heavy_check_mark:'
+    - icon: ':question:'
       path: data-structure/fenwick-tree.hpp
       title: data-structure/fenwick-tree.hpp
-    - icon: ':heavy_check_mark:'
+    - icon: ':x:'
       path: data-structure/persistent-queue.hpp
       title: data-structure/persistent-queue.hpp
-    - icon: ':heavy_check_mark:'
+    - icon: ':x:'
       path: data-structure/sparse-table.hpp
       title: data-structure/sparse-table.hpp
   - name: data-structure/convex
@@ -55,7 +63,7 @@ data:
     - icon: ':heavy_check_mark:'
       path: data-structure/convex/li-chao-tree.hpp
       title: data-structure/convex/li-chao-tree.hpp
-    - icon: ':warning:'
+    - icon: ':heavy_check_mark:'
       path: data-structure/convex/line-container.hpp
       title: data-structure/convex/line-container.hpp
   - name: data-structure/link-cut-tree
@@ -86,13 +94,13 @@ data:
       title: data-structure/link-cut-tree/splay-tree-base.hpp
   - name: data-structure/segment-tree
     pages:
-    - icon: ':heavy_check_mark:'
+    - icon: ':x:'
       path: data-structure/segment-tree/dynamic-segment-tree.hpp
       title: data-structure/segment-tree/dynamic-segment-tree.hpp
-    - icon: ':heavy_check_mark:'
+    - icon: ':x:'
       path: data-structure/segment-tree/lazy-segment-tree.hpp
       title: data-structure/segment-tree/lazy-segment-tree.hpp
-    - icon: ':heavy_check_mark:'
+    - icon: ':x:'
       path: data-structure/segment-tree/segment-tree.hpp
       title: data-structure/segment-tree/segment-tree.hpp
   - name: flow
@@ -103,10 +111,10 @@ data:
     - icon: ':warning:'
       path: flow/dinic.hpp
       title: flow/dinic.hpp
-    - icon: ':heavy_check_mark:'
+    - icon: ':x:'
       path: flow/general-matching.hpp
       title: flow/general-matching.hpp
-    - icon: ':heavy_check_mark:'
+    - icon: ':x:'
       path: flow/general-weighted-matching.hpp
       title: flow/general-weighted-matching.hpp
     - icon: ':warning:'
@@ -120,27 +128,27 @@ data:
       title: flow/min-cost-flow.hpp
   - name: graph
     pages:
-    - icon: ':heavy_check_mark:'
+    - icon: ':x:'
       path: graph/graph-base.hpp
       title: graph/graph-base.hpp
     - icon: ':warning:'
       path: graph/low-link.hpp
       title: graph/low-link.hpp
-    - icon: ':heavy_check_mark:'
+    - icon: ':x:'
       path: graph/strongly-connected-component.hpp
       title: graph/strongly-connected-component.hpp
-    - icon: ':heavy_check_mark:'
+    - icon: ':x:'
       path: graph/twosat.hpp
       title: graph/twosat.hpp
   - name: group/monoid
     pages:
-    - icon: ':heavy_check_mark:'
+    - icon: ':question:'
       path: group/monoid/add-count.hpp
       title: group/monoid/add-count.hpp
-    - icon: ':heavy_check_mark:'
+    - icon: ':question:'
       path: group/monoid/add.hpp
       title: group/monoid/add.hpp
-    - icon: ':heavy_check_mark:'
+    - icon: ':question:'
       path: group/monoid/affine.hpp
       title: group/monoid/affine.hpp
     - icon: ':warning:'
@@ -152,13 +160,13 @@ data:
     - icon: ':warning:'
       path: group/monoid/max.hpp
       title: group/monoid/max.hpp
-    - icon: ':heavy_check_mark:'
+    - icon: ':x:'
       path: group/monoid/min-count.hpp
       title: group/monoid/min-count.hpp
     - icon: ':warning:'
       path: group/monoid/min-idx.hpp
       title: group/monoid/min-idx.hpp
-    - icon: ':heavy_check_mark:'
+    - icon: ':x:'
       path: group/monoid/min.hpp
       title: group/monoid/min.hpp
     - icon: ':warning:'
@@ -167,7 +175,7 @@ data:
     - icon: ':warning:'
       path: group/monoid/monoid-base.hpp
       title: group/monoid/monoid-base.hpp
-    - icon: ':heavy_check_mark:'
+    - icon: ':x:'
       path: group/monoid/monoid-reverse.hpp
       title: group/monoid/monoid-reverse.hpp
     - icon: ':warning:'
@@ -178,7 +186,7 @@ data:
     - icon: ':warning:'
       path: group/monoid-action/add-count-add.hpp
       title: group/monoid-action/add-count-add.hpp
-    - icon: ':heavy_check_mark:'
+    - icon: ':question:'
       path: group/monoid-action/add-count-affine.hpp
       title: group/monoid-action/add-count-affine.hpp
     - icon: ':warning:'
@@ -196,7 +204,7 @@ data:
     - icon: ':warning:'
       path: group/monoid-action/min-add.hpp
       title: group/monoid-action/min-add.hpp
-    - icon: ':heavy_check_mark:'
+    - icon: ':x:'
       path: group/monoid-action/min-count-add.hpp
       title: group/monoid-action/min-count-add.hpp
     - icon: ':warning:'
@@ -212,7 +220,7 @@ data:
       title: linear-algebra/matrix.hpp
   - name: modular-arithmetic
     pages:
-    - icon: ':heavy_check_mark:'
+    - icon: ':x:'
       path: modular-arithmetic/binpow.hpp
       title: modular-arithmetic/binpow.hpp
     - icon: ':warning:'
@@ -221,7 +229,7 @@ data:
     - icon: ':warning:'
       path: modular-arithmetic/dynamic-modint.hpp
       title: modular-arithmetic/dynamic-modint.hpp
-    - icon: ':heavy_check_mark:'
+    - icon: ':question:'
       path: modular-arithmetic/modint.hpp
       title: modular-arithmetic/modint.hpp
     - icon: ':warning:'
@@ -229,57 +237,57 @@ data:
       title: modular-arithmetic/montgomery-modint.hpp
   - name: number-theory
     pages:
-    - icon: ':heavy_check_mark:'
+    - icon: ':x:'
       path: number-theory/floor-sum.hpp
       title: number-theory/floor-sum.hpp
   - name: polynomial
     pages:
-    - icon: ':heavy_check_mark:'
+    - icon: ':x:'
       path: polynomial/fft.hpp
       title: polynomial/fft.hpp
-    - icon: ':heavy_check_mark:'
+    - icon: ':x:'
       path: polynomial/formal-power-series.hpp
       title: polynomial/formal-power-series.hpp
     - icon: ':warning:'
       path: polynomial/lagrange-interpolate.hpp
       title: polynomial/lagrange-interpolate.hpp
-    - icon: ':heavy_check_mark:'
+    - icon: ':x:'
       path: polynomial/ntt.hpp
       title: polynomial/ntt.hpp
   - name: string
     pages:
-    - icon: ':heavy_check_mark:'
+    - icon: ':x:'
       path: string/manacher.hpp
       title: string/manacher.hpp
     - icon: ':warning:'
       path: string/prefix-function.hpp
       title: string/prefix-function.hpp
-    - icon: ':heavy_check_mark:'
+    - icon: ':x:'
       path: string/suffix-array.hpp
       title: string/suffix-array.hpp
-    - icon: ':heavy_check_mark:'
+    - icon: ':x:'
       path: string/suffix-automaton.hpp
       title: string/suffix-automaton.hpp
-    - icon: ':heavy_check_mark:'
+    - icon: ':x:'
       path: string/z-algorithm.hpp
       title: string/z-algorithm.hpp
   - name: .
     pages:
-    - icon: ':heavy_check_mark:'
+    - icon: ':question:'
       path: template.hpp
       title: template.hpp
   - name: tree
     pages:
-    - icon: ':heavy_check_mark:'
+    - icon: ':x:'
       path: tree/hld.hpp
       title: tree/hld.hpp
-    - icon: ':heavy_check_mark:'
+    - icon: ':x:'
       path: tree/static-top-tree-dp.hpp
       title: tree/static-top-tree-dp.hpp
-    - icon: ':heavy_check_mark:'
+    - icon: ':x:'
       path: tree/static-top-tree-rerooting-dp.hpp
       title: tree/static-top-tree-rerooting-dp.hpp
-    - icon: ':heavy_check_mark:'
+    - icon: ':x:'
       path: tree/static-top-tree.hpp
       title: tree/static-top-tree.hpp
   - name: verify/atcoder
@@ -303,167 +311,241 @@ data:
     - icon: ':warning:'
       path: verify/spoj/FASTFLOW.cpp
       title: verify/spoj/FASTFLOW.cpp
-  - name: verify/yosupo/graph
-    pages:
-    - icon: ':warning:'
-      path: verify/yosupo/graph/assignment.cpp
-      title: verify/yosupo/graph/assignment.cpp
   verificationCategories:
-  - name: verify/yosupo/convolution
+  - name: verify/yosupo/convolution/and-convolution
     pages:
     - icon: ':heavy_check_mark:'
-      path: verify/yosupo/convolution/bitwise_and_convolution.test.cpp
-      title: verify/yosupo/convolution/bitwise_and_convolution.test.cpp
-    - icon: ':heavy_check_mark:'
-      path: verify/yosupo/convolution/bitwise_or_convolution.test.cpp
-      title: verify/yosupo/convolution/bitwise_or_convolution.test.cpp
-    - icon: ':heavy_check_mark:'
-      path: verify/yosupo/convolution/bitwise_xor_convolution.test.cpp
-      title: verify/yosupo/convolution/bitwise_xor_convolution.test.cpp
-    - icon: ':heavy_check_mark:'
-      path: verify/yosupo/convolution/convolution_mod.test.cpp
-      title: verify/yosupo/convolution/convolution_mod.test.cpp
-    - icon: ':heavy_check_mark:'
-      path: verify/yosupo/convolution/convolution_mod_1000000007.test.cpp
-      title: verify/yosupo/convolution/convolution_mod_1000000007.test.cpp
-    - icon: ':heavy_check_mark:'
-      path: verify/yosupo/convolution/gcd_convolution.test.cpp
-      title: verify/yosupo/convolution/gcd_convolution.test.cpp
-    - icon: ':heavy_check_mark:'
-      path: verify/yosupo/convolution/lcm_convolution.test.cpp
-      title: verify/yosupo/convolution/lcm_convolution.test.cpp
-    - icon: ':heavy_check_mark:'
-      path: verify/yosupo/convolution/min_plus_convolution_convex_arbitrary.test.cpp
-      title: verify/yosupo/convolution/min_plus_convolution_convex_arbitrary.test.cpp
-  - name: verify/yosupo/data-structure
+      path: verify/yosupo/convolution/and-convolution/bitwise_and_convolution.test.cpp
+      title: verify/yosupo/convolution/and-convolution/bitwise_and_convolution.test.cpp
+  - name: verify/yosupo/convolution/gcd-convolution
     pages:
     - icon: ':heavy_check_mark:'
-      path: verify/yosupo/data-structure/area_of_union_of_rectangles.test.cpp
-      title: verify/yosupo/data-structure/area_of_union_of_rectangles.test.cpp
-    - icon: ':heavy_check_mark:'
-      path: verify/yosupo/data-structure/dynamic_sequence_range_affine_range_sum.test.cpp
-      title: verify/yosupo/data-structure/dynamic_sequence_range_affine_range_sum.test.cpp
-    - icon: ':heavy_check_mark:'
-      path: verify/yosupo/data-structure/line_add_get_min.test.cpp
-      title: verify/yosupo/data-structure/line_add_get_min.test.cpp
-    - icon: ':heavy_check_mark:'
-      path: verify/yosupo/data-structure/persistent_queue.test.cpp
-      title: verify/yosupo/data-structure/persistent_queue.test.cpp
-    - icon: ':heavy_check_mark:'
-      path: verify/yosupo/data-structure/point_add_range_sum.test.cpp
-      title: verify/yosupo/data-structure/point_add_range_sum.test.cpp
-    - icon: ':heavy_check_mark:'
-      path: verify/yosupo/data-structure/point_set_range_composite.test.cpp
-      title: verify/yosupo/data-structure/point_set_range_composite.test.cpp
-    - icon: ':heavy_check_mark:'
-      path: verify/yosupo/data-structure/point_set_tree_path_composite_sum.test.cpp
-      title: verify/yosupo/data-structure/point_set_tree_path_composite_sum.test.cpp
-    - icon: ':heavy_check_mark:'
-      path: verify/yosupo/data-structure/point_set_tree_path_composite_sum_fixed_root.test.cpp
-      title: verify/yosupo/data-structure/point_set_tree_path_composite_sum_fixed_root.test.cpp
-    - icon: ':heavy_check_mark:'
-      path: verify/yosupo/data-structure/predecessor_problem.test.cpp
-      title: verify/yosupo/data-structure/predecessor_problem.test.cpp
-    - icon: ':heavy_check_mark:'
-      path: verify/yosupo/data-structure/range_affine_range_sum.test.cpp
-      title: verify/yosupo/data-structure/range_affine_range_sum.test.cpp
-    - icon: ':heavy_check_mark:'
-      path: verify/yosupo/data-structure/range_affine_range_sum_lct.test.cpp
-      title: verify/yosupo/data-structure/range_affine_range_sum_lct.test.cpp
-    - icon: ':heavy_check_mark:'
-      path: verify/yosupo/data-structure/range_reverse_range_sum.test.cpp
-      title: verify/yosupo/data-structure/range_reverse_range_sum.test.cpp
-    - icon: ':heavy_check_mark:'
-      path: verify/yosupo/data-structure/segment_add_get_min.test.cpp
-      title: verify/yosupo/data-structure/segment_add_get_min.test.cpp
-    - icon: ':heavy_check_mark:'
-      path: verify/yosupo/data-structure/segment_add_get_min_online.test.cpp
-      title: verify/yosupo/data-structure/segment_add_get_min_online.test.cpp
-    - icon: ':heavy_check_mark:'
-      path: verify/yosupo/data-structure/set_xor_min.test.cpp
-      title: verify/yosupo/data-structure/set_xor_min.test.cpp
-    - icon: ':heavy_check_mark:'
-      path: verify/yosupo/data-structure/staticrmq.test.cpp
-      title: verify/yosupo/data-structure/staticrmq.test.cpp
-    - icon: ':heavy_check_mark:'
-      path: verify/yosupo/data-structure/unionfind.test.cpp
-      title: verify/yosupo/data-structure/unionfind.test.cpp
-    - icon: ':heavy_check_mark:'
-      path: verify/yosupo/data-structure/vertex_add_path_sum.test.cpp
-      title: verify/yosupo/data-structure/vertex_add_path_sum.test.cpp
-    - icon: ':heavy_check_mark:'
-      path: verify/yosupo/data-structure/vertex_add_subtree_sum.test.cpp
-      title: verify/yosupo/data-structure/vertex_add_subtree_sum.test.cpp
-    - icon: ':heavy_check_mark:'
-      path: verify/yosupo/data-structure/vertex_set_path_composite.test.cpp
-      title: verify/yosupo/data-structure/vertex_set_path_composite.test.cpp
-  - name: verify/yosupo/graph
+      path: verify/yosupo/convolution/gcd-convolution/gcd_convolution.test.cpp
+      title: verify/yosupo/convolution/gcd-convolution/gcd_convolution.test.cpp
+  - name: verify/yosupo/convolution/lcm-convolution
     pages:
     - icon: ':heavy_check_mark:'
-      path: verify/yosupo/graph/general_matching.test.cpp
-      title: verify/yosupo/graph/general_matching.test.cpp
-    - icon: ':heavy_check_mark:'
-      path: verify/yosupo/graph/general_weighted_matching.test.cpp
-      title: verify/yosupo/graph/general_weighted_matching.test.cpp
-    - icon: ':heavy_check_mark:'
-      path: verify/yosupo/graph/scc.test.cpp
-      title: verify/yosupo/graph/scc.test.cpp
-  - name: verify/yosupo/linear-algebra
+      path: verify/yosupo/convolution/lcm-convolution/lcm_convolution.test.cpp
+      title: verify/yosupo/convolution/lcm-convolution/lcm_convolution.test.cpp
+  - name: verify/yosupo/convolution/max-plus-convolution
     pages:
     - icon: ':heavy_check_mark:'
-      path: verify/yosupo/linear-algebra/matrix_product_mod_2.test.cpp
-      title: verify/yosupo/linear-algebra/matrix_product_mod_2.test.cpp
-  - name: verify/yosupo/number-theory
+      path: verify/yosupo/convolution/max-plus-convolution/min_plus_convolution_convex_arbitrary.test.cpp
+      title: verify/yosupo/convolution/max-plus-convolution/min_plus_convolution_convex_arbitrary.test.cpp
+  - name: verify/yosupo/convolution/or-convolution
     pages:
     - icon: ':heavy_check_mark:'
-      path: verify/yosupo/number-theory/sum_of_floor_of_linear.test.cpp
-      title: verify/yosupo/number-theory/sum_of_floor_of_linear.test.cpp
-  - name: verify/yosupo/other
+      path: verify/yosupo/convolution/or-convolution/bitwise_and_convolution.test.cpp
+      title: verify/yosupo/convolution/or-convolution/bitwise_and_convolution.test.cpp
+  - name: verify/yosupo/convolution/xor-convolution
     pages:
     - icon: ':heavy_check_mark:'
-      path: verify/yosupo/other/two_sat.test.cpp
-      title: verify/yosupo/other/two_sat.test.cpp
-  - name: verify/yosupo/polynomial
+      path: verify/yosupo/convolution/xor-convolution/bitwise_xor_convolution.test.cpp
+      title: verify/yosupo/convolution/xor-convolution/bitwise_xor_convolution.test.cpp
+  - name: verify/yosupo/data-structure/bbst/splay-tree
     pages:
     - icon: ':heavy_check_mark:'
-      path: verify/yosupo/polynomial/exp_of_formal_power_series.test.cpp
-      title: verify/yosupo/polynomial/exp_of_formal_power_series.test.cpp
-    - icon: ':heavy_check_mark:'
-      path: verify/yosupo/polynomial/inv_of_formal_power_series.test.cpp
-      title: verify/yosupo/polynomial/inv_of_formal_power_series.test.cpp
-    - icon: ':heavy_check_mark:'
-      path: verify/yosupo/polynomial/log_of_formal_power_series.test.cpp
-      title: verify/yosupo/polynomial/log_of_formal_power_series.test.cpp
-    - icon: ':heavy_check_mark:'
-      path: verify/yosupo/polynomial/pow_of_formal_power_series.test.cpp
-      title: verify/yosupo/polynomial/pow_of_formal_power_series.test.cpp
-  - name: verify/yosupo/string
+      path: verify/yosupo/data-structure/bbst/splay-tree/range_reverse_range_sum.test.cpp
+      title: verify/yosupo/data-structure/bbst/splay-tree/range_reverse_range_sum.test.cpp
+  - name: verify/yosupo/data-structure/bbst/treap
+    pages:
+    - icon: ':x:'
+      path: verify/yosupo/data-structure/bbst/treap/range_reverse_range_sum.test.cpp
+      title: verify/yosupo/data-structure/bbst/treap/range_reverse_range_sum.test.cpp
+  - name: verify/yosupo/data-structure/binary-trie
     pages:
     - icon: ':heavy_check_mark:'
-      path: verify/yosupo/string/enumerate_palindromes.test.cpp
-      title: verify/yosupo/string/enumerate_palindromes.test.cpp
-    - icon: ':heavy_check_mark:'
-      path: verify/yosupo/string/number_of_substrings.test.cpp
-      title: verify/yosupo/string/number_of_substrings.test.cpp
-    - icon: ':heavy_check_mark:'
-      path: verify/yosupo/string/number_of_substrings2.test.cpp
-      title: verify/yosupo/string/number_of_substrings2.test.cpp
-    - icon: ':heavy_check_mark:'
-      path: verify/yosupo/string/suffixarray.test.cpp
-      title: verify/yosupo/string/suffixarray.test.cpp
-    - icon: ':heavy_check_mark:'
-      path: verify/yosupo/string/zalgorithm.test.cpp
-      title: verify/yosupo/string/zalgorithm.test.cpp
-  - name: verify/yosupo/tree
+      path: verify/yosupo/data-structure/binary-trie/set_xor_min.test.cpp
+      title: verify/yosupo/data-structure/binary-trie/set_xor_min.test.cpp
+  - name: verify/yosupo/data-structure/bitset
     pages:
     - icon: ':heavy_check_mark:'
-      path: verify/yosupo/tree/cartesian_tree.test.cpp
-      title: verify/yosupo/tree/cartesian_tree.test.cpp
+      path: verify/yosupo/data-structure/bitset/matrix_product_mod_2.test.cpp
+      title: verify/yosupo/data-structure/bitset/matrix_product_mod_2.test.cpp
+  - name: verify/yosupo/data-structure/cartesian-tree
+    pages:
     - icon: ':heavy_check_mark:'
-      path: verify/yosupo/tree/jump_on_tree.test.cpp
-      title: verify/yosupo/tree/jump_on_tree.test.cpp
+      path: verify/yosupo/data-structure/cartesian-tree/cartesian_tree.test.cpp
+      title: verify/yosupo/data-structure/cartesian-tree/cartesian_tree.test.cpp
+  - name: verify/yosupo/data-structure/convex/dynamic-li-chao-tree
+    pages:
     - icon: ':heavy_check_mark:'
-      path: verify/yosupo/tree/lca.test.cpp
-      title: verify/yosupo/tree/lca.test.cpp
+      path: verify/yosupo/data-structure/convex/dynamic-li-chao-tree/segment_add_get_min.test.cpp
+      title: verify/yosupo/data-structure/convex/dynamic-li-chao-tree/segment_add_get_min.test.cpp
+  - name: verify/yosupo/data-structure/convex/li-chao-tree
+    pages:
+    - icon: ':heavy_check_mark:'
+      path: verify/yosupo/data-structure/convex/li-chao-tree/line_add_get_min.test.cpp
+      title: verify/yosupo/data-structure/convex/li-chao-tree/line_add_get_min.test.cpp
+    - icon: ':heavy_check_mark:'
+      path: verify/yosupo/data-structure/convex/li-chao-tree/segment_add_get_min.test.cpp
+      title: verify/yosupo/data-structure/convex/li-chao-tree/segment_add_get_min.test.cpp
+  - name: verify/yosupo/data-structure/convex/line-container
+    pages:
+    - icon: ':heavy_check_mark:'
+      path: verify/yosupo/data-structure/convex/line-container/line_add_get_min.test.cpp
+      title: verify/yosupo/data-structure/convex/line-container/line_add_get_min.test.cpp
+  - name: verify/yosupo/data-structure/dsu
+    pages:
+    - icon: ':heavy_check_mark:'
+      path: verify/yosupo/data-structure/dsu/unionfind.test.cpp
+      title: verify/yosupo/data-structure/dsu/unionfind.test.cpp
+  - name: verify/yosupo/data-structure/fast-set
+    pages:
+    - icon: ':heavy_check_mark:'
+      path: verify/yosupo/data-structure/fast-set/predecessor_problem.test.cpp
+      title: verify/yosupo/data-structure/fast-set/predecessor_problem.test.cpp
+  - name: verify/yosupo/data-structure/fenwick-tree
+    pages:
+    - icon: ':heavy_check_mark:'
+      path: verify/yosupo/data-structure/fenwick-tree/point_add_range_sum.test.cpp
+      title: verify/yosupo/data-structure/fenwick-tree/point_add_range_sum.test.cpp
+  - name: verify/yosupo/data-structure/link-cut-tree/lazy-link-cut-tree
+    pages:
+    - icon: ':heavy_check_mark:'
+      path: verify/yosupo/data-structure/link-cut-tree/lazy-link-cut-tree/range_affine_range_sum.test.cpp
+      title: verify/yosupo/data-structure/link-cut-tree/lazy-link-cut-tree/range_affine_range_sum.test.cpp
+  - name: verify/yosupo/data-structure/link-cut-tree/lazy-reversible-splay-tree
+    pages:
+    - icon: ':heavy_check_mark:'
+      path: verify/yosupo/data-structure/link-cut-tree/lazy-reversible-splay-tree/dynamic_sequence_range_affine_range_sum.test.cpp
+      title: verify/yosupo/data-structure/link-cut-tree/lazy-reversible-splay-tree/dynamic_sequence_range_affine_range_sum.test.cpp
+  - name: verify/yosupo/data-structure/link-cut-tree/reversible-splay-tree
+    pages:
+    - icon: ':heavy_check_mark:'
+      path: verify/yosupo/data-structure/link-cut-tree/reversible-splay-tree/range_reverse_range_sum.test.cpp
+      title: verify/yosupo/data-structure/link-cut-tree/reversible-splay-tree/range_reverse_range_sum.test.cpp
+  - name: verify/yosupo/data-structure/persistent-queue
+    pages:
+    - icon: ':x:'
+      path: verify/yosupo/data-structure/persistent-queue/persistent_queue.test.cpp
+      title: verify/yosupo/data-structure/persistent-queue/persistent_queue.test.cpp
+  - name: verify/yosupo/data-structure/segment-tree/dynamic-segment-tree
+    pages:
+    - icon: ':x:'
+      path: verify/yosupo/data-structure/segment-tree/dynamic-segment-tree/area_of_union_of_rectangles.test.cpp
+      title: verify/yosupo/data-structure/segment-tree/dynamic-segment-tree/area_of_union_of_rectangles.test.cpp
+  - name: verify/yosupo/data-structure/segment-tree/lazy-segment-tree
+    pages:
+    - icon: ':x:'
+      path: verify/yosupo/data-structure/segment-tree/lazy-segment-tree/range_affine_range_sum.test.cpp
+      title: verify/yosupo/data-structure/segment-tree/lazy-segment-tree/range_affine_range_sum.test.cpp
+  - name: verify/yosupo/data-structure/segment-tree/segment-tree
+    pages:
+    - icon: ':x:'
+      path: verify/yosupo/data-structure/segment-tree/segment-tree/point_set_range_composite.test.cpp
+      title: verify/yosupo/data-structure/segment-tree/segment-tree/point_set_range_composite.test.cpp
+  - name: verify/yosupo/data-structure/sparse-table
+    pages:
+    - icon: ':x:'
+      path: verify/yosupo/data-structure/sparse-table/staticrmq.test.cpp
+      title: verify/yosupo/data-structure/sparse-table/staticrmq.test.cpp
+  - name: verify/yosupo/flow/general-matching
+    pages:
+    - icon: ':x:'
+      path: verify/yosupo/flow/general-matching/general_matching.test.cpp
+      title: verify/yosupo/flow/general-matching/general_matching.test.cpp
+  - name: verify/yosupo/flow/general-weighted-matching
+    pages:
+    - icon: ':x:'
+      path: verify/yosupo/flow/general-weighted-matching/assignment.test.cpp
+      title: verify/yosupo/flow/general-weighted-matching/assignment.test.cpp
+    - icon: ':x:'
+      path: verify/yosupo/flow/general-weighted-matching/general_weighted_matching.test.cpp
+      title: verify/yosupo/flow/general-weighted-matching/general_weighted_matching.test.cpp
+  - name: verify/yosupo/graph/strongly-connected-component
+    pages:
+    - icon: ':x:'
+      path: verify/yosupo/graph/strongly-connected-component/scc.test.cpp
+      title: verify/yosupo/graph/strongly-connected-component/scc.test.cpp
+  - name: verify/yosupo/graph/twosat
+    pages:
+    - icon: ':x:'
+      path: verify/yosupo/graph/twosat/two_sat.test.cpp
+      title: verify/yosupo/graph/twosat/two_sat.test.cpp
+  - name: verify/yosupo/number-theory/floor-sum
+    pages:
+    - icon: ':x:'
+      path: verify/yosupo/number-theory/floor-sum/sum_of_floor_of_linear.test.cpp
+      title: verify/yosupo/number-theory/floor-sum/sum_of_floor_of_linear.test.cpp
+  - name: verify/yosupo/polynomial/fft
+    pages:
+    - icon: ':x:'
+      path: verify/yosupo/polynomial/fft/convolution_mod_1000000007.test.cpp
+      title: verify/yosupo/polynomial/fft/convolution_mod_1000000007.test.cpp
+  - name: verify/yosupo/polynomial/formal-power-series
+    pages:
+    - icon: ':x:'
+      path: verify/yosupo/polynomial/formal-power-series/exp_of_formal_power_series.test.cpp
+      title: verify/yosupo/polynomial/formal-power-series/exp_of_formal_power_series.test.cpp
+    - icon: ':x:'
+      path: verify/yosupo/polynomial/formal-power-series/inv_of_formal_power_series.test.cpp
+      title: verify/yosupo/polynomial/formal-power-series/inv_of_formal_power_series.test.cpp
+    - icon: ':x:'
+      path: verify/yosupo/polynomial/formal-power-series/log_of_formal_power_series.test.cpp
+      title: verify/yosupo/polynomial/formal-power-series/log_of_formal_power_series.test.cpp
+    - icon: ':x:'
+      path: verify/yosupo/polynomial/formal-power-series/pow_of_formal_power_series.test.cpp
+      title: verify/yosupo/polynomial/formal-power-series/pow_of_formal_power_series.test.cpp
+  - name: verify/yosupo/polynomial/ntt
+    pages:
+    - icon: ':x:'
+      path: verify/yosupo/polynomial/ntt/convolution_mod.test.cpp
+      title: verify/yosupo/polynomial/ntt/convolution_mod.test.cpp
+  - name: verify/yosupo/string/manacher
+    pages:
+    - icon: ':x:'
+      path: verify/yosupo/string/manacher/enumerate_palindromes.test.cpp
+      title: verify/yosupo/string/manacher/enumerate_palindromes.test.cpp
+  - name: verify/yosupo/string/suffix-array
+    pages:
+    - icon: ':x:'
+      path: verify/yosupo/string/suffix-array/number_of_substrings.test.cpp
+      title: verify/yosupo/string/suffix-array/number_of_substrings.test.cpp
+    - icon: ':x:'
+      path: verify/yosupo/string/suffix-array/suffixarray.test.cpp
+      title: verify/yosupo/string/suffix-array/suffixarray.test.cpp
+  - name: verify/yosupo/string/suffix-automaton
+    pages:
+    - icon: ':x:'
+      path: verify/yosupo/string/suffix-automaton/number_of_substrings.test.cpp
+      title: verify/yosupo/string/suffix-automaton/number_of_substrings.test.cpp
+  - name: verify/yosupo/string/z-algorithm
+    pages:
+    - icon: ':x:'
+      path: verify/yosupo/string/z-algorithm/zalgorithm.test.cpp
+      title: verify/yosupo/string/z-algorithm/zalgorithm.test.cpp
+  - name: verify/yosupo/template
+    pages:
+    - icon: ':x:'
+      path: verify/yosupo/template/aplusb.test.cpp
+      title: verify/yosupo/template/aplusb.test.cpp
+  - name: verify/yosupo/tree/hld
+    pages:
+    - icon: ':x:'
+      path: verify/yosupo/tree/hld/jump_on_tree.test.cpp
+      title: verify/yosupo/tree/hld/jump_on_tree.test.cpp
+    - icon: ':x:'
+      path: verify/yosupo/tree/hld/lca.test.cpp
+      title: verify/yosupo/tree/hld/lca.test.cpp
+    - icon: ':x:'
+      path: verify/yosupo/tree/hld/vertex_add_path_sum.test.cpp
+      title: verify/yosupo/tree/hld/vertex_add_path_sum.test.cpp
+    - icon: ':x:'
+      path: verify/yosupo/tree/hld/vertex_add_subtree_sum.test.cpp
+      title: verify/yosupo/tree/hld/vertex_add_subtree_sum.test.cpp
+    - icon: ':x:'
+      path: verify/yosupo/tree/hld/vertex_set_path_composite.test.cpp
+      title: verify/yosupo/tree/hld/vertex_set_path_composite.test.cpp
+  - name: verify/yosupo/tree/static-top-tree-dp
+    pages:
+    - icon: ':x:'
+      path: verify/yosupo/tree/static-top-tree-dp/point_set_tree_path_composite_sum_fixed_root.test.cpp
+      title: verify/yosupo/tree/static-top-tree-dp/point_set_tree_path_composite_sum_fixed_root.test.cpp
+  - name: verify/yosupo/tree/static-top-tree-rerooting-dp
+    pages:
+    - icon: ':x:'
+      path: verify/yosupo/tree/static-top-tree-rerooting-dp/point_set_tree_path_composite_sum.test.cpp
+      title: verify/yosupo/tree/static-top-tree-rerooting-dp/point_set_tree_path_composite_sum.test.cpp
 layout: toppage
 ---

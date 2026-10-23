@@ -10,8 +10,8 @@ data:
     title: data-structure/link-cut-tree/link-cut-tree.hpp
   _extendedVerifiedWith:
   - icon: ':heavy_check_mark:'
-    path: verify/yosupo/data-structure/range_affine_range_sum_lct.test.cpp
-    title: verify/yosupo/data-structure/range_affine_range_sum_lct.test.cpp
+    path: verify/yosupo/data-structure/link-cut-tree/lazy-link-cut-tree/range_affine_range_sum.test.cpp
+    title: verify/yosupo/data-structure/link-cut-tree/lazy-link-cut-tree/range_affine_range_sum.test.cpp
   _isVerificationFailed: false
   _pathExtension: hpp
   _verificationStatusIcon: ':heavy_check_mark:'
@@ -74,7 +74,7 @@ data:
   timestamp: '2024-06-10 16:05:09+07:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
-  - verify/yosupo/data-structure/range_affine_range_sum_lct.test.cpp
+  - verify/yosupo/data-structure/link-cut-tree/lazy-link-cut-tree/range_affine_range_sum.test.cpp
 documentation_of: data-structure/link-cut-tree/link-cut-tree-base.hpp
 layout: document
 redirect_from:

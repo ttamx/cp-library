@@ -3,12 +3,12 @@ data:
   _extendedDependsOn: []
   _extendedRequiredBy: []
   _extendedVerifiedWith:
-  - icon: ':heavy_check_mark:'
-    path: verify/yosupo/string/number_of_substrings.test.cpp
-    title: verify/yosupo/string/number_of_substrings.test.cpp
-  _isVerificationFailed: false
+  - icon: ':x:'
+    path: verify/yosupo/string/suffix-automaton/number_of_substrings.test.cpp
+    title: verify/yosupo/string/suffix-automaton/number_of_substrings.test.cpp
+  _isVerificationFailed: true
   _pathExtension: hpp
-  _verificationStatusIcon: ':heavy_check_mark:'
+  _verificationStatusIcon: ':x:'
   attributes:
     links: []
   bundledCode: "#line 2 \"string/suffix-automaton.hpp\"\n\n/**\n * Author: Teetat\
@@ -53,9 +53,9 @@ data:
   path: string/suffix-automaton.hpp
   requiredBy: []
   timestamp: '2024-06-15 00:08:38+07:00'
-  verificationStatus: LIBRARY_ALL_AC
+  verificationStatus: LIBRARY_ALL_WA
   verifiedWith:
-  - verify/yosupo/string/number_of_substrings.test.cpp
+  - verify/yosupo/string/suffix-automaton/number_of_substrings.test.cpp
 documentation_of: string/suffix-automaton.hpp
 layout: document
 redirect_from:

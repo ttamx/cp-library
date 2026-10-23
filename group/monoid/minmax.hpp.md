@@ -12,19 +12,19 @@ data:
     \ * Date: 2024-04-14\n * Description: Min Max Monoid class.\n */\n\ntemplate<class\
     \ T>\nstruct MinMaxMonoid{\n    using P = pair<T,T>;\n    using value_type = P;\n\
     \    static constexpr P op(const P &x,const P &y){return P(min(x.first,y.first),max(x.second,y.second));}\n\
-    \    static constexpr P unit(){return P(numeric_limits<T>::max(),numeric_limits<T>::min());}\n\
+    \    static constexpr P unit(){return P(numeric_limits<T>::max(),numeric_limits<T>::lowest());}\n\
     };\n\n"
   code: "#pragma once\n\n/**\n * Author: Teetat T.\n * Date: 2024-04-14\n * Description:\
     \ Min Max Monoid class.\n */\n\ntemplate<class T>\nstruct MinMaxMonoid{\n    using\
     \ P = pair<T,T>;\n    using value_type = P;\n    static constexpr P op(const P\
     \ &x,const P &y){return P(min(x.first,y.first),max(x.second,y.second));}\n   \
-    \ static constexpr P unit(){return P(numeric_limits<T>::max(),numeric_limits<T>::min());}\n\
+    \ static constexpr P unit(){return P(numeric_limits<T>::max(),numeric_limits<T>::lowest());}\n\
     };\n\n"
   dependsOn: []
   isVerificationFile: false
   path: group/monoid/minmax.hpp
   requiredBy: []
-  timestamp: '2024-12-12 23:59:39+07:00'
+  timestamp: '2026-10-23 21:54:40+07:00'
   verificationStatus: LIBRARY_NO_TESTS
   verifiedWith: []
 documentation_of: group/monoid/minmax.hpp

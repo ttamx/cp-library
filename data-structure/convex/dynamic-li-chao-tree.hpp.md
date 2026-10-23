@@ -4,8 +4,8 @@ data:
   _extendedRequiredBy: []
   _extendedVerifiedWith:
   - icon: ':heavy_check_mark:'
-    path: verify/yosupo/data-structure/segment_add_get_min_online.test.cpp
-    title: verify/yosupo/data-structure/segment_add_get_min_online.test.cpp
+    path: verify/yosupo/data-structure/convex/dynamic-li-chao-tree/segment_add_get_min.test.cpp
+    title: verify/yosupo/data-structure/convex/dynamic-li-chao-tree/segment_add_get_min.test.cpp
   _isVerificationFailed: false
   _pathExtension: hpp
   _verificationStatusIcon: ':heavy_check_mark:'
@@ -59,7 +59,7 @@ data:
   timestamp: '2024-06-12 17:31:48+07:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
-  - verify/yosupo/data-structure/segment_add_get_min_online.test.cpp
+  - verify/yosupo/data-structure/convex/dynamic-li-chao-tree/segment_add_get_min.test.cpp
 documentation_of: data-structure/convex/dynamic-li-chao-tree.hpp
 layout: document
 redirect_from:

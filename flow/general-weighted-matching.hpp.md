@@ -1,40 +1,49 @@
 ---
 data:
   _extendedDependsOn:
-  - icon: ':heavy_check_mark:'
+  - icon: ':question:'
     path: template.hpp
     title: template.hpp
-  _extendedRequiredBy:
-  - icon: ':warning:'
-    path: verify/yosupo/graph/assignment.cpp
-    title: verify/yosupo/graph/assignment.cpp
+  _extendedRequiredBy: []
   _extendedVerifiedWith:
-  - icon: ':heavy_check_mark:'
-    path: verify/yosupo/graph/general_weighted_matching.test.cpp
-    title: verify/yosupo/graph/general_weighted_matching.test.cpp
-  _isVerificationFailed: false
+  - icon: ':x:'
+    path: verify/yosupo/flow/general-weighted-matching/assignment.test.cpp
+    title: verify/yosupo/flow/general-weighted-matching/assignment.test.cpp
+  - icon: ':x:'
+    path: verify/yosupo/flow/general-weighted-matching/general_weighted_matching.test.cpp
+    title: verify/yosupo/flow/general-weighted-matching/general_weighted_matching.test.cpp
+  _isVerificationFailed: true
   _pathExtension: hpp
-  _verificationStatusIcon: ':heavy_check_mark:'
+  _verificationStatusIcon: ':x:'
   attributes:
     links: []
   bundledCode: "#line 2 \"template.hpp\"\n#include<bits/stdc++.h>\n\nusing namespace\
-    \ std;\n\n#define pb push_back\n#define eb emplace_back\n#define mp make_pair\n\
-    #define mt make_tuple\n#define fi first\n#define se second\n\n#define ALL(a) a.begin(),a.end()\n\
-    #define RALL(a) a.rbegin(),a.rend()\n#define SORT(a) sort(ALL(a))\n#define RSORT(a)\
-    \ sort(RALL(a))\n#define REV(a) reverse(ALL(a))\n#define UNI(a) a.erase(unique(ALL(a)),a.end())\n\
-    #define SZ(a) (int)(a.size())\n#define LB(a,x) (int)(lower_bound(ALL(a),x)-a.begin())\n\
-    #define UB(a,x) (int)(upper_bound(ALL(a),x)-a.begin())\n#define MIN(a) *min_element(ALL(a))\n\
-    #define MAX(a) *max_element(ALL(a))\n\nusing ll = long long;\nusing db = long\
-    \ double;\nusing i128 = __int128_t;\nusing u32 = uint32_t;\nusing u64 = uint64_t;\n\
+    \ std;\n\nusing ll = long long;\nusing db = long double;\nusing i128 = __int128_t;\n\
+    using u32 = uint32_t;\nusing u64 = uint64_t;\ntemplate<class T>\nusing PQ = priority_queue<T,vector<T>,greater<T>>;\n\
     \nconst int INF=INT_MAX/2;\nconst ll LINF=LLONG_MAX/4;\nconst db DINF=numeric_limits<db>::infinity();\n\
-    const int MOD=998244353;\nconst int MOD2=1000000007;\nconst db EPS=1e-9;\nconst\
-    \ db PI=acos(db(-1));\n\ntemplate<class T>\nusing PQ = priority_queue<T,vector<T>,greater<T>>;\n\
-    \n#define vv(T,a,n,...) vector<vector<T>> a(n,vector<T>(__VA_ARGS__))\n#define\
-    \ vvv(T,a,n,m,...) vector<vector<vector<T>>> a(n,vector<vector<T>>(m,vector<T>(__VA_ARGS__)))\n\
-    #define vvvv(T,a,n,m,k,...) vector<vector<vector<vector<T>>>> a(n,vector<vector<vector<T>>>(m,vector<vector<T>>(k,vector<T>(__VA_ARGS__))))\n\
-    \ntemplate<class T,class U>\nbool chmin(T &a,U b){return b<a?a=b,1:0;}\ntemplate<class\
-    \ T,class U>\nbool chmax(T &a,U b){return a<b?a=b,1:0;}\ntemplate<class T,class\
-    \ U>\nT SUM(const U &a){return accumulate(ALL(a),T{});}\n\nmt19937 rng(chrono::steady_clock::now().time_since_epoch().count());\n\
+    const db EPS=1e-9;\nconst db PI=acos(db(-1));\n\n#define ALL(a) a.begin(),a.end()\n\
+    #define RALL(a) a.rbegin(),a.rend()\n#define SZ(a) (int)(a.size())\n#define SORT(a)\
+    \ sort(ALL(a))\n#define RSORT(a) sort(RALL(a))\n#define REV(a) reverse(ALL(a))\n\
+    #define UNI(a) a.erase(unique(ALL(a)),a.end())\n#define LB(a,x) (int)(lower_bound(ALL(a),x)-a.begin())\n\
+    #define UB(a,x) (int)(upper_bound(ALL(a),x)-a.begin())\n#define FIND(a,x) (int)(find(ALL(a),x)-a.begin())\n\
+    #define COUNT(a,x) (int)count(ALL(a),x)\n#define MIN(a) *min_element(ALL(a))\n\
+    #define MAX(a) *max_element(ALL(a))\n\ntemplate<class T,class U>\nbool chmin(T\
+    \ &a,U b){return b<a?a=b,1:0;}\ntemplate<class T,class U>\nbool chmax(T &a,U b){return\
+    \ a<b?a=b,1:0;}\n\ntemplate<class T>\nT floor(T a,T b){return a/b-((a^b)<0&&a%b);}\n\
+    template<class T>\nT ceil(T a,T b){return a/b+((a^b)>=0&&a%b);}\n\nint popcnt(ll\
+    \ x){return __builtin_popcountll(x);}\nint topbit(ll x){return x==0?-1:63-__builtin_clzll(x);}\n\
+    int lowbit(ll x){return x==0?-1:__builtin_ctzll(x);}\n\ntemplate<class T,class\
+    \ U>\nT SUM(const U &a){return accumulate(ALL(a),T{});}\ntemplate<class T>\nvector<int>\
+    \ argsort(const vector<T> &a){\n    vector<int> p(SZ(a));\n    iota(ALL(p),0);\n\
+    \    stable_sort(ALL(p),[&](int i,int j){return a[i]<a[j];});\n    return p;\n\
+    }\n\ntemplate<class T,size_t D=0>\nstruct VecBuilder{\n    array<size_t,D> d;\n\
+    \    VecBuilder<T,D+1> operator[](size_t n)const{\n        VecBuilder<T,D+1> res{};\n\
+    \        for(size_t i=0;i<D;i++)res.d[i]=d[i];\n        res.d[D]=n;\n        return\
+    \ res;\n    }\n    template<size_t I=0>\n    auto build(const T &x)const{\n  \
+    \      if constexpr(I+1==D)return vector<T>(d[I],x);\n        else return vector<decltype(build<I+1>(x))>(d[I],build<I+1>(x));\n\
+    \    }\n    auto operator()(const T &x=T())const{\n        static_assert(D>0);\n\
+    \        return build(x);\n    }\n};\ntemplate<class T>\ninline constexpr VecBuilder<T>\
+    \ VEC{};\n\nmt19937 rng(chrono::steady_clock::now().time_since_epoch().count());\n\
     mt19937_64 rng64(chrono::steady_clock::now().time_since_epoch().count());\n#line\
     \ 3 \"flow/general-weighted-matching.hpp\"\n\n/**\n * Description: General weighted\
     \ matching using blossom algorithm.\n * Time: O(|V|^3) \\text{(fast in practice)}\n\
@@ -58,14 +67,15 @@ data:
     \    if(vis[u]==t)return u;\n    vis[u]=t;u=st[match[u]];\n    if(u)u=st[pa[u]];\n\
     \  }\n  return 0;\n}\nvoid add_blossom(int u,int lca,int v){\n  int b=n+1;while(b<=n_x&&st[b])++b;\n\
     \  if(b>n_x)++n_x; //new blossom;\n  lab[b]=0;S[b]=0;match[b]=match[lca];flo[b]=vector<int>{lca};\n\
-    \  for(int x=u,y;x!=lca;x=st[pa[y]])\n    flo[b].eb(x),flo[b].eb(y=st[match[x]]),q_push(y);\n\
-    \  reverse(1+ALL(flo[b]));\n  for(int x=v,y;x!=lca;x=st[pa[y]])\n    flo[b].eb(x),flo[b].eb(y=st[match[x]]),q_push(y);\n\
-    \  set_st(b,b);\n  for(int x=1;x<=n_x;x++)g[b][x].w=g[x][b].w=0;\n  for(int x=1;x<=n;x++)flo_from[b][x]=0;\n\
-    \  for(auto xs:flo[b]){\n    for(int x=1;x<=n_x;x++)\n      if(g[b][x].w==0||e_delta(g[xs][x])<e_delta(g[b][x]))\n\
-    \        g[b][x]=g[xs][x],g[x][b]=g[x][xs];\n    for(int x=1;x<=n;x++)if(flo_from[xs][x])flo_from[b][x]=xs;\n\
-    \  }\n  set_slack(b);\n}\nvoid expand_blossom(int b){\n  for(auto xs:flo[b])set_st(xs,xs);\n\
-    \  int xr=flo_from[b][g[b][pa[b]].u],pr=get_pr(b,xr);\n  for(int i=0;i<pr;i+=2){\n\
-    \    int xs=flo[b][i],xns=flo[b][i+1];\n    pa[xs]=g[xns][xs].u;S[xs]=1;S[xns]=0;\n\
+    \  for(int x=u,y;x!=lca;x=st[pa[y]]){\n    flo[b].emplace_back(x);\n    flo[b].emplace_back(y=st[match[x]]);\n\
+    \    q_push(y);\n  }\n  reverse(1+ALL(flo[b]));\n  for(int x=v,y;x!=lca;x=st[pa[y]]){\n\
+    \    flo[b].emplace_back(x);\n    flo[b].emplace_back(y=st[match[x]]);\n    q_push(y);\n\
+    \  }\n  set_st(b,b);\n  for(int x=1;x<=n_x;x++)g[b][x].w=g[x][b].w=0;\n  for(int\
+    \ x=1;x<=n;x++)flo_from[b][x]=0;\n  for(auto xs:flo[b]){\n    for(int x=1;x<=n_x;x++)\n\
+    \      if(g[b][x].w==0||e_delta(g[xs][x])<e_delta(g[b][x]))\n        g[b][x]=g[xs][x],g[x][b]=g[x][xs];\n\
+    \    for(int x=1;x<=n;x++)if(flo_from[xs][x])flo_from[b][x]=xs;\n  }\n  set_slack(b);\n\
+    }\nvoid expand_blossom(int b){\n  for(auto xs:flo[b])set_st(xs,xs);\n  int xr=flo_from[b][g[b][pa[b]].u],pr=get_pr(b,xr);\n\
+    \  for(int i=0;i<pr;i+=2){\n    int xs=flo[b][i],xns=flo[b][i+1];\n    pa[xs]=g[xns][xs].u;S[xs]=1;S[xns]=0;\n\
     \    slack[xs]=0,set_slack(xns);q_push(xns);\n  }\n  S[xr]=1,pa[xr]=pa[b];\n \
     \ for(int i=pr+1;i<SZ(flo[b]);i++)S[flo[b][i]]=-1,set_slack(flo[b][i]);\n  st[b]=0;\n\
     }\nbool on_found_edge(const Edge &e){\n  int u=st[e.u],v=st[e.v];\n  if(S[v]==-1){\n\
@@ -116,14 +126,15 @@ data:
     \    if(vis[u]==t)return u;\n    vis[u]=t;u=st[match[u]];\n    if(u)u=st[pa[u]];\n\
     \  }\n  return 0;\n}\nvoid add_blossom(int u,int lca,int v){\n  int b=n+1;while(b<=n_x&&st[b])++b;\n\
     \  if(b>n_x)++n_x; //new blossom;\n  lab[b]=0;S[b]=0;match[b]=match[lca];flo[b]=vector<int>{lca};\n\
-    \  for(int x=u,y;x!=lca;x=st[pa[y]])\n    flo[b].eb(x),flo[b].eb(y=st[match[x]]),q_push(y);\n\
-    \  reverse(1+ALL(flo[b]));\n  for(int x=v,y;x!=lca;x=st[pa[y]])\n    flo[b].eb(x),flo[b].eb(y=st[match[x]]),q_push(y);\n\
-    \  set_st(b,b);\n  for(int x=1;x<=n_x;x++)g[b][x].w=g[x][b].w=0;\n  for(int x=1;x<=n;x++)flo_from[b][x]=0;\n\
-    \  for(auto xs:flo[b]){\n    for(int x=1;x<=n_x;x++)\n      if(g[b][x].w==0||e_delta(g[xs][x])<e_delta(g[b][x]))\n\
-    \        g[b][x]=g[xs][x],g[x][b]=g[x][xs];\n    for(int x=1;x<=n;x++)if(flo_from[xs][x])flo_from[b][x]=xs;\n\
-    \  }\n  set_slack(b);\n}\nvoid expand_blossom(int b){\n  for(auto xs:flo[b])set_st(xs,xs);\n\
-    \  int xr=flo_from[b][g[b][pa[b]].u],pr=get_pr(b,xr);\n  for(int i=0;i<pr;i+=2){\n\
-    \    int xs=flo[b][i],xns=flo[b][i+1];\n    pa[xs]=g[xns][xs].u;S[xs]=1;S[xns]=0;\n\
+    \  for(int x=u,y;x!=lca;x=st[pa[y]]){\n    flo[b].emplace_back(x);\n    flo[b].emplace_back(y=st[match[x]]);\n\
+    \    q_push(y);\n  }\n  reverse(1+ALL(flo[b]));\n  for(int x=v,y;x!=lca;x=st[pa[y]]){\n\
+    \    flo[b].emplace_back(x);\n    flo[b].emplace_back(y=st[match[x]]);\n    q_push(y);\n\
+    \  }\n  set_st(b,b);\n  for(int x=1;x<=n_x;x++)g[b][x].w=g[x][b].w=0;\n  for(int\
+    \ x=1;x<=n;x++)flo_from[b][x]=0;\n  for(auto xs:flo[b]){\n    for(int x=1;x<=n_x;x++)\n\
+    \      if(g[b][x].w==0||e_delta(g[xs][x])<e_delta(g[b][x]))\n        g[b][x]=g[xs][x],g[x][b]=g[x][xs];\n\
+    \    for(int x=1;x<=n;x++)if(flo_from[xs][x])flo_from[b][x]=xs;\n  }\n  set_slack(b);\n\
+    }\nvoid expand_blossom(int b){\n  for(auto xs:flo[b])set_st(xs,xs);\n  int xr=flo_from[b][g[b][pa[b]].u],pr=get_pr(b,xr);\n\
+    \  for(int i=0;i<pr;i+=2){\n    int xs=flo[b][i],xns=flo[b][i+1];\n    pa[xs]=g[xns][xs].u;S[xs]=1;S[xns]=0;\n\
     \    slack[xs]=0,set_slack(xns);q_push(xns);\n  }\n  S[xr]=1,pa[xr]=pa[b];\n \
     \ for(int i=pr+1;i<SZ(flo[b]);i++)S[flo[b][i]]=-1,set_slack(flo[b][i]);\n  st[b]=0;\n\
     }\nbool on_found_edge(const Edge &e){\n  int u=st[e.u],v=st[e.v];\n  if(S[v]==-1){\n\
@@ -156,12 +167,12 @@ data:
   - template.hpp
   isVerificationFile: false
   path: flow/general-weighted-matching.hpp
-  requiredBy:
-  - verify/yosupo/graph/assignment.cpp
-  timestamp: '2026-07-22 11:58:01+07:00'
-  verificationStatus: LIBRARY_ALL_AC
+  requiredBy: []
+  timestamp: '2026-10-24 00:09:28+07:00'
+  verificationStatus: LIBRARY_ALL_WA
   verifiedWith:
-  - verify/yosupo/graph/general_weighted_matching.test.cpp
+  - verify/yosupo/flow/general-weighted-matching/general_weighted_matching.test.cpp
+  - verify/yosupo/flow/general-weighted-matching/assignment.test.cpp
 documentation_of: flow/general-weighted-matching.hpp
 layout: document
 redirect_from:

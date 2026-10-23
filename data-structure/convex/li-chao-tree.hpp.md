@@ -4,11 +4,11 @@ data:
   _extendedRequiredBy: []
   _extendedVerifiedWith:
   - icon: ':heavy_check_mark:'
-    path: verify/yosupo/data-structure/line_add_get_min.test.cpp
-    title: verify/yosupo/data-structure/line_add_get_min.test.cpp
+    path: verify/yosupo/data-structure/convex/li-chao-tree/line_add_get_min.test.cpp
+    title: verify/yosupo/data-structure/convex/li-chao-tree/line_add_get_min.test.cpp
   - icon: ':heavy_check_mark:'
-    path: verify/yosupo/data-structure/segment_add_get_min.test.cpp
-    title: verify/yosupo/data-structure/segment_add_get_min.test.cpp
+    path: verify/yosupo/data-structure/convex/li-chao-tree/segment_add_get_min.test.cpp
+    title: verify/yosupo/data-structure/convex/li-chao-tree/segment_add_get_min.test.cpp
   _isVerificationFailed: false
   _pathExtension: hpp
   _verificationStatusIcon: ':heavy_check_mark:'
@@ -63,8 +63,8 @@ data:
   timestamp: '2024-06-12 17:31:48+07:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
-  - verify/yosupo/data-structure/segment_add_get_min.test.cpp
-  - verify/yosupo/data-structure/line_add_get_min.test.cpp
+  - verify/yosupo/data-structure/convex/li-chao-tree/line_add_get_min.test.cpp
+  - verify/yosupo/data-structure/convex/li-chao-tree/segment_add_get_min.test.cpp
 documentation_of: data-structure/convex/li-chao-tree.hpp
 layout: document
 redirect_from:

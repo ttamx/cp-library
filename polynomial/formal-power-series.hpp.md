@@ -1,29 +1,29 @@
 ---
 data:
   _extendedDependsOn:
-  - icon: ':heavy_check_mark:'
+  - icon: ':x:'
     path: modular-arithmetic/binpow.hpp
     title: modular-arithmetic/binpow.hpp
-  - icon: ':heavy_check_mark:'
+  - icon: ':x:'
     path: polynomial/ntt.hpp
     title: polynomial/ntt.hpp
   _extendedRequiredBy: []
   _extendedVerifiedWith:
-  - icon: ':heavy_check_mark:'
-    path: verify/yosupo/polynomial/exp_of_formal_power_series.test.cpp
-    title: verify/yosupo/polynomial/exp_of_formal_power_series.test.cpp
-  - icon: ':heavy_check_mark:'
-    path: verify/yosupo/polynomial/inv_of_formal_power_series.test.cpp
-    title: verify/yosupo/polynomial/inv_of_formal_power_series.test.cpp
-  - icon: ':heavy_check_mark:'
-    path: verify/yosupo/polynomial/log_of_formal_power_series.test.cpp
-    title: verify/yosupo/polynomial/log_of_formal_power_series.test.cpp
-  - icon: ':heavy_check_mark:'
-    path: verify/yosupo/polynomial/pow_of_formal_power_series.test.cpp
-    title: verify/yosupo/polynomial/pow_of_formal_power_series.test.cpp
-  _isVerificationFailed: false
+  - icon: ':x:'
+    path: verify/yosupo/polynomial/formal-power-series/exp_of_formal_power_series.test.cpp
+    title: verify/yosupo/polynomial/formal-power-series/exp_of_formal_power_series.test.cpp
+  - icon: ':x:'
+    path: verify/yosupo/polynomial/formal-power-series/inv_of_formal_power_series.test.cpp
+    title: verify/yosupo/polynomial/formal-power-series/inv_of_formal_power_series.test.cpp
+  - icon: ':x:'
+    path: verify/yosupo/polynomial/formal-power-series/log_of_formal_power_series.test.cpp
+    title: verify/yosupo/polynomial/formal-power-series/log_of_formal_power_series.test.cpp
+  - icon: ':x:'
+    path: verify/yosupo/polynomial/formal-power-series/pow_of_formal_power_series.test.cpp
+    title: verify/yosupo/polynomial/formal-power-series/pow_of_formal_power_series.test.cpp
+  _isVerificationFailed: true
   _pathExtension: hpp
-  _verificationStatusIcon: ':heavy_check_mark:'
+  _verificationStatusIcon: ':x:'
   attributes:
     links: []
   bundledCode: "#line 2 \"modular-arithmetic/binpow.hpp\"\n\n/**\n * Author: Teetat\
@@ -162,12 +162,12 @@ data:
   path: polynomial/formal-power-series.hpp
   requiredBy: []
   timestamp: '2026-10-23 21:46:01+07:00'
-  verificationStatus: LIBRARY_ALL_AC
+  verificationStatus: LIBRARY_ALL_WA
   verifiedWith:
-  - verify/yosupo/polynomial/pow_of_formal_power_series.test.cpp
-  - verify/yosupo/polynomial/log_of_formal_power_series.test.cpp
-  - verify/yosupo/polynomial/inv_of_formal_power_series.test.cpp
-  - verify/yosupo/polynomial/exp_of_formal_power_series.test.cpp
+  - verify/yosupo/polynomial/formal-power-series/inv_of_formal_power_series.test.cpp
+  - verify/yosupo/polynomial/formal-power-series/log_of_formal_power_series.test.cpp
+  - verify/yosupo/polynomial/formal-power-series/pow_of_formal_power_series.test.cpp
+  - verify/yosupo/polynomial/formal-power-series/exp_of_formal_power_series.test.cpp
 documentation_of: polynomial/formal-power-series.hpp
 layout: document
 redirect_from:

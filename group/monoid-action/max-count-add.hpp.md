@@ -1,7 +1,7 @@
 ---
 data:
   _extendedDependsOn:
-  - icon: ':heavy_check_mark:'
+  - icon: ':question:'
     path: group/monoid/add.hpp
     title: group/monoid/add.hpp
   - icon: ':warning:'
@@ -24,7 +24,7 @@ data:
     \ = pair<T,int>;\n    using value_type = P;\n    static constexpr P op(const P\
     \ &x,const P &y){\n        if(x.first>y.first)return x;\n        if(y.first>x.first)return\
     \ y;\n        return P(x.first,x.second+y.second);\n    }\n    static constexpr\
-    \ P unit(){return P(numeric_limits<T>::min(),0);}\n    static constexpr P make(const\
+    \ P unit(){return P(numeric_limits<T>::lowest(),0);}\n    static constexpr P make(const\
     \ T &x){return P(x,1);}\n};\n\n#line 4 \"group/monoid-action/max-count-add.hpp\"\
     \n\n/**\n * Author: Teetat T.\n * Date: 2024-04-14\n * Description: Add to Max\
     \ & Count Action class.\n */\n\ntemplate<class T>\nstruct MaxCountAddAction{\n\
@@ -45,7 +45,7 @@ data:
   isVerificationFile: false
   path: group/monoid-action/max-count-add.hpp
   requiredBy: []
-  timestamp: '2024-06-10 17:34:10+07:00'
+  timestamp: '2026-10-23 21:54:40+07:00'
   verificationStatus: LIBRARY_NO_TESTS
   verifiedWith: []
 documentation_of: group/monoid-action/max-count-add.hpp

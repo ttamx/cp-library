@@ -13,8 +13,8 @@ data:
     title: data-structure/link-cut-tree/link-cut-tree.hpp
   _extendedVerifiedWith:
   - icon: ':heavy_check_mark:'
-    path: verify/yosupo/data-structure/range_reverse_range_sum.test.cpp
-    title: verify/yosupo/data-structure/range_reverse_range_sum.test.cpp
+    path: verify/yosupo/data-structure/link-cut-tree/reversible-splay-tree/range_reverse_range_sum.test.cpp
+    title: verify/yosupo/data-structure/link-cut-tree/reversible-splay-tree/range_reverse_range_sum.test.cpp
   _isVerificationFailed: false
   _pathExtension: hpp
   _verificationStatusIcon: ':heavy_check_mark:'
@@ -106,7 +106,7 @@ data:
   timestamp: '2026-04-15 22:47:01+07:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
-  - verify/yosupo/data-structure/range_reverse_range_sum.test.cpp
+  - verify/yosupo/data-structure/link-cut-tree/reversible-splay-tree/range_reverse_range_sum.test.cpp
 documentation_of: data-structure/link-cut-tree/reversible-splay-tree.hpp
 layout: document
 redirect_from:

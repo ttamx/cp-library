@@ -5,22 +5,22 @@ data:
   - icon: ':warning:'
     path: group/monoid-action/add-count-add.hpp
     title: group/monoid-action/add-count-add.hpp
-  - icon: ':heavy_check_mark:'
+  - icon: ':question:'
     path: group/monoid-action/add-count-affine.hpp
     title: group/monoid-action/add-count-affine.hpp
   _extendedVerifiedWith:
   - icon: ':heavy_check_mark:'
-    path: verify/yosupo/data-structure/dynamic_sequence_range_affine_range_sum.test.cpp
-    title: verify/yosupo/data-structure/dynamic_sequence_range_affine_range_sum.test.cpp
+    path: verify/yosupo/data-structure/link-cut-tree/lazy-link-cut-tree/range_affine_range_sum.test.cpp
+    title: verify/yosupo/data-structure/link-cut-tree/lazy-link-cut-tree/range_affine_range_sum.test.cpp
   - icon: ':heavy_check_mark:'
-    path: verify/yosupo/data-structure/range_affine_range_sum.test.cpp
-    title: verify/yosupo/data-structure/range_affine_range_sum.test.cpp
-  - icon: ':heavy_check_mark:'
-    path: verify/yosupo/data-structure/range_affine_range_sum_lct.test.cpp
-    title: verify/yosupo/data-structure/range_affine_range_sum_lct.test.cpp
-  _isVerificationFailed: false
+    path: verify/yosupo/data-structure/link-cut-tree/lazy-reversible-splay-tree/dynamic_sequence_range_affine_range_sum.test.cpp
+    title: verify/yosupo/data-structure/link-cut-tree/lazy-reversible-splay-tree/dynamic_sequence_range_affine_range_sum.test.cpp
+  - icon: ':x:'
+    path: verify/yosupo/data-structure/segment-tree/lazy-segment-tree/range_affine_range_sum.test.cpp
+    title: verify/yosupo/data-structure/segment-tree/lazy-segment-tree/range_affine_range_sum.test.cpp
+  _isVerificationFailed: true
   _pathExtension: hpp
-  _verificationStatusIcon: ':heavy_check_mark:'
+  _verificationStatusIcon: ':question:'
   attributes:
     links: []
   bundledCode: "#line 2 \"group/monoid/add-count.hpp\"\n\n/**\n * Author: Teetat T.\n\
@@ -41,14 +41,14 @@ data:
   isVerificationFile: false
   path: group/monoid/add-count.hpp
   requiredBy:
-  - group/monoid-action/add-count-affine.hpp
   - group/monoid-action/add-count-add.hpp
+  - group/monoid-action/add-count-affine.hpp
   timestamp: '2025-03-14 23:36:46+07:00'
-  verificationStatus: LIBRARY_ALL_AC
+  verificationStatus: LIBRARY_SOME_WA
   verifiedWith:
-  - verify/yosupo/data-structure/dynamic_sequence_range_affine_range_sum.test.cpp
-  - verify/yosupo/data-structure/range_affine_range_sum_lct.test.cpp
-  - verify/yosupo/data-structure/range_affine_range_sum.test.cpp
+  - verify/yosupo/data-structure/segment-tree/lazy-segment-tree/range_affine_range_sum.test.cpp
+  - verify/yosupo/data-structure/link-cut-tree/lazy-link-cut-tree/range_affine_range_sum.test.cpp
+  - verify/yosupo/data-structure/link-cut-tree/lazy-reversible-splay-tree/dynamic_sequence_range_affine_range_sum.test.cpp
 documentation_of: group/monoid/add-count.hpp
 layout: document
 redirect_from:

@@ -1,7 +1,7 @@
 ---
 data:
   _extendedDependsOn:
-  - icon: ':heavy_check_mark:'
+  - icon: ':question:'
     path: group/monoid/add.hpp
     title: group/monoid/add.hpp
   - icon: ':warning:'
@@ -22,13 +22,14 @@ data:
     \n\n/**\n * Author: Teetat T.\n * Date: 2024-04-14\n * Description: Max Monoid\
     \ class.\n */\n\ntemplate<class T>\nstruct MaxMonoid{\n    using value_type =\
     \ T;\n    static constexpr T op(const T &x,const T &y){return max(x,y);}\n   \
-    \ static constexpr T unit(){return numeric_limits<T>::min();}\n};\n\n#line 4 \"\
-    group/monoid-action/max-add.hpp\"\n\n/**\n * Author: Teetat T.\n * Date: 2024-04-14\n\
-    \ * Description: Add to Max Action class.\n */\n\ntemplate<class T>\nstruct MaxAddAction{\n\
-    \    using InfoMonoid = MaxMonoid<T>;\n    using TagMonoid = AddMonoid<T>;\n \
-    \   using Info = typename InfoMonoid::value_type;\n    using Tag = typename TagMonoid::value_type;\n\
-    \    static constexpr Info op(const Info &a,const Tag &b){\n        return (a==InfoMonoid::unit()?a:(a+b));\n\
-    \    }\n};\n\n"
+    \ static constexpr T unit(){return numeric_limits<T>::lowest();}\n};\n\n#line\
+    \ 4 \"group/monoid-action/max-add.hpp\"\n\n/**\n * Author: Teetat T.\n * Date:\
+    \ 2024-04-14\n * Description: Add to Max Action class.\n */\n\ntemplate<class\
+    \ T>\nstruct MaxAddAction{\n    using InfoMonoid = MaxMonoid<T>;\n    using TagMonoid\
+    \ = AddMonoid<T>;\n    using Info = typename InfoMonoid::value_type;\n    using\
+    \ Tag = typename TagMonoid::value_type;\n    static constexpr Info op(const Info\
+    \ &a,const Tag &b){\n        return (a==InfoMonoid::unit()?a:(a+b));\n    }\n\
+    };\n\n"
   code: "#pragma once\n#include \"group/monoid/add.hpp\"\n#include \"group/monoid/max.hpp\"\
     \n\n/**\n * Author: Teetat T.\n * Date: 2024-04-14\n * Description: Add to Max\
     \ Action class.\n */\n\ntemplate<class T>\nstruct MaxAddAction{\n    using InfoMonoid\
@@ -42,7 +43,7 @@ data:
   isVerificationFile: false
   path: group/monoid-action/max-add.hpp
   requiredBy: []
-  timestamp: '2024-12-12 23:59:39+07:00'
+  timestamp: '2026-10-23 21:54:40+07:00'
   verificationStatus: LIBRARY_NO_TESTS
   verifiedWith: []
 documentation_of: group/monoid-action/max-add.hpp

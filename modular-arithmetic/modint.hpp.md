@@ -4,59 +4,59 @@ data:
   _extendedRequiredBy: []
   _extendedVerifiedWith:
   - icon: ':heavy_check_mark:'
-    path: verify/yosupo/convolution/bitwise_and_convolution.test.cpp
-    title: verify/yosupo/convolution/bitwise_and_convolution.test.cpp
+    path: verify/yosupo/convolution/and-convolution/bitwise_and_convolution.test.cpp
+    title: verify/yosupo/convolution/and-convolution/bitwise_and_convolution.test.cpp
   - icon: ':heavy_check_mark:'
-    path: verify/yosupo/convolution/bitwise_or_convolution.test.cpp
-    title: verify/yosupo/convolution/bitwise_or_convolution.test.cpp
+    path: verify/yosupo/convolution/gcd-convolution/gcd_convolution.test.cpp
+    title: verify/yosupo/convolution/gcd-convolution/gcd_convolution.test.cpp
   - icon: ':heavy_check_mark:'
-    path: verify/yosupo/convolution/bitwise_xor_convolution.test.cpp
-    title: verify/yosupo/convolution/bitwise_xor_convolution.test.cpp
+    path: verify/yosupo/convolution/lcm-convolution/lcm_convolution.test.cpp
+    title: verify/yosupo/convolution/lcm-convolution/lcm_convolution.test.cpp
   - icon: ':heavy_check_mark:'
-    path: verify/yosupo/convolution/convolution_mod.test.cpp
-    title: verify/yosupo/convolution/convolution_mod.test.cpp
+    path: verify/yosupo/convolution/or-convolution/bitwise_and_convolution.test.cpp
+    title: verify/yosupo/convolution/or-convolution/bitwise_and_convolution.test.cpp
   - icon: ':heavy_check_mark:'
-    path: verify/yosupo/convolution/gcd_convolution.test.cpp
-    title: verify/yosupo/convolution/gcd_convolution.test.cpp
+    path: verify/yosupo/convolution/xor-convolution/bitwise_xor_convolution.test.cpp
+    title: verify/yosupo/convolution/xor-convolution/bitwise_xor_convolution.test.cpp
   - icon: ':heavy_check_mark:'
-    path: verify/yosupo/convolution/lcm_convolution.test.cpp
-    title: verify/yosupo/convolution/lcm_convolution.test.cpp
+    path: verify/yosupo/data-structure/link-cut-tree/lazy-link-cut-tree/range_affine_range_sum.test.cpp
+    title: verify/yosupo/data-structure/link-cut-tree/lazy-link-cut-tree/range_affine_range_sum.test.cpp
   - icon: ':heavy_check_mark:'
-    path: verify/yosupo/data-structure/dynamic_sequence_range_affine_range_sum.test.cpp
-    title: verify/yosupo/data-structure/dynamic_sequence_range_affine_range_sum.test.cpp
-  - icon: ':heavy_check_mark:'
-    path: verify/yosupo/data-structure/point_set_range_composite.test.cpp
-    title: verify/yosupo/data-structure/point_set_range_composite.test.cpp
-  - icon: ':heavy_check_mark:'
-    path: verify/yosupo/data-structure/point_set_tree_path_composite_sum.test.cpp
-    title: verify/yosupo/data-structure/point_set_tree_path_composite_sum.test.cpp
-  - icon: ':heavy_check_mark:'
-    path: verify/yosupo/data-structure/point_set_tree_path_composite_sum_fixed_root.test.cpp
-    title: verify/yosupo/data-structure/point_set_tree_path_composite_sum_fixed_root.test.cpp
-  - icon: ':heavy_check_mark:'
-    path: verify/yosupo/data-structure/range_affine_range_sum.test.cpp
-    title: verify/yosupo/data-structure/range_affine_range_sum.test.cpp
-  - icon: ':heavy_check_mark:'
-    path: verify/yosupo/data-structure/range_affine_range_sum_lct.test.cpp
-    title: verify/yosupo/data-structure/range_affine_range_sum_lct.test.cpp
-  - icon: ':heavy_check_mark:'
-    path: verify/yosupo/data-structure/vertex_set_path_composite.test.cpp
-    title: verify/yosupo/data-structure/vertex_set_path_composite.test.cpp
-  - icon: ':heavy_check_mark:'
-    path: verify/yosupo/polynomial/exp_of_formal_power_series.test.cpp
-    title: verify/yosupo/polynomial/exp_of_formal_power_series.test.cpp
-  - icon: ':heavy_check_mark:'
-    path: verify/yosupo/polynomial/inv_of_formal_power_series.test.cpp
-    title: verify/yosupo/polynomial/inv_of_formal_power_series.test.cpp
-  - icon: ':heavy_check_mark:'
-    path: verify/yosupo/polynomial/log_of_formal_power_series.test.cpp
-    title: verify/yosupo/polynomial/log_of_formal_power_series.test.cpp
-  - icon: ':heavy_check_mark:'
-    path: verify/yosupo/polynomial/pow_of_formal_power_series.test.cpp
-    title: verify/yosupo/polynomial/pow_of_formal_power_series.test.cpp
-  _isVerificationFailed: false
+    path: verify/yosupo/data-structure/link-cut-tree/lazy-reversible-splay-tree/dynamic_sequence_range_affine_range_sum.test.cpp
+    title: verify/yosupo/data-structure/link-cut-tree/lazy-reversible-splay-tree/dynamic_sequence_range_affine_range_sum.test.cpp
+  - icon: ':x:'
+    path: verify/yosupo/data-structure/segment-tree/lazy-segment-tree/range_affine_range_sum.test.cpp
+    title: verify/yosupo/data-structure/segment-tree/lazy-segment-tree/range_affine_range_sum.test.cpp
+  - icon: ':x:'
+    path: verify/yosupo/data-structure/segment-tree/segment-tree/point_set_range_composite.test.cpp
+    title: verify/yosupo/data-structure/segment-tree/segment-tree/point_set_range_composite.test.cpp
+  - icon: ':x:'
+    path: verify/yosupo/polynomial/formal-power-series/exp_of_formal_power_series.test.cpp
+    title: verify/yosupo/polynomial/formal-power-series/exp_of_formal_power_series.test.cpp
+  - icon: ':x:'
+    path: verify/yosupo/polynomial/formal-power-series/inv_of_formal_power_series.test.cpp
+    title: verify/yosupo/polynomial/formal-power-series/inv_of_formal_power_series.test.cpp
+  - icon: ':x:'
+    path: verify/yosupo/polynomial/formal-power-series/log_of_formal_power_series.test.cpp
+    title: verify/yosupo/polynomial/formal-power-series/log_of_formal_power_series.test.cpp
+  - icon: ':x:'
+    path: verify/yosupo/polynomial/formal-power-series/pow_of_formal_power_series.test.cpp
+    title: verify/yosupo/polynomial/formal-power-series/pow_of_formal_power_series.test.cpp
+  - icon: ':x:'
+    path: verify/yosupo/polynomial/ntt/convolution_mod.test.cpp
+    title: verify/yosupo/polynomial/ntt/convolution_mod.test.cpp
+  - icon: ':x:'
+    path: verify/yosupo/tree/hld/vertex_set_path_composite.test.cpp
+    title: verify/yosupo/tree/hld/vertex_set_path_composite.test.cpp
+  - icon: ':x:'
+    path: verify/yosupo/tree/static-top-tree-dp/point_set_tree_path_composite_sum_fixed_root.test.cpp
+    title: verify/yosupo/tree/static-top-tree-dp/point_set_tree_path_composite_sum_fixed_root.test.cpp
+  - icon: ':x:'
+    path: verify/yosupo/tree/static-top-tree-rerooting-dp/point_set_tree_path_composite_sum.test.cpp
+    title: verify/yosupo/tree/static-top-tree-rerooting-dp/point_set_tree_path_composite_sum.test.cpp
+  _isVerificationFailed: true
   _pathExtension: hpp
-  _verificationStatusIcon: ':heavy_check_mark:'
+  _verificationStatusIcon: ':question:'
   attributes:
     links: []
   bundledCode: "#line 2 \"modular-arithmetic/modint.hpp\"\n\n/**\n * Author: Teetat\
@@ -127,25 +127,25 @@ data:
   path: modular-arithmetic/modint.hpp
   requiredBy: []
   timestamp: '2026-10-23 21:46:01+07:00'
-  verificationStatus: LIBRARY_ALL_AC
+  verificationStatus: LIBRARY_SOME_WA
   verifiedWith:
-  - verify/yosupo/polynomial/pow_of_formal_power_series.test.cpp
-  - verify/yosupo/polynomial/log_of_formal_power_series.test.cpp
-  - verify/yosupo/polynomial/inv_of_formal_power_series.test.cpp
-  - verify/yosupo/polynomial/exp_of_formal_power_series.test.cpp
-  - verify/yosupo/convolution/bitwise_and_convolution.test.cpp
-  - verify/yosupo/convolution/gcd_convolution.test.cpp
-  - verify/yosupo/convolution/bitwise_xor_convolution.test.cpp
-  - verify/yosupo/convolution/bitwise_or_convolution.test.cpp
-  - verify/yosupo/convolution/lcm_convolution.test.cpp
-  - verify/yosupo/convolution/convolution_mod.test.cpp
-  - verify/yosupo/data-structure/point_set_tree_path_composite_sum.test.cpp
-  - verify/yosupo/data-structure/point_set_tree_path_composite_sum_fixed_root.test.cpp
-  - verify/yosupo/data-structure/dynamic_sequence_range_affine_range_sum.test.cpp
-  - verify/yosupo/data-structure/point_set_range_composite.test.cpp
-  - verify/yosupo/data-structure/range_affine_range_sum_lct.test.cpp
-  - verify/yosupo/data-structure/vertex_set_path_composite.test.cpp
-  - verify/yosupo/data-structure/range_affine_range_sum.test.cpp
+  - verify/yosupo/convolution/xor-convolution/bitwise_xor_convolution.test.cpp
+  - verify/yosupo/convolution/or-convolution/bitwise_and_convolution.test.cpp
+  - verify/yosupo/convolution/lcm-convolution/lcm_convolution.test.cpp
+  - verify/yosupo/convolution/and-convolution/bitwise_and_convolution.test.cpp
+  - verify/yosupo/convolution/gcd-convolution/gcd_convolution.test.cpp
+  - verify/yosupo/data-structure/segment-tree/segment-tree/point_set_range_composite.test.cpp
+  - verify/yosupo/data-structure/segment-tree/lazy-segment-tree/range_affine_range_sum.test.cpp
+  - verify/yosupo/data-structure/link-cut-tree/lazy-link-cut-tree/range_affine_range_sum.test.cpp
+  - verify/yosupo/data-structure/link-cut-tree/lazy-reversible-splay-tree/dynamic_sequence_range_affine_range_sum.test.cpp
+  - verify/yosupo/tree/static-top-tree-rerooting-dp/point_set_tree_path_composite_sum.test.cpp
+  - verify/yosupo/tree/static-top-tree-dp/point_set_tree_path_composite_sum_fixed_root.test.cpp
+  - verify/yosupo/tree/hld/vertex_set_path_composite.test.cpp
+  - verify/yosupo/polynomial/ntt/convolution_mod.test.cpp
+  - verify/yosupo/polynomial/formal-power-series/inv_of_formal_power_series.test.cpp
+  - verify/yosupo/polynomial/formal-power-series/log_of_formal_power_series.test.cpp
+  - verify/yosupo/polynomial/formal-power-series/pow_of_formal_power_series.test.cpp
+  - verify/yosupo/polynomial/formal-power-series/exp_of_formal_power_series.test.cpp
 documentation_of: modular-arithmetic/modint.hpp
 layout: document
 redirect_from:

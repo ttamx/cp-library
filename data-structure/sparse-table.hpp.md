@@ -2,22 +2,22 @@
 data:
   _extendedDependsOn: []
   _extendedRequiredBy:
-  - icon: ':heavy_check_mark:'
+  - icon: ':x:'
     path: string/suffix-array.hpp
     title: string/suffix-array.hpp
   _extendedVerifiedWith:
-  - icon: ':heavy_check_mark:'
-    path: verify/yosupo/data-structure/staticrmq.test.cpp
-    title: verify/yosupo/data-structure/staticrmq.test.cpp
-  - icon: ':heavy_check_mark:'
-    path: verify/yosupo/string/number_of_substrings2.test.cpp
-    title: verify/yosupo/string/number_of_substrings2.test.cpp
-  - icon: ':heavy_check_mark:'
-    path: verify/yosupo/string/suffixarray.test.cpp
-    title: verify/yosupo/string/suffixarray.test.cpp
-  _isVerificationFailed: false
+  - icon: ':x:'
+    path: verify/yosupo/data-structure/sparse-table/staticrmq.test.cpp
+    title: verify/yosupo/data-structure/sparse-table/staticrmq.test.cpp
+  - icon: ':x:'
+    path: verify/yosupo/string/suffix-array/number_of_substrings.test.cpp
+    title: verify/yosupo/string/suffix-array/number_of_substrings.test.cpp
+  - icon: ':x:'
+    path: verify/yosupo/string/suffix-array/suffixarray.test.cpp
+    title: verify/yosupo/string/suffix-array/suffixarray.test.cpp
+  _isVerificationFailed: true
   _pathExtension: hpp
-  _verificationStatusIcon: ':heavy_check_mark:'
+  _verificationStatusIcon: ':x:'
   attributes:
     links: []
   bundledCode: "#line 2 \"data-structure/sparse-table.hpp\"\n\n/**\n * Author: Teetat\
@@ -46,11 +46,11 @@ data:
   requiredBy:
   - string/suffix-array.hpp
   timestamp: '2024-06-12 17:31:48+07:00'
-  verificationStatus: LIBRARY_ALL_AC
+  verificationStatus: LIBRARY_ALL_WA
   verifiedWith:
-  - verify/yosupo/string/suffixarray.test.cpp
-  - verify/yosupo/string/number_of_substrings2.test.cpp
-  - verify/yosupo/data-structure/staticrmq.test.cpp
+  - verify/yosupo/string/suffix-array/suffixarray.test.cpp
+  - verify/yosupo/string/suffix-array/number_of_substrings.test.cpp
+  - verify/yosupo/data-structure/sparse-table/staticrmq.test.cpp
 documentation_of: data-structure/sparse-table.hpp
 layout: document
 redirect_from:

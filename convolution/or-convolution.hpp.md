@@ -4,8 +4,8 @@ data:
   _extendedRequiredBy: []
   _extendedVerifiedWith:
   - icon: ':heavy_check_mark:'
-    path: verify/yosupo/convolution/bitwise_or_convolution.test.cpp
-    title: verify/yosupo/convolution/bitwise_or_convolution.test.cpp
+    path: verify/yosupo/convolution/or-convolution/bitwise_and_convolution.test.cpp
+    title: verify/yosupo/convolution/or-convolution/bitwise_and_convolution.test.cpp
   _isVerificationFailed: false
   _pathExtension: hpp
   _verificationStatusIcon: ':heavy_check_mark:'
@@ -43,7 +43,7 @@ data:
   timestamp: '2024-07-30 03:30:30+07:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
-  - verify/yosupo/convolution/bitwise_or_convolution.test.cpp
+  - verify/yosupo/convolution/or-convolution/bitwise_and_convolution.test.cpp
 documentation_of: convolution/or-convolution.hpp
 layout: document
 redirect_from:

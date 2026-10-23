@@ -4,8 +4,8 @@ data:
   _extendedRequiredBy: []
   _extendedVerifiedWith:
   - icon: ':heavy_check_mark:'
-    path: verify/yosupo/linear-algebra/matrix_product_mod_2.test.cpp
-    title: verify/yosupo/linear-algebra/matrix_product_mod_2.test.cpp
+    path: verify/yosupo/data-structure/bitset/matrix_product_mod_2.test.cpp
+    title: verify/yosupo/data-structure/bitset/matrix_product_mod_2.test.cpp
   _isVerificationFailed: false
   _pathExtension: hpp
   _verificationStatusIcon: ':heavy_check_mark:'
@@ -171,7 +171,7 @@ data:
   timestamp: '2026-10-23 21:48:42+07:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
-  - verify/yosupo/linear-algebra/matrix_product_mod_2.test.cpp
+  - verify/yosupo/data-structure/bitset/matrix_product_mod_2.test.cpp
 documentation_of: data-structure/bitset.hpp
 layout: document
 redirect_from:

@@ -4,8 +4,8 @@ data:
   _extendedRequiredBy: []
   _extendedVerifiedWith:
   - icon: ':heavy_check_mark:'
-    path: verify/yosupo/convolution/min_plus_convolution_convex_arbitrary.test.cpp
-    title: verify/yosupo/convolution/min_plus_convolution_convex_arbitrary.test.cpp
+    path: verify/yosupo/convolution/max-plus-convolution/min_plus_convolution_convex_arbitrary.test.cpp
+    title: verify/yosupo/convolution/max-plus-convolution/min_plus_convolution_convex_arbitrary.test.cpp
   _isVerificationFailed: false
   _pathExtension: hpp
   _verificationStatusIcon: ':heavy_check_mark:'
@@ -87,7 +87,7 @@ data:
   timestamp: '2024-09-02 00:35:52+07:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
-  - verify/yosupo/convolution/min_plus_convolution_convex_arbitrary.test.cpp
+  - verify/yosupo/convolution/max-plus-convolution/min_plus_convolution_convex_arbitrary.test.cpp
 documentation_of: convolution/max-plus-convolution.hpp
 layout: document
 redirect_from:

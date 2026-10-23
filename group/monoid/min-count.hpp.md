@@ -2,16 +2,16 @@
 data:
   _extendedDependsOn: []
   _extendedRequiredBy:
-  - icon: ':heavy_check_mark:'
+  - icon: ':x:'
     path: group/monoid-action/min-count-add.hpp
     title: group/monoid-action/min-count-add.hpp
   _extendedVerifiedWith:
-  - icon: ':heavy_check_mark:'
-    path: verify/yosupo/data-structure/area_of_union_of_rectangles.test.cpp
-    title: verify/yosupo/data-structure/area_of_union_of_rectangles.test.cpp
-  _isVerificationFailed: false
+  - icon: ':x:'
+    path: verify/yosupo/data-structure/segment-tree/dynamic-segment-tree/area_of_union_of_rectangles.test.cpp
+    title: verify/yosupo/data-structure/segment-tree/dynamic-segment-tree/area_of_union_of_rectangles.test.cpp
+  _isVerificationFailed: true
   _pathExtension: hpp
-  _verificationStatusIcon: ':heavy_check_mark:'
+  _verificationStatusIcon: ':x:'
   attributes:
     links: []
   bundledCode: "#line 2 \"group/monoid/min-count.hpp\"\n\n/**\n * Author: Teetat T.\n\
@@ -34,9 +34,9 @@ data:
   requiredBy:
   - group/monoid-action/min-count-add.hpp
   timestamp: '2024-06-10 16:05:09+07:00'
-  verificationStatus: LIBRARY_ALL_AC
+  verificationStatus: LIBRARY_ALL_WA
   verifiedWith:
-  - verify/yosupo/data-structure/area_of_union_of_rectangles.test.cpp
+  - verify/yosupo/data-structure/segment-tree/dynamic-segment-tree/area_of_union_of_rectangles.test.cpp
 documentation_of: group/monoid/min-count.hpp
 layout: document
 redirect_from:

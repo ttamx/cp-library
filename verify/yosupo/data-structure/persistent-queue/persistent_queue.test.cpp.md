@@ -1,0 +1,92 @@
+---
+data:
+  _extendedDependsOn:
+  - icon: ':x:'
+    path: data-structure/persistent-queue.hpp
+    title: data-structure/persistent-queue.hpp
+  - icon: ':question:'
+    path: template.hpp
+    title: template.hpp
+  _extendedRequiredBy: []
+  _extendedVerifiedWith: []
+  _isVerificationFailed: true
+  _pathExtension: cpp
+  _verificationStatusIcon: ':x:'
+  attributes:
+    '*NOT_SPECIAL_COMMENTS*': ''
+    PROBLEM: https://judge.yosupo.jp/problem/persistent_queue
+    links:
+    - https://judge.yosupo.jp/problem/persistent_queue
+  bundledCode: "#line 1 \"verify/yosupo/data-structure/persistent-queue/persistent_queue.test.cpp\"\
+    \n#define PROBLEM \"https://judge.yosupo.jp/problem/persistent_queue\"\n#line\
+    \ 2 \"template.hpp\"\n#include<bits/stdc++.h>\n\nusing namespace std;\n\nusing\
+    \ ll = long long;\nusing db = long double;\nusing i128 = __int128_t;\nusing u32\
+    \ = uint32_t;\nusing u64 = uint64_t;\ntemplate<class T>\nusing PQ = priority_queue<T,vector<T>,greater<T>>;\n\
+    \nconst int INF=INT_MAX/2;\nconst ll LINF=LLONG_MAX/4;\nconst db DINF=numeric_limits<db>::infinity();\n\
+    const db EPS=1e-9;\nconst db PI=acos(db(-1));\n\n#define ALL(a) a.begin(),a.end()\n\
+    #define RALL(a) a.rbegin(),a.rend()\n#define SZ(a) (int)(a.size())\n#define SORT(a)\
+    \ sort(ALL(a))\n#define RSORT(a) sort(RALL(a))\n#define REV(a) reverse(ALL(a))\n\
+    #define UNI(a) a.erase(unique(ALL(a)),a.end())\n#define LB(a,x) (int)(lower_bound(ALL(a),x)-a.begin())\n\
+    #define UB(a,x) (int)(upper_bound(ALL(a),x)-a.begin())\n#define FIND(a,x) (int)(find(ALL(a),x)-a.begin())\n\
+    #define COUNT(a,x) (int)count(ALL(a),x)\n#define MIN(a) *min_element(ALL(a))\n\
+    #define MAX(a) *max_element(ALL(a))\n\ntemplate<class T,class U>\nbool chmin(T\
+    \ &a,U b){return b<a?a=b,1:0;}\ntemplate<class T,class U>\nbool chmax(T &a,U b){return\
+    \ a<b?a=b,1:0;}\n\ntemplate<class T>\nT floor(T a,T b){return a/b-((a^b)<0&&a%b);}\n\
+    template<class T>\nT ceil(T a,T b){return a/b+((a^b)>=0&&a%b);}\n\nint popcnt(ll\
+    \ x){return __builtin_popcountll(x);}\nint topbit(ll x){return x==0?-1:63-__builtin_clzll(x);}\n\
+    int lowbit(ll x){return x==0?-1:__builtin_ctzll(x);}\n\ntemplate<class T,class\
+    \ U>\nT SUM(const U &a){return accumulate(ALL(a),T{});}\ntemplate<class T>\nvector<int>\
+    \ argsort(const vector<T> &a){\n    vector<int> p(SZ(a));\n    iota(ALL(p),0);\n\
+    \    stable_sort(ALL(p),[&](int i,int j){return a[i]<a[j];});\n    return p;\n\
+    }\n\ntemplate<class T,size_t D=0>\nstruct VecBuilder{\n    array<size_t,D> d;\n\
+    \    VecBuilder<T,D+1> operator[](size_t n)const{\n        VecBuilder<T,D+1> res{};\n\
+    \        for(size_t i=0;i<D;i++)res.d[i]=d[i];\n        res.d[D]=n;\n        return\
+    \ res;\n    }\n    template<size_t I=0>\n    auto build(const T &x)const{\n  \
+    \      if constexpr(I+1==D)return vector<T>(d[I],x);\n        else return vector<decltype(build<I+1>(x))>(d[I],build<I+1>(x));\n\
+    \    }\n    auto operator()(const T &x=T())const{\n        static_assert(D>0);\n\
+    \        return build(x);\n    }\n};\ntemplate<class T>\ninline constexpr VecBuilder<T>\
+    \ VEC{};\n\nmt19937 rng(chrono::steady_clock::now().time_since_epoch().count());\n\
+    mt19937_64 rng64(chrono::steady_clock::now().time_since_epoch().count());\n#line\
+    \ 2 \"data-structure/persistent-queue.hpp\"\n\n/**\n * Author: Teetat T.\n * Date:\
+    \ 2024-06-28\n * Description: Persistent Queue.\n */\n\ntemplate<class T>\nstruct\
+    \ PersistentQueue{\n    int n,lg;\n    vector<T> dat;\n    vector<int> back_id,len;\n\
+    \    vector<vector<int>> par;\n    PersistentQueue():n(1),lg(1),dat(0),back_id(0),len(0),par(1,{0}){}\n\
+    \    void calc_par(){\n        if(n<(1<<lg))return;\n        for(int i=0;i<n;i++)par[i].emplace_back(par[par[i][lg-1]][lg-1]);\n\
+    \        lg++;\n    }\n    int push(int t,const T &val){\n        dat.emplace_back(val);\n\
+    \        back_id.emplace_back(n);\n        len.emplace_back((t==-1?0:len[t])+1);\n\
+    \        par.emplace_back(vector<int>(lg,0));\n        par[n][0]=t==-1?0:back_id[t];\n\
+    \        for(int i=1;i<lg;i++)par[n][i]=par[par[n][i-1]][i-1];\n        n++;\n\
+    \        calc_par();\n        return back_id.size()-1;\n    }\n    int pop(int\
+    \ t){\n        back_id.emplace_back(back_id[t]);\n        len.emplace_back(len[t]-1);\n\
+    \        return back_id.size()-1;\n    }\n    T front(int t){\n        int d=size(t)-1;\n\
+    \        int x=back_id[t];\n        for(int j=lg-1;j>=0;j--)if(d>>j&1)x=par[x][j];\n\
+    \        return dat[x-1];\n    }\n    int size(int t){\n        return len[t];\n\
+    \    }\n};\n\n#line 4 \"verify/yosupo/data-structure/persistent-queue/persistent_queue.test.cpp\"\
+    \n\nint main(){\n    cin.tie(nullptr)->sync_with_stdio(false);\n    int n;\n \
+    \   cin >> n;\n    PersistentQueue<int> q;\n    for(int i=0;i<n;i++){\n      \
+    \  int op,t;\n        cin >> op >> t;\n        if(op==0){\n            int x;\n\
+    \            cin >> x;\n            q.push(t,x);\n        }else{\n           \
+    \ cout << q.front(t) << \"\\n\";\n            q.pop(t);\n        }\n    }\n}\n"
+  code: "#define PROBLEM \"https://judge.yosupo.jp/problem/persistent_queue\"\n#include\
+    \ \"template.hpp\"\n#include \"data-structure/persistent-queue.hpp\"\n\nint main(){\n\
+    \    cin.tie(nullptr)->sync_with_stdio(false);\n    int n;\n    cin >> n;\n  \
+    \  PersistentQueue<int> q;\n    for(int i=0;i<n;i++){\n        int op,t;\n   \
+    \     cin >> op >> t;\n        if(op==0){\n            int x;\n            cin\
+    \ >> x;\n            q.push(t,x);\n        }else{\n            cout << q.front(t)\
+    \ << \"\\n\";\n            q.pop(t);\n        }\n    }\n}"
+  dependsOn:
+  - template.hpp
+  - data-structure/persistent-queue.hpp
+  isVerificationFile: true
+  path: verify/yosupo/data-structure/persistent-queue/persistent_queue.test.cpp
+  requiredBy: []
+  timestamp: '2026-10-24 00:10:28+07:00'
+  verificationStatus: TEST_WRONG_ANSWER
+  verifiedWith: []
+documentation_of: verify/yosupo/data-structure/persistent-queue/persistent_queue.test.cpp
+layout: document
+redirect_from:
+- /verify/verify/yosupo/data-structure/persistent-queue/persistent_queue.test.cpp
+- /verify/verify/yosupo/data-structure/persistent-queue/persistent_queue.test.cpp.html
+title: verify/yosupo/data-structure/persistent-queue/persistent_queue.test.cpp
+---

@@ -4,8 +4,8 @@ data:
   _extendedRequiredBy: []
   _extendedVerifiedWith:
   - icon: ':heavy_check_mark:'
-    path: verify/yosupo/convolution/bitwise_xor_convolution.test.cpp
-    title: verify/yosupo/convolution/bitwise_xor_convolution.test.cpp
+    path: verify/yosupo/convolution/xor-convolution/bitwise_xor_convolution.test.cpp
+    title: verify/yosupo/convolution/xor-convolution/bitwise_xor_convolution.test.cpp
   _isVerificationFailed: false
   _pathExtension: hpp
   _verificationStatusIcon: ':heavy_check_mark:'
@@ -40,7 +40,7 @@ data:
   timestamp: '2024-08-04 01:01:28+07:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
-  - verify/yosupo/convolution/bitwise_xor_convolution.test.cpp
+  - verify/yosupo/convolution/xor-convolution/bitwise_xor_convolution.test.cpp
 documentation_of: convolution/xor-convolution.hpp
 layout: document
 redirect_from:
