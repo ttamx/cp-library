@@ -188,10 +188,14 @@ struct BitSet{
     }
     int count_range(int l,int r)const{
         assert(0<=l&&l<=r&&r<=n);
+        if(l==r)return 0;
+        int ql=l>>6,qr=r>>6;
+        u64 ml=u64(-1)<<(l&63),mr=maskbit(r&63)-1;
+        if(ql==qr)return __builtin_popcountll(dat[ql]&ml&mr);
         int res=0;
-        while(l<r&&(l&63))res+=(*this)[l++];
-        while(l<r&&(r&63))res+=(*this)[--r];
-        for(int i=l>>6;i<(r>>6);i++)res+=__builtin_popcountll(dat[i]);
+        if(l&63)res+=__builtin_popcountll(dat[ql++]&ml);
+        if(r&63)res+=__builtin_popcountll(dat[qr]&mr);
+        for(int i=ql;i<qr;i++)res+=__builtin_popcountll(dat[i]);
         return res;
     }
 };
