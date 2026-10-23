@@ -15,6 +15,6 @@ struct MaxIdxMonoid{
         if(x.first<y.first)return y;
         return tie_is_left?x:y;
     }
-    static constexpr P unit(){return P(numeric_limits<T>::min(),IDX(-1));}
+    static constexpr P unit(){return P(numeric_limits<T>::lowest(),IDX(-1));}
 };
 

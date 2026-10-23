@@ -3,7 +3,7 @@
 /**
  * Author: Teetat T.
  * Date: 2024-04-14
- * Description: Affine Transfomation Monoid class.
+ * Description: Affine Transformation Monoid class.
  */
 
 template<class T>

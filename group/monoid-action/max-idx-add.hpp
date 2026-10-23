@@ -9,7 +9,7 @@
  */
 
 template<class T,class IDX=int,bool tie_is_left=true>
-struct MaxAddIdxAction{
+struct MaxIdxAddAction{
     using InfoMonoid = MaxIdxMonoid<T,IDX,tie_is_left>;
     using TagMonoid = AddMonoid<T>;
     using Info = typename InfoMonoid::value_type;

@@ -14,7 +14,7 @@ struct MonoidActionBase{
     using Info = typename InfoMonoid::value_type;
     using Tag = typename TagMonoid::value_type;
     static constexpr Info op(const Info &a,const Tag &b){
-        return combine(a,b);
+        return apply(a,b);
     }
 };
 

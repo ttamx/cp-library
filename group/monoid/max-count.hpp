@@ -15,7 +15,7 @@ struct MaxCountMonoid{
         if(y.first>x.first)return y;
         return P(x.first,x.second+y.second);
     }
-    static constexpr P unit(){return P(numeric_limits<T>::min(),0);}
+    static constexpr P unit(){return P(numeric_limits<T>::lowest(),0);}
     static constexpr P make(const T &x){return P(x,1);}
 };
 
