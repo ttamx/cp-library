@@ -173,7 +173,7 @@ data:
   isVerificationFile: true
   path: verify/yosupo/data-structure/range_affine_range_sum.test.cpp
   requiredBy: []
-  timestamp: '2026-07-22 11:58:01+07:00'
+  timestamp: '2026-10-23 21:46:01+07:00'
   verificationStatus: TEST_ACCEPTED
   verifiedWith: []
 documentation_of: verify/yosupo/data-structure/range_affine_range_sum.test.cpp

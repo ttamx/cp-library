@@ -103,7 +103,7 @@ data:
   isVerificationFile: true
   path: verify/yosupo/convolution/bitwise_and_convolution.test.cpp
   requiredBy: []
-  timestamp: '2026-07-22 11:58:01+07:00'
+  timestamp: '2026-10-23 21:46:01+07:00'
   verificationStatus: TEST_ACCEPTED
   verifiedWith: []
 documentation_of: verify/yosupo/convolution/bitwise_and_convolution.test.cpp

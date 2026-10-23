@@ -27,6 +27,9 @@ data:
       path: data-structure/binary-trie.hpp
       title: data-structure/binary-trie.hpp
     - icon: ':heavy_check_mark:'
+      path: data-structure/bitset.hpp
+      title: data-structure/bitset.hpp
+    - icon: ':heavy_check_mark:'
       path: data-structure/cartesian-tree.hpp
       title: data-structure/cartesian-tree.hpp
     - icon: ':heavy_check_mark:'
@@ -405,6 +408,11 @@ data:
     - icon: ':heavy_check_mark:'
       path: verify/yosupo/graph/scc.test.cpp
       title: verify/yosupo/graph/scc.test.cpp
+  - name: verify/yosupo/linear-algebra
+    pages:
+    - icon: ':heavy_check_mark:'
+      path: verify/yosupo/linear-algebra/matrix_product_mod_2.test.cpp
+      title: verify/yosupo/linear-algebra/matrix_product_mod_2.test.cpp
   - name: verify/yosupo/number-theory
     pages:
     - icon: ':heavy_check_mark:'

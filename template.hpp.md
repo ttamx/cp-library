@@ -127,6 +127,9 @@ data:
     path: verify/yosupo/graph/scc.test.cpp
     title: verify/yosupo/graph/scc.test.cpp
   - icon: ':heavy_check_mark:'
+    path: verify/yosupo/linear-algebra/matrix_product_mod_2.test.cpp
+    title: verify/yosupo/linear-algebra/matrix_product_mod_2.test.cpp
+  - icon: ':heavy_check_mark:'
     path: verify/yosupo/number-theory/sum_of_floor_of_linear.test.cpp
     title: verify/yosupo/number-theory/sum_of_floor_of_linear.test.cpp
   - icon: ':heavy_check_mark:'
@@ -375,64 +378,65 @@ data:
   isVerificationFile: false
   path: template.hpp
   requiredBy:
-  - flow/general-weighted-matching.hpp
-  - verify/spoj/FASTFLOW.cpp
+  - graph/twosat.hpp
   - verify/kattis/thekingofthenorth.cpp
-  - verify/atcoder/abc347_g.cpp
+  - verify/spoj/FASTFLOW.cpp
+  - verify/yosupo/graph/assignment.cpp
   - verify/atcoder/abc193_f.cpp
   - verify/atcoder/abc259_g.cpp
-  - verify/yosupo/graph/assignment.cpp
-  - graph/twosat.hpp
-  - data-structure/cartesian-tree.hpp
+  - verify/atcoder/abc347_g.cpp
+  - flow/general-weighted-matching.hpp
   - data-structure/fast-set.hpp
+  - data-structure/cartesian-tree.hpp
   timestamp: '2026-04-15 22:12:04+07:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
-  - verify/yosupo/number-theory/sum_of_floor_of_linear.test.cpp
-  - verify/yosupo/polynomial/exp_of_formal_power_series.test.cpp
+  - verify/yosupo/polynomial/pow_of_formal_power_series.test.cpp
   - verify/yosupo/polynomial/log_of_formal_power_series.test.cpp
   - verify/yosupo/polynomial/inv_of_formal_power_series.test.cpp
-  - verify/yosupo/polynomial/pow_of_formal_power_series.test.cpp
+  - verify/yosupo/polynomial/exp_of_formal_power_series.test.cpp
+  - verify/yosupo/graph/general_weighted_matching.test.cpp
+  - verify/yosupo/graph/general_matching.test.cpp
+  - verify/yosupo/graph/scc.test.cpp
+  - verify/yosupo/convolution/bitwise_and_convolution.test.cpp
+  - verify/yosupo/convolution/convolution_mod_1000000007.test.cpp
+  - verify/yosupo/convolution/gcd_convolution.test.cpp
+  - verify/yosupo/convolution/bitwise_xor_convolution.test.cpp
+  - verify/yosupo/convolution/bitwise_or_convolution.test.cpp
+  - verify/yosupo/convolution/lcm_convolution.test.cpp
+  - verify/yosupo/convolution/convolution_mod.test.cpp
+  - verify/yosupo/convolution/min_plus_convolution_convex_arbitrary.test.cpp
+  - verify/yosupo/linear-algebra/matrix_product_mod_2.test.cpp
+  - verify/yosupo/other/two_sat.test.cpp
+  - verify/yosupo/number-theory/sum_of_floor_of_linear.test.cpp
+  - verify/yosupo/string/zalgorithm.test.cpp
+  - verify/yosupo/string/enumerate_palindromes.test.cpp
+  - verify/yosupo/string/number_of_substrings.test.cpp
+  - verify/yosupo/string/suffixarray.test.cpp
+  - verify/yosupo/string/number_of_substrings2.test.cpp
+  - verify/yosupo/data-structure/unionfind.test.cpp
+  - verify/yosupo/data-structure/range_reverse_range_sum.test.cpp
+  - verify/yosupo/data-structure/segment_add_get_min.test.cpp
+  - verify/yosupo/data-structure/staticrmq.test.cpp
+  - verify/yosupo/data-structure/vertex_add_subtree_sum.test.cpp
+  - verify/yosupo/data-structure/point_set_tree_path_composite_sum.test.cpp
+  - verify/yosupo/data-structure/point_set_tree_path_composite_sum_fixed_root.test.cpp
+  - verify/yosupo/data-structure/set_xor_min.test.cpp
+  - verify/yosupo/data-structure/segment_add_get_min_online.test.cpp
+  - verify/yosupo/data-structure/dynamic_sequence_range_affine_range_sum.test.cpp
+  - verify/yosupo/data-structure/predecessor_problem.test.cpp
+  - verify/yosupo/data-structure/vertex_add_path_sum.test.cpp
+  - verify/yosupo/data-structure/point_set_range_composite.test.cpp
+  - verify/yosupo/data-structure/persistent_queue.test.cpp
+  - verify/yosupo/data-structure/range_affine_range_sum_lct.test.cpp
+  - verify/yosupo/data-structure/vertex_set_path_composite.test.cpp
+  - verify/yosupo/data-structure/line_add_get_min.test.cpp
+  - verify/yosupo/data-structure/area_of_union_of_rectangles.test.cpp
+  - verify/yosupo/data-structure/point_add_range_sum.test.cpp
+  - verify/yosupo/data-structure/range_affine_range_sum.test.cpp
   - verify/yosupo/tree/cartesian_tree.test.cpp
   - verify/yosupo/tree/lca.test.cpp
   - verify/yosupo/tree/jump_on_tree.test.cpp
-  - verify/yosupo/other/two_sat.test.cpp
-  - verify/yosupo/graph/scc.test.cpp
-  - verify/yosupo/graph/general_matching.test.cpp
-  - verify/yosupo/graph/general_weighted_matching.test.cpp
-  - verify/yosupo/string/number_of_substrings.test.cpp
-  - verify/yosupo/string/zalgorithm.test.cpp
-  - verify/yosupo/string/suffixarray.test.cpp
-  - verify/yosupo/string/enumerate_palindromes.test.cpp
-  - verify/yosupo/string/number_of_substrings2.test.cpp
-  - verify/yosupo/convolution/convolution_mod_1000000007.test.cpp
-  - verify/yosupo/convolution/bitwise_and_convolution.test.cpp
-  - verify/yosupo/convolution/bitwise_or_convolution.test.cpp
-  - verify/yosupo/convolution/lcm_convolution.test.cpp
-  - verify/yosupo/convolution/gcd_convolution.test.cpp
-  - verify/yosupo/convolution/min_plus_convolution_convex_arbitrary.test.cpp
-  - verify/yosupo/convolution/convolution_mod.test.cpp
-  - verify/yosupo/convolution/bitwise_xor_convolution.test.cpp
-  - verify/yosupo/data-structure/dynamic_sequence_range_affine_range_sum.test.cpp
-  - verify/yosupo/data-structure/range_affine_range_sum.test.cpp
-  - verify/yosupo/data-structure/vertex_add_path_sum.test.cpp
-  - verify/yosupo/data-structure/persistent_queue.test.cpp
-  - verify/yosupo/data-structure/unionfind.test.cpp
-  - verify/yosupo/data-structure/range_affine_range_sum_lct.test.cpp
-  - verify/yosupo/data-structure/segment_add_get_min.test.cpp
-  - verify/yosupo/data-structure/point_set_tree_path_composite_sum_fixed_root.test.cpp
-  - verify/yosupo/data-structure/line_add_get_min.test.cpp
-  - verify/yosupo/data-structure/vertex_add_subtree_sum.test.cpp
-  - verify/yosupo/data-structure/point_set_tree_path_composite_sum.test.cpp
-  - verify/yosupo/data-structure/predecessor_problem.test.cpp
-  - verify/yosupo/data-structure/point_add_range_sum.test.cpp
-  - verify/yosupo/data-structure/area_of_union_of_rectangles.test.cpp
-  - verify/yosupo/data-structure/point_set_range_composite.test.cpp
-  - verify/yosupo/data-structure/segment_add_get_min_online.test.cpp
-  - verify/yosupo/data-structure/vertex_set_path_composite.test.cpp
-  - verify/yosupo/data-structure/staticrmq.test.cpp
-  - verify/yosupo/data-structure/range_reverse_range_sum.test.cpp
-  - verify/yosupo/data-structure/set_xor_min.test.cpp
 documentation_of: template.hpp
 layout: document
 redirect_from:

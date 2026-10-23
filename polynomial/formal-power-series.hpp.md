@@ -32,11 +32,11 @@ data:
     \    T res=1;\n    for(;b>0;b>>=1,a*=a)if(b&1)res*=a;\n    return res;\n}\n\n\
     #line 3 \"polynomial/ntt.hpp\"\n\n/**\n * Author: Teetat T.\n * Description: Number\
     \ Theoretic Transform\n * Time: $O(N \\log N)$\n */\n\ntemplate<class mint>\n\
-    struct NTT{\n\tusing vm = vector<mint>;\n\t\n\tstatic constexpr mint root=mint::get_root();\n\
-    \    static_assert(root!=0, \"root must be nonzero\");\n\n\tstatic void ntt(vm\
-    \ &a){\n\t\tint n=a.size(),L=31-__builtin_clz(n);\n\t\tvm rt(n);\n\t\trt[1]=1;\n\
-    \t\tfor(int k=2,s=2;k<n;k*=2,s++){\n\t\t\tmint z[]={1,binpow(root,MOD>>s)};\n\t\
-    \t\tfor(int i=k;i<2*k;i++)rt[i]=rt[i/2]*z[i&1];\n\t\t}\n\t\tvector<int> rev(n);\n\
+    struct NTT{\n\tusing vm = vector<mint>;\n\t\n\tstatic constexpr ll mod=mint::get_mod();\n\
+    \tstatic constexpr mint root=mint::get_root();\n    static_assert(root!=0, \"\
+    root must be nonzero\");\n\n\tstatic void ntt(vm &a){\n\t\tint n=a.size(),L=31-__builtin_clz(n);\n\
+    \t\tvm rt(n);\n\t\trt[1]=1;\n\t\tfor(int k=2,s=2;k<n;k*=2,s++){\n\t\t\tmint z[]={1,binpow(root,mod>>s)};\n\
+    \t\t\tfor(int i=k;i<2*k;i++)rt[i]=rt[i/2]*z[i&1];\n\t\t}\n\t\tvector<int> rev(n);\n\
     \t\tfor(int i=1;i<n;i++)rev[i]=(rev[i/2]|(i&1)<<L)/2;\n\t\tfor(int i=1;i<n;i++)if(i<rev[i])swap(a[i],a[rev[i]]);\n\
     \t\tfor(int k=1;k<n;k*=2)for(int i=0;i<n;i+=2*k)for(int j=0;j<k;j++){\n\t\t\t\
     mint z=rt[j+k]*a[i+j+k];\n\t\t\ta[i+j+k]=a[i+j]-z;\n\t\t\ta[i+j]+=z;\n\t\t}\n\t\
@@ -161,13 +161,13 @@ data:
   isVerificationFile: false
   path: polynomial/formal-power-series.hpp
   requiredBy: []
-  timestamp: '2026-04-15 21:45:25+07:00'
+  timestamp: '2026-10-23 21:46:01+07:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
-  - verify/yosupo/polynomial/exp_of_formal_power_series.test.cpp
+  - verify/yosupo/polynomial/pow_of_formal_power_series.test.cpp
   - verify/yosupo/polynomial/log_of_formal_power_series.test.cpp
   - verify/yosupo/polynomial/inv_of_formal_power_series.test.cpp
-  - verify/yosupo/polynomial/pow_of_formal_power_series.test.cpp
+  - verify/yosupo/polynomial/exp_of_formal_power_series.test.cpp
 documentation_of: polynomial/formal-power-series.hpp
 layout: document
 redirect_from:

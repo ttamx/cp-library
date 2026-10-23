@@ -34,10 +34,10 @@ data:
     \ i=0;i<a.size();i++)in1[i]=cd(ll(a[i])/cut,ll(a[i])%cut); // a1 + i * a2\n\t\t\
     for(int i=0;i<b.size();i++)in2[i]=cd(ll(b[i])/cut,ll(b[i])%cut); // b1 + i * b2\n\
     \t\tfft(in1),fft(in2);\n\t\tfor(int i=0;i<n;i++){\n\t\t\tint j=-i&(n-1);\n\t\t\
-    \tout1[j]=(in1[i]+conj(in1[j]))*in2[i]/(2.l*n); // f1 * (g1 + i * g2) = f1 * g1\
-    \ + i f1 * g2\n\t\t\tout2[j]=(in1[i]-conj(in1[j]))*in2[i]/cd(0.l,2.l*n); // f2\
-    \ * (g1 + i * g2) = f2 * g1 + i f2 * g2\n\t\t}\n\t\tfft(out1),fft(out2);\n\t\t\
-    for(int i=0;i<res.size();i++){\n\t\t\tll x=round(real(out1[i])),y=round(imag(out1[i]))+round(real(out2[i])),z=round(imag(out2[i]));\n\
+    \tout1[j]=(in1[i]+conj(in1[j]))*in2[i]/(db(2)*n); // f1 * (g1 + i * g2) = f1 *\
+    \ g1 + i f1 * g2\n\t\t\tout2[j]=(in1[i]-conj(in1[j]))*in2[i]/cd(db(0),db(2)*n);\
+    \ // f2 * (g1 + i * g2) = f2 * g1 + i f2 * g2\n\t\t}\n\t\tfft(out1),fft(out2);\n\
+    \t\tfor(int i=0;i<res.size();i++){\n\t\t\tll x=round(real(out1[i])),y=round(imag(out1[i]))+round(real(out2[i])),z=round(imag(out2[i]));\n\
     \t\t\tres[i]=((x%mod*cut+y)%mod*cut+z)%mod; // a1 * b1 * cut^2 + (a1 * b2 + a2\
     \ * b1) * cut + a2 * b2\n\t\t}\n\t\treturn res;\n\t}\n\tvt operator()(const vt\
     \ &a,const vt &b){\n\t\treturn mod>0?convMod(a,b):conv(a,b);\n\t}\n};\ntemplate<>\n\
@@ -64,10 +64,10 @@ data:
     \ i=0;i<a.size();i++)in1[i]=cd(ll(a[i])/cut,ll(a[i])%cut); // a1 + i * a2\n\t\t\
     for(int i=0;i<b.size();i++)in2[i]=cd(ll(b[i])/cut,ll(b[i])%cut); // b1 + i * b2\n\
     \t\tfft(in1),fft(in2);\n\t\tfor(int i=0;i<n;i++){\n\t\t\tint j=-i&(n-1);\n\t\t\
-    \tout1[j]=(in1[i]+conj(in1[j]))*in2[i]/(2.l*n); // f1 * (g1 + i * g2) = f1 * g1\
-    \ + i f1 * g2\n\t\t\tout2[j]=(in1[i]-conj(in1[j]))*in2[i]/cd(0.l,2.l*n); // f2\
-    \ * (g1 + i * g2) = f2 * g1 + i f2 * g2\n\t\t}\n\t\tfft(out1),fft(out2);\n\t\t\
-    for(int i=0;i<res.size();i++){\n\t\t\tll x=round(real(out1[i])),y=round(imag(out1[i]))+round(real(out2[i])),z=round(imag(out2[i]));\n\
+    \tout1[j]=(in1[i]+conj(in1[j]))*in2[i]/(db(2)*n); // f1 * (g1 + i * g2) = f1 *\
+    \ g1 + i f1 * g2\n\t\t\tout2[j]=(in1[i]-conj(in1[j]))*in2[i]/cd(db(0),db(2)*n);\
+    \ // f2 * (g1 + i * g2) = f2 * g1 + i f2 * g2\n\t\t}\n\t\tfft(out1),fft(out2);\n\
+    \t\tfor(int i=0;i<res.size();i++){\n\t\t\tll x=round(real(out1[i])),y=round(imag(out1[i]))+round(real(out2[i])),z=round(imag(out2[i]));\n\
     \t\t\tres[i]=((x%mod*cut+y)%mod*cut+z)%mod; // a1 * b1 * cut^2 + (a1 * b2 + a2\
     \ * b1) * cut + a2 * b2\n\t\t}\n\t\treturn res;\n\t}\n\tvt operator()(const vt\
     \ &a,const vt &b){\n\t\treturn mod>0?convMod(a,b):conv(a,b);\n\t}\n};\ntemplate<>\n\
@@ -76,7 +76,7 @@ data:
   isVerificationFile: false
   path: polynomial/fft.hpp
   requiredBy: []
-  timestamp: '2026-04-04 10:38:14+05:30'
+  timestamp: '2026-10-23 21:46:01+07:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
   - verify/yosupo/convolution/convolution_mod_1000000007.test.cpp

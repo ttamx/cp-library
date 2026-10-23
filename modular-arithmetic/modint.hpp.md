@@ -126,26 +126,26 @@ data:
   isVerificationFile: false
   path: modular-arithmetic/modint.hpp
   requiredBy: []
-  timestamp: '2026-07-22 11:58:01+07:00'
+  timestamp: '2026-10-23 21:46:01+07:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
-  - verify/yosupo/polynomial/exp_of_formal_power_series.test.cpp
+  - verify/yosupo/polynomial/pow_of_formal_power_series.test.cpp
   - verify/yosupo/polynomial/log_of_formal_power_series.test.cpp
   - verify/yosupo/polynomial/inv_of_formal_power_series.test.cpp
-  - verify/yosupo/polynomial/pow_of_formal_power_series.test.cpp
+  - verify/yosupo/polynomial/exp_of_formal_power_series.test.cpp
   - verify/yosupo/convolution/bitwise_and_convolution.test.cpp
+  - verify/yosupo/convolution/gcd_convolution.test.cpp
+  - verify/yosupo/convolution/bitwise_xor_convolution.test.cpp
   - verify/yosupo/convolution/bitwise_or_convolution.test.cpp
   - verify/yosupo/convolution/lcm_convolution.test.cpp
-  - verify/yosupo/convolution/gcd_convolution.test.cpp
   - verify/yosupo/convolution/convolution_mod.test.cpp
-  - verify/yosupo/convolution/bitwise_xor_convolution.test.cpp
-  - verify/yosupo/data-structure/dynamic_sequence_range_affine_range_sum.test.cpp
-  - verify/yosupo/data-structure/range_affine_range_sum.test.cpp
-  - verify/yosupo/data-structure/range_affine_range_sum_lct.test.cpp
-  - verify/yosupo/data-structure/point_set_tree_path_composite_sum_fixed_root.test.cpp
   - verify/yosupo/data-structure/point_set_tree_path_composite_sum.test.cpp
+  - verify/yosupo/data-structure/point_set_tree_path_composite_sum_fixed_root.test.cpp
+  - verify/yosupo/data-structure/dynamic_sequence_range_affine_range_sum.test.cpp
   - verify/yosupo/data-structure/point_set_range_composite.test.cpp
+  - verify/yosupo/data-structure/range_affine_range_sum_lct.test.cpp
   - verify/yosupo/data-structure/vertex_set_path_composite.test.cpp
+  - verify/yosupo/data-structure/range_affine_range_sum.test.cpp
 documentation_of: modular-arithmetic/modint.hpp
 layout: document
 redirect_from:

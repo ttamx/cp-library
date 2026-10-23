@@ -46,10 +46,10 @@ data:
   timestamp: '2026-04-04 10:38:14+05:30'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
-  - verify/yosupo/polynomial/exp_of_formal_power_series.test.cpp
+  - verify/yosupo/polynomial/pow_of_formal_power_series.test.cpp
   - verify/yosupo/polynomial/log_of_formal_power_series.test.cpp
   - verify/yosupo/polynomial/inv_of_formal_power_series.test.cpp
-  - verify/yosupo/polynomial/pow_of_formal_power_series.test.cpp
+  - verify/yosupo/polynomial/exp_of_formal_power_series.test.cpp
   - verify/yosupo/convolution/convolution_mod.test.cpp
 documentation_of: modular-arithmetic/binpow.hpp
 layout: document
