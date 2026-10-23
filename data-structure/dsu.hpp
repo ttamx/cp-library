@@ -24,6 +24,7 @@ struct DSU{
     bool merge(int u,int v){
         u=find(u),v=find(v);
         if(u==v)return false;
+        if(sz[u]<sz[v])swap(u,v);
         sz[u]+=sz[v];
         p[v]=u;
         return true;
