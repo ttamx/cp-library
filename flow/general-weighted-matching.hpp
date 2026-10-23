@@ -71,11 +71,17 @@ void add_blossom(int u,int lca,int v){
   int b=n+1;while(b<=n_x&&st[b])++b;
   if(b>n_x)++n_x; //new blossom;
   lab[b]=0;S[b]=0;match[b]=match[lca];flo[b]=vector<int>{lca};
-  for(int x=u,y;x!=lca;x=st[pa[y]])
-    flo[b].eb(x),flo[b].eb(y=st[match[x]]),q_push(y);
+  for(int x=u,y;x!=lca;x=st[pa[y]]){
+    flo[b].emplace_back(x);
+    flo[b].emplace_back(y=st[match[x]]);
+    q_push(y);
+  }
   reverse(1+ALL(flo[b]));
-  for(int x=v,y;x!=lca;x=st[pa[y]])
-    flo[b].eb(x),flo[b].eb(y=st[match[x]]),q_push(y);
+  for(int x=v,y;x!=lca;x=st[pa[y]]){
+    flo[b].emplace_back(x);
+    flo[b].emplace_back(y=st[match[x]]);
+    q_push(y);
+  }
   set_st(b,b);
   for(int x=1;x<=n_x;x++)g[b][x].w=g[x][b].w=0;
   for(int x=1;x<=n;x++)flo_from[b][x]=0;
