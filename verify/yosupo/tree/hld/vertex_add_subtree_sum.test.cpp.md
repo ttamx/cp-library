@@ -4,7 +4,7 @@ data:
   - icon: ':question:'
     path: data-structure/fenwick-tree.hpp
     title: data-structure/fenwick-tree.hpp
-  - icon: ':x:'
+  - icon: ':question:'
     path: graph/graph-base.hpp
     title: graph/graph-base.hpp
   - icon: ':question:'

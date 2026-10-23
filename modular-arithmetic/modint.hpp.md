@@ -24,13 +24,13 @@ data:
   - icon: ':heavy_check_mark:'
     path: verify/yosupo/data-structure/link-cut-tree/lazy-reversible-splay-tree/dynamic_sequence_range_affine_range_sum.test.cpp
     title: verify/yosupo/data-structure/link-cut-tree/lazy-reversible-splay-tree/dynamic_sequence_range_affine_range_sum.test.cpp
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: verify/yosupo/data-structure/segment-tree/lazy-segment-tree/range_affine_range_sum.test.cpp
     title: verify/yosupo/data-structure/segment-tree/lazy-segment-tree/range_affine_range_sum.test.cpp
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: verify/yosupo/data-structure/segment-tree/segment-tree/point_set_range_composite.test.cpp
     title: verify/yosupo/data-structure/segment-tree/segment-tree/point_set_range_composite.test.cpp
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: verify/yosupo/polynomial/formal-power-series/exp_of_formal_power_series.test.cpp
     title: verify/yosupo/polynomial/formal-power-series/exp_of_formal_power_series.test.cpp
   - icon: ':x:'

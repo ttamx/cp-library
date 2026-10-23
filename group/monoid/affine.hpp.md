@@ -2,7 +2,7 @@
 data:
   _extendedDependsOn: []
   _extendedRequiredBy:
-  - icon: ':question:'
+  - icon: ':heavy_check_mark:'
     path: group/monoid-action/add-count-affine.hpp
     title: group/monoid-action/add-count-affine.hpp
   _extendedVerifiedWith:
@@ -12,10 +12,10 @@ data:
   - icon: ':heavy_check_mark:'
     path: verify/yosupo/data-structure/link-cut-tree/lazy-reversible-splay-tree/dynamic_sequence_range_affine_range_sum.test.cpp
     title: verify/yosupo/data-structure/link-cut-tree/lazy-reversible-splay-tree/dynamic_sequence_range_affine_range_sum.test.cpp
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: verify/yosupo/data-structure/segment-tree/lazy-segment-tree/range_affine_range_sum.test.cpp
     title: verify/yosupo/data-structure/segment-tree/lazy-segment-tree/range_affine_range_sum.test.cpp
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: verify/yosupo/data-structure/segment-tree/segment-tree/point_set_range_composite.test.cpp
     title: verify/yosupo/data-structure/segment-tree/segment-tree/point_set_range_composite.test.cpp
   - icon: ':x:'

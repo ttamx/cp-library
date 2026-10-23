@@ -1,10 +1,10 @@
 ---
 data:
   _extendedDependsOn:
-  - icon: ':x:'
+  - icon: ':question:'
     path: data-structure/sparse-table.hpp
     title: data-structure/sparse-table.hpp
-  - icon: ':x:'
+  - icon: ':question:'
     path: group/monoid/min.hpp
     title: group/monoid/min.hpp
   - icon: ':question:'
@@ -12,9 +12,9 @@ data:
     title: template.hpp
   _extendedRequiredBy: []
   _extendedVerifiedWith: []
-  _isVerificationFailed: true
+  _isVerificationFailed: false
   _pathExtension: cpp
-  _verificationStatusIcon: ':x:'
+  _verificationStatusIcon: ':heavy_check_mark:'
   attributes:
     '*NOT_SPECIAL_COMMENTS*': ''
     PROBLEM: https://judge.yosupo.jp/problem/staticrmq
@@ -83,7 +83,7 @@ data:
   path: verify/yosupo/data-structure/sparse-table/staticrmq.test.cpp
   requiredBy: []
   timestamp: '2026-10-24 00:10:28+07:00'
-  verificationStatus: TEST_WRONG_ANSWER
+  verificationStatus: TEST_ACCEPTED
   verifiedWith: []
 documentation_of: verify/yosupo/data-structure/sparse-table/staticrmq.test.cpp
 layout: document

@@ -8,10 +8,10 @@ data:
   - icon: ':heavy_check_mark:'
     path: data-structure/fast-set.hpp
     title: data-structure/fast-set.hpp
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: flow/general-weighted-matching.hpp
     title: flow/general-weighted-matching.hpp
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: graph/twosat.hpp
     title: graph/twosat.hpp
   - icon: ':warning:'
@@ -93,43 +93,43 @@ data:
   - icon: ':heavy_check_mark:'
     path: verify/yosupo/data-structure/link-cut-tree/reversible-splay-tree/range_reverse_range_sum.test.cpp
     title: verify/yosupo/data-structure/link-cut-tree/reversible-splay-tree/range_reverse_range_sum.test.cpp
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: verify/yosupo/data-structure/persistent-queue/persistent_queue.test.cpp
     title: verify/yosupo/data-structure/persistent-queue/persistent_queue.test.cpp
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: verify/yosupo/data-structure/segment-tree/dynamic-segment-tree/area_of_union_of_rectangles.test.cpp
     title: verify/yosupo/data-structure/segment-tree/dynamic-segment-tree/area_of_union_of_rectangles.test.cpp
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: verify/yosupo/data-structure/segment-tree/lazy-segment-tree/range_affine_range_sum.test.cpp
     title: verify/yosupo/data-structure/segment-tree/lazy-segment-tree/range_affine_range_sum.test.cpp
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: verify/yosupo/data-structure/segment-tree/segment-tree/point_set_range_composite.test.cpp
     title: verify/yosupo/data-structure/segment-tree/segment-tree/point_set_range_composite.test.cpp
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: verify/yosupo/data-structure/sparse-table/staticrmq.test.cpp
     title: verify/yosupo/data-structure/sparse-table/staticrmq.test.cpp
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: verify/yosupo/flow/general-matching/general_matching.test.cpp
     title: verify/yosupo/flow/general-matching/general_matching.test.cpp
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: verify/yosupo/flow/general-weighted-matching/assignment.test.cpp
     title: verify/yosupo/flow/general-weighted-matching/assignment.test.cpp
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: verify/yosupo/flow/general-weighted-matching/general_weighted_matching.test.cpp
     title: verify/yosupo/flow/general-weighted-matching/general_weighted_matching.test.cpp
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: verify/yosupo/graph/strongly-connected-component/scc.test.cpp
     title: verify/yosupo/graph/strongly-connected-component/scc.test.cpp
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: verify/yosupo/graph/twosat/two_sat.test.cpp
     title: verify/yosupo/graph/twosat/two_sat.test.cpp
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: verify/yosupo/number-theory/floor-sum/sum_of_floor_of_linear.test.cpp
     title: verify/yosupo/number-theory/floor-sum/sum_of_floor_of_linear.test.cpp
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: verify/yosupo/polynomial/fft/convolution_mod_1000000007.test.cpp
     title: verify/yosupo/polynomial/fft/convolution_mod_1000000007.test.cpp
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: verify/yosupo/polynomial/formal-power-series/exp_of_formal_power_series.test.cpp
     title: verify/yosupo/polynomial/formal-power-series/exp_of_formal_power_series.test.cpp
   - icon: ':x:'

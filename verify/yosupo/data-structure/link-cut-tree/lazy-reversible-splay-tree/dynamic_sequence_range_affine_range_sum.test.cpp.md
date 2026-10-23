@@ -10,10 +10,10 @@ data:
   - icon: ':heavy_check_mark:'
     path: data-structure/link-cut-tree/splay-tree-base.hpp
     title: data-structure/link-cut-tree/splay-tree-base.hpp
-  - icon: ':question:'
+  - icon: ':heavy_check_mark:'
     path: group/monoid-action/add-count-affine.hpp
     title: group/monoid-action/add-count-affine.hpp
-  - icon: ':question:'
+  - icon: ':heavy_check_mark:'
     path: group/monoid/add-count.hpp
     title: group/monoid/add-count.hpp
   - icon: ':question:'

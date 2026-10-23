@@ -1,16 +1,16 @@
 ---
 data:
   _extendedDependsOn:
-  - icon: ':x:'
+  - icon: ':question:'
     path: modular-arithmetic/binpow.hpp
     title: modular-arithmetic/binpow.hpp
   - icon: ':question:'
     path: modular-arithmetic/modint.hpp
     title: modular-arithmetic/modint.hpp
-  - icon: ':x:'
+  - icon: ':question:'
     path: polynomial/formal-power-series.hpp
     title: polynomial/formal-power-series.hpp
-  - icon: ':x:'
+  - icon: ':question:'
     path: polynomial/ntt.hpp
     title: polynomial/ntt.hpp
   - icon: ':question:'

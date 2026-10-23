@@ -3,12 +3,12 @@ data:
   _extendedDependsOn: []
   _extendedRequiredBy: []
   _extendedVerifiedWith:
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: verify/yosupo/flow/general-matching/general_matching.test.cpp
     title: verify/yosupo/flow/general-matching/general_matching.test.cpp
-  _isVerificationFailed: true
+  _isVerificationFailed: false
   _pathExtension: hpp
-  _verificationStatusIcon: ':x:'
+  _verificationStatusIcon: ':heavy_check_mark:'
   attributes:
     links: []
   bundledCode: "#line 2 \"flow/general-matching.hpp\"\n\n/**\n * Author: Teetat T.\n\
@@ -74,7 +74,7 @@ data:
   path: flow/general-matching.hpp
   requiredBy: []
   timestamp: '2026-07-22 11:58:01+07:00'
-  verificationStatus: LIBRARY_ALL_WA
+  verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
   - verify/yosupo/flow/general-matching/general_matching.test.cpp
 documentation_of: flow/general-matching.hpp

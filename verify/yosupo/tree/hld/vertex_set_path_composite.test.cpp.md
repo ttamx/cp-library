@@ -1,10 +1,10 @@
 ---
 data:
   _extendedDependsOn:
-  - icon: ':x:'
+  - icon: ':question:'
     path: data-structure/segment-tree/segment-tree.hpp
     title: data-structure/segment-tree/segment-tree.hpp
-  - icon: ':x:'
+  - icon: ':question:'
     path: graph/graph-base.hpp
     title: graph/graph-base.hpp
   - icon: ':question:'

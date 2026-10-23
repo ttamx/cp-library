@@ -49,10 +49,10 @@ data:
     - icon: ':question:'
       path: data-structure/fenwick-tree.hpp
       title: data-structure/fenwick-tree.hpp
-    - icon: ':x:'
+    - icon: ':heavy_check_mark:'
       path: data-structure/persistent-queue.hpp
       title: data-structure/persistent-queue.hpp
-    - icon: ':x:'
+    - icon: ':question:'
       path: data-structure/sparse-table.hpp
       title: data-structure/sparse-table.hpp
   - name: data-structure/convex
@@ -94,13 +94,13 @@ data:
       title: data-structure/link-cut-tree/splay-tree-base.hpp
   - name: data-structure/segment-tree
     pages:
-    - icon: ':x:'
+    - icon: ':heavy_check_mark:'
       path: data-structure/segment-tree/dynamic-segment-tree.hpp
       title: data-structure/segment-tree/dynamic-segment-tree.hpp
-    - icon: ':x:'
+    - icon: ':heavy_check_mark:'
       path: data-structure/segment-tree/lazy-segment-tree.hpp
       title: data-structure/segment-tree/lazy-segment-tree.hpp
-    - icon: ':x:'
+    - icon: ':question:'
       path: data-structure/segment-tree/segment-tree.hpp
       title: data-structure/segment-tree/segment-tree.hpp
   - name: flow
@@ -111,10 +111,10 @@ data:
     - icon: ':warning:'
       path: flow/dinic.hpp
       title: flow/dinic.hpp
-    - icon: ':x:'
+    - icon: ':heavy_check_mark:'
       path: flow/general-matching.hpp
       title: flow/general-matching.hpp
-    - icon: ':x:'
+    - icon: ':heavy_check_mark:'
       path: flow/general-weighted-matching.hpp
       title: flow/general-weighted-matching.hpp
     - icon: ':warning:'
@@ -128,21 +128,21 @@ data:
       title: flow/min-cost-flow.hpp
   - name: graph
     pages:
-    - icon: ':x:'
+    - icon: ':question:'
       path: graph/graph-base.hpp
       title: graph/graph-base.hpp
     - icon: ':warning:'
       path: graph/low-link.hpp
       title: graph/low-link.hpp
-    - icon: ':x:'
+    - icon: ':heavy_check_mark:'
       path: graph/strongly-connected-component.hpp
       title: graph/strongly-connected-component.hpp
-    - icon: ':x:'
+    - icon: ':heavy_check_mark:'
       path: graph/twosat.hpp
       title: graph/twosat.hpp
   - name: group/monoid
     pages:
-    - icon: ':question:'
+    - icon: ':heavy_check_mark:'
       path: group/monoid/add-count.hpp
       title: group/monoid/add-count.hpp
     - icon: ':question:'
@@ -160,13 +160,13 @@ data:
     - icon: ':warning:'
       path: group/monoid/max.hpp
       title: group/monoid/max.hpp
-    - icon: ':x:'
+    - icon: ':heavy_check_mark:'
       path: group/monoid/min-count.hpp
       title: group/monoid/min-count.hpp
     - icon: ':warning:'
       path: group/monoid/min-idx.hpp
       title: group/monoid/min-idx.hpp
-    - icon: ':x:'
+    - icon: ':question:'
       path: group/monoid/min.hpp
       title: group/monoid/min.hpp
     - icon: ':warning:'
@@ -186,7 +186,7 @@ data:
     - icon: ':warning:'
       path: group/monoid-action/add-count-add.hpp
       title: group/monoid-action/add-count-add.hpp
-    - icon: ':question:'
+    - icon: ':heavy_check_mark:'
       path: group/monoid-action/add-count-affine.hpp
       title: group/monoid-action/add-count-affine.hpp
     - icon: ':warning:'
@@ -204,7 +204,7 @@ data:
     - icon: ':warning:'
       path: group/monoid-action/min-add.hpp
       title: group/monoid-action/min-add.hpp
-    - icon: ':x:'
+    - icon: ':heavy_check_mark:'
       path: group/monoid-action/min-count-add.hpp
       title: group/monoid-action/min-count-add.hpp
     - icon: ':warning:'
@@ -220,7 +220,7 @@ data:
       title: linear-algebra/matrix.hpp
   - name: modular-arithmetic
     pages:
-    - icon: ':x:'
+    - icon: ':question:'
       path: modular-arithmetic/binpow.hpp
       title: modular-arithmetic/binpow.hpp
     - icon: ':warning:'
@@ -237,21 +237,21 @@ data:
       title: modular-arithmetic/montgomery-modint.hpp
   - name: number-theory
     pages:
-    - icon: ':x:'
+    - icon: ':heavy_check_mark:'
       path: number-theory/floor-sum.hpp
       title: number-theory/floor-sum.hpp
   - name: polynomial
     pages:
-    - icon: ':x:'
+    - icon: ':heavy_check_mark:'
       path: polynomial/fft.hpp
       title: polynomial/fft.hpp
-    - icon: ':x:'
+    - icon: ':question:'
       path: polynomial/formal-power-series.hpp
       title: polynomial/formal-power-series.hpp
     - icon: ':warning:'
       path: polynomial/lagrange-interpolate.hpp
       title: polynomial/lagrange-interpolate.hpp
-    - icon: ':x:'
+    - icon: ':question:'
       path: polynomial/ntt.hpp
       title: polynomial/ntt.hpp
   - name: string
@@ -417,65 +417,65 @@ data:
       title: verify/yosupo/data-structure/link-cut-tree/reversible-splay-tree/range_reverse_range_sum.test.cpp
   - name: verify/yosupo/data-structure/persistent-queue
     pages:
-    - icon: ':x:'
+    - icon: ':heavy_check_mark:'
       path: verify/yosupo/data-structure/persistent-queue/persistent_queue.test.cpp
       title: verify/yosupo/data-structure/persistent-queue/persistent_queue.test.cpp
   - name: verify/yosupo/data-structure/segment-tree/dynamic-segment-tree
     pages:
-    - icon: ':x:'
+    - icon: ':heavy_check_mark:'
       path: verify/yosupo/data-structure/segment-tree/dynamic-segment-tree/area_of_union_of_rectangles.test.cpp
       title: verify/yosupo/data-structure/segment-tree/dynamic-segment-tree/area_of_union_of_rectangles.test.cpp
   - name: verify/yosupo/data-structure/segment-tree/lazy-segment-tree
     pages:
-    - icon: ':x:'
+    - icon: ':heavy_check_mark:'
       path: verify/yosupo/data-structure/segment-tree/lazy-segment-tree/range_affine_range_sum.test.cpp
       title: verify/yosupo/data-structure/segment-tree/lazy-segment-tree/range_affine_range_sum.test.cpp
   - name: verify/yosupo/data-structure/segment-tree/segment-tree
     pages:
-    - icon: ':x:'
+    - icon: ':heavy_check_mark:'
       path: verify/yosupo/data-structure/segment-tree/segment-tree/point_set_range_composite.test.cpp
       title: verify/yosupo/data-structure/segment-tree/segment-tree/point_set_range_composite.test.cpp
   - name: verify/yosupo/data-structure/sparse-table
     pages:
-    - icon: ':x:'
+    - icon: ':heavy_check_mark:'
       path: verify/yosupo/data-structure/sparse-table/staticrmq.test.cpp
       title: verify/yosupo/data-structure/sparse-table/staticrmq.test.cpp
   - name: verify/yosupo/flow/general-matching
     pages:
-    - icon: ':x:'
+    - icon: ':heavy_check_mark:'
       path: verify/yosupo/flow/general-matching/general_matching.test.cpp
       title: verify/yosupo/flow/general-matching/general_matching.test.cpp
   - name: verify/yosupo/flow/general-weighted-matching
     pages:
-    - icon: ':x:'
+    - icon: ':heavy_check_mark:'
       path: verify/yosupo/flow/general-weighted-matching/assignment.test.cpp
       title: verify/yosupo/flow/general-weighted-matching/assignment.test.cpp
-    - icon: ':x:'
+    - icon: ':heavy_check_mark:'
       path: verify/yosupo/flow/general-weighted-matching/general_weighted_matching.test.cpp
       title: verify/yosupo/flow/general-weighted-matching/general_weighted_matching.test.cpp
   - name: verify/yosupo/graph/strongly-connected-component
     pages:
-    - icon: ':x:'
+    - icon: ':heavy_check_mark:'
       path: verify/yosupo/graph/strongly-connected-component/scc.test.cpp
       title: verify/yosupo/graph/strongly-connected-component/scc.test.cpp
   - name: verify/yosupo/graph/twosat
     pages:
-    - icon: ':x:'
+    - icon: ':heavy_check_mark:'
       path: verify/yosupo/graph/twosat/two_sat.test.cpp
       title: verify/yosupo/graph/twosat/two_sat.test.cpp
   - name: verify/yosupo/number-theory/floor-sum
     pages:
-    - icon: ':x:'
+    - icon: ':heavy_check_mark:'
       path: verify/yosupo/number-theory/floor-sum/sum_of_floor_of_linear.test.cpp
       title: verify/yosupo/number-theory/floor-sum/sum_of_floor_of_linear.test.cpp
   - name: verify/yosupo/polynomial/fft
     pages:
-    - icon: ':x:'
+    - icon: ':heavy_check_mark:'
       path: verify/yosupo/polynomial/fft/convolution_mod_1000000007.test.cpp
       title: verify/yosupo/polynomial/fft/convolution_mod_1000000007.test.cpp
   - name: verify/yosupo/polynomial/formal-power-series
     pages:
-    - icon: ':x:'
+    - icon: ':heavy_check_mark:'
       path: verify/yosupo/polynomial/formal-power-series/exp_of_formal_power_series.test.cpp
       title: verify/yosupo/polynomial/formal-power-series/exp_of_formal_power_series.test.cpp
     - icon: ':x:'

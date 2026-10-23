@@ -17,7 +17,7 @@ data:
   - icon: ':warning:'
     path: group/monoid-action/min-add.hpp
     title: group/monoid-action/min-add.hpp
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: group/monoid-action/min-count-add.hpp
     title: group/monoid-action/min-count-add.hpp
   - icon: ':warning:'
@@ -33,7 +33,7 @@ data:
   - icon: ':heavy_check_mark:'
     path: verify/yosupo/data-structure/link-cut-tree/reversible-splay-tree/range_reverse_range_sum.test.cpp
     title: verify/yosupo/data-structure/link-cut-tree/reversible-splay-tree/range_reverse_range_sum.test.cpp
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: verify/yosupo/data-structure/segment-tree/dynamic-segment-tree/area_of_union_of_rectangles.test.cpp
     title: verify/yosupo/data-structure/segment-tree/dynamic-segment-tree/area_of_union_of_rectangles.test.cpp
   _isVerificationFailed: true
