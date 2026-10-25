@@ -1,4 +1,5 @@
 #pragma once
+#include "random.hpp"
 
 template<class Monoid>
 struct Treap{

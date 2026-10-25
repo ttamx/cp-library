@@ -49,21 +49,12 @@ void test_sum_argsort(){
     assert(argsort(b)==vector<int>({1,3,2,0}));
 }
 
-void test_vec(){
-    auto a=VEC<pair<int,int>>[2][3][4]();
-    static_assert(is_same_v<decltype(a),vector<vector<vector<pair<int,int>>>>>);
-    assert(SZ(a)==2&&SZ(a[0])==3&&SZ(a[0][0])==4&&a[1][2][3]==pair(0,0));
-    auto b=VEC<ll>[2][3](LINF);
-    assert(b[1][2]==LINF);
-}
-
 int main(){
     test_macros();
     test_chmin_chmax();
     test_floor_ceil();
     test_bits();
     test_sum_argsort();
-    test_vec();
     ll a,b;
     cin >> a >> b;
     cout << a+b << "\n";

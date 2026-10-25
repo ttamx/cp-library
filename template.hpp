@@ -54,28 +54,3 @@ vector<int> argsort(const vector<T> &a){
     stable_sort(ALL(p),[&](int i,int j){return a[i]<a[j];});
     return p;
 }
-
-template<class T,size_t D=0>
-struct VecBuilder{
-    array<size_t,D> d;
-    VecBuilder<T,D+1> operator[](size_t n)const{
-        VecBuilder<T,D+1> res{};
-        for(size_t i=0;i<D;i++)res.d[i]=d[i];
-        res.d[D]=n;
-        return res;
-    }
-    template<size_t I=0>
-    auto build(const T &x)const{
-        if constexpr(I+1==D)return vector<T>(d[I],x);
-        else return vector<decltype(build<I+1>(x))>(d[I],build<I+1>(x));
-    }
-    auto operator()(const T &x=T())const{
-        static_assert(D>0);
-        return build(x);
-    }
-};
-template<class T>
-inline constexpr VecBuilder<T> VEC{};
-
-mt19937 rng(chrono::steady_clock::now().time_since_epoch().count());
-mt19937_64 rng64(chrono::steady_clock::now().time_since_epoch().count());
