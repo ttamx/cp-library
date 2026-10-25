@@ -3,12 +3,12 @@
 /**
  * Author: Teetat T.
  * Date: 2024-06-12
- * Description: Li-Chao Tree (minimize).
+ * Description: Li-Chao Tree.
  */
 
-template<class T>
+template<class T,bool IS_MIN>
 struct LiChaoTree{
-    static const T INF=numeric_limits<T>::max()/2;
+    static constexpr T INF=numeric_limits<T>::max();
     struct Line{
         T m,c;
         Line(T _m,T _c):m(_m),c(_c){}
@@ -27,6 +27,7 @@ struct LiChaoTree{
         xs=x;
         sort(xs.begin(),xs.end());
         xs.erase(unique(xs.begin(),xs.end()),xs.end());
+        if(xs.empty())return t.clear();
         t.assign(4<<(31-__builtin_clz(xs.size())),Line(0,INF));
     }
     void insert(int l,int r,int i,Line v){
@@ -36,6 +37,8 @@ struct LiChaoTree{
         if(v.eval(xs[r])<t[i].eval(xs[r]))insert(m+1,r,i*2+1,v);
     }
     inline void insert(T m,T c){
+        if(xs.empty())return;
+        if constexpr(!IS_MIN)m=-m,c=-c;
         insert(0,(int)xs.size()-1,1,Line(m,c));
     }
     void insert_range(int l,int r,int i,T x,T y,Line v){
@@ -46,6 +49,8 @@ struct LiChaoTree{
         insert_range(m+1,r,i*2+1,x,y,v);
     }
     inline void insert_range(T m,T c,T x,T y){
+        if(xs.empty())return;
+        if constexpr(!IS_MIN)m=-m,c=-c;
         insert_range(0,(int)xs.size()-1,1,x,y,Line(m,c));
     }
     T query(int l,int r,int i,T x){
@@ -55,7 +60,9 @@ struct LiChaoTree{
         return min(t[i].eval(x),query(m+1,r,i*2+1,x));
     }
     inline T query(T x){
-        return query(0,(int)xs.size()-1,1,x);
+        if(xs.empty())return IS_MIN?INF:-INF;
+        T res=query(0,(int)xs.size()-1,1,x);
+        return IS_MIN?res:-res;
     }
 };
 

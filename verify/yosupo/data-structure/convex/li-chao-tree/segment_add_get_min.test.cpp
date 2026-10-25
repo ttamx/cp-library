@@ -27,7 +27,7 @@ int main(){
             xs.emplace_back(r);
         }
     }
-    LiChaoTree<ll> lct(xs);
+    LiChaoTree<ll,true> lct(xs);
     for(auto [a,b,l,r]:lines)lct.insert_range(a,b,l,r);
     for(auto [op,a,b,l,r]:qrs){
         if(op){

@@ -7,7 +7,7 @@ int main(){
     int n,q;
     cin >> n >> q;
     const int X=1e9;
-    DynamicLiChaoTree<ll> lct(-X,X);
+    DynamicLiChaoTree<ll,true> lct(-X,X);
     while(n--){
         ll l,r,a,b;
         cin >> l >> r >> a >> b;

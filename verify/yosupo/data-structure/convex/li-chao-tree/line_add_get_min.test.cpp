@@ -22,7 +22,7 @@ int main(){
     if(xs.empty()){
         exit(0);
     }
-    LiChaoTree<ll> lct(xs);
+    LiChaoTree<ll,true> lct(xs);
     for(auto [a,b]:lines)lct.insert(a,b);
     for(auto [op,a,b]:qrs){
         if(op){
