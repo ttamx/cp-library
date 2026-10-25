@@ -16,7 +16,7 @@ struct ReversibleBBST:Tree{
     ReversibleBBST()=default;
 
     T sum(Ptr t){
-        return t?t->sum:T();
+        return t?t->sum:Monoid::unit();
     }
     void pull(Ptr t){
         if(!t)return;

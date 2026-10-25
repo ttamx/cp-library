@@ -27,6 +27,7 @@ struct Dinic{
     Dinic(int n,int s,int t){init(n,s,t);}
     void init(int _n,int _s,int _t){
         n=_n,s=_s,t=_t;
+        assert(s!=t);
         U=0;
         e.clear();
         g.assign(n,{});
