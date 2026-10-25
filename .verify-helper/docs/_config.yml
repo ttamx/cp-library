@@ -1,2 +1,4 @@
 title: ttamx's library
 theme: jekyll-theme-hacker
+exclude:
+  - bundle.py
