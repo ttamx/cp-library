@@ -7,7 +7,7 @@ data:
   - icon: ':heavy_check_mark:'
     path: group/monoid/add.hpp
     title: group/monoid/add.hpp
-  - icon: ':heavy_check_mark:'
+  - icon: ':question:'
     path: template.hpp
     title: template.hpp
   _extendedRequiredBy: []
@@ -41,19 +41,11 @@ data:
     \ U>\nT SUM(const U &a){return accumulate(ALL(a),T{});}\ntemplate<class T>\nvector<int>\
     \ argsort(const vector<T> &a){\n    vector<int> p(SZ(a));\n    iota(ALL(p),0);\n\
     \    stable_sort(ALL(p),[&](int i,int j){return a[i]<a[j];});\n    return p;\n\
-    }\n\ntemplate<class T,size_t D=0>\nstruct VecBuilder{\n    array<size_t,D> d;\n\
-    \    VecBuilder<T,D+1> operator[](size_t n)const{\n        VecBuilder<T,D+1> res{};\n\
-    \        for(size_t i=0;i<D;i++)res.d[i]=d[i];\n        res.d[D]=n;\n        return\
-    \ res;\n    }\n    template<size_t I=0>\n    auto build(const T &x)const{\n  \
-    \      if constexpr(I+1==D)return vector<T>(d[I],x);\n        else return vector<decltype(build<I+1>(x))>(d[I],build<I+1>(x));\n\
-    \    }\n    auto operator()(const T &x=T())const{\n        static_assert(D>0);\n\
-    \        return build(x);\n    }\n};\ntemplate<class T>\ninline constexpr VecBuilder<T>\
-    \ VEC{};\n\nmt19937 rng(chrono::steady_clock::now().time_since_epoch().count());\n\
-    mt19937_64 rng64(chrono::steady_clock::now().time_since_epoch().count());\n#line\
-    \ 2 \"data-structure/bbst/splay-tree.hpp\"\n\ntemplate<class Monoid>\nstruct SplayTree{\n\
-    \    using T = typename Monoid::value_type;\n    struct Node{\n        int l,r,p,sz;\n\
-    \        bool rev;\n        T val,sum,revsum;\n    };\n    vector<Node> t;\n\n\
-    \    SplayTree(int reserve=0){\n        t.reserve(reserve+1);\n        t.push_back(Node{0,0,0,0,false,Monoid::unit(),Monoid::unit(),Monoid::unit()});\n\
+    }\n#line 2 \"data-structure/bbst/splay-tree.hpp\"\n\ntemplate<class Monoid>\n\
+    struct SplayTree{\n    using T = typename Monoid::value_type;\n    struct Node{\n\
+    \        int l,r,p,sz;\n        bool rev;\n        T val,sum,revsum;\n    };\n\
+    \    vector<Node> t;\n\n    SplayTree(int reserve=0){\n        t.reserve(reserve+1);\n\
+    \        t.push_back(Node{0,0,0,0,false,Monoid::unit(),Monoid::unit(),Monoid::unit()});\n\
     \    }\n    int make(const T &v){\n        t.push_back(Node{0,0,0,1,false,v,v,v});\n\
     \        return SZ(t)-1;\n    }\n    int sz(int x){return t[x].sz;}\n    T sum(int\
     \ x){return t[x].sum;}\n\n    void pull(int x){\n        Node &v=t[x];\n     \
@@ -118,7 +110,7 @@ data:
   isVerificationFile: true
   path: verify/yosupo/data-structure/bbst/splay-tree/range_reverse_range_sum.test.cpp
   requiredBy: []
-  timestamp: '2026-10-24 00:10:28+07:00'
+  timestamp: '2026-10-25 14:43:57+07:00'
   verificationStatus: TEST_ACCEPTED
   verifiedWith: []
 documentation_of: verify/yosupo/data-structure/bbst/splay-tree/range_reverse_range_sum.test.cpp

@@ -1,17 +1,17 @@
 ---
 data:
   _extendedDependsOn:
-  - icon: ':heavy_check_mark:'
+  - icon: ':x:'
     path: number-theory/floor-sum.hpp
     title: number-theory/floor-sum.hpp
-  - icon: ':heavy_check_mark:'
+  - icon: ':question:'
     path: template.hpp
     title: template.hpp
   _extendedRequiredBy: []
   _extendedVerifiedWith: []
-  _isVerificationFailed: false
+  _isVerificationFailed: true
   _pathExtension: cpp
-  _verificationStatusIcon: ':heavy_check_mark:'
+  _verificationStatusIcon: ':x:'
   attributes:
     '*NOT_SPECIAL_COMMENTS*': ''
     PROBLEM: https://judge.yosupo.jp/problem/sum_of_floor_of_linear
@@ -38,19 +38,10 @@ data:
     \ U>\nT SUM(const U &a){return accumulate(ALL(a),T{});}\ntemplate<class T>\nvector<int>\
     \ argsort(const vector<T> &a){\n    vector<int> p(SZ(a));\n    iota(ALL(p),0);\n\
     \    stable_sort(ALL(p),[&](int i,int j){return a[i]<a[j];});\n    return p;\n\
-    }\n\ntemplate<class T,size_t D=0>\nstruct VecBuilder{\n    array<size_t,D> d;\n\
-    \    VecBuilder<T,D+1> operator[](size_t n)const{\n        VecBuilder<T,D+1> res{};\n\
-    \        for(size_t i=0;i<D;i++)res.d[i]=d[i];\n        res.d[D]=n;\n        return\
-    \ res;\n    }\n    template<size_t I=0>\n    auto build(const T &x)const{\n  \
-    \      if constexpr(I+1==D)return vector<T>(d[I],x);\n        else return vector<decltype(build<I+1>(x))>(d[I],build<I+1>(x));\n\
-    \    }\n    auto operator()(const T &x=T())const{\n        static_assert(D>0);\n\
-    \        return build(x);\n    }\n};\ntemplate<class T>\ninline constexpr VecBuilder<T>\
-    \ VEC{};\n\nmt19937 rng(chrono::steady_clock::now().time_since_epoch().count());\n\
-    mt19937_64 rng64(chrono::steady_clock::now().time_since_epoch().count());\n#line\
-    \ 2 \"number-theory/floor-sum.hpp\"\n\n/**\n * Author: Teetat T.\n * Date: 2024-09-21\n\
-    \ * Description: Floor sum function.\n *  $f(a, b, c, n) = \\sum_{x=0}^n \\lfloor\
-    \ \\frac{ax+b}{c} \\rfloor$\n *  becareful when a,b,c are negetive (use custom\
-    \ floor division and mod instead)\n * Time: $O(\\log a)$\n */\n\nll floor_sum(ll\
+    }\n#line 2 \"number-theory/floor-sum.hpp\"\n\n/**\n * Author: Teetat T.\n * Date:\
+    \ 2024-09-21\n * Description: Floor sum function.\n *  $f(a, b, c, n) = \\sum_{x=0}^n\
+    \ \\lfloor \\frac{ax+b}{c} \\rfloor$\n *  becareful when a,b,c are negetive (use\
+    \ custom floor division and mod instead)\n * Time: $O(\\log a)$\n */\n\nll floor_sum(ll\
     \ a,ll b,ll c,ll n){\n    ll res=n*(n+1)/2*(a/c)+(n+1)*(b/c);\n    a%=c,b%=c;\n\
     \    if(a==0)return res;\n    ll m=(a*n+b)/c;\n    return res+n*m-floor_sum(c,c-b-1,a,m-1);\n\
     }\n\n#line 4 \"verify/yosupo/number-theory/floor-sum/sum_of_floor_of_linear.test.cpp\"\
@@ -68,8 +59,8 @@ data:
   isVerificationFile: true
   path: verify/yosupo/number-theory/floor-sum/sum_of_floor_of_linear.test.cpp
   requiredBy: []
-  timestamp: '2026-10-24 00:10:28+07:00'
-  verificationStatus: TEST_ACCEPTED
+  timestamp: '2026-10-25 14:43:57+07:00'
+  verificationStatus: TEST_WRONG_ANSWER
   verifiedWith: []
 documentation_of: verify/yosupo/number-theory/floor-sum/sum_of_floor_of_linear.test.cpp
 layout: document

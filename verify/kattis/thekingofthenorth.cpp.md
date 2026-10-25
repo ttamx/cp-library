@@ -4,7 +4,7 @@ data:
   - icon: ':warning:'
     path: flow/dinic.hpp
     title: flow/dinic.hpp
-  - icon: ':heavy_check_mark:'
+  - icon: ':question:'
     path: template.hpp
     title: template.hpp
   _extendedRequiredBy: []
@@ -33,32 +33,24 @@ data:
     \ U>\nT SUM(const U &a){return accumulate(ALL(a),T{});}\ntemplate<class T>\nvector<int>\
     \ argsort(const vector<T> &a){\n    vector<int> p(SZ(a));\n    iota(ALL(p),0);\n\
     \    stable_sort(ALL(p),[&](int i,int j){return a[i]<a[j];});\n    return p;\n\
-    }\n\ntemplate<class T,size_t D=0>\nstruct VecBuilder{\n    array<size_t,D> d;\n\
-    \    VecBuilder<T,D+1> operator[](size_t n)const{\n        VecBuilder<T,D+1> res{};\n\
-    \        for(size_t i=0;i<D;i++)res.d[i]=d[i];\n        res.d[D]=n;\n        return\
-    \ res;\n    }\n    template<size_t I=0>\n    auto build(const T &x)const{\n  \
-    \      if constexpr(I+1==D)return vector<T>(d[I],x);\n        else return vector<decltype(build<I+1>(x))>(d[I],build<I+1>(x));\n\
-    \    }\n    auto operator()(const T &x=T())const{\n        static_assert(D>0);\n\
-    \        return build(x);\n    }\n};\ntemplate<class T>\ninline constexpr VecBuilder<T>\
-    \ VEC{};\n\nmt19937 rng(chrono::steady_clock::now().time_since_epoch().count());\n\
-    mt19937_64 rng64(chrono::steady_clock::now().time_since_epoch().count());\n#line\
-    \ 2 \"flow/dinic.hpp\"\n\n/**\n * Author: Teetat T.\n * Date: 2024-07-15\n * Description:\
-    \ Dinic's Algorithm for finding the maximum flow.\n * Time: O(V E \\log U) where\
-    \ U is the maximum flow.\n */\n\ntemplate<class T,bool directed=true,bool scaling=true>\n\
-    struct Dinic{\n    static constexpr T INF=numeric_limits<T>::max()/2;\n    struct\
-    \ Edge{\n        int to;\n        T flow,cap;\n        Edge(int _to,T _cap):to(_to),flow(0),cap(_cap){}\n\
-    \        T remain(){return cap-flow;}\n    };\n    int n,s,t;\n    T U;\n    vector<Edge>\
-    \ e;\n    vector<vector<int>> g;\n    vector<int> ptr,lv;\n    bool calculated;\n\
-    \    T max_flow;\n    Dinic(){}\n    Dinic(int n,int s,int t){init(n,s,t);}\n\
-    \    void init(int _n,int _s,int _t){\n        n=_n,s=_s,t=_t;\n        U=0;\n\
-    \        e.clear();\n        g.assign(n,{});\n        calculated=false;\n    }\n\
-    \    void add_edge(int from,int to,T cap){\n        assert(0<=from&&from<n&&0<=to&&to<n);\n\
-    \        g[from].emplace_back(e.size());\n        e.emplace_back(to,cap);\n  \
-    \      g[to].emplace_back(e.size());\n        e.emplace_back(from,directed?0:cap);\n\
-    \        U=max(U,cap);\n    }\n    bool bfs(T scale){\n        lv.assign(n,-1);\n\
-    \        vector<int> q{s};\n        lv[s]=0;\n        for(int i=0;i<(int)q.size();i++){\n\
-    \            int u=q[i];\n            for(int j:g[u]){\n                int v=e[j].to;\n\
-    \                if(lv[v]==-1&&e[j].remain()>=scale){\n                    q.emplace_back(v);\n\
+    }\n#line 2 \"flow/dinic.hpp\"\n\n/**\n * Author: Teetat T.\n * Date: 2024-07-15\n\
+    \ * Description: Dinic's Algorithm for finding the maximum flow.\n * Time: O(V\
+    \ E \\log U) where U is the maximum flow.\n */\n\ntemplate<class T,bool directed=true,bool\
+    \ scaling=true>\nstruct Dinic{\n    static constexpr T INF=numeric_limits<T>::max()/2;\n\
+    \    struct Edge{\n        int to;\n        T flow,cap;\n        Edge(int _to,T\
+    \ _cap):to(_to),flow(0),cap(_cap){}\n        T remain(){return cap-flow;}\n  \
+    \  };\n    int n,s,t;\n    T U;\n    vector<Edge> e;\n    vector<vector<int>>\
+    \ g;\n    vector<int> ptr,lv;\n    bool calculated;\n    T max_flow;\n    Dinic(){}\n\
+    \    Dinic(int n,int s,int t){init(n,s,t);}\n    void init(int _n,int _s,int _t){\n\
+    \        n=_n,s=_s,t=_t;\n        U=0;\n        e.clear();\n        g.assign(n,{});\n\
+    \        calculated=false;\n    }\n    void add_edge(int from,int to,T cap){\n\
+    \        assert(0<=from&&from<n&&0<=to&&to<n);\n        g[from].emplace_back(e.size());\n\
+    \        e.emplace_back(to,cap);\n        g[to].emplace_back(e.size());\n    \
+    \    e.emplace_back(from,directed?0:cap);\n        U=max(U,cap);\n    }\n    bool\
+    \ bfs(T scale){\n        lv.assign(n,-1);\n        vector<int> q{s};\n       \
+    \ lv[s]=0;\n        for(int i=0;i<(int)q.size();i++){\n            int u=q[i];\n\
+    \            for(int j:g[u]){\n                int v=e[j].to;\n              \
+    \  if(lv[v]==-1&&e[j].remain()>=scale){\n                    q.emplace_back(v);\n\
     \                    lv[v]=lv[u]+1;\n                }\n            }\n      \
     \  }\n        return lv[t]!=-1;\n    }\n    T dfs(int u,int t,T f){\n        if(u==t||f==0)return\
     \ f;\n        for(int &i=ptr[u];i<(int)g[u].size();i++){\n            int j=g[u][i];\n\
@@ -110,7 +102,7 @@ data:
   isVerificationFile: false
   path: verify/kattis/thekingofthenorth.cpp
   requiredBy: []
-  timestamp: '2026-10-24 00:09:28+07:00'
+  timestamp: '2026-10-25 14:43:57+07:00'
   verificationStatus: LIBRARY_NO_TESTS
   verifiedWith: []
 documentation_of: verify/kattis/thekingofthenorth.cpp

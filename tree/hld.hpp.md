@@ -3,30 +3,30 @@ data:
   _extendedDependsOn: []
   _extendedRequiredBy: []
   _extendedVerifiedWith:
-  - icon: ':heavy_check_mark:'
+  - icon: ':x:'
     path: verify/yosupo/tree/hld/jump_on_tree.test.cpp
     title: verify/yosupo/tree/hld/jump_on_tree.test.cpp
-  - icon: ':heavy_check_mark:'
+  - icon: ':x:'
     path: verify/yosupo/tree/hld/lca.test.cpp
     title: verify/yosupo/tree/hld/lca.test.cpp
-  - icon: ':heavy_check_mark:'
+  - icon: ':x:'
     path: verify/yosupo/tree/hld/vertex_add_path_sum.test.cpp
     title: verify/yosupo/tree/hld/vertex_add_path_sum.test.cpp
-  - icon: ':heavy_check_mark:'
+  - icon: ':x:'
     path: verify/yosupo/tree/hld/vertex_add_subtree_sum.test.cpp
     title: verify/yosupo/tree/hld/vertex_add_subtree_sum.test.cpp
-  - icon: ':heavy_check_mark:'
+  - icon: ':x:'
     path: verify/yosupo/tree/hld/vertex_set_path_composite.test.cpp
     title: verify/yosupo/tree/hld/vertex_set_path_composite.test.cpp
-  - icon: ':heavy_check_mark:'
+  - icon: ':x:'
     path: verify/yosupo/tree/static-top-tree-dp/point_set_tree_path_composite_sum_fixed_root.test.cpp
     title: verify/yosupo/tree/static-top-tree-dp/point_set_tree_path_composite_sum_fixed_root.test.cpp
-  - icon: ':heavy_check_mark:'
+  - icon: ':x:'
     path: verify/yosupo/tree/static-top-tree-rerooting-dp/point_set_tree_path_composite_sum.test.cpp
     title: verify/yosupo/tree/static-top-tree-rerooting-dp/point_set_tree_path_composite_sum.test.cpp
-  _isVerificationFailed: false
+  _isVerificationFailed: true
   _pathExtension: hpp
-  _verificationStatusIcon: ':heavy_check_mark:'
+  _verificationStatusIcon: ':x:'
   attributes:
     links: []
   bundledCode: "#line 2 \"tree/hld.hpp\"\n\n/**\n * Author: Teetat T.\n * Date: 2024-06-15\n\
@@ -94,7 +94,7 @@ data:
   path: tree/hld.hpp
   requiredBy: []
   timestamp: '2024-11-14 23:02:13+07:00'
-  verificationStatus: LIBRARY_ALL_AC
+  verificationStatus: LIBRARY_ALL_WA
   verifiedWith:
   - verify/yosupo/tree/static-top-tree-rerooting-dp/point_set_tree_path_composite_sum.test.cpp
   - verify/yosupo/tree/static-top-tree-dp/point_set_tree_path_composite_sum_fixed_root.test.cpp

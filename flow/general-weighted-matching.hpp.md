@@ -1,7 +1,7 @@
 ---
 data:
   _extendedDependsOn:
-  - icon: ':heavy_check_mark:'
+  - icon: ':question:'
     path: template.hpp
     title: template.hpp
   _extendedRequiredBy: []
@@ -9,12 +9,12 @@ data:
   - icon: ':heavy_check_mark:'
     path: verify/yosupo/flow/general-weighted-matching/assignment.test.cpp
     title: verify/yosupo/flow/general-weighted-matching/assignment.test.cpp
-  - icon: ':heavy_check_mark:'
+  - icon: ':x:'
     path: verify/yosupo/flow/general-weighted-matching/general_weighted_matching.test.cpp
     title: verify/yosupo/flow/general-weighted-matching/general_weighted_matching.test.cpp
-  _isVerificationFailed: false
+  _isVerificationFailed: true
   _pathExtension: hpp
-  _verificationStatusIcon: ':heavy_check_mark:'
+  _verificationStatusIcon: ':question:'
   attributes:
     links: []
   bundledCode: "#line 2 \"template.hpp\"\n#include<bits/stdc++.h>\n\nusing namespace\
@@ -36,20 +36,11 @@ data:
     \ U>\nT SUM(const U &a){return accumulate(ALL(a),T{});}\ntemplate<class T>\nvector<int>\
     \ argsort(const vector<T> &a){\n    vector<int> p(SZ(a));\n    iota(ALL(p),0);\n\
     \    stable_sort(ALL(p),[&](int i,int j){return a[i]<a[j];});\n    return p;\n\
-    }\n\ntemplate<class T,size_t D=0>\nstruct VecBuilder{\n    array<size_t,D> d;\n\
-    \    VecBuilder<T,D+1> operator[](size_t n)const{\n        VecBuilder<T,D+1> res{};\n\
-    \        for(size_t i=0;i<D;i++)res.d[i]=d[i];\n        res.d[D]=n;\n        return\
-    \ res;\n    }\n    template<size_t I=0>\n    auto build(const T &x)const{\n  \
-    \      if constexpr(I+1==D)return vector<T>(d[I],x);\n        else return vector<decltype(build<I+1>(x))>(d[I],build<I+1>(x));\n\
-    \    }\n    auto operator()(const T &x=T())const{\n        static_assert(D>0);\n\
-    \        return build(x);\n    }\n};\ntemplate<class T>\ninline constexpr VecBuilder<T>\
-    \ VEC{};\n\nmt19937 rng(chrono::steady_clock::now().time_since_epoch().count());\n\
-    mt19937_64 rng64(chrono::steady_clock::now().time_since_epoch().count());\n#line\
-    \ 3 \"flow/general-weighted-matching.hpp\"\n\n/**\n * Description: General weighted\
-    \ matching using blossom algorithm.\n * Time: O(|V|^3) \\text{(fast in practice)}\n\
-    \ */\n\ntemplate<int N,class T>\nstruct GeneralWeightedMatching{\nstatic const\
-    \ T INF=numeric_limits<T>::max();\nstruct Edge{\n  int u,v;\n  T w;\n  Edge(){}\n\
-    \  Edge(int u,int v,T w):u(u),v(v),w(w){}\n};\nint n,n_x;\nEdge g[N*2][N*2];\n\
+    }\n#line 3 \"flow/general-weighted-matching.hpp\"\n\n/**\n * Description: General\
+    \ weighted matching using blossom algorithm.\n * Time: O(|V|^3) \\text{(fast in\
+    \ practice)}\n */\n\ntemplate<int N,class T>\nstruct GeneralWeightedMatching{\n\
+    static const T INF=numeric_limits<T>::max();\nstruct Edge{\n  int u,v;\n  T w;\n\
+    \  Edge(){}\n  Edge(int u,int v,T w):u(u),v(v),w(w){}\n};\nint n,n_x;\nEdge g[N*2][N*2];\n\
     T lab[N*2];\nint match[N*2],slack[N*2],st[N*2],pa[N*2];\nint flo_from[N*2][N+1],S[N*2],vis[N*2];\n\
     vector<int> flo[N*2];\nqueue<int> q;\nT e_delta(const Edge &e){return lab[e.u]+lab[e.v]-g[e.u][e.v].w*2;}\n\
     void update_slack(int u,int x){\n  if(!slack[x]||e_delta(g[u][x])<e_delta(g[slack[x]][x]))slack[x]=u;\n\
@@ -168,8 +159,8 @@ data:
   isVerificationFile: false
   path: flow/general-weighted-matching.hpp
   requiredBy: []
-  timestamp: '2026-10-24 00:09:28+07:00'
-  verificationStatus: LIBRARY_ALL_AC
+  timestamp: '2026-10-25 14:43:57+07:00'
+  verificationStatus: LIBRARY_SOME_WA
   verifiedWith:
   - verify/yosupo/flow/general-weighted-matching/general_weighted_matching.test.cpp
   - verify/yosupo/flow/general-weighted-matching/assignment.test.cpp

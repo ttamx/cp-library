@@ -5,22 +5,22 @@ data:
   - icon: ':warning:'
     path: group/monoid-action/min-add.hpp
     title: group/monoid-action/min-add.hpp
-  - icon: ':heavy_check_mark:'
+  - icon: ':x:'
     path: string/suffix-array.hpp
     title: string/suffix-array.hpp
   _extendedVerifiedWith:
   - icon: ':heavy_check_mark:'
     path: verify/yosupo/data-structure/sparse-table/staticrmq.test.cpp
     title: verify/yosupo/data-structure/sparse-table/staticrmq.test.cpp
-  - icon: ':heavy_check_mark:'
+  - icon: ':x:'
     path: verify/yosupo/string/suffix-array/number_of_substrings.test.cpp
     title: verify/yosupo/string/suffix-array/number_of_substrings.test.cpp
-  - icon: ':heavy_check_mark:'
+  - icon: ':x:'
     path: verify/yosupo/string/suffix-array/suffixarray.test.cpp
     title: verify/yosupo/string/suffix-array/suffixarray.test.cpp
-  _isVerificationFailed: false
+  _isVerificationFailed: true
   _pathExtension: hpp
-  _verificationStatusIcon: ':heavy_check_mark:'
+  _verificationStatusIcon: ':question:'
   attributes:
     links: []
   bundledCode: "#line 2 \"group/monoid/min.hpp\"\n\n/**\n * Author: Teetat T.\n *\
@@ -39,7 +39,7 @@ data:
   - string/suffix-array.hpp
   - group/monoid-action/min-add.hpp
   timestamp: '2024-06-10 16:05:09+07:00'
-  verificationStatus: LIBRARY_ALL_AC
+  verificationStatus: LIBRARY_SOME_WA
   verifiedWith:
   - verify/yosupo/string/suffix-array/suffixarray.test.cpp
   - verify/yosupo/string/suffix-array/number_of_substrings.test.cpp

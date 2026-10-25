@@ -1,10 +1,10 @@
 ---
 data:
   _extendedDependsOn:
-  - icon: ':heavy_check_mark:'
+  - icon: ':question:'
     path: data-structure/fenwick-tree.hpp
     title: data-structure/fenwick-tree.hpp
-  - icon: ':heavy_check_mark:'
+  - icon: ':question:'
     path: template.hpp
     title: template.hpp
   _extendedRequiredBy: []
@@ -38,17 +38,8 @@ data:
     \ U>\nT SUM(const U &a){return accumulate(ALL(a),T{});}\ntemplate<class T>\nvector<int>\
     \ argsort(const vector<T> &a){\n    vector<int> p(SZ(a));\n    iota(ALL(p),0);\n\
     \    stable_sort(ALL(p),[&](int i,int j){return a[i]<a[j];});\n    return p;\n\
-    }\n\ntemplate<class T,size_t D=0>\nstruct VecBuilder{\n    array<size_t,D> d;\n\
-    \    VecBuilder<T,D+1> operator[](size_t n)const{\n        VecBuilder<T,D+1> res{};\n\
-    \        for(size_t i=0;i<D;i++)res.d[i]=d[i];\n        res.d[D]=n;\n        return\
-    \ res;\n    }\n    template<size_t I=0>\n    auto build(const T &x)const{\n  \
-    \      if constexpr(I+1==D)return vector<T>(d[I],x);\n        else return vector<decltype(build<I+1>(x))>(d[I],build<I+1>(x));\n\
-    \    }\n    auto operator()(const T &x=T())const{\n        static_assert(D>0);\n\
-    \        return build(x);\n    }\n};\ntemplate<class T>\ninline constexpr VecBuilder<T>\
-    \ VEC{};\n\nmt19937 rng(chrono::steady_clock::now().time_since_epoch().count());\n\
-    mt19937_64 rng64(chrono::steady_clock::now().time_since_epoch().count());\n#line\
-    \ 2 \"data-structure/fenwick-tree.hpp\"\n\n/**\n * Author: Teetat T.\n * Date:\
-    \ 2024-01-15\n * Description: Fenwick / Binary Indexed Tree\n */\n\ntemplate<class\
+    }\n#line 2 \"data-structure/fenwick-tree.hpp\"\n\n/**\n * Author: Teetat T.\n\
+    \ * Date: 2024-01-15\n * Description: Fenwick / Binary Indexed Tree\n */\n\ntemplate<class\
     \ T>\nstruct Fenwick{\n    int n,logn;\n    vector<T> t;\n    Fenwick(){}\n  \
     \  Fenwick(int _n){init(vector<T>(_n,T{}));}\n    template<class U>\n    Fenwick(const\
     \ vector<U> &a){init(a);}\n    template<class U>\n    void init(const vector<U>\
@@ -82,7 +73,7 @@ data:
   isVerificationFile: true
   path: verify/yosupo/data-structure/fenwick-tree/point_add_range_sum.test.cpp
   requiredBy: []
-  timestamp: '2026-10-24 00:10:28+07:00'
+  timestamp: '2026-10-25 14:43:57+07:00'
   verificationStatus: TEST_ACCEPTED
   verifiedWith: []
 documentation_of: verify/yosupo/data-structure/fenwick-tree/point_add_range_sum.test.cpp

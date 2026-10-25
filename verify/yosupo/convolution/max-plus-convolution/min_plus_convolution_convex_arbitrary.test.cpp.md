@@ -4,7 +4,7 @@ data:
   - icon: ':heavy_check_mark:'
     path: convolution/max-plus-convolution.hpp
     title: convolution/max-plus-convolution.hpp
-  - icon: ':heavy_check_mark:'
+  - icon: ':question:'
     path: template.hpp
     title: template.hpp
   _extendedRequiredBy: []
@@ -38,33 +38,25 @@ data:
     \ U>\nT SUM(const U &a){return accumulate(ALL(a),T{});}\ntemplate<class T>\nvector<int>\
     \ argsort(const vector<T> &a){\n    vector<int> p(SZ(a));\n    iota(ALL(p),0);\n\
     \    stable_sort(ALL(p),[&](int i,int j){return a[i]<a[j];});\n    return p;\n\
-    }\n\ntemplate<class T,size_t D=0>\nstruct VecBuilder{\n    array<size_t,D> d;\n\
-    \    VecBuilder<T,D+1> operator[](size_t n)const{\n        VecBuilder<T,D+1> res{};\n\
-    \        for(size_t i=0;i<D;i++)res.d[i]=d[i];\n        res.d[D]=n;\n        return\
-    \ res;\n    }\n    template<size_t I=0>\n    auto build(const T &x)const{\n  \
-    \      if constexpr(I+1==D)return vector<T>(d[I],x);\n        else return vector<decltype(build<I+1>(x))>(d[I],build<I+1>(x));\n\
-    \    }\n    auto operator()(const T &x=T())const{\n        static_assert(D>0);\n\
-    \        return build(x);\n    }\n};\ntemplate<class T>\ninline constexpr VecBuilder<T>\
-    \ VEC{};\n\nmt19937 rng(chrono::steady_clock::now().time_since_epoch().count());\n\
-    mt19937_64 rng64(chrono::steady_clock::now().time_since_epoch().count());\n#line\
-    \ 2 \"convolution/max-plus-convolution.hpp\"\n\n/**\n * Author: Teetat T.\n *\
-    \ Date: 2024-09-01\n * Description: Max Plus Convolution. Find $C[k] = max_{i+j=k}\\\
-    {A[i] + B[j]\\}$.\n * Time: $O(N)$.\n */\n\n// SMAWCK algorithm for finding row-wise\
-    \ maxima.\n// f(i,j,k) checks if M[i][j] <= M[i][k].\n// f(i,j,k) checks if M[i][k]\
-    \ is at least as good as M[i][j].\n// higher is better.\ntemplate<class F>\nvector<int>\
-    \ smawck(const F &f,const vector<int> &rows,const vector<int> &cols){\n    int\
-    \ n=(int)rows.size(),m=(int)cols.size();\n    if(max(n,m)<=2){\n        vector<int>\
-    \ ans(n,-1);\n        for(int i=0;i<n;i++){\n            for(int j:cols){\n  \
-    \              if(ans[i]==-1||f(rows[i],ans[i],j)){\n                    ans[i]=j;\n\
-    \                }\n            }\n        }\n        return ans;\n    }\n   \
-    \ if(n<m){\n        // reduce\n        vector<int> st;\n        for(int j:cols){\n\
-    \            while(true){\n                if(st.empty()){\n                 \
-    \   st.emplace_back(j);\n                    break;\n                }else if(f(rows[(int)st.size()-1],st.back(),j)){\n\
-    \                    st.pop_back();\n                }else if(st.size()<n){\n\
+    }\n#line 2 \"convolution/max-plus-convolution.hpp\"\n\n/**\n * Author: Teetat\
+    \ T.\n * Date: 2024-09-01\n * Description: Max Plus Convolution. Find $C[k] =\
+    \ max_{i+j=k}\\{A[i] + B[j]\\}$.\n * Time: $O(N)$.\n */\n\n// SMAWCK algorithm\
+    \ for finding row-wise maxima.\n// f(i,j,k) checks if M[i][j] <= M[i][k].\n//\
+    \ f(i,j,k) checks if M[i][k] is at least as good as M[i][j].\n// higher is better.\n\
+    template<class F>\nvector<int> smawck(const F &f,const vector<int> &rows,const\
+    \ vector<int> &cols){\n    int n=(int)rows.size(),m=(int)cols.size();\n    if(max(n,m)<=2){\n\
+    \        vector<int> ans(n,-1);\n        for(int i=0;i<n;i++){\n            for(int\
+    \ j:cols){\n                if(ans[i]==-1||f(rows[i],ans[i],j)){\n           \
+    \         ans[i]=j;\n                }\n            }\n        }\n        return\
+    \ ans;\n    }\n    if(n<m){\n        // reduce\n        vector<int> st;\n    \
+    \    for(int j:cols){\n            while(true){\n                if(st.empty()){\n\
     \                    st.emplace_back(j);\n                    break;\n       \
-    \         }else{\n                    break;\n                }\n            }\n\
-    \        }\n        return smawck(f,rows,st);\n    }   \n    vector<int> ans(n,-1);\n\
-    \    vector<int> new_rows;\n    for(int i=1;i<n;i+=2){\n        new_rows.emplace_back(rows[i]);\n\
+    \         }else if(f(rows[(int)st.size()-1],st.back(),j)){\n                 \
+    \   st.pop_back();\n                }else if(st.size()<n){\n                 \
+    \   st.emplace_back(j);\n                    break;\n                }else{\n\
+    \                    break;\n                }\n            }\n        }\n   \
+    \     return smawck(f,rows,st);\n    }   \n    vector<int> ans(n,-1);\n    vector<int>\
+    \ new_rows;\n    for(int i=1;i<n;i+=2){\n        new_rows.emplace_back(rows[i]);\n\
     \    }\n    auto res=smawck(f,new_rows,cols);\n    for(int i=0;i<new_rows.size();i++){\n\
     \        ans[2*i+1]=res[i];\n    }\n    for(int i=0,l=0,r=0;i<n;i+=2){\n     \
     \   if(i+1==n)r=m;\n        while(r<m&&cols[r]<=ans[i+1])r++;\n        ans[i]=cols[l++];\n\
@@ -99,7 +91,7 @@ data:
   isVerificationFile: true
   path: verify/yosupo/convolution/max-plus-convolution/min_plus_convolution_convex_arbitrary.test.cpp
   requiredBy: []
-  timestamp: '2026-10-24 00:10:28+07:00'
+  timestamp: '2026-10-25 14:43:57+07:00'
   verificationStatus: TEST_ACCEPTED
   verifiedWith: []
 documentation_of: verify/yosupo/convolution/max-plus-convolution/min_plus_convolution_convex_arbitrary.test.cpp

@@ -8,6 +8,9 @@ data:
     path: group/monoid/add.hpp
     title: group/monoid/add.hpp
   - icon: ':heavy_check_mark:'
+    path: random.hpp
+    title: random.hpp
+  - icon: ':question:'
     path: template.hpp
     title: template.hpp
   _extendedRequiredBy: []
@@ -41,16 +44,15 @@ data:
     \ U>\nT SUM(const U &a){return accumulate(ALL(a),T{});}\ntemplate<class T>\nvector<int>\
     \ argsort(const vector<T> &a){\n    vector<int> p(SZ(a));\n    iota(ALL(p),0);\n\
     \    stable_sort(ALL(p),[&](int i,int j){return a[i]<a[j];});\n    return p;\n\
-    }\n\ntemplate<class T,size_t D=0>\nstruct VecBuilder{\n    array<size_t,D> d;\n\
-    \    VecBuilder<T,D+1> operator[](size_t n)const{\n        VecBuilder<T,D+1> res{};\n\
-    \        for(size_t i=0;i<D;i++)res.d[i]=d[i];\n        res.d[D]=n;\n        return\
-    \ res;\n    }\n    template<size_t I=0>\n    auto build(const T &x)const{\n  \
-    \      if constexpr(I+1==D)return vector<T>(d[I],x);\n        else return vector<decltype(build<I+1>(x))>(d[I],build<I+1>(x));\n\
-    \    }\n    auto operator()(const T &x=T())const{\n        static_assert(D>0);\n\
-    \        return build(x);\n    }\n};\ntemplate<class T>\ninline constexpr VecBuilder<T>\
-    \ VEC{};\n\nmt19937 rng(chrono::steady_clock::now().time_since_epoch().count());\n\
-    mt19937_64 rng64(chrono::steady_clock::now().time_since_epoch().count());\n#line\
-    \ 2 \"data-structure/bbst/treap.hpp\"\n\ntemplate<class Monoid>\nstruct Treap{\n\
+    }\n#line 3 \"random.hpp\"\n\nstruct SplitMix64{\n    using result_type = u64;\n\
+    \    u64 x;\n    SplitMix64(u64 seed=chrono::steady_clock::now().time_since_epoch().count()):x(seed){}\n\
+    \    static constexpr u64 min(){return 0;}\n    static constexpr u64 max(){return\
+    \ numeric_limits<u64>::max();}\n    u64 operator()(){\n        u64 z=(x+=0x9e3779b97f4a7c15);\n\
+    \        z=(z^(z>>30))*0xbf58476d1ce4e5b9;\n        z=(z^(z>>27))*0x94d049bb133111eb;\n\
+    \        return z^(z>>31);\n    }\n};\n\nSplitMix64 rng;\n\nu64 rnd(u64 n){\n\
+    \    return rng()%n;\n}\nll rnd(ll l,ll r){\n    assert(l<=r);\n    return l+rng()%(r-l+1);\n\
+    }\ndb rnd_real(db l,db r){\n    return l+(r-l)*(rng()>>11)*0x1p-53;\n}\n#line\
+    \ 3 \"data-structure/bbst/treap.hpp\"\n\ntemplate<class Monoid>\nstruct Treap{\n\
     \    using T = typename Monoid::value_type;\n    struct Node{\n        int l,r,sz,prio;\n\
     \        bool rev;\n        T val,sum,revsum;\n    };\n    vector<Node> t;\n\n\
     \    Treap(int n=0){\n        t.reserve(n+1);\n        t.push_back(Node{0,0,0,0,false,Monoid::unit(),Monoid::unit(),Monoid::unit()});\n\
@@ -110,11 +112,12 @@ data:
   dependsOn:
   - template.hpp
   - data-structure/bbst/treap.hpp
+  - random.hpp
   - group/monoid/add.hpp
   isVerificationFile: true
   path: verify/yosupo/data-structure/bbst/treap/range_reverse_range_sum.test.cpp
   requiredBy: []
-  timestamp: '2026-10-24 00:10:28+07:00'
+  timestamp: '2026-10-25 14:43:57+07:00'
   verificationStatus: TEST_ACCEPTED
   verifiedWith: []
 documentation_of: verify/yosupo/data-structure/bbst/treap/range_reverse_range_sum.test.cpp

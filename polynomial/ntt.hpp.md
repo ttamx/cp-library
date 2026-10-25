@@ -1,32 +1,32 @@
 ---
 data:
   _extendedDependsOn:
-  - icon: ':heavy_check_mark:'
+  - icon: ':x:'
     path: modular-arithmetic/binpow.hpp
     title: modular-arithmetic/binpow.hpp
   _extendedRequiredBy:
-  - icon: ':heavy_check_mark:'
+  - icon: ':x:'
     path: polynomial/formal-power-series.hpp
     title: polynomial/formal-power-series.hpp
   _extendedVerifiedWith:
-  - icon: ':heavy_check_mark:'
+  - icon: ':x:'
     path: verify/yosupo/polynomial/formal-power-series/exp_of_formal_power_series.test.cpp
     title: verify/yosupo/polynomial/formal-power-series/exp_of_formal_power_series.test.cpp
-  - icon: ':heavy_check_mark:'
+  - icon: ':x:'
     path: verify/yosupo/polynomial/formal-power-series/inv_of_formal_power_series.test.cpp
     title: verify/yosupo/polynomial/formal-power-series/inv_of_formal_power_series.test.cpp
-  - icon: ':heavy_check_mark:'
+  - icon: ':x:'
     path: verify/yosupo/polynomial/formal-power-series/log_of_formal_power_series.test.cpp
     title: verify/yosupo/polynomial/formal-power-series/log_of_formal_power_series.test.cpp
-  - icon: ':heavy_check_mark:'
+  - icon: ':x:'
     path: verify/yosupo/polynomial/formal-power-series/pow_of_formal_power_series.test.cpp
     title: verify/yosupo/polynomial/formal-power-series/pow_of_formal_power_series.test.cpp
-  - icon: ':heavy_check_mark:'
+  - icon: ':x:'
     path: verify/yosupo/polynomial/ntt/convolution_mod.test.cpp
     title: verify/yosupo/polynomial/ntt/convolution_mod.test.cpp
-  _isVerificationFailed: false
+  _isVerificationFailed: true
   _pathExtension: hpp
-  _verificationStatusIcon: ':heavy_check_mark:'
+  _verificationStatusIcon: ':x:'
   attributes:
     links: []
   bundledCode: "#line 2 \"modular-arithmetic/binpow.hpp\"\n\n/**\n * Author: Teetat\
@@ -73,7 +73,7 @@ data:
   requiredBy:
   - polynomial/formal-power-series.hpp
   timestamp: '2026-10-23 21:46:01+07:00'
-  verificationStatus: LIBRARY_ALL_AC
+  verificationStatus: LIBRARY_ALL_WA
   verifiedWith:
   - verify/yosupo/polynomial/ntt/convolution_mod.test.cpp
   - verify/yosupo/polynomial/formal-power-series/inv_of_formal_power_series.test.cpp
