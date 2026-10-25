@@ -39,27 +39,30 @@ data:
     \ argsort(const vector<T> &a){\n    vector<int> p(SZ(a));\n    iota(ALL(p),0);\n\
     \    stable_sort(ALL(p),[&](int i,int j){return a[i]<a[j];});\n    return p;\n\
     }\n#line 2 \"data-structure/convex/li-chao-tree.hpp\"\n\n/**\n * Author: Teetat\
-    \ T.\n * Date: 2024-06-12\n * Description: Li-Chao Tree (minimize).\n */\n\ntemplate<class\
-    \ T>\nstruct LiChaoTree{\n    static const T INF=numeric_limits<T>::max()/2;\n\
+    \ T.\n * Date: 2024-06-12\n * Description: Li-Chao Tree.\n */\n\ntemplate<class\
+    \ T,bool IS_MIN>\nstruct LiChaoTree{\n    static constexpr T INF=numeric_limits<T>::max();\n\
     \    struct Line{\n        T m,c;\n        Line(T _m,T _c):m(_m),c(_c){}\n   \
     \     inline T eval(T x)const{return m*x+c;}\n    };\n    vector<T> xs;\n    vector<Line>\
     \ t;\n    LiChaoTree(){}\n    LiChaoTree(const vector<T> &x):xs(x){init(x);}\n\
     \    LiChaoTree(int n):xs(n){\n        vector<T> x(n);\n        iota(x.begin(),x.end(),0);\n\
     \        init(x);\n    }\n    void init(const vector<T> &x){\n        xs=x;\n\
     \        sort(xs.begin(),xs.end());\n        xs.erase(unique(xs.begin(),xs.end()),xs.end());\n\
-    \        t.assign(4<<(31-__builtin_clz(xs.size())),Line(0,INF));\n    }\n    void\
-    \ insert(int l,int r,int i,Line v){\n        int m=(l+r)/2;\n        if(v.eval(xs[m])<t[i].eval(xs[m]))swap(t[i],v);\n\
-    \        if(v.eval(xs[l])<t[i].eval(xs[l]))insert(l,m,i*2,v);\n        if(v.eval(xs[r])<t[i].eval(xs[r]))insert(m+1,r,i*2+1,v);\n\
-    \    }\n    inline void insert(T m,T c){\n        insert(0,(int)xs.size()-1,1,Line(m,c));\n\
-    \    }\n    void insert_range(int l,int r,int i,T x,T y,Line v){\n        if(y<xs[l]||xs[r]<x)return;\n\
-    \        if(x<=xs[l]&&xs[r]<=y)return insert(l,r,i,v);\n        int m=(l+r)/2;\n\
-    \        insert_range(l,m,i*2,x,y,v);\n        insert_range(m+1,r,i*2+1,x,y,v);\n\
-    \    }\n    inline void insert_range(T m,T c,T x,T y){\n        insert_range(0,(int)xs.size()-1,1,x,y,Line(m,c));\n\
+    \        if(xs.empty())return t.clear();\n        t.assign(4<<(31-__builtin_clz(xs.size())),Line(0,INF));\n\
+    \    }\n    void insert(int l,int r,int i,Line v){\n        int m=(l+r)/2;\n \
+    \       if(v.eval(xs[m])<t[i].eval(xs[m]))swap(t[i],v);\n        if(v.eval(xs[l])<t[i].eval(xs[l]))insert(l,m,i*2,v);\n\
+    \        if(v.eval(xs[r])<t[i].eval(xs[r]))insert(m+1,r,i*2+1,v);\n    }\n   \
+    \ inline void insert(T m,T c){\n        if(xs.empty())return;\n        if constexpr(!IS_MIN)m=-m,c=-c;\n\
+    \        insert(0,(int)xs.size()-1,1,Line(m,c));\n    }\n    void insert_range(int\
+    \ l,int r,int i,T x,T y,Line v){\n        if(y<xs[l]||xs[r]<x)return;\n      \
+    \  if(x<=xs[l]&&xs[r]<=y)return insert(l,r,i,v);\n        int m=(l+r)/2;\n   \
+    \     insert_range(l,m,i*2,x,y,v);\n        insert_range(m+1,r,i*2+1,x,y,v);\n\
+    \    }\n    inline void insert_range(T m,T c,T x,T y){\n        if(xs.empty())return;\n\
+    \        if constexpr(!IS_MIN)m=-m,c=-c;\n        insert_range(0,(int)xs.size()-1,1,x,y,Line(m,c));\n\
     \    }\n    T query(int l,int r,int i,T x){\n        if(l==r)return t[i].eval(x);\n\
     \        int m=(l+r)/2;\n        if(x<=xs[m])return min(t[i].eval(x),query(l,m,i*2,x));\n\
     \        return min(t[i].eval(x),query(m+1,r,i*2+1,x));\n    }\n    inline T query(T\
-    \ x){\n        return query(0,(int)xs.size()-1,1,x);\n    }\n};\n\n#line 4 \"\
-    verify/yosupo/data-structure/convex/li-chao-tree/segment_add_get_min.test.cpp\"\
+    \ x){\n        if(xs.empty())return IS_MIN?INF:-INF;\n        T res=query(0,(int)xs.size()-1,1,x);\n\
+    \        return IS_MIN?res:-res;\n    }\n};\n\n#line 4 \"verify/yosupo/data-structure/convex/li-chao-tree/segment_add_get_min.test.cpp\"\
     \n\nint main(){\n    cin.tie(nullptr)->sync_with_stdio(false);\n    int n,q;\n\
     \    cin >> n >> q;\n    vector<tuple<ll,ll,ll,ll>> lines(n);\n    vector<ll>\
     \ xs;\n    for(auto &[a,b,l,r]:lines){\n        cin >> l >> r >> a >> b;\n   \
@@ -68,7 +71,7 @@ data:
     \        cin >> op;\n        if(op){\n            cin >> a;\n            xs.emplace_back(a);\n\
     \        }else{\n            cin >> l >> r >> a >> b;\n            r--;\n    \
     \        xs.emplace_back(l);\n            xs.emplace_back(r);\n        }\n   \
-    \ }\n    LiChaoTree<ll> lct(xs);\n    for(auto [a,b,l,r]:lines)lct.insert_range(a,b,l,r);\n\
+    \ }\n    LiChaoTree<ll,true> lct(xs);\n    for(auto [a,b,l,r]:lines)lct.insert_range(a,b,l,r);\n\
     \    for(auto [op,a,b,l,r]:qrs){\n        if(op){\n            ll res=lct.query(a);\n\
     \            if(res>=lct.INF)cout << \"INFINITY\\n\";\n            else cout <<\
     \ res << \"\\n\";\n        }else{\n            lct.insert_range(a,b,l,r);\n  \
@@ -83,7 +86,7 @@ data:
     \        cin >> op;\n        if(op){\n            cin >> a;\n            xs.emplace_back(a);\n\
     \        }else{\n            cin >> l >> r >> a >> b;\n            r--;\n    \
     \        xs.emplace_back(l);\n            xs.emplace_back(r);\n        }\n   \
-    \ }\n    LiChaoTree<ll> lct(xs);\n    for(auto [a,b,l,r]:lines)lct.insert_range(a,b,l,r);\n\
+    \ }\n    LiChaoTree<ll,true> lct(xs);\n    for(auto [a,b,l,r]:lines)lct.insert_range(a,b,l,r);\n\
     \    for(auto [op,a,b,l,r]:qrs){\n        if(op){\n            ll res=lct.query(a);\n\
     \            if(res>=lct.INF)cout << \"INFINITY\\n\";\n            else cout <<\
     \ res << \"\\n\";\n        }else{\n            lct.insert_range(a,b,l,r);\n  \
@@ -94,7 +97,7 @@ data:
   isVerificationFile: true
   path: verify/yosupo/data-structure/convex/li-chao-tree/segment_add_get_min.test.cpp
   requiredBy: []
-  timestamp: '2026-10-25 14:43:57+07:00'
+  timestamp: '2026-10-25 17:59:42+07:00'
   verificationStatus: TEST_ACCEPTED
   verifiedWith: []
 documentation_of: verify/yosupo/data-structure/convex/li-chao-tree/segment_add_get_min.test.cpp

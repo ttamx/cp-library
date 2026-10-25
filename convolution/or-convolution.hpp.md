@@ -22,8 +22,9 @@ data:
     \    assert(n==(n&-n));\n    for(int i=n;i>>=1;){\n        for(int j=0;j<n;j++){\n\
     \            if(j&i){\n                a[j]-=a[j^i];\n            }\n        }\n\
     \    }\n}\n\ntemplate<class T>\nvector<T> or_convolution(vector<T> a,vector<T>\
-    \ b){\n    subset_zeta(a);\n    subset_zeta(b);\n    for(int i=0;i<(int)a.size();i++)a[i]*=b[i];\n\
-    \    subset_mobius(a);\n    return a;\n}\n\n"
+    \ b){\n    assert(a.size()==b.size());\n    subset_zeta(a);\n    subset_zeta(b);\n\
+    \    for(int i=0;i<(int)a.size();i++)a[i]*=b[i];\n    subset_mobius(a);\n    return\
+    \ a;\n}\n\n"
   code: "#pragma once\n\n/**\n * Author: Teetat T.\n * Date: 2024-07-29\n * Description:\
     \ Bitwise OR Convolution.\n * Subset Zeta Transform: $A^\\prime[S]=\\sum_{T\\\
     subseteq S}A[T]$.\n * Subset Mobius Transform: $A[T]=\\sum_{S\\subseteq T}(-1)^{|T-S|}A^\\\
@@ -34,13 +35,14 @@ data:
     \ &a){\n    int n=(int)a.size();\n    assert(n==(n&-n));\n    for(int i=n;i>>=1;){\n\
     \        for(int j=0;j<n;j++){\n            if(j&i){\n                a[j]-=a[j^i];\n\
     \            }\n        }\n    }\n}\n\ntemplate<class T>\nvector<T> or_convolution(vector<T>\
-    \ a,vector<T> b){\n    subset_zeta(a);\n    subset_zeta(b);\n    for(int i=0;i<(int)a.size();i++)a[i]*=b[i];\n\
-    \    subset_mobius(a);\n    return a;\n}\n\n"
+    \ a,vector<T> b){\n    assert(a.size()==b.size());\n    subset_zeta(a);\n    subset_zeta(b);\n\
+    \    for(int i=0;i<(int)a.size();i++)a[i]*=b[i];\n    subset_mobius(a);\n    return\
+    \ a;\n}\n\n"
   dependsOn: []
   isVerificationFile: false
   path: convolution/or-convolution.hpp
   requiredBy: []
-  timestamp: '2024-07-30 03:30:30+07:00'
+  timestamp: '2026-10-25 17:59:10+07:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
   - verify/yosupo/convolution/or-convolution/bitwise_and_convolution.test.cpp

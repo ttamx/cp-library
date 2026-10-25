@@ -83,8 +83,9 @@ data:
     \    vector<bool> is_prime(n,true);\n    for(int p=2;p<n;p++){\n        if(!is_prime[p])continue;\n\
     \        for(int i=(n-1)/p;i>=1;i--){\n            is_prime[i*p]=false;\n    \
     \        a[i*p]-=a[i];\n        }\n    }\n}\n\ntemplate<class T>\nvector<T> lcm_convolution(vector<T>\
-    \ a,vector<T> b){\n    divisor_zeta(a);\n    divisor_zeta(b);\n    for(int i=0;i<(int)a.size();i++)a[i]*=b[i];\n\
-    \    divisor_mobius(a);\n    return a;\n}\n\n#line 5 \"verify/yosupo/convolution/lcm-convolution/lcm_convolution.test.cpp\"\
+    \ a,vector<T> b){\n    assert(a.size()==b.size());\n    divisor_zeta(a);\n   \
+    \ divisor_zeta(b);\n    for(int i=0;i<(int)a.size();i++)a[i]*=b[i];\n    divisor_mobius(a);\n\
+    \    return a;\n}\n\n#line 5 \"verify/yosupo/convolution/lcm-convolution/lcm_convolution.test.cpp\"\
     \n\nusing mint = mint998;\n\nint main(){\n    cin.tie(nullptr)->sync_with_stdio(false);\n\
     \    int n;\n    cin >> n;\n    vector<mint> a(n+1),b(n+1);\n    for(int i=1;i<=n;i++)cin\
     \ >> a[i];\n    for(int i=1;i<=n;i++)cin >> b[i];\n    auto c=lcm_convolution(a,b);\n\
@@ -102,7 +103,7 @@ data:
   isVerificationFile: true
   path: verify/yosupo/convolution/lcm-convolution/lcm_convolution.test.cpp
   requiredBy: []
-  timestamp: '2026-10-25 14:43:57+07:00'
+  timestamp: '2026-10-25 17:59:10+07:00'
   verificationStatus: TEST_ACCEPTED
   verifiedWith: []
 documentation_of: verify/yosupo/convolution/lcm-convolution/lcm_convolution.test.cpp

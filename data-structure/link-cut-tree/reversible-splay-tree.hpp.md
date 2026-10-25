@@ -64,11 +64,11 @@ data:
     \ Base.\n */\n\ntemplate<class Tree,class Node,class Monoid>\nstruct ReversibleBBST:Tree{\n\
     \    using Tree::merge;\n    using Tree::split;\n    using typename Tree::Ptr;\n\
     \    using T = typename Monoid::value_type;\n\n    ReversibleBBST()=default;\n\
-    \n    T sum(Ptr t){\n        return t?t->sum:T();\n    }\n    void pull(Ptr t){\n\
-    \        if(!t)return;\n        t->size=1;\n        t->sum=t->val;\n        t->revsum=t->val;\n\
-    \        if(t->l){\n            t->size+=t->l->size;\n            t->sum=Monoid::op(t->l->sum,t->sum);\n\
-    \            t->revsum=Monoid::op(t->revsum,t->l->revsum);\n        }\n      \
-    \  if(t->r){\n            t->size+=t->r->size;\n            t->sum=Monoid::op(t->sum,t->r->sum);\n\
+    \n    T sum(Ptr t){\n        return t?t->sum:Monoid::unit();\n    }\n    void\
+    \ pull(Ptr t){\n        if(!t)return;\n        t->size=1;\n        t->sum=t->val;\n\
+    \        t->revsum=t->val;\n        if(t->l){\n            t->size+=t->l->size;\n\
+    \            t->sum=Monoid::op(t->l->sum,t->sum);\n            t->revsum=Monoid::op(t->revsum,t->l->revsum);\n\
+    \        }\n        if(t->r){\n            t->size+=t->r->size;\n            t->sum=Monoid::op(t->sum,t->r->sum);\n\
     \            t->revsum=Monoid::op(t->r->revsum,t->revsum);\n        }\n    }\n\
     \    void push(Ptr t){\n        if(!t)return;\n        if(t->rev){\n         \
     \   toggle(t->l);\n            toggle(t->r);\n            t->rev=false;\n    \
@@ -103,7 +103,7 @@ data:
   path: data-structure/link-cut-tree/reversible-splay-tree.hpp
   requiredBy:
   - data-structure/link-cut-tree/link-cut-tree.hpp
-  timestamp: '2026-04-15 22:47:01+07:00'
+  timestamp: '2026-10-25 18:00:04+07:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
   - verify/yosupo/data-structure/link-cut-tree/reversible-splay-tree/range_reverse_range_sum.test.cpp

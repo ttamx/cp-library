@@ -79,10 +79,10 @@ data:
     \    assert(n==(n&-n));\n    for(int i=1;i<n;i<<=1){\n        for(int j=0;j<n;j++){\n\
     \            if(j&i){\n                T &u=a[j^i],&v=a[j];\n                tie(u,v)=make_pair(u+v,u-v);\n\
     \            }\n        }\n    }\n}\n\ntemplate<class T>\nvector<T> xor_convolution(vector<T>\
-    \ a,vector<T> b){\n    int n=(int)a.size();\n    fwht(a);\n    fwht(b);\n    for(int\
-    \ i=0;i<n;i++)a[i]*=b[i];\n    fwht(a);\n    T div=T(1)/T(n);\n    if(div==T(0)){\n\
-    \        for(auto &x:a)x/=n;\n    }else{\n        for(auto &x:a)x*=div;\n    }\n\
-    \    return a;\n}\n\n#line 5 \"verify/yosupo/convolution/xor-convolution/bitwise_xor_convolution.test.cpp\"\
+    \ a,vector<T> b){\n    int n=(int)a.size();\n    if(n==0)return a;\n    fwht(a);\n\
+    \    fwht(b);\n    for(int i=0;i<n;i++)a[i]*=b[i];\n    fwht(a);\n    T div=T(1)/T(n);\n\
+    \    if(div==T(0)){\n        for(auto &x:a)x/=n;\n    }else{\n        for(auto\
+    \ &x:a)x*=div;\n    }\n    return a;\n}\n\n#line 5 \"verify/yosupo/convolution/xor-convolution/bitwise_xor_convolution.test.cpp\"\
     \n\nusing mint = mint998;\n\nint main(){\n    cin.tie(nullptr)->sync_with_stdio(false);\n\
     \    int n;\n    cin >> n;\n    n=1<<n;\n    vector<mint> a(n),b(n);\n    for(auto\
     \ &x:a)cin >> x;\n    for(auto &x:b)cin >> x;\n    auto c=xor_convolution(a,b);\n\
@@ -101,7 +101,7 @@ data:
   isVerificationFile: true
   path: verify/yosupo/convolution/xor-convolution/bitwise_xor_convolution.test.cpp
   requiredBy: []
-  timestamp: '2026-10-25 14:43:57+07:00'
+  timestamp: '2026-10-25 17:59:10+07:00'
   verificationStatus: TEST_ACCEPTED
   verifiedWith: []
 documentation_of: verify/yosupo/convolution/xor-convolution/bitwise_xor_convolution.test.cpp

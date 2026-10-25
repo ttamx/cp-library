@@ -140,8 +140,8 @@ data:
     \     for(int i=2;i>>1<deg;i<<=1){\n            res=(res*(mint(2)-res*pre(i))).pre(i);\n\
     \        }\n        return res.pre(deg);\n    }\n    FPS log(int deg=-1){\n  \
     \      assert(!this->empty()&&(*this)[0]==mint(1));\n        if(deg==-1)deg=this->size();\n\
-    \        return (pre(deg).diff()*inv(deg)).pre(deg-1).integral();\n    }\n   \
-    \ FPS exp(int deg=-1){\n        assert(this->empty()||(*this)[0]==mint(0));\n\
+    \        assert(deg>0);\n        return (pre(deg).diff()*inv(deg)).pre(deg-1).integral();\n\
+    \    }\n    FPS exp(int deg=-1){\n        assert(this->empty()||(*this)[0]==mint(0));\n\
     \        if(deg==-1)deg=this->size();\n        FPS res{mint(1)};\n        for(int\
     \ i=2;i>>1<deg;i<<=1){\n            res=(res*(pre(i)-res.log(i)+mint(1))).pre(i);\n\
     \        }\n        return res.pre(deg);\n    }\n    FPS pow(ll k,int deg=-1){\n\
@@ -172,7 +172,7 @@ data:
   isVerificationFile: true
   path: verify/yosupo/polynomial/formal-power-series/pow_of_formal_power_series.test.cpp
   requiredBy: []
-  timestamp: '2026-10-25 14:43:57+07:00'
+  timestamp: '2026-10-25 17:59:10+07:00'
   verificationStatus: TEST_ACCEPTED
   verifiedWith: []
 documentation_of: verify/yosupo/polynomial/formal-power-series/pow_of_formal_power_series.test.cpp

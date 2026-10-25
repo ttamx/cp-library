@@ -23,15 +23,15 @@ data:
     \  };\n    int n,s,t;\n    T U;\n    vector<Edge> e;\n    vector<vector<int>>\
     \ g;\n    vector<int> ptr,lv;\n    bool calculated;\n    T max_flow;\n    Dinic(){}\n\
     \    Dinic(int n,int s,int t){init(n,s,t);}\n    void init(int _n,int _s,int _t){\n\
-    \        n=_n,s=_s,t=_t;\n        U=0;\n        e.clear();\n        g.assign(n,{});\n\
-    \        calculated=false;\n    }\n    void add_edge(int from,int to,T cap){\n\
-    \        assert(0<=from&&from<n&&0<=to&&to<n);\n        g[from].emplace_back(e.size());\n\
-    \        e.emplace_back(to,cap);\n        g[to].emplace_back(e.size());\n    \
-    \    e.emplace_back(from,directed?0:cap);\n        U=max(U,cap);\n    }\n    bool\
-    \ bfs(T scale){\n        lv.assign(n,-1);\n        vector<int> q{s};\n       \
-    \ lv[s]=0;\n        for(int i=0;i<(int)q.size();i++){\n            int u=q[i];\n\
-    \            for(int j:g[u]){\n                int v=e[j].to;\n              \
-    \  if(lv[v]==-1&&e[j].remain()>=scale){\n                    q.emplace_back(v);\n\
+    \        n=_n,s=_s,t=_t;\n        assert(s!=t);\n        U=0;\n        e.clear();\n\
+    \        g.assign(n,{});\n        calculated=false;\n    }\n    void add_edge(int\
+    \ from,int to,T cap){\n        assert(0<=from&&from<n&&0<=to&&to<n);\n       \
+    \ g[from].emplace_back(e.size());\n        e.emplace_back(to,cap);\n        g[to].emplace_back(e.size());\n\
+    \        e.emplace_back(from,directed?0:cap);\n        U=max(U,cap);\n    }\n\
+    \    bool bfs(T scale){\n        lv.assign(n,-1);\n        vector<int> q{s};\n\
+    \        lv[s]=0;\n        for(int i=0;i<(int)q.size();i++){\n            int\
+    \ u=q[i];\n            for(int j:g[u]){\n                int v=e[j].to;\n    \
+    \            if(lv[v]==-1&&e[j].remain()>=scale){\n                    q.emplace_back(v);\n\
     \                    lv[v]=lv[u]+1;\n                }\n            }\n      \
     \  }\n        return lv[t]!=-1;\n    }\n    T dfs(int u,int t,T f){\n        if(u==t||f==0)return\
     \ f;\n        for(int &i=ptr[u];i<(int)g[u].size();i++){\n            int j=g[u][i];\n\
@@ -134,7 +134,7 @@ data:
   path: flow/k-ary-optimization.hpp
   requiredBy:
   - verify/atcoder/abc347_g.cpp
-  timestamp: '2024-07-29 18:44:45+07:00'
+  timestamp: '2026-10-25 18:00:04+07:00'
   verificationStatus: LIBRARY_NO_TESTS
   verifiedWith: []
 documentation_of: flow/k-ary-optimization.hpp

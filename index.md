@@ -259,6 +259,9 @@ data:
     - icon: ':heavy_check_mark:'
       path: random.hpp
       title: random.hpp
+    - icon: ':warning:'
+      path: template.cpp
+      title: template.cpp
     - icon: ':heavy_check_mark:'
       path: template.hpp
       title: template.hpp

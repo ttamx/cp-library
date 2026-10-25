@@ -21,12 +21,12 @@ data:
     \ create){init(n,create);}\n    SegmentTree(int n,T v=Monoid::unit()){init(n,[&](int){return\
     \ v;});}\n    template<class U>\n    SegmentTree(const vector<U> &a){init((int)a.size(),[&](int\
     \ i){return T(a[i]);});}\n    void init(int _n,function<T(int)> create){\n   \
-    \     n=_n;\n        t.assign(4<<(31-__builtin_clz(n)),Monoid::unit());\n    \
-    \    function<void(int,int,int)> build=[&](int l,int r,int i){\n            if(l==r)return\
-    \ void(t[i]=create(l));\n            int m=(l+r)/2;\n            build(l,m,i*2);\n\
-    \            build(m+1,r,i*2+1);\n            pull(i);\n        };\n        build(0,n-1,1);\n\
-    \    }\n    void pull(int i){\n        t[i]=Monoid::op(t[i*2],t[i*2+1]);\n   \
-    \ }\n    void modify(int l,int r,int i,int x,const T &v){\n        if(x<l||r<x)return;\n\
+    \     n=_n;\n        if(n==0)return t.clear();\n        t.assign(4<<(31-__builtin_clz(n)),Monoid::unit());\n\
+    \        function<void(int,int,int)> build=[&](int l,int r,int i){\n         \
+    \   if(l==r)return void(t[i]=create(l));\n            int m=(l+r)/2;\n       \
+    \     build(l,m,i*2);\n            build(m+1,r,i*2+1);\n            pull(i);\n\
+    \        };\n        build(0,n-1,1);\n    }\n    void pull(int i){\n        t[i]=Monoid::op(t[i*2],t[i*2+1]);\n\
+    \    }\n    void modify(int l,int r,int i,int x,const T &v){\n        if(x<l||r<x)return;\n\
     \        if(l==r)return void(t[i]=v);\n        int m=(l+r)/2;\n        modify(l,m,i*2,x,v);\n\
     \        modify(m+1,r,i*2+1,x,v);\n        pull(i);\n    }\n    void modify(int\
     \ x,const T &v){\n        modify(0,n-1,1,x,v);\n    }\n    template<class U>\n\
@@ -54,12 +54,13 @@ data:
     \    SegmentTree(int n,function<T(int)> create){init(n,create);}\n    SegmentTree(int\
     \ n,T v=Monoid::unit()){init(n,[&](int){return v;});}\n    template<class U>\n\
     \    SegmentTree(const vector<U> &a){init((int)a.size(),[&](int i){return T(a[i]);});}\n\
-    \    void init(int _n,function<T(int)> create){\n        n=_n;\n        t.assign(4<<(31-__builtin_clz(n)),Monoid::unit());\n\
-    \        function<void(int,int,int)> build=[&](int l,int r,int i){\n         \
-    \   if(l==r)return void(t[i]=create(l));\n            int m=(l+r)/2;\n       \
-    \     build(l,m,i*2);\n            build(m+1,r,i*2+1);\n            pull(i);\n\
-    \        };\n        build(0,n-1,1);\n    }\n    void pull(int i){\n        t[i]=Monoid::op(t[i*2],t[i*2+1]);\n\
-    \    }\n    void modify(int l,int r,int i,int x,const T &v){\n        if(x<l||r<x)return;\n\
+    \    void init(int _n,function<T(int)> create){\n        n=_n;\n        if(n==0)return\
+    \ t.clear();\n        t.assign(4<<(31-__builtin_clz(n)),Monoid::unit());\n   \
+    \     function<void(int,int,int)> build=[&](int l,int r,int i){\n            if(l==r)return\
+    \ void(t[i]=create(l));\n            int m=(l+r)/2;\n            build(l,m,i*2);\n\
+    \            build(m+1,r,i*2+1);\n            pull(i);\n        };\n        build(0,n-1,1);\n\
+    \    }\n    void pull(int i){\n        t[i]=Monoid::op(t[i*2],t[i*2+1]);\n   \
+    \ }\n    void modify(int l,int r,int i,int x,const T &v){\n        if(x<l||r<x)return;\n\
     \        if(l==r)return void(t[i]=v);\n        int m=(l+r)/2;\n        modify(l,m,i*2,x,v);\n\
     \        modify(m+1,r,i*2+1,x,v);\n        pull(i);\n    }\n    void modify(int\
     \ x,const T &v){\n        modify(0,n-1,1,x,v);\n    }\n    template<class U>\n\
@@ -85,7 +86,7 @@ data:
   isVerificationFile: false
   path: data-structure/segment-tree/segment-tree.hpp
   requiredBy: []
-  timestamp: '2024-07-29 18:44:45+07:00'
+  timestamp: '2026-10-25 17:59:10+07:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
   - verify/yosupo/data-structure/segment-tree/segment-tree/point_set_range_composite.test.cpp

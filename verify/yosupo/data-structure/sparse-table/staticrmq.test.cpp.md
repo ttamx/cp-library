@@ -46,10 +46,10 @@ data:
     \ Monoid>\nstruct SparseTable{\n    using T = typename Monoid::value_type;\n \
     \   int n;\n    vector<vector<T>> t;\n    SparseTable(){}\n    SparseTable(const\
     \ vector<T> &a){init(a);}\n    void init(const vector<T> &a){\n        n=(int)a.size();\n\
-    \        int lg=31-__builtin_clz(n);\n        t.assign(lg+1,vector<T>(n,Monoid::unit()));\n\
-    \        t[0]=a;\n        for(int i=0;i<lg;i++){\n            for(int j=0;j+(2<<i)<=n;j++){\n\
-    \                t[i+1][j]=Monoid::op(t[i][j],t[i][j+(1<<i)]);\n            }\n\
-    \        }\n    }\n    T query(int l,int r){\n        int lg=31-__builtin_clz(r-l+1);\n\
+    \        if(n==0)return t.clear();\n        int lg=31-__builtin_clz(n);\n    \
+    \    t.assign(lg+1,vector<T>(n,Monoid::unit()));\n        t[0]=a;\n        for(int\
+    \ i=0;i<lg;i++){\n            for(int j=0;j+(2<<i)<=n;j++){\n                t[i+1][j]=Monoid::op(t[i][j],t[i][j+(1<<i)]);\n\
+    \            }\n        }\n    }\n    T query(int l,int r){\n        int lg=31-__builtin_clz(r-l+1);\n\
     \        return Monoid::op(t[lg][l],t[lg][r-(1<<lg)+1]);\n    }\n};\n\n#line 2\
     \ \"group/monoid/min.hpp\"\n\n/**\n * Author: Teetat T.\n * Date: 2024-04-14\n\
     \ * Description: Min Monoid class.\n */\n\ntemplate<class T>\nstruct MinMonoid{\n\
@@ -73,7 +73,7 @@ data:
   isVerificationFile: true
   path: verify/yosupo/data-structure/sparse-table/staticrmq.test.cpp
   requiredBy: []
-  timestamp: '2026-10-25 14:43:57+07:00'
+  timestamp: '2026-10-25 17:59:10+07:00'
   verificationStatus: TEST_ACCEPTED
   verifiedWith: []
 documentation_of: verify/yosupo/data-structure/sparse-table/staticrmq.test.cpp

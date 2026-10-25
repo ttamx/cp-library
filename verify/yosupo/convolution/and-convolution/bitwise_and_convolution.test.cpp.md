@@ -83,8 +83,9 @@ data:
     \    assert(n==(n&-n));\n    for(int i=n;i>>=1;){\n        for(int j=0;j<n;j++){\n\
     \            if(j&i){\n                a[j^i]-=a[j];\n            }\n        }\n\
     \    }\n}\n\ntemplate<class T>\nvector<T> and_convolution(vector<T> a,vector<T>\
-    \ b){\n    superset_zeta(a);\n    superset_zeta(b);\n    for(int i=0;i<(int)a.size();i++)a[i]*=b[i];\n\
-    \    superset_mobius(a);\n    return a;\n}\n\n#line 5 \"verify/yosupo/convolution/and-convolution/bitwise_and_convolution.test.cpp\"\
+    \ b){\n    assert(a.size()==b.size());\n    superset_zeta(a);\n    superset_zeta(b);\n\
+    \    for(int i=0;i<(int)a.size();i++)a[i]*=b[i];\n    superset_mobius(a);\n  \
+    \  return a;\n}\n\n#line 5 \"verify/yosupo/convolution/and-convolution/bitwise_and_convolution.test.cpp\"\
     \n\nusing mint = mint998;\n\nint main(){\n    cin.tie(nullptr)->sync_with_stdio(false);\n\
     \    int n;\n    cin >> n;\n    n=1<<n;\n    vector<mint> a(n),b(n);\n    for(auto\
     \ &x:a)cin >> x;\n    for(auto &x:b)cin >> x;\n    auto c=and_convolution(a,b);\n\
@@ -103,7 +104,7 @@ data:
   isVerificationFile: true
   path: verify/yosupo/convolution/and-convolution/bitwise_and_convolution.test.cpp
   requiredBy: []
-  timestamp: '2026-10-25 14:43:57+07:00'
+  timestamp: '2026-10-25 17:59:10+07:00'
   verificationStatus: TEST_ACCEPTED
   verifiedWith: []
 documentation_of: verify/yosupo/convolution/and-convolution/bitwise_and_convolution.test.cpp
