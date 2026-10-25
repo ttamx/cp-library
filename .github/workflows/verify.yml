@@ -30,7 +30,7 @@ jobs:
         pip install -r requirements.txt
         pip install "setuptools<81"
 
-    - run: oj-verify all
+    - run: oj-verify all --timeout 3600
       env:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         GH_PAT: idk
