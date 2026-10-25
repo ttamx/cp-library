@@ -37,6 +37,7 @@ void superset_mobius(vector<T> &a){
 
 template<class T>
 vector<T> and_convolution(vector<T> a,vector<T> b){
+    assert(a.size()==b.size());
     superset_zeta(a);
     superset_zeta(b);
     for(int i=0;i<(int)a.size();i++)a[i]*=b[i];

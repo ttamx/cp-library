@@ -25,6 +25,7 @@ void fwht(vector<T> &a){
 template<class T>
 vector<T> xor_convolution(vector<T> a,vector<T> b){
     int n=(int)a.size();
+    if(n==0)return a;
     fwht(a);
     fwht(b);
     for(int i=0;i<n;i++)a[i]*=b[i];

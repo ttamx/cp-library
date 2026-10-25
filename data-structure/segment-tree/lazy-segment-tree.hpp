@@ -22,6 +22,7 @@ struct LazySegmentTree{
     LazySegmentTree(const vector<T> &a){init((int)a.size(),[&](int i){return Info(a[i]);});}
     void init(int _n,function<Info(int)> create){
         n=_n;
+        if(n==0)return t.clear(),lz.clear();
         int m=4<<(31-__builtin_clz(n));
         t.assign(m,InfoMonoid::unit());
         lz.assign(m,TagMonoid::unit());

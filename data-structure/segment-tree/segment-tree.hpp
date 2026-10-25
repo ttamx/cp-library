@@ -18,6 +18,7 @@ struct SegmentTree{
     SegmentTree(const vector<U> &a){init((int)a.size(),[&](int i){return T(a[i]);});}
     void init(int _n,function<T(int)> create){
         n=_n;
+        if(n==0)return t.clear();
         t.assign(4<<(31-__builtin_clz(n)),Monoid::unit());
         function<void(int,int,int)> build=[&](int l,int r,int i){
             if(l==r)return void(t[i]=create(l));

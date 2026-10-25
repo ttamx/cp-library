@@ -10,6 +10,7 @@ template<class STR>
 vector<int> z_algorithm(const STR &s){
     int n=(int)s.size();
     vector<int> z(n);
+    if(n==0)return z;
     z[0]=n;
     for(int i=1,l=0,r=1;i<n;i++){
         if(i<r)z[i]=min(r-i,z[i-l]);

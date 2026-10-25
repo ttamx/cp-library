@@ -17,7 +17,7 @@ struct Fenwick{
     template<class U>
     void init(const vector<U> &a){
         n=(int)a.size();
-        logn=31-__builtin_clz(n);
+        logn=n?31-__builtin_clz(n):0;
         t.assign(n+1,T{});
         for(int i=1;i<=n;i++){
             t[i]=t[i]+a[i-1];

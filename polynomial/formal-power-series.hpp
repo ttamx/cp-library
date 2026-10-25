@@ -112,6 +112,7 @@ struct FormalPowerSeries:vector<mint>{
     FPS log(int deg=-1){
         assert(!this->empty()&&(*this)[0]==mint(1));
         if(deg==-1)deg=this->size();
+        assert(deg>0);
         return (pre(deg).diff()*inv(deg)).pre(deg-1).integral();
     }
     FPS exp(int deg=-1){

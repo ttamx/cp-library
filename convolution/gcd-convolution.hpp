@@ -37,6 +37,7 @@ void multiple_mobius(vector<T> &a){
 
 template<class T>
 vector<T> gcd_convolution(vector<T> a,vector<T> b){
+    assert(a.size()==b.size());
     multiple_zeta(a);
     multiple_zeta(b);
     for(int i=0;i<(int)a.size();i++)a[i]*=b[i];

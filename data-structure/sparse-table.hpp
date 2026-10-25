@@ -15,6 +15,7 @@ struct SparseTable{
     SparseTable(const vector<T> &a){init(a);}
     void init(const vector<T> &a){
         n=(int)a.size();
+        if(n==0)return t.clear();
         int lg=31-__builtin_clz(n);
         t.assign(lg+1,vector<T>(n,Monoid::unit()));
         t[0]=a;

@@ -37,6 +37,7 @@ void divisor_mobius(vector<T> &a){
 
 template<class T>
 vector<T> lcm_convolution(vector<T> a,vector<T> b){
+    assert(a.size()==b.size());
     divisor_zeta(a);
     divisor_zeta(b);
     for(int i=0;i<(int)a.size();i++)a[i]*=b[i];
