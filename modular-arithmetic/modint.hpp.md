@@ -30,33 +30,33 @@ data:
   - icon: ':heavy_check_mark:'
     path: verify/yosupo/data-structure/segment-tree/segment-tree/point_set_range_composite.test.cpp
     title: verify/yosupo/data-structure/segment-tree/segment-tree/point_set_range_composite.test.cpp
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: verify/yosupo/polynomial/formal-power-series/exp_of_formal_power_series.test.cpp
     title: verify/yosupo/polynomial/formal-power-series/exp_of_formal_power_series.test.cpp
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: verify/yosupo/polynomial/formal-power-series/inv_of_formal_power_series.test.cpp
     title: verify/yosupo/polynomial/formal-power-series/inv_of_formal_power_series.test.cpp
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: verify/yosupo/polynomial/formal-power-series/log_of_formal_power_series.test.cpp
     title: verify/yosupo/polynomial/formal-power-series/log_of_formal_power_series.test.cpp
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: verify/yosupo/polynomial/formal-power-series/pow_of_formal_power_series.test.cpp
     title: verify/yosupo/polynomial/formal-power-series/pow_of_formal_power_series.test.cpp
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: verify/yosupo/polynomial/ntt/convolution_mod.test.cpp
     title: verify/yosupo/polynomial/ntt/convolution_mod.test.cpp
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: verify/yosupo/tree/hld/vertex_set_path_composite.test.cpp
     title: verify/yosupo/tree/hld/vertex_set_path_composite.test.cpp
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: verify/yosupo/tree/static-top-tree-dp/point_set_tree_path_composite_sum_fixed_root.test.cpp
     title: verify/yosupo/tree/static-top-tree-dp/point_set_tree_path_composite_sum_fixed_root.test.cpp
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: verify/yosupo/tree/static-top-tree-rerooting-dp/point_set_tree_path_composite_sum.test.cpp
     title: verify/yosupo/tree/static-top-tree-rerooting-dp/point_set_tree_path_composite_sum.test.cpp
-  _isVerificationFailed: true
+  _isVerificationFailed: false
   _pathExtension: hpp
-  _verificationStatusIcon: ':question:'
+  _verificationStatusIcon: ':heavy_check_mark:'
   attributes:
     links: []
   bundledCode: "#line 2 \"modular-arithmetic/modint.hpp\"\n\n/**\n * Author: Teetat\
@@ -127,7 +127,7 @@ data:
   path: modular-arithmetic/modint.hpp
   requiredBy: []
   timestamp: '2026-10-23 21:46:01+07:00'
-  verificationStatus: LIBRARY_SOME_WA
+  verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
   - verify/yosupo/convolution/xor-convolution/bitwise_xor_convolution.test.cpp
   - verify/yosupo/convolution/or-convolution/bitwise_and_convolution.test.cpp

@@ -1,29 +1,29 @@
 ---
 data:
   _extendedDependsOn:
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: graph/graph-base.hpp
     title: graph/graph-base.hpp
-  - icon: ':question:'
+  - icon: ':heavy_check_mark:'
     path: modular-arithmetic/modint.hpp
     title: modular-arithmetic/modint.hpp
-  - icon: ':question:'
+  - icon: ':heavy_check_mark:'
     path: template.hpp
     title: template.hpp
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: tree/hld.hpp
     title: tree/hld.hpp
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: tree/static-top-tree-dp.hpp
     title: tree/static-top-tree-dp.hpp
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: tree/static-top-tree.hpp
     title: tree/static-top-tree.hpp
   _extendedRequiredBy: []
   _extendedVerifiedWith: []
-  _isVerificationFailed: true
+  _isVerificationFailed: false
   _pathExtension: cpp
-  _verificationStatusIcon: ':x:'
+  _verificationStatusIcon: ':heavy_check_mark:'
   attributes:
     '*NOT_SPECIAL_COMMENTS*': ''
     PROBLEM: https://judge.yosupo.jp/problem/point_set_tree_path_composite_sum_fixed_root
@@ -256,7 +256,7 @@ data:
   path: verify/yosupo/tree/static-top-tree-dp/point_set_tree_path_composite_sum_fixed_root.test.cpp
   requiredBy: []
   timestamp: '2026-10-25 14:43:57+07:00'
-  verificationStatus: TEST_WRONG_ANSWER
+  verificationStatus: TEST_ACCEPTED
   verifiedWith: []
 documentation_of: verify/yosupo/tree/static-top-tree-dp/point_set_tree_path_composite_sum_fixed_root.test.cpp
 layout: document

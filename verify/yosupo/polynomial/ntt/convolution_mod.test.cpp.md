@@ -1,23 +1,23 @@
 ---
 data:
   _extendedDependsOn:
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: modular-arithmetic/binpow.hpp
     title: modular-arithmetic/binpow.hpp
-  - icon: ':question:'
+  - icon: ':heavy_check_mark:'
     path: modular-arithmetic/modint.hpp
     title: modular-arithmetic/modint.hpp
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: polynomial/ntt.hpp
     title: polynomial/ntt.hpp
-  - icon: ':question:'
+  - icon: ':heavy_check_mark:'
     path: template.hpp
     title: template.hpp
   _extendedRequiredBy: []
   _extendedVerifiedWith: []
-  _isVerificationFailed: true
+  _isVerificationFailed: false
   _pathExtension: cpp
-  _verificationStatusIcon: ':x:'
+  _verificationStatusIcon: ':heavy_check_mark:'
   attributes:
     '*NOT_SPECIAL_COMMENTS*': ''
     PROBLEM: https://judge.yosupo.jp/problem/convolution_mod
@@ -114,7 +114,7 @@ data:
   path: verify/yosupo/polynomial/ntt/convolution_mod.test.cpp
   requiredBy: []
   timestamp: '2026-10-25 14:43:57+07:00'
-  verificationStatus: TEST_WRONG_ANSWER
+  verificationStatus: TEST_ACCEPTED
   verifiedWith: []
 documentation_of: verify/yosupo/polynomial/ntt/convolution_mod.test.cpp
 layout: document
