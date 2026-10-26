@@ -218,6 +218,14 @@ data:
     - icon: ':warning:'
       path: linear-algebra/matrix.hpp
       title: linear-algebra/matrix.hpp
+  - name: misc
+    pages:
+    - icon: ':heavy_check_mark:'
+      path: misc/enumerate-xor.hpp
+      title: misc/enumerate-xor.hpp
+    - icon: ':heavy_check_mark:'
+      path: misc/xor-intervals.hpp
+      title: misc/xor-intervals.hpp
   - name: modular-arithmetic
     pages:
     - icon: ':heavy_check_mark:'
@@ -469,6 +477,16 @@ data:
     - icon: ':heavy_check_mark:'
       path: verify/yosupo/graph/twosat/two_sat.test.cpp
       title: verify/yosupo/graph/twosat/two_sat.test.cpp
+  - name: verify/yosupo/misc/enumerate-xor
+    pages:
+    - icon: ':heavy_check_mark:'
+      path: verify/yosupo/misc/enumerate-xor/aplusb.test.cpp
+      title: verify/yosupo/misc/enumerate-xor/aplusb.test.cpp
+  - name: verify/yosupo/misc/xor-intervals
+    pages:
+    - icon: ':heavy_check_mark:'
+      path: verify/yosupo/misc/xor-intervals/aplusb.test.cpp
+      title: verify/yosupo/misc/xor-intervals/aplusb.test.cpp
   - name: verify/yosupo/number-theory/floor-sum
     pages:
     - icon: ':heavy_check_mark:'

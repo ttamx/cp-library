@@ -130,6 +130,12 @@ data:
     path: verify/yosupo/graph/twosat/two_sat.test.cpp
     title: verify/yosupo/graph/twosat/two_sat.test.cpp
   - icon: ':heavy_check_mark:'
+    path: verify/yosupo/misc/enumerate-xor/aplusb.test.cpp
+    title: verify/yosupo/misc/enumerate-xor/aplusb.test.cpp
+  - icon: ':heavy_check_mark:'
+    path: verify/yosupo/misc/xor-intervals/aplusb.test.cpp
+    title: verify/yosupo/misc/xor-intervals/aplusb.test.cpp
+  - icon: ':heavy_check_mark:'
     path: verify/yosupo/number-theory/floor-sum/sum_of_floor_of_linear.test.cpp
     title: verify/yosupo/number-theory/floor-sum/sum_of_floor_of_linear.test.cpp
   - icon: ':heavy_check_mark:'
@@ -270,6 +276,8 @@ data:
   - verify/yosupo/graph/twosat/two_sat.test.cpp
   - verify/yosupo/graph/strongly-connected-component/scc.test.cpp
   - verify/yosupo/template/aplusb.test.cpp
+  - verify/yosupo/misc/enumerate-xor/aplusb.test.cpp
+  - verify/yosupo/misc/xor-intervals/aplusb.test.cpp
   - verify/yosupo/data-structure/segment-tree/segment-tree/point_set_range_composite.test.cpp
   - verify/yosupo/data-structure/segment-tree/lazy-segment-tree/range_affine_range_sum.test.cpp
   - verify/yosupo/data-structure/segment-tree/dynamic-segment-tree/area_of_union_of_rectangles.test.cpp
